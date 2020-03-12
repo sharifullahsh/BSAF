@@ -19,9 +19,9 @@ namespace BSAF
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            BSAFMainMDIForm mForm = new BSAFMainMDIForm();
-            mForm.Show();
-            mForm.Owner = this;
+            MDIParent mdi = new MDIParent();
+            mdi.Show();
+            mdi.Owner = this;
             this.Hide();
         }
 
@@ -30,6 +30,9 @@ namespace BSAF
 
         }
 
-      
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

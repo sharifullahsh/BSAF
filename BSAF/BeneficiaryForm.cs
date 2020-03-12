@@ -23,6 +23,42 @@ namespace BSAF
             frm.ShowDialog();
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProfileNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkReturnReasonOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkReturnReasonOther.Checked)
+            {
+                this.txtReturnReasonOther.Visible = true;
+                this.lblReturnReasonOther.Visible = true;
+            }
+            else
+            {
+                this.txtReturnReasonOther.Visible = false;
+                this.lblReturnReasonOther.Visible = false;
+            }
+        }
+
+        private void chkBroughtOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkBroughtOther.Checked)
+            {
+                this.txtItemBroughtOther.Visible = true;
+                this.lblItemBroughtIOther.Visible = true;
+            }
+            else
+            {
+                this.txtItemBroughtOther.Visible = false;
+                this.lblItemBroughtIOther.Visible = false;
+            }
+        }
     }
 }
