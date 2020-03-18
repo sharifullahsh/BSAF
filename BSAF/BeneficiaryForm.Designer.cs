@@ -176,60 +176,60 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.gbQes8Answer = new System.Windows.Forms.GroupBox();
-            this.gbQues8AccessJob = new System.Windows.Forms.GroupBox();
-            this.chkVeryImportant = new System.Windows.Forms.RadioButton();
-            this.chkImportant = new System.Windows.Forms.RadioButton();
-            this.chkSlightlyImportant = new System.Windows.Forms.RadioButton();
-            this.chkNotAtAllImportant = new System.Windows.Forms.RadioButton();
+            this.Q8ATJ = new System.Windows.Forms.GroupBox();
+            this.ATJV = new System.Windows.Forms.RadioButton();
+            this.ATJI = new System.Windows.Forms.RadioButton();
+            this.ATJS = new System.Windows.Forms.RadioButton();
+            this.ATJN = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
-            this.gbQues8Other = new System.Windows.Forms.GroupBox();
+            this.Q8OTher = new System.Windows.Forms.GroupBox();
             this.txtQues8Other = new System.Windows.Forms.TextBox();
-            this.radioButton29 = new System.Windows.Forms.RadioButton();
-            this.radioButton30 = new System.Windows.Forms.RadioButton();
-            this.radioButton31 = new System.Windows.Forms.RadioButton();
-            this.radioButton32 = new System.Windows.Forms.RadioButton();
+            this.OTherV = new System.Windows.Forms.RadioButton();
+            this.OTherI = new System.Windows.Forms.RadioButton();
+            this.OTherS = new System.Windows.Forms.RadioButton();
+            this.OThern = new System.Windows.Forms.RadioButton();
             this.label32 = new System.Windows.Forms.Label();
-            this.gbQues8AccessToHouse = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.Q8ATH = new System.Windows.Forms.GroupBox();
+            this.ATHV = new System.Windows.Forms.RadioButton();
+            this.ATHI = new System.Windows.Forms.RadioButton();
+            this.ATHS = new System.Windows.Forms.RadioButton();
+            this.ATHN = new System.Windows.Forms.RadioButton();
             this.label25 = new System.Windows.Forms.Label();
-            this.gbQues8AbillityToReturn = new System.Windows.Forms.GroupBox();
-            this.radioButton25 = new System.Windows.Forms.RadioButton();
-            this.radioButton26 = new System.Windows.Forms.RadioButton();
-            this.radioButton27 = new System.Windows.Forms.RadioButton();
-            this.radioButton28 = new System.Windows.Forms.RadioButton();
+            this.Q8AROH = new System.Windows.Forms.GroupBox();
+            this.AROHV = new System.Windows.Forms.RadioButton();
+            this.AROHI = new System.Windows.Forms.RadioButton();
+            this.AROHS = new System.Windows.Forms.RadioButton();
+            this.AROHN = new System.Windows.Forms.RadioButton();
             this.label31 = new System.Windows.Forms.Label();
-            this.gbQues8AccessToFarmland = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.Q8ATF = new System.Windows.Forms.GroupBox();
+            this.ATFV = new System.Windows.Forms.RadioButton();
+            this.ATFI = new System.Windows.Forms.RadioButton();
+            this.ATFS = new System.Windows.Forms.RadioButton();
+            this.ATFN = new System.Windows.Forms.RadioButton();
             this.label26 = new System.Windows.Forms.Label();
-            this.gbQues8FamilyMember = new System.Windows.Forms.GroupBox();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.radioButton22 = new System.Windows.Forms.RadioButton();
-            this.radioButton23 = new System.Windows.Forms.RadioButton();
-            this.radioButton24 = new System.Windows.Forms.RadioButton();
+            this.Q8POFM = new System.Windows.Forms.GroupBox();
+            this.POFMV = new System.Windows.Forms.RadioButton();
+            this.POFMI = new System.Windows.Forms.RadioButton();
+            this.POFMS = new System.Windows.Forms.RadioButton();
+            this.POFMN = new System.Windows.Forms.RadioButton();
             this.label30 = new System.Windows.Forms.Label();
-            this.gbQues8Security = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.Q8S = new System.Windows.Forms.GroupBox();
+            this.SV = new System.Windows.Forms.RadioButton();
+            this.SI = new System.Windows.Forms.RadioButton();
+            this.SS = new System.Windows.Forms.RadioButton();
+            this.SN = new System.Windows.Forms.RadioButton();
             this.label27 = new System.Windows.Forms.Label();
-            this.gbQues8EthnicGroup = new System.Windows.Forms.GroupBox();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.radioButton20 = new System.Windows.Forms.RadioButton();
+            this.Q8SEG = new System.Windows.Forms.GroupBox();
+            this.SEGV = new System.Windows.Forms.RadioButton();
+            this.SEGI = new System.Windows.Forms.RadioButton();
+            this.SEGS = new System.Windows.Forms.RadioButton();
+            this.SEGN = new System.Windows.Forms.RadioButton();
             this.label29 = new System.Windows.Forms.Label();
-            this.gbQues8Education = new System.Windows.Forms.GroupBox();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.Q8EFC = new System.Windows.Forms.GroupBox();
+            this.EFCV = new System.Windows.Forms.RadioButton();
+            this.EFCI = new System.Windows.Forms.RadioButton();
+            this.EFCS = new System.Windows.Forms.RadioButton();
+            this.EFCN = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tabHostCountrySection = new System.Windows.Forms.TabPage();
@@ -279,84 +279,84 @@
             this.tabAssistanceNeeds1 = new System.Windows.Forms.TabPage();
             this.btnAssistanceNeedsPrevious1 = new System.Windows.Forms.Button();
             this.btnAssistanceNeedsNext1 = new System.Windows.Forms.Button();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
+            this.Q19SC = new System.Windows.Forms.GroupBox();
+            this.SCC = new System.Windows.Forms.TextBox();
+            this.SCD = new System.Windows.Forms.DateTimePicker();
+            this.SCP = new System.Windows.Forms.CheckBox();
+            this.SCR = new System.Windows.Forms.CheckBox();
             this.label68 = new System.Windows.Forms.Label();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker11 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.Q19PC = new System.Windows.Forms.GroupBox();
+            this.PCC = new System.Windows.Forms.TextBox();
+            this.PCD = new System.Windows.Forms.DateTimePicker();
+            this.PCP = new System.Windows.Forms.CheckBox();
+            this.PCR = new System.Windows.Forms.CheckBox();
             this.label66 = new System.Windows.Forms.Label();
-            this.gbAssistanceNeeds = new System.Windows.Forms.GroupBox();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker14 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox28 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
+            this.Q19 = new System.Windows.Forms.GroupBox();
+            this.Q19PR = new System.Windows.Forms.GroupBox();
+            this.PRC = new System.Windows.Forms.TextBox();
+            this.PRD = new System.Windows.Forms.DateTimePicker();
+            this.PRP = new System.Windows.Forms.CheckBox();
+            this.PRR = new System.Windows.Forms.CheckBox();
             this.label69 = new System.Windows.Forms.Label();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker12 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
+            this.Q19NFI = new System.Windows.Forms.GroupBox();
+            this.NFIC = new System.Windows.Forms.TextBox();
+            this.NFID = new System.Windows.Forms.DateTimePicker();
+            this.NFIP = new System.Windows.Forms.CheckBox();
+            this.NFIR = new System.Windows.Forms.CheckBox();
             this.label67 = new System.Windows.Forms.Label();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.Q19WFP = new System.Windows.Forms.GroupBox();
+            this.WFPC = new System.Windows.Forms.TextBox();
+            this.WFPD = new System.Windows.Forms.DateTimePicker();
+            this.WFPP = new System.Windows.Forms.CheckBox();
+            this.WFPR = new System.Windows.Forms.CheckBox();
             this.label65 = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.Q19DDR = new System.Windows.Forms.GroupBox();
+            this.DDRC = new System.Windows.Forms.TextBox();
+            this.DDRD = new System.Windows.Forms.DateTimePicker();
+            this.DDRP = new System.Windows.Forms.CheckBox();
+            this.DDRR = new System.Windows.Forms.CheckBox();
             this.label64 = new System.Windows.Forms.Label();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.Q19E = new System.Windows.Forms.GroupBox();
+            this.EC = new System.Windows.Forms.TextBox();
+            this.ED = new System.Windows.Forms.DateTimePicker();
+            this.EP = new System.Windows.Forms.CheckBox();
+            this.ER = new System.Windows.Forms.CheckBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.Q19EMC = new System.Windows.Forms.GroupBox();
+            this.EMCC = new System.Windows.Forms.TextBox();
+            this.EMCD = new System.Windows.Forms.DateTimePicker();
+            this.EMCP = new System.Windows.Forms.CheckBox();
+            this.EMCR = new System.Windows.Forms.CheckBox();
             this.label62 = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.Q19AITC = new System.Windows.Forms.GroupBox();
+            this.AITCC = new System.Windows.Forms.TextBox();
+            this.AITCD = new System.Windows.Forms.DateTimePicker();
+            this.AITCP = new System.Windows.Forms.CheckBox();
+            this.AITCR = new System.Windows.Forms.CheckBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.Q19STA = new System.Windows.Forms.GroupBox();
+            this.STAC = new System.Windows.Forms.TextBox();
+            this.STAD = new System.Windows.Forms.DateTimePicker();
+            this.STAP = new System.Windows.Forms.CheckBox();
+            this.STAR = new System.Windows.Forms.CheckBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.Q19FT = new System.Windows.Forms.GroupBox();
+            this.FTC = new System.Windows.Forms.TextBox();
+            this.FTD = new System.Windows.Forms.DateTimePicker();
+            this.FTP = new System.Windows.Forms.CheckBox();
+            this.FTR = new System.Windows.Forms.CheckBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.Q19CFT = new System.Windows.Forms.GroupBox();
+            this.CFTC = new System.Windows.Forms.TextBox();
+            this.CFTD = new System.Windows.Forms.DateTimePicker();
+            this.CFTP = new System.Windows.Forms.CheckBox();
+            this.CFTR = new System.Windows.Forms.CheckBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.Q19FLT = new System.Windows.Forms.GroupBox();
+            this.FLTC = new System.Windows.Forms.TextBox();
+            this.FLTD = new System.Windows.Forms.DateTimePicker();
+            this.FLTP = new System.Windows.Forms.CheckBox();
+            this.FLTR = new System.Windows.Forms.CheckBox();
             this.label52 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label58 = new System.Windows.Forms.Label();
@@ -364,11 +364,11 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dtpProvidedDate = new System.Windows.Forms.DateTimePicker();
-            this.chkProvided = new System.Windows.Forms.CheckBox();
-            this.chk = new System.Windows.Forms.CheckBox();
+            this.Q19TBRC = new System.Windows.Forms.GroupBox();
+            this.TBRCC = new System.Windows.Forms.TextBox();
+            this.TBRCD = new System.Windows.Forms.DateTimePicker();
+            this.TBRCP = new System.Windows.Forms.CheckBox();
+            this.TBRCR = new System.Windows.Forms.CheckBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tabAssistanceNeeds2 = new System.Windows.Forms.TabPage();
@@ -377,21 +377,21 @@
             this.btnAssistanceNeedsPrevious2 = new System.Windows.Forms.Button();
             this.btnAssistanceNeedsNext2 = new System.Windows.Forms.Button();
             this.gbTransportationDiff = new System.Windows.Forms.GroupBox();
-            this.txtTransportationOther = new System.Windows.Forms.TextBox();
-            this.chkTransportationOther = new System.Windows.Forms.CheckBox();
+            this.txtTransportOther = new System.Windows.Forms.TextBox();
+            this.TRNSPORTOther = new System.Windows.Forms.CheckBox();
             this.txtTransMobile = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
             this.txtTransAccompaniedBy = new System.Windows.Forms.TextBox();
             this.label81 = new System.Windows.Forms.Label();
             this.txtTransAdditionalInfo = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
-            this.chkTransUnderSupport = new System.Windows.Forms.CheckBox();
-            this.chkTransLeftTransitCenter = new System.Windows.Forms.CheckBox();
-            this.chkTransHandedOverToFamily = new System.Windows.Forms.CheckBox();
-            this.chkTransProvideTransFacilities = new System.Windows.Forms.CheckBox();
-            this.chkTransRerredToOtherPlace = new System.Windows.Forms.CheckBox();
-            this.chkTransByHim = new System.Windows.Forms.CheckBox();
-            this.chkTransEscort = new System.Windows.Forms.CheckBox();
+            this.US = new System.Windows.Forms.CheckBox();
+            this.LTTC = new System.Windows.Forms.CheckBox();
+            this.HOTH = new System.Windows.Forms.CheckBox();
+            this.PWT = new System.Windows.Forms.CheckBox();
+            this.RTOP = new System.Windows.Forms.CheckBox();
+            this.TBH = new System.Windows.Forms.CheckBox();
+            this.TWE = new System.Windows.Forms.CheckBox();
             this.label78 = new System.Windows.Forms.Label();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.txtAssistance1 = new System.Windows.Forms.TextBox();
@@ -420,6 +420,9 @@
             this.dateTransportationDiff = new System.Windows.Forms.DateTimePicker();
             this.label70 = new System.Windows.Forms.Label();
             this.txtReintegrationNeeds1 = new System.Windows.Forms.TabPage();
+            this.lblHoHEducationOther = new System.Windows.Forms.Label();
+            this.txtHoHEducationOther = new System.Windows.Forms.TextBox();
+            this.cmbHoHEducationLevel = new System.Windows.Forms.ComboBox();
             this.lblProOther = new System.Windows.Forms.Label();
             this.cmbProfession = new System.Windows.Forms.ComboBox();
             this.txtProfOther = new System.Windows.Forms.TextBox();
@@ -443,7 +446,6 @@
             this.chk3ConcernsLackOfHouse = new System.Windows.Forms.CheckBox();
             this.chk3ConcernsSecurity = new System.Windows.Forms.CheckBox();
             this.label93 = new System.Windows.Forms.Label();
-            this.txtHoHEducationOther = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.gbToolsNeeded = new System.Windows.Forms.GroupBox();
@@ -495,8 +497,6 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
-            this.cmbHoHEducationLevel = new System.Windows.Forms.ComboBox();
-            this.lblHoHEducationOther = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -513,37 +513,37 @@
             this.pnlQes11RentPay.SuspendLayout();
             this.pnlOwnHouse.SuspendLayout();
             this.gbQes8Answer.SuspendLayout();
-            this.gbQues8AccessJob.SuspendLayout();
-            this.gbQues8Other.SuspendLayout();
-            this.gbQues8AccessToHouse.SuspendLayout();
-            this.gbQues8AbillityToReturn.SuspendLayout();
-            this.gbQues8AccessToFarmland.SuspendLayout();
-            this.gbQues8FamilyMember.SuspendLayout();
-            this.gbQues8Security.SuspendLayout();
-            this.gbQues8EthnicGroup.SuspendLayout();
-            this.gbQues8Education.SuspendLayout();
+            this.Q8ATJ.SuspendLayout();
+            this.Q8OTher.SuspendLayout();
+            this.Q8ATH.SuspendLayout();
+            this.Q8AROH.SuspendLayout();
+            this.Q8ATF.SuspendLayout();
+            this.Q8POFM.SuspendLayout();
+            this.Q8S.SuspendLayout();
+            this.Q8SEG.SuspendLayout();
+            this.Q8EFC.SuspendLayout();
             this.tabHostCountrySection.SuspendLayout();
             this.pnlItemBrought.SuspendLayout();
             this.pnlLengthOfStayInHostC.SuspendLayout();
             this.pnlHoustCountryPlace.SuspendLayout();
             this.pnlHostCountry.SuspendLayout();
             this.tabAssistanceNeeds1.SuspendLayout();
-            this.groupBox19.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.gbAssistanceNeeds.SuspendLayout();
-            this.groupBox20.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.Q19SC.SuspendLayout();
+            this.Q19PC.SuspendLayout();
+            this.Q19.SuspendLayout();
+            this.Q19PR.SuspendLayout();
+            this.Q19NFI.SuspendLayout();
+            this.Q19WFP.SuspendLayout();
+            this.Q19DDR.SuspendLayout();
+            this.Q19E.SuspendLayout();
+            this.Q19EMC.SuspendLayout();
+            this.Q19AITC.SuspendLayout();
+            this.Q19STA.SuspendLayout();
+            this.Q19FT.SuspendLayout();
+            this.Q19CFT.SuspendLayout();
+            this.Q19FLT.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.Q19TBRC.SuspendLayout();
             this.tabAssistanceNeeds2.SuspendLayout();
             this.gbTransportationDiff.SuspendLayout();
             this.groupBox22.SuspendLayout();
@@ -970,7 +970,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(889, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.Size = new System.Drawing.Size(77, 23);
             this.button1.TabIndex = 32;
             this.button1.Text = "Add Member";
             this.button1.UseVisualStyleBackColor = true;
@@ -1153,7 +1153,7 @@
             this.lvFamilyMember.GridLines = true;
             this.lvFamilyMember.Location = new System.Drawing.Point(0, 67);
             this.lvFamilyMember.Name = "lvFamilyMember";
-            this.lvFamilyMember.Size = new System.Drawing.Size(969, 120);
+            this.lvFamilyMember.Size = new System.Drawing.Size(984, 120);
             this.lvFamilyMember.TabIndex = 0;
             this.lvFamilyMember.UseCompatibleStateImageBehavior = false;
             this.lvFamilyMember.View = System.Windows.Forms.View.Details;
@@ -1218,7 +1218,7 @@
             this.tabeBeneficiary.Location = new System.Drawing.Point(0, 0);
             this.tabeBeneficiary.Name = "tabeBeneficiary";
             this.tabeBeneficiary.SelectedIndex = 0;
-            this.tabeBeneficiary.Size = new System.Drawing.Size(1009, 761);
+            this.tabeBeneficiary.Size = new System.Drawing.Size(1009, 749);
             this.tabeBeneficiary.TabIndex = 52;
             // 
             // tabProfile
@@ -1249,7 +1249,7 @@
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1001, 735);
+            this.tabProfile.Size = new System.Drawing.Size(1001, 723);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "Beneficiary";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -1332,9 +1332,9 @@
             this.pnlFamilyMember.Controls.Add(this.cmbMaritalStatus);
             this.pnlFamilyMember.Controls.Add(this.cmbIDType);
             this.pnlFamilyMember.Controls.Add(this.lblIDType);
-            this.pnlFamilyMember.Location = new System.Drawing.Point(17, 202);
+            this.pnlFamilyMember.Location = new System.Drawing.Point(9, 202);
             this.pnlFamilyMember.Name = "pnlFamilyMember";
-            this.pnlFamilyMember.Size = new System.Drawing.Size(969, 187);
+            this.pnlFamilyMember.Size = new System.Drawing.Size(984, 187);
             this.pnlFamilyMember.TabIndex = 51;
             // 
             // btnProfileNext
@@ -1384,7 +1384,7 @@
             this.tabProtection1.Location = new System.Drawing.Point(4, 22);
             this.tabProtection1.Name = "tabProtection1";
             this.tabProtection1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProtection1.Size = new System.Drawing.Size(1001, 735);
+            this.tabProtection1.Size = new System.Drawing.Size(1001, 723);
             this.tabProtection1.TabIndex = 1;
             this.tabProtection1.Text = "Protection 1";
             this.tabProtection1.UseVisualStyleBackColor = true;
@@ -1875,7 +1875,7 @@
             this.txtOther.Location = new System.Drawing.Point(4, 22);
             this.txtOther.Name = "txtOther";
             this.txtOther.Padding = new System.Windows.Forms.Padding(3);
-            this.txtOther.Size = new System.Drawing.Size(1001, 735);
+            this.txtOther.Size = new System.Drawing.Size(1001, 723);
             this.txtOther.TabIndex = 2;
             this.txtOther.Text = "Protection 2";
             this.txtOther.UseVisualStyleBackColor = true;
@@ -2135,77 +2135,77 @@
             // 
             // gbQes8Answer
             // 
-            this.gbQes8Answer.Controls.Add(this.gbQues8AccessJob);
-            this.gbQes8Answer.Controls.Add(this.gbQues8Other);
-            this.gbQes8Answer.Controls.Add(this.gbQues8AccessToHouse);
-            this.gbQes8Answer.Controls.Add(this.gbQues8AbillityToReturn);
-            this.gbQes8Answer.Controls.Add(this.gbQues8AccessToFarmland);
-            this.gbQes8Answer.Controls.Add(this.gbQues8FamilyMember);
-            this.gbQes8Answer.Controls.Add(this.gbQues8Security);
-            this.gbQes8Answer.Controls.Add(this.gbQues8EthnicGroup);
-            this.gbQes8Answer.Controls.Add(this.gbQues8Education);
+            this.gbQes8Answer.Controls.Add(this.Q8ATJ);
+            this.gbQes8Answer.Controls.Add(this.Q8OTher);
+            this.gbQes8Answer.Controls.Add(this.Q8ATH);
+            this.gbQes8Answer.Controls.Add(this.Q8AROH);
+            this.gbQes8Answer.Controls.Add(this.Q8ATF);
+            this.gbQes8Answer.Controls.Add(this.Q8POFM);
+            this.gbQes8Answer.Controls.Add(this.Q8S);
+            this.gbQes8Answer.Controls.Add(this.Q8SEG);
+            this.gbQes8Answer.Controls.Add(this.Q8EFC);
             this.gbQes8Answer.Location = new System.Drawing.Point(18, 24);
             this.gbQes8Answer.Name = "gbQes8Answer";
             this.gbQes8Answer.Size = new System.Drawing.Size(978, 312);
             this.gbQes8Answer.TabIndex = 15;
             this.gbQes8Answer.TabStop = false;
             // 
-            // gbQues8AccessJob
+            // Q8ATJ
             // 
-            this.gbQues8AccessJob.Controls.Add(this.chkVeryImportant);
-            this.gbQues8AccessJob.Controls.Add(this.chkImportant);
-            this.gbQues8AccessJob.Controls.Add(this.chkSlightlyImportant);
-            this.gbQues8AccessJob.Controls.Add(this.chkNotAtAllImportant);
-            this.gbQues8AccessJob.Controls.Add(this.label24);
-            this.gbQues8AccessJob.Location = new System.Drawing.Point(10, 5);
-            this.gbQues8AccessJob.Name = "gbQues8AccessJob";
-            this.gbQues8AccessJob.Size = new System.Drawing.Size(960, 39);
-            this.gbQues8AccessJob.TabIndex = 1;
-            this.gbQues8AccessJob.TabStop = false;
+            this.Q8ATJ.Controls.Add(this.ATJV);
+            this.Q8ATJ.Controls.Add(this.ATJI);
+            this.Q8ATJ.Controls.Add(this.ATJS);
+            this.Q8ATJ.Controls.Add(this.ATJN);
+            this.Q8ATJ.Controls.Add(this.label24);
+            this.Q8ATJ.Location = new System.Drawing.Point(10, 5);
+            this.Q8ATJ.Name = "Q8ATJ";
+            this.Q8ATJ.Size = new System.Drawing.Size(960, 39);
+            this.Q8ATJ.TabIndex = 1;
+            this.Q8ATJ.TabStop = false;
             // 
-            // chkVeryImportant
+            // ATJV
             // 
-            this.chkVeryImportant.AutoSize = true;
-            this.chkVeryImportant.Location = new System.Drawing.Point(855, 12);
-            this.chkVeryImportant.Name = "chkVeryImportant";
-            this.chkVeryImportant.Size = new System.Drawing.Size(93, 17);
-            this.chkVeryImportant.TabIndex = 5;
-            this.chkVeryImportant.TabStop = true;
-            this.chkVeryImportant.Text = "Very Important";
-            this.chkVeryImportant.UseVisualStyleBackColor = true;
+            this.ATJV.AutoSize = true;
+            this.ATJV.Location = new System.Drawing.Point(855, 12);
+            this.ATJV.Name = "ATJV";
+            this.ATJV.Size = new System.Drawing.Size(93, 17);
+            this.ATJV.TabIndex = 5;
+            this.ATJV.TabStop = true;
+            this.ATJV.Text = "Very Important";
+            this.ATJV.UseVisualStyleBackColor = true;
             // 
-            // chkImportant
+            // ATJI
             // 
-            this.chkImportant.AutoSize = true;
-            this.chkImportant.Location = new System.Drawing.Point(719, 13);
-            this.chkImportant.Name = "chkImportant";
-            this.chkImportant.Size = new System.Drawing.Size(69, 17);
-            this.chkImportant.TabIndex = 4;
-            this.chkImportant.TabStop = true;
-            this.chkImportant.Text = "Important";
-            this.chkImportant.UseVisualStyleBackColor = true;
+            this.ATJI.AutoSize = true;
+            this.ATJI.Location = new System.Drawing.Point(719, 13);
+            this.ATJI.Name = "ATJI";
+            this.ATJI.Size = new System.Drawing.Size(69, 17);
+            this.ATJI.TabIndex = 4;
+            this.ATJI.TabStop = true;
+            this.ATJI.Text = "Important";
+            this.ATJI.UseVisualStyleBackColor = true;
             // 
-            // chkSlightlyImportant
+            // ATJS
             // 
-            this.chkSlightlyImportant.AutoSize = true;
-            this.chkSlightlyImportant.Location = new System.Drawing.Point(511, 12);
-            this.chkSlightlyImportant.Name = "chkSlightlyImportant";
-            this.chkSlightlyImportant.Size = new System.Drawing.Size(105, 17);
-            this.chkSlightlyImportant.TabIndex = 3;
-            this.chkSlightlyImportant.TabStop = true;
-            this.chkSlightlyImportant.Text = "Slightly Important";
-            this.chkSlightlyImportant.UseVisualStyleBackColor = true;
+            this.ATJS.AutoSize = true;
+            this.ATJS.Location = new System.Drawing.Point(511, 12);
+            this.ATJS.Name = "ATJS";
+            this.ATJS.Size = new System.Drawing.Size(105, 17);
+            this.ATJS.TabIndex = 3;
+            this.ATJS.TabStop = true;
+            this.ATJS.Text = "Slightly Important";
+            this.ATJS.UseVisualStyleBackColor = true;
             // 
-            // chkNotAtAllImportant
+            // ATJN
             // 
-            this.chkNotAtAllImportant.AutoSize = true;
-            this.chkNotAtAllImportant.Location = new System.Drawing.Point(300, 12);
-            this.chkNotAtAllImportant.Name = "chkNotAtAllImportant";
-            this.chkNotAtAllImportant.Size = new System.Drawing.Size(114, 17);
-            this.chkNotAtAllImportant.TabIndex = 2;
-            this.chkNotAtAllImportant.TabStop = true;
-            this.chkNotAtAllImportant.Text = "Not at all Important";
-            this.chkNotAtAllImportant.UseVisualStyleBackColor = true;
+            this.ATJN.AutoSize = true;
+            this.ATJN.Location = new System.Drawing.Point(300, 12);
+            this.ATJN.Name = "ATJN";
+            this.ATJN.Size = new System.Drawing.Size(114, 17);
+            this.ATJN.TabIndex = 2;
+            this.ATJN.TabStop = true;
+            this.ATJN.Text = "Not at all Important";
+            this.ATJN.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -2217,70 +2217,70 @@
             this.label24.TabIndex = 1;
             this.label24.Text = "Access to a job";
             // 
-            // gbQues8Other
+            // Q8OTher
             // 
-            this.gbQues8Other.Controls.Add(this.txtQues8Other);
-            this.gbQues8Other.Controls.Add(this.radioButton29);
-            this.gbQues8Other.Controls.Add(this.radioButton30);
-            this.gbQues8Other.Controls.Add(this.radioButton31);
-            this.gbQues8Other.Controls.Add(this.radioButton32);
-            this.gbQues8Other.Controls.Add(this.label32);
-            this.gbQues8Other.Location = new System.Drawing.Point(10, 275);
-            this.gbQues8Other.Name = "gbQues8Other";
-            this.gbQues8Other.Size = new System.Drawing.Size(960, 31);
-            this.gbQues8Other.TabIndex = 13;
-            this.gbQues8Other.TabStop = false;
+            this.Q8OTher.Controls.Add(this.txtQues8Other);
+            this.Q8OTher.Controls.Add(this.OTherV);
+            this.Q8OTher.Controls.Add(this.OTherI);
+            this.Q8OTher.Controls.Add(this.OTherS);
+            this.Q8OTher.Controls.Add(this.OThern);
+            this.Q8OTher.Controls.Add(this.label32);
+            this.Q8OTher.Location = new System.Drawing.Point(10, 275);
+            this.Q8OTher.Name = "Q8OTher";
+            this.Q8OTher.Size = new System.Drawing.Size(960, 31);
+            this.Q8OTher.TabIndex = 13;
+            this.Q8OTher.TabStop = false;
             // 
             // txtQues8Other
             // 
-            this.txtQues8Other.Location = new System.Drawing.Point(57, 10);
+            this.txtQues8Other.Location = new System.Drawing.Point(57, 9);
             this.txtQues8Other.Name = "txtQues8Other";
             this.txtQues8Other.Size = new System.Drawing.Size(236, 20);
             this.txtQues8Other.TabIndex = 14;
             // 
-            // radioButton29
+            // OTherV
             // 
-            this.radioButton29.AutoSize = true;
-            this.radioButton29.Location = new System.Drawing.Point(855, 9);
-            this.radioButton29.Name = "radioButton29";
-            this.radioButton29.Size = new System.Drawing.Size(93, 17);
-            this.radioButton29.TabIndex = 5;
-            this.radioButton29.TabStop = true;
-            this.radioButton29.Text = "Very Important";
-            this.radioButton29.UseVisualStyleBackColor = true;
+            this.OTherV.AutoSize = true;
+            this.OTherV.Location = new System.Drawing.Point(855, 9);
+            this.OTherV.Name = "OTherV";
+            this.OTherV.Size = new System.Drawing.Size(93, 17);
+            this.OTherV.TabIndex = 5;
+            this.OTherV.TabStop = true;
+            this.OTherV.Text = "Very Important";
+            this.OTherV.UseVisualStyleBackColor = true;
             // 
-            // radioButton30
+            // OTherI
             // 
-            this.radioButton30.AutoSize = true;
-            this.radioButton30.Location = new System.Drawing.Point(719, 9);
-            this.radioButton30.Name = "radioButton30";
-            this.radioButton30.Size = new System.Drawing.Size(69, 17);
-            this.radioButton30.TabIndex = 4;
-            this.radioButton30.TabStop = true;
-            this.radioButton30.Text = "Important";
-            this.radioButton30.UseVisualStyleBackColor = true;
+            this.OTherI.AutoSize = true;
+            this.OTherI.Location = new System.Drawing.Point(719, 9);
+            this.OTherI.Name = "OTherI";
+            this.OTherI.Size = new System.Drawing.Size(69, 17);
+            this.OTherI.TabIndex = 4;
+            this.OTherI.TabStop = true;
+            this.OTherI.Text = "Important";
+            this.OTherI.UseVisualStyleBackColor = true;
             // 
-            // radioButton31
+            // OTherS
             // 
-            this.radioButton31.AutoSize = true;
-            this.radioButton31.Location = new System.Drawing.Point(511, 9);
-            this.radioButton31.Name = "radioButton31";
-            this.radioButton31.Size = new System.Drawing.Size(105, 17);
-            this.radioButton31.TabIndex = 3;
-            this.radioButton31.TabStop = true;
-            this.radioButton31.Text = "Slightly Important";
-            this.radioButton31.UseVisualStyleBackColor = true;
+            this.OTherS.AutoSize = true;
+            this.OTherS.Location = new System.Drawing.Point(511, 9);
+            this.OTherS.Name = "OTherS";
+            this.OTherS.Size = new System.Drawing.Size(105, 17);
+            this.OTherS.TabIndex = 3;
+            this.OTherS.TabStop = true;
+            this.OTherS.Text = "Slightly Important";
+            this.OTherS.UseVisualStyleBackColor = true;
             // 
-            // radioButton32
+            // OThern
             // 
-            this.radioButton32.AutoSize = true;
-            this.radioButton32.Location = new System.Drawing.Point(299, 9);
-            this.radioButton32.Name = "radioButton32";
-            this.radioButton32.Size = new System.Drawing.Size(114, 17);
-            this.radioButton32.TabIndex = 2;
-            this.radioButton32.TabStop = true;
-            this.radioButton32.Text = "Not at all Important";
-            this.radioButton32.UseVisualStyleBackColor = true;
+            this.OThern.AutoSize = true;
+            this.OThern.Location = new System.Drawing.Point(299, 9);
+            this.OThern.Name = "OThern";
+            this.OThern.Size = new System.Drawing.Size(114, 17);
+            this.OThern.TabIndex = 2;
+            this.OThern.TabStop = true;
+            this.OThern.Text = "Not at all Important";
+            this.OThern.UseVisualStyleBackColor = true;
             // 
             // label32
             // 
@@ -2292,62 +2292,62 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "Other";
             // 
-            // gbQues8AccessToHouse
+            // Q8ATH
             // 
-            this.gbQues8AccessToHouse.Controls.Add(this.radioButton1);
-            this.gbQues8AccessToHouse.Controls.Add(this.radioButton2);
-            this.gbQues8AccessToHouse.Controls.Add(this.radioButton3);
-            this.gbQues8AccessToHouse.Controls.Add(this.radioButton4);
-            this.gbQues8AccessToHouse.Controls.Add(this.label25);
-            this.gbQues8AccessToHouse.Location = new System.Drawing.Point(10, 39);
-            this.gbQues8AccessToHouse.Name = "gbQues8AccessToHouse";
-            this.gbQues8AccessToHouse.Size = new System.Drawing.Size(960, 38);
-            this.gbQues8AccessToHouse.TabIndex = 6;
-            this.gbQues8AccessToHouse.TabStop = false;
+            this.Q8ATH.Controls.Add(this.ATHV);
+            this.Q8ATH.Controls.Add(this.ATHI);
+            this.Q8ATH.Controls.Add(this.ATHS);
+            this.Q8ATH.Controls.Add(this.ATHN);
+            this.Q8ATH.Controls.Add(this.label25);
+            this.Q8ATH.Location = new System.Drawing.Point(10, 39);
+            this.Q8ATH.Name = "Q8ATH";
+            this.Q8ATH.Size = new System.Drawing.Size(960, 38);
+            this.Q8ATH.TabIndex = 6;
+            this.Q8ATH.TabStop = false;
             // 
-            // radioButton1
+            // ATHV
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(855, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Very Important";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.ATHV.AutoSize = true;
+            this.ATHV.Location = new System.Drawing.Point(855, 12);
+            this.ATHV.Name = "ATHV";
+            this.ATHV.Size = new System.Drawing.Size(93, 17);
+            this.ATHV.TabIndex = 5;
+            this.ATHV.TabStop = true;
+            this.ATHV.Text = "Very Important";
+            this.ATHV.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // ATHI
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(719, 12);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Important";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.ATHI.AutoSize = true;
+            this.ATHI.Location = new System.Drawing.Point(719, 12);
+            this.ATHI.Name = "ATHI";
+            this.ATHI.Size = new System.Drawing.Size(69, 17);
+            this.ATHI.TabIndex = 4;
+            this.ATHI.TabStop = true;
+            this.ATHI.Text = "Important";
+            this.ATHI.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // ATHS
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(511, 12);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(105, 17);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Slightly Important";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.ATHS.AutoSize = true;
+            this.ATHS.Location = new System.Drawing.Point(511, 12);
+            this.ATHS.Name = "ATHS";
+            this.ATHS.Size = new System.Drawing.Size(105, 17);
+            this.ATHS.TabIndex = 3;
+            this.ATHS.TabStop = true;
+            this.ATHS.Text = "Slightly Important";
+            this.ATHS.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // ATHN
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(299, 12);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(114, 17);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Not at all Important";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.ATHN.AutoSize = true;
+            this.ATHN.Location = new System.Drawing.Point(299, 12);
+            this.ATHN.Name = "ATHN";
+            this.ATHN.Size = new System.Drawing.Size(114, 17);
+            this.ATHN.TabIndex = 2;
+            this.ATHN.TabStop = true;
+            this.ATHN.Text = "Not at all Important";
+            this.ATHN.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -2359,129 +2359,129 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Access to a house or apartment";
             // 
-            // gbQues8AbillityToReturn
+            // Q8AROH
             // 
-            this.gbQues8AbillityToReturn.Controls.Add(this.radioButton25);
-            this.gbQues8AbillityToReturn.Controls.Add(this.radioButton26);
-            this.gbQues8AbillityToReturn.Controls.Add(this.radioButton27);
-            this.gbQues8AbillityToReturn.Controls.Add(this.radioButton28);
-            this.gbQues8AbillityToReturn.Controls.Add(this.label31);
-            this.gbQues8AbillityToReturn.Location = new System.Drawing.Point(10, 245);
-            this.gbQues8AbillityToReturn.Name = "gbQues8AbillityToReturn";
-            this.gbQues8AbillityToReturn.Size = new System.Drawing.Size(960, 28);
-            this.gbQues8AbillityToReturn.TabIndex = 12;
-            this.gbQues8AbillityToReturn.TabStop = false;
+            this.Q8AROH.Controls.Add(this.AROHV);
+            this.Q8AROH.Controls.Add(this.AROHI);
+            this.Q8AROH.Controls.Add(this.AROHS);
+            this.Q8AROH.Controls.Add(this.AROHN);
+            this.Q8AROH.Controls.Add(this.label31);
+            this.Q8AROH.Location = new System.Drawing.Point(10, 244);
+            this.Q8AROH.Name = "Q8AROH";
+            this.Q8AROH.Size = new System.Drawing.Size(960, 30);
+            this.Q8AROH.TabIndex = 12;
+            this.Q8AROH.TabStop = false;
             // 
-            // radioButton25
+            // AROHV
             // 
-            this.radioButton25.AutoSize = true;
-            this.radioButton25.Location = new System.Drawing.Point(855, 7);
-            this.radioButton25.Name = "radioButton25";
-            this.radioButton25.Size = new System.Drawing.Size(93, 17);
-            this.radioButton25.TabIndex = 5;
-            this.radioButton25.TabStop = true;
-            this.radioButton25.Text = "Very Important";
-            this.radioButton25.UseVisualStyleBackColor = true;
+            this.AROHV.AutoSize = true;
+            this.AROHV.Location = new System.Drawing.Point(855, 10);
+            this.AROHV.Name = "AROHV";
+            this.AROHV.Size = new System.Drawing.Size(93, 17);
+            this.AROHV.TabIndex = 5;
+            this.AROHV.TabStop = true;
+            this.AROHV.Text = "Very Important";
+            this.AROHV.UseVisualStyleBackColor = true;
             // 
-            // radioButton26
+            // AROHI
             // 
-            this.radioButton26.AutoSize = true;
-            this.radioButton26.Location = new System.Drawing.Point(719, 7);
-            this.radioButton26.Name = "radioButton26";
-            this.radioButton26.Size = new System.Drawing.Size(69, 17);
-            this.radioButton26.TabIndex = 4;
-            this.radioButton26.TabStop = true;
-            this.radioButton26.Text = "Important";
-            this.radioButton26.UseVisualStyleBackColor = true;
+            this.AROHI.AutoSize = true;
+            this.AROHI.Location = new System.Drawing.Point(719, 10);
+            this.AROHI.Name = "AROHI";
+            this.AROHI.Size = new System.Drawing.Size(69, 17);
+            this.AROHI.TabIndex = 4;
+            this.AROHI.TabStop = true;
+            this.AROHI.Text = "Important";
+            this.AROHI.UseVisualStyleBackColor = true;
             // 
-            // radioButton27
+            // AROHS
             // 
-            this.radioButton27.AutoSize = true;
-            this.radioButton27.Location = new System.Drawing.Point(511, 7);
-            this.radioButton27.Name = "radioButton27";
-            this.radioButton27.Size = new System.Drawing.Size(105, 17);
-            this.radioButton27.TabIndex = 3;
-            this.radioButton27.TabStop = true;
-            this.radioButton27.Text = "Slightly Important";
-            this.radioButton27.UseVisualStyleBackColor = true;
+            this.AROHS.AutoSize = true;
+            this.AROHS.Location = new System.Drawing.Point(511, 10);
+            this.AROHS.Name = "AROHS";
+            this.AROHS.Size = new System.Drawing.Size(105, 17);
+            this.AROHS.TabIndex = 3;
+            this.AROHS.TabStop = true;
+            this.AROHS.Text = "Slightly Important";
+            this.AROHS.UseVisualStyleBackColor = true;
             // 
-            // radioButton28
+            // AROHN
             // 
-            this.radioButton28.AutoSize = true;
-            this.radioButton28.Location = new System.Drawing.Point(299, 7);
-            this.radioButton28.Name = "radioButton28";
-            this.radioButton28.Size = new System.Drawing.Size(114, 17);
-            this.radioButton28.TabIndex = 2;
-            this.radioButton28.TabStop = true;
-            this.radioButton28.Text = "Not at all Important";
-            this.radioButton28.UseVisualStyleBackColor = true;
+            this.AROHN.AutoSize = true;
+            this.AROHN.Location = new System.Drawing.Point(299, 9);
+            this.AROHN.Name = "AROHN";
+            this.AROHN.Size = new System.Drawing.Size(114, 17);
+            this.AROHN.TabIndex = 2;
+            this.AROHN.TabStop = true;
+            this.AROHN.Text = "Not at all Important";
+            this.AROHN.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(6, 5);
+            this.label31.Location = new System.Drawing.Point(5, 9);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(208, 17);
             this.label31.TabIndex = 1;
             this.label31.Text = "Ability to return to original home";
             // 
-            // gbQues8AccessToFarmland
+            // Q8ATF
             // 
-            this.gbQues8AccessToFarmland.Controls.Add(this.radioButton5);
-            this.gbQues8AccessToFarmland.Controls.Add(this.radioButton6);
-            this.gbQues8AccessToFarmland.Controls.Add(this.radioButton7);
-            this.gbQues8AccessToFarmland.Controls.Add(this.radioButton8);
-            this.gbQues8AccessToFarmland.Controls.Add(this.label26);
-            this.gbQues8AccessToFarmland.Location = new System.Drawing.Point(10, 72);
-            this.gbQues8AccessToFarmland.Name = "gbQues8AccessToFarmland";
-            this.gbQues8AccessToFarmland.Size = new System.Drawing.Size(960, 38);
-            this.gbQues8AccessToFarmland.TabIndex = 7;
-            this.gbQues8AccessToFarmland.TabStop = false;
+            this.Q8ATF.Controls.Add(this.ATFV);
+            this.Q8ATF.Controls.Add(this.ATFI);
+            this.Q8ATF.Controls.Add(this.ATFS);
+            this.Q8ATF.Controls.Add(this.ATFN);
+            this.Q8ATF.Controls.Add(this.label26);
+            this.Q8ATF.Location = new System.Drawing.Point(10, 72);
+            this.Q8ATF.Name = "Q8ATF";
+            this.Q8ATF.Size = new System.Drawing.Size(960, 38);
+            this.Q8ATF.TabIndex = 7;
+            this.Q8ATF.TabStop = false;
             // 
-            // radioButton5
+            // ATFV
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(855, 11);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(93, 17);
-            this.radioButton5.TabIndex = 5;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Very Important";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.ATFV.AutoSize = true;
+            this.ATFV.Location = new System.Drawing.Point(855, 11);
+            this.ATFV.Name = "ATFV";
+            this.ATFV.Size = new System.Drawing.Size(93, 17);
+            this.ATFV.TabIndex = 5;
+            this.ATFV.TabStop = true;
+            this.ATFV.Text = "Very Important";
+            this.ATFV.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // ATFI
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(719, 11);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(69, 17);
-            this.radioButton6.TabIndex = 4;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Important";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.ATFI.AutoSize = true;
+            this.ATFI.Location = new System.Drawing.Point(719, 11);
+            this.ATFI.Name = "ATFI";
+            this.ATFI.Size = new System.Drawing.Size(69, 17);
+            this.ATFI.TabIndex = 4;
+            this.ATFI.TabStop = true;
+            this.ATFI.Text = "Important";
+            this.ATFI.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // ATFS
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(511, 11);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(105, 17);
-            this.radioButton7.TabIndex = 3;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Slightly Important";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.ATFS.AutoSize = true;
+            this.ATFS.Location = new System.Drawing.Point(511, 11);
+            this.ATFS.Name = "ATFS";
+            this.ATFS.Size = new System.Drawing.Size(105, 17);
+            this.ATFS.TabIndex = 3;
+            this.ATFS.TabStop = true;
+            this.ATFS.Text = "Slightly Important";
+            this.ATFS.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // ATFN
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(299, 11);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(114, 17);
-            this.radioButton8.TabIndex = 2;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Not at all Important";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.ATFN.AutoSize = true;
+            this.ATFN.Location = new System.Drawing.Point(299, 11);
+            this.ATFN.Name = "ATFN";
+            this.ATFN.Size = new System.Drawing.Size(114, 17);
+            this.ATFN.TabIndex = 2;
+            this.ATFN.TabStop = true;
+            this.ATFN.Text = "Not at all Important";
+            this.ATFN.UseVisualStyleBackColor = true;
             // 
             // label26
             // 
@@ -2493,62 +2493,62 @@
             this.label26.TabIndex = 1;
             this.label26.Text = "Access to farmland";
             // 
-            // gbQues8FamilyMember
+            // Q8POFM
             // 
-            this.gbQues8FamilyMember.Controls.Add(this.radioButton21);
-            this.gbQues8FamilyMember.Controls.Add(this.radioButton22);
-            this.gbQues8FamilyMember.Controls.Add(this.radioButton23);
-            this.gbQues8FamilyMember.Controls.Add(this.radioButton24);
-            this.gbQues8FamilyMember.Controls.Add(this.label30);
-            this.gbQues8FamilyMember.Location = new System.Drawing.Point(11, 215);
-            this.gbQues8FamilyMember.Name = "gbQues8FamilyMember";
-            this.gbQues8FamilyMember.Size = new System.Drawing.Size(959, 29);
-            this.gbQues8FamilyMember.TabIndex = 11;
-            this.gbQues8FamilyMember.TabStop = false;
+            this.Q8POFM.Controls.Add(this.POFMV);
+            this.Q8POFM.Controls.Add(this.POFMI);
+            this.Q8POFM.Controls.Add(this.POFMS);
+            this.Q8POFM.Controls.Add(this.POFMN);
+            this.Q8POFM.Controls.Add(this.label30);
+            this.Q8POFM.Location = new System.Drawing.Point(11, 210);
+            this.Q8POFM.Name = "Q8POFM";
+            this.Q8POFM.Size = new System.Drawing.Size(959, 35);
+            this.Q8POFM.TabIndex = 11;
+            this.Q8POFM.TabStop = false;
             // 
-            // radioButton21
+            // POFMV
             // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.Location = new System.Drawing.Point(855, 9);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(93, 17);
-            this.radioButton21.TabIndex = 5;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Very Important";
-            this.radioButton21.UseVisualStyleBackColor = true;
+            this.POFMV.AutoSize = true;
+            this.POFMV.Location = new System.Drawing.Point(855, 11);
+            this.POFMV.Name = "POFMV";
+            this.POFMV.Size = new System.Drawing.Size(93, 17);
+            this.POFMV.TabIndex = 5;
+            this.POFMV.TabStop = true;
+            this.POFMV.Text = "Very Important";
+            this.POFMV.UseVisualStyleBackColor = true;
             // 
-            // radioButton22
+            // POFMI
             // 
-            this.radioButton22.AutoSize = true;
-            this.radioButton22.Location = new System.Drawing.Point(719, 9);
-            this.radioButton22.Name = "radioButton22";
-            this.radioButton22.Size = new System.Drawing.Size(69, 17);
-            this.radioButton22.TabIndex = 4;
-            this.radioButton22.TabStop = true;
-            this.radioButton22.Text = "Important";
-            this.radioButton22.UseVisualStyleBackColor = true;
+            this.POFMI.AutoSize = true;
+            this.POFMI.Location = new System.Drawing.Point(719, 11);
+            this.POFMI.Name = "POFMI";
+            this.POFMI.Size = new System.Drawing.Size(69, 17);
+            this.POFMI.TabIndex = 4;
+            this.POFMI.TabStop = true;
+            this.POFMI.Text = "Important";
+            this.POFMI.UseVisualStyleBackColor = true;
             // 
-            // radioButton23
+            // POFMS
             // 
-            this.radioButton23.AutoSize = true;
-            this.radioButton23.Location = new System.Drawing.Point(511, 9);
-            this.radioButton23.Name = "radioButton23";
-            this.radioButton23.Size = new System.Drawing.Size(105, 17);
-            this.radioButton23.TabIndex = 3;
-            this.radioButton23.TabStop = true;
-            this.radioButton23.Text = "Slightly Important";
-            this.radioButton23.UseVisualStyleBackColor = true;
+            this.POFMS.AutoSize = true;
+            this.POFMS.Location = new System.Drawing.Point(511, 11);
+            this.POFMS.Name = "POFMS";
+            this.POFMS.Size = new System.Drawing.Size(105, 17);
+            this.POFMS.TabIndex = 3;
+            this.POFMS.TabStop = true;
+            this.POFMS.Text = "Slightly Important";
+            this.POFMS.UseVisualStyleBackColor = true;
             // 
-            // radioButton24
+            // POFMN
             // 
-            this.radioButton24.AutoSize = true;
-            this.radioButton24.Location = new System.Drawing.Point(299, 9);
-            this.radioButton24.Name = "radioButton24";
-            this.radioButton24.Size = new System.Drawing.Size(114, 17);
-            this.radioButton24.TabIndex = 2;
-            this.radioButton24.TabStop = true;
-            this.radioButton24.Text = "Not at all Important";
-            this.radioButton24.UseVisualStyleBackColor = true;
+            this.POFMN.AutoSize = true;
+            this.POFMN.Location = new System.Drawing.Point(299, 11);
+            this.POFMN.Name = "POFMN";
+            this.POFMN.Size = new System.Drawing.Size(114, 17);
+            this.POFMN.TabIndex = 2;
+            this.POFMN.TabStop = true;
+            this.POFMN.Text = "Not at all Important";
+            this.POFMN.UseVisualStyleBackColor = true;
             // 
             // label30
             // 
@@ -2560,62 +2560,62 @@
             this.label30.TabIndex = 1;
             this.label30.Text = "Presence of family members";
             // 
-            // gbQues8Security
+            // Q8S
             // 
-            this.gbQues8Security.Controls.Add(this.radioButton9);
-            this.gbQues8Security.Controls.Add(this.radioButton10);
-            this.gbQues8Security.Controls.Add(this.radioButton11);
-            this.gbQues8Security.Controls.Add(this.radioButton12);
-            this.gbQues8Security.Controls.Add(this.label27);
-            this.gbQues8Security.Location = new System.Drawing.Point(10, 109);
-            this.gbQues8Security.Name = "gbQues8Security";
-            this.gbQues8Security.Size = new System.Drawing.Size(960, 32);
-            this.gbQues8Security.TabIndex = 8;
-            this.gbQues8Security.TabStop = false;
+            this.Q8S.Controls.Add(this.SV);
+            this.Q8S.Controls.Add(this.SI);
+            this.Q8S.Controls.Add(this.SS);
+            this.Q8S.Controls.Add(this.SN);
+            this.Q8S.Controls.Add(this.label27);
+            this.Q8S.Location = new System.Drawing.Point(10, 109);
+            this.Q8S.Name = "Q8S";
+            this.Q8S.Size = new System.Drawing.Size(960, 32);
+            this.Q8S.TabIndex = 8;
+            this.Q8S.TabStop = false;
             // 
-            // radioButton9
+            // SV
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(855, 10);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(93, 17);
-            this.radioButton9.TabIndex = 5;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Very Important";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.SV.AutoSize = true;
+            this.SV.Location = new System.Drawing.Point(855, 10);
+            this.SV.Name = "SV";
+            this.SV.Size = new System.Drawing.Size(93, 17);
+            this.SV.TabIndex = 5;
+            this.SV.TabStop = true;
+            this.SV.Text = "Very Important";
+            this.SV.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // SI
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(719, 10);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(69, 17);
-            this.radioButton10.TabIndex = 4;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Important";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.SI.AutoSize = true;
+            this.SI.Location = new System.Drawing.Point(719, 10);
+            this.SI.Name = "SI";
+            this.SI.Size = new System.Drawing.Size(69, 17);
+            this.SI.TabIndex = 4;
+            this.SI.TabStop = true;
+            this.SI.Text = "Important";
+            this.SI.UseVisualStyleBackColor = true;
             // 
-            // radioButton11
+            // SS
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(511, 10);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(105, 17);
-            this.radioButton11.TabIndex = 3;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Slightly Important";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.SS.AutoSize = true;
+            this.SS.Location = new System.Drawing.Point(511, 10);
+            this.SS.Name = "SS";
+            this.SS.Size = new System.Drawing.Size(105, 17);
+            this.SS.TabIndex = 3;
+            this.SS.TabStop = true;
+            this.SS.Text = "Slightly Important";
+            this.SS.UseVisualStyleBackColor = true;
             // 
-            // radioButton12
+            // SN
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(299, 10);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(114, 17);
-            this.radioButton12.TabIndex = 2;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Not at all Important";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.SN.AutoSize = true;
+            this.SN.Location = new System.Drawing.Point(299, 10);
+            this.SN.Name = "SN";
+            this.SN.Size = new System.Drawing.Size(114, 17);
+            this.SN.TabIndex = 2;
+            this.SN.TabStop = true;
+            this.SN.Text = "Not at all Important";
+            this.SN.UseVisualStyleBackColor = true;
             // 
             // label27
             // 
@@ -2627,129 +2627,129 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Security";
             // 
-            // gbQues8EthnicGroup
+            // Q8SEG
             // 
-            this.gbQues8EthnicGroup.Controls.Add(this.radioButton17);
-            this.gbQues8EthnicGroup.Controls.Add(this.radioButton18);
-            this.gbQues8EthnicGroup.Controls.Add(this.radioButton19);
-            this.gbQues8EthnicGroup.Controls.Add(this.radioButton20);
-            this.gbQues8EthnicGroup.Controls.Add(this.label29);
-            this.gbQues8EthnicGroup.Location = new System.Drawing.Point(10, 180);
-            this.gbQues8EthnicGroup.Name = "gbQues8EthnicGroup";
-            this.gbQues8EthnicGroup.Size = new System.Drawing.Size(960, 29);
-            this.gbQues8EthnicGroup.TabIndex = 10;
-            this.gbQues8EthnicGroup.TabStop = false;
+            this.Q8SEG.Controls.Add(this.SEGV);
+            this.Q8SEG.Controls.Add(this.SEGI);
+            this.Q8SEG.Controls.Add(this.SEGS);
+            this.Q8SEG.Controls.Add(this.SEGN);
+            this.Q8SEG.Controls.Add(this.label29);
+            this.Q8SEG.Location = new System.Drawing.Point(10, 173);
+            this.Q8SEG.Name = "Q8SEG";
+            this.Q8SEG.Size = new System.Drawing.Size(960, 38);
+            this.Q8SEG.TabIndex = 10;
+            this.Q8SEG.TabStop = false;
             // 
-            // radioButton17
+            // SEGV
             // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.Location = new System.Drawing.Point(855, 8);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(93, 17);
-            this.radioButton17.TabIndex = 5;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "Very Important";
-            this.radioButton17.UseVisualStyleBackColor = true;
+            this.SEGV.AutoSize = true;
+            this.SEGV.Location = new System.Drawing.Point(855, 13);
+            this.SEGV.Name = "SEGV";
+            this.SEGV.Size = new System.Drawing.Size(93, 17);
+            this.SEGV.TabIndex = 5;
+            this.SEGV.TabStop = true;
+            this.SEGV.Text = "Very Important";
+            this.SEGV.UseVisualStyleBackColor = true;
             // 
-            // radioButton18
+            // SEGI
             // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.Location = new System.Drawing.Point(719, 8);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(69, 17);
-            this.radioButton18.TabIndex = 4;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Important";
-            this.radioButton18.UseVisualStyleBackColor = true;
+            this.SEGI.AutoSize = true;
+            this.SEGI.Location = new System.Drawing.Point(719, 13);
+            this.SEGI.Name = "SEGI";
+            this.SEGI.Size = new System.Drawing.Size(69, 17);
+            this.SEGI.TabIndex = 4;
+            this.SEGI.TabStop = true;
+            this.SEGI.Text = "Important";
+            this.SEGI.UseVisualStyleBackColor = true;
             // 
-            // radioButton19
+            // SEGS
             // 
-            this.radioButton19.AutoSize = true;
-            this.radioButton19.Location = new System.Drawing.Point(511, 8);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(105, 17);
-            this.radioButton19.TabIndex = 3;
-            this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "Slightly Important";
-            this.radioButton19.UseVisualStyleBackColor = true;
+            this.SEGS.AutoSize = true;
+            this.SEGS.Location = new System.Drawing.Point(511, 13);
+            this.SEGS.Name = "SEGS";
+            this.SEGS.Size = new System.Drawing.Size(105, 17);
+            this.SEGS.TabIndex = 3;
+            this.SEGS.TabStop = true;
+            this.SEGS.Text = "Slightly Important";
+            this.SEGS.UseVisualStyleBackColor = true;
             // 
-            // radioButton20
+            // SEGN
             // 
-            this.radioButton20.AutoSize = true;
-            this.radioButton20.Location = new System.Drawing.Point(299, 8);
-            this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(114, 17);
-            this.radioButton20.TabIndex = 2;
-            this.radioButton20.TabStop = true;
-            this.radioButton20.Text = "Not at all Important";
-            this.radioButton20.UseVisualStyleBackColor = true;
+            this.SEGN.AutoSize = true;
+            this.SEGN.Location = new System.Drawing.Point(299, 13);
+            this.SEGN.Name = "SEGN";
+            this.SEGN.Size = new System.Drawing.Size(114, 17);
+            this.SEGN.TabIndex = 2;
+            this.SEGN.TabStop = true;
+            this.SEGN.Text = "Not at all Important";
+            this.SEGN.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(6, 8);
+            this.label29.Location = new System.Drawing.Point(6, 13);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(133, 17);
             this.label29.TabIndex = 1;
             this.label29.Text = "Similar ethnic group";
             // 
-            // gbQues8Education
+            // Q8EFC
             // 
-            this.gbQues8Education.Controls.Add(this.radioButton13);
-            this.gbQues8Education.Controls.Add(this.radioButton14);
-            this.gbQues8Education.Controls.Add(this.radioButton15);
-            this.gbQues8Education.Controls.Add(this.radioButton16);
-            this.gbQues8Education.Controls.Add(this.label28);
-            this.gbQues8Education.Location = new System.Drawing.Point(10, 138);
-            this.gbQues8Education.Name = "gbQues8Education";
-            this.gbQues8Education.Size = new System.Drawing.Size(960, 36);
-            this.gbQues8Education.TabIndex = 9;
-            this.gbQues8Education.TabStop = false;
+            this.Q8EFC.Controls.Add(this.EFCV);
+            this.Q8EFC.Controls.Add(this.EFCI);
+            this.Q8EFC.Controls.Add(this.EFCS);
+            this.Q8EFC.Controls.Add(this.EFCN);
+            this.Q8EFC.Controls.Add(this.label28);
+            this.Q8EFC.Location = new System.Drawing.Point(10, 138);
+            this.Q8EFC.Name = "Q8EFC";
+            this.Q8EFC.Size = new System.Drawing.Size(960, 36);
+            this.Q8EFC.TabIndex = 9;
+            this.Q8EFC.TabStop = false;
             // 
-            // radioButton13
+            // EFCV
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(855, 9);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(93, 17);
-            this.radioButton13.TabIndex = 5;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Very Important";
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.EFCV.AutoSize = true;
+            this.EFCV.Location = new System.Drawing.Point(855, 10);
+            this.EFCV.Name = "EFCV";
+            this.EFCV.Size = new System.Drawing.Size(93, 17);
+            this.EFCV.TabIndex = 5;
+            this.EFCV.TabStop = true;
+            this.EFCV.Text = "Very Important";
+            this.EFCV.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
+            // EFCI
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(719, 9);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(69, 17);
-            this.radioButton14.TabIndex = 4;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Important";
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.EFCI.AutoSize = true;
+            this.EFCI.Location = new System.Drawing.Point(719, 10);
+            this.EFCI.Name = "EFCI";
+            this.EFCI.Size = new System.Drawing.Size(69, 17);
+            this.EFCI.TabIndex = 4;
+            this.EFCI.TabStop = true;
+            this.EFCI.Text = "Important";
+            this.EFCI.UseVisualStyleBackColor = true;
             // 
-            // radioButton15
+            // EFCS
             // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.Location = new System.Drawing.Point(511, 9);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(105, 17);
-            this.radioButton15.TabIndex = 3;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "Slightly Important";
-            this.radioButton15.UseVisualStyleBackColor = true;
+            this.EFCS.AutoSize = true;
+            this.EFCS.Location = new System.Drawing.Point(511, 10);
+            this.EFCS.Name = "EFCS";
+            this.EFCS.Size = new System.Drawing.Size(105, 17);
+            this.EFCS.TabIndex = 3;
+            this.EFCS.TabStop = true;
+            this.EFCS.Text = "Slightly Important";
+            this.EFCS.UseVisualStyleBackColor = true;
             // 
-            // radioButton16
+            // EFCN
             // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.Location = new System.Drawing.Point(299, 9);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(114, 17);
-            this.radioButton16.TabIndex = 2;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "Not at all Important";
-            this.radioButton16.UseVisualStyleBackColor = true;
+            this.EFCN.AutoSize = true;
+            this.EFCN.Location = new System.Drawing.Point(299, 10);
+            this.EFCN.Name = "EFCN";
+            this.EFCN.Size = new System.Drawing.Size(114, 17);
+            this.EFCN.TabIndex = 2;
+            this.EFCN.TabStop = true;
+            this.EFCN.Text = "Not at all Important";
+            this.EFCN.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -2790,7 +2790,7 @@
             this.tabHostCountrySection.Location = new System.Drawing.Point(4, 22);
             this.tabHostCountrySection.Name = "tabHostCountrySection";
             this.tabHostCountrySection.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHostCountrySection.Size = new System.Drawing.Size(1001, 735);
+            this.tabHostCountrySection.Size = new System.Drawing.Size(1001, 723);
             this.tabHostCountrySection.TabIndex = 3;
             this.tabHostCountrySection.Text = "Host Country";
             this.tabHostCountrySection.UseVisualStyleBackColor = true;
@@ -3234,14 +3234,14 @@
             // 
             this.tabAssistanceNeeds1.Controls.Add(this.btnAssistanceNeedsPrevious1);
             this.tabAssistanceNeeds1.Controls.Add(this.btnAssistanceNeedsNext1);
-            this.tabAssistanceNeeds1.Controls.Add(this.groupBox19);
-            this.tabAssistanceNeeds1.Controls.Add(this.groupBox17);
-            this.tabAssistanceNeeds1.Controls.Add(this.gbAssistanceNeeds);
+            this.tabAssistanceNeeds1.Controls.Add(this.Q19SC);
+            this.tabAssistanceNeeds1.Controls.Add(this.Q19PC);
+            this.tabAssistanceNeeds1.Controls.Add(this.Q19);
             this.tabAssistanceNeeds1.Controls.Add(this.label50);
             this.tabAssistanceNeeds1.Location = new System.Drawing.Point(4, 22);
             this.tabAssistanceNeeds1.Name = "tabAssistanceNeeds1";
             this.tabAssistanceNeeds1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssistanceNeeds1.Size = new System.Drawing.Size(1001, 735);
+            this.tabAssistanceNeeds1.Size = new System.Drawing.Size(1001, 723);
             this.tabAssistanceNeeds1.TabIndex = 4;
             this.tabAssistanceNeeds1.Text = "Assistance Needs";
             this.tabAssistanceNeeds1.UseVisualStyleBackColor = true;
@@ -3266,52 +3266,52 @@
             this.btnAssistanceNeedsNext1.UseVisualStyleBackColor = true;
             this.btnAssistanceNeedsNext1.Click += new System.EventHandler(this.btnAssistanceNeedsNext1_Click);
             // 
-            // groupBox19
+            // Q19SC
             // 
-            this.groupBox19.Controls.Add(this.textBox16);
-            this.groupBox19.Controls.Add(this.dateTimePicker13);
-            this.groupBox19.Controls.Add(this.checkBox26);
-            this.groupBox19.Controls.Add(this.checkBox27);
-            this.groupBox19.Controls.Add(this.label68);
-            this.groupBox19.Location = new System.Drawing.Point(23, 512);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(956, 38);
-            this.groupBox19.TabIndex = 19;
-            this.groupBox19.TabStop = false;
+            this.Q19SC.Controls.Add(this.SCC);
+            this.Q19SC.Controls.Add(this.SCD);
+            this.Q19SC.Controls.Add(this.SCP);
+            this.Q19SC.Controls.Add(this.SCR);
+            this.Q19SC.Controls.Add(this.label68);
+            this.Q19SC.Location = new System.Drawing.Point(23, 512);
+            this.Q19SC.Name = "Q19SC";
+            this.Q19SC.Size = new System.Drawing.Size(956, 38);
+            this.Q19SC.TabIndex = 19;
+            this.Q19SC.TabStop = false;
             // 
-            // textBox16
+            // SCC
             // 
-            this.textBox16.Location = new System.Drawing.Point(642, 11);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(308, 20);
-            this.textBox16.TabIndex = 7;
+            this.SCC.Location = new System.Drawing.Point(642, 11);
+            this.SCC.Name = "SCC";
+            this.SCC.Size = new System.Drawing.Size(308, 20);
+            this.SCC.TabIndex = 7;
             // 
-            // dateTimePicker13
+            // SCD
             // 
-            this.dateTimePicker13.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker13.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker13.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker13.Name = "dateTimePicker13";
-            this.dateTimePicker13.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker13.TabIndex = 6;
+            this.SCD.CustomFormat = "MMM dd yyyy";
+            this.SCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SCD.Location = new System.Drawing.Point(509, 11);
+            this.SCD.Name = "SCD";
+            this.SCD.Size = new System.Drawing.Size(109, 20);
+            this.SCD.TabIndex = 6;
             // 
-            // checkBox26
+            // SCP
             // 
-            this.checkBox26.AutoSize = true;
-            this.checkBox26.Location = new System.Drawing.Point(452, 15);
-            this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(15, 14);
-            this.checkBox26.TabIndex = 4;
-            this.checkBox26.UseVisualStyleBackColor = true;
+            this.SCP.AutoSize = true;
+            this.SCP.Location = new System.Drawing.Point(452, 15);
+            this.SCP.Name = "SCP";
+            this.SCP.Size = new System.Drawing.Size(15, 14);
+            this.SCP.TabIndex = 4;
+            this.SCP.UseVisualStyleBackColor = true;
             // 
-            // checkBox27
+            // SCR
             // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Location = new System.Drawing.Point(363, 14);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(15, 14);
-            this.checkBox27.TabIndex = 3;
-            this.checkBox27.UseVisualStyleBackColor = true;
+            this.SCR.AutoSize = true;
+            this.SCR.Location = new System.Drawing.Point(363, 14);
+            this.SCR.Name = "SCR";
+            this.SCR.Size = new System.Drawing.Size(15, 14);
+            this.SCR.TabIndex = 3;
+            this.SCR.UseVisualStyleBackColor = true;
             // 
             // label68
             // 
@@ -3323,52 +3323,52 @@
             this.label68.TabIndex = 2;
             this.label68.Text = "Seasonal Clothes";
             // 
-            // groupBox17
+            // Q19PC
             // 
-            this.groupBox17.Controls.Add(this.textBox14);
-            this.groupBox17.Controls.Add(this.dateTimePicker11);
-            this.groupBox17.Controls.Add(this.checkBox22);
-            this.groupBox17.Controls.Add(this.checkBox23);
-            this.groupBox17.Controls.Add(this.label66);
-            this.groupBox17.Location = new System.Drawing.Point(23, 436);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(956, 38);
-            this.groupBox17.TabIndex = 17;
-            this.groupBox17.TabStop = false;
+            this.Q19PC.Controls.Add(this.PCC);
+            this.Q19PC.Controls.Add(this.PCD);
+            this.Q19PC.Controls.Add(this.PCP);
+            this.Q19PC.Controls.Add(this.PCR);
+            this.Q19PC.Controls.Add(this.label66);
+            this.Q19PC.Location = new System.Drawing.Point(23, 436);
+            this.Q19PC.Name = "Q19PC";
+            this.Q19PC.Size = new System.Drawing.Size(956, 38);
+            this.Q19PC.TabIndex = 17;
+            this.Q19PC.TabStop = false;
             // 
-            // textBox14
+            // PCC
             // 
-            this.textBox14.Location = new System.Drawing.Point(642, 11);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(308, 20);
-            this.textBox14.TabIndex = 7;
+            this.PCC.Location = new System.Drawing.Point(642, 11);
+            this.PCC.Name = "PCC";
+            this.PCC.Size = new System.Drawing.Size(308, 20);
+            this.PCC.TabIndex = 7;
             // 
-            // dateTimePicker11
+            // PCD
             // 
-            this.dateTimePicker11.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker11.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker11.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker11.Name = "dateTimePicker11";
-            this.dateTimePicker11.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker11.TabIndex = 6;
+            this.PCD.CustomFormat = "MMM dd yyyy";
+            this.PCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.PCD.Location = new System.Drawing.Point(509, 11);
+            this.PCD.Name = "PCD";
+            this.PCD.Size = new System.Drawing.Size(109, 20);
+            this.PCD.TabIndex = 6;
             // 
-            // checkBox22
+            // PCP
             // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.Location = new System.Drawing.Point(452, 15);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(15, 14);
-            this.checkBox22.TabIndex = 4;
-            this.checkBox22.UseVisualStyleBackColor = true;
+            this.PCP.AutoSize = true;
+            this.PCP.Location = new System.Drawing.Point(452, 15);
+            this.PCP.Name = "PCP";
+            this.PCP.Size = new System.Drawing.Size(15, 14);
+            this.PCP.TabIndex = 4;
+            this.PCP.UseVisualStyleBackColor = true;
             // 
-            // checkBox23
+            // PCR
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(363, 14);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(15, 14);
-            this.checkBox23.TabIndex = 3;
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.PCR.AutoSize = true;
+            this.PCR.Location = new System.Drawing.Point(363, 14);
+            this.PCR.Name = "PCR";
+            this.PCR.Size = new System.Drawing.Size(15, 14);
+            this.PCR.TabIndex = 3;
+            this.PCR.UseVisualStyleBackColor = true;
             // 
             // label66
             // 
@@ -3380,73 +3380,73 @@
             this.label66.TabIndex = 2;
             this.label66.Text = "Psychosocial counseling";
             // 
-            // gbAssistanceNeeds
+            // Q19
             // 
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox20);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox18);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox16);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox15);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox14);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox13);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox12);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox11);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox10);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox9);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox8);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox7);
-            this.gbAssistanceNeeds.Controls.Add(this.groupBox6);
-            this.gbAssistanceNeeds.Location = new System.Drawing.Point(24, 25);
-            this.gbAssistanceNeeds.Name = "gbAssistanceNeeds";
-            this.gbAssistanceNeeds.Size = new System.Drawing.Size(956, 559);
-            this.gbAssistanceNeeds.TabIndex = 1;
-            this.gbAssistanceNeeds.TabStop = false;
+            this.Q19.Controls.Add(this.Q19PR);
+            this.Q19.Controls.Add(this.Q19NFI);
+            this.Q19.Controls.Add(this.Q19WFP);
+            this.Q19.Controls.Add(this.Q19DDR);
+            this.Q19.Controls.Add(this.Q19E);
+            this.Q19.Controls.Add(this.Q19EMC);
+            this.Q19.Controls.Add(this.Q19AITC);
+            this.Q19.Controls.Add(this.Q19STA);
+            this.Q19.Controls.Add(this.Q19FT);
+            this.Q19.Controls.Add(this.Q19CFT);
+            this.Q19.Controls.Add(this.Q19FLT);
+            this.Q19.Controls.Add(this.groupBox7);
+            this.Q19.Controls.Add(this.Q19TBRC);
+            this.Q19.Location = new System.Drawing.Point(24, 25);
+            this.Q19.Name = "Q19";
+            this.Q19.Size = new System.Drawing.Size(956, 559);
+            this.Q19.TabIndex = 1;
+            this.Q19.TabStop = false;
             // 
-            // groupBox20
+            // Q19PR
             // 
-            this.groupBox20.Controls.Add(this.textBox17);
-            this.groupBox20.Controls.Add(this.dateTimePicker14);
-            this.groupBox20.Controls.Add(this.checkBox28);
-            this.groupBox20.Controls.Add(this.checkBox29);
-            this.groupBox20.Controls.Add(this.label69);
-            this.groupBox20.Location = new System.Drawing.Point(2, 523);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(956, 38);
-            this.groupBox20.TabIndex = 20;
-            this.groupBox20.TabStop = false;
+            this.Q19PR.Controls.Add(this.PRC);
+            this.Q19PR.Controls.Add(this.PRD);
+            this.Q19PR.Controls.Add(this.PRP);
+            this.Q19PR.Controls.Add(this.PRR);
+            this.Q19PR.Controls.Add(this.label69);
+            this.Q19PR.Location = new System.Drawing.Point(2, 523);
+            this.Q19PR.Name = "Q19PR";
+            this.Q19PR.Size = new System.Drawing.Size(956, 38);
+            this.Q19PR.TabIndex = 20;
+            this.Q19PR.TabStop = false;
             // 
-            // textBox17
+            // PRC
             // 
-            this.textBox17.Location = new System.Drawing.Point(642, 11);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(308, 20);
-            this.textBox17.TabIndex = 7;
+            this.PRC.Location = new System.Drawing.Point(642, 11);
+            this.PRC.Name = "PRC";
+            this.PRC.Size = new System.Drawing.Size(308, 20);
+            this.PRC.TabIndex = 7;
             // 
-            // dateTimePicker14
+            // PRD
             // 
-            this.dateTimePicker14.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker14.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker14.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker14.Name = "dateTimePicker14";
-            this.dateTimePicker14.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker14.TabIndex = 6;
+            this.PRD.CustomFormat = "MMM dd yyyy";
+            this.PRD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.PRD.Location = new System.Drawing.Point(509, 11);
+            this.PRD.Name = "PRD";
+            this.PRD.Size = new System.Drawing.Size(109, 20);
+            this.PRD.TabIndex = 6;
             // 
-            // checkBox28
+            // PRP
             // 
-            this.checkBox28.AutoSize = true;
-            this.checkBox28.Location = new System.Drawing.Point(452, 15);
-            this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(15, 14);
-            this.checkBox28.TabIndex = 4;
-            this.checkBox28.UseVisualStyleBackColor = true;
+            this.PRP.AutoSize = true;
+            this.PRP.Location = new System.Drawing.Point(450, 15);
+            this.PRP.Name = "PRP";
+            this.PRP.Size = new System.Drawing.Size(15, 14);
+            this.PRP.TabIndex = 4;
+            this.PRP.UseVisualStyleBackColor = true;
             // 
-            // checkBox29
+            // PRR
             // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Location = new System.Drawing.Point(363, 14);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(15, 14);
-            this.checkBox29.TabIndex = 3;
-            this.checkBox29.UseVisualStyleBackColor = true;
+            this.PRR.AutoSize = true;
+            this.PRR.Location = new System.Drawing.Point(361, 14);
+            this.PRR.Name = "PRR";
+            this.PRR.Size = new System.Drawing.Size(15, 14);
+            this.PRR.TabIndex = 3;
+            this.PRR.UseVisualStyleBackColor = true;
             // 
             // label69
             // 
@@ -3458,52 +3458,52 @@
             this.label69.TabIndex = 2;
             this.label69.Text = "Protection referral";
             // 
-            // groupBox18
+            // Q19NFI
             // 
-            this.groupBox18.Controls.Add(this.textBox15);
-            this.groupBox18.Controls.Add(this.dateTimePicker12);
-            this.groupBox18.Controls.Add(this.checkBox24);
-            this.groupBox18.Controls.Add(this.checkBox25);
-            this.groupBox18.Controls.Add(this.label67);
-            this.groupBox18.Location = new System.Drawing.Point(1, 449);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(956, 38);
-            this.groupBox18.TabIndex = 18;
-            this.groupBox18.TabStop = false;
+            this.Q19NFI.Controls.Add(this.NFIC);
+            this.Q19NFI.Controls.Add(this.NFID);
+            this.Q19NFI.Controls.Add(this.NFIP);
+            this.Q19NFI.Controls.Add(this.NFIR);
+            this.Q19NFI.Controls.Add(this.label67);
+            this.Q19NFI.Location = new System.Drawing.Point(1, 449);
+            this.Q19NFI.Name = "Q19NFI";
+            this.Q19NFI.Size = new System.Drawing.Size(956, 38);
+            this.Q19NFI.TabIndex = 18;
+            this.Q19NFI.TabStop = false;
             // 
-            // textBox15
+            // NFIC
             // 
-            this.textBox15.Location = new System.Drawing.Point(642, 11);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(308, 20);
-            this.textBox15.TabIndex = 7;
+            this.NFIC.Location = new System.Drawing.Point(642, 11);
+            this.NFIC.Name = "NFIC";
+            this.NFIC.Size = new System.Drawing.Size(308, 20);
+            this.NFIC.TabIndex = 7;
             // 
-            // dateTimePicker12
+            // NFID
             // 
-            this.dateTimePicker12.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker12.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker12.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker12.Name = "dateTimePicker12";
-            this.dateTimePicker12.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker12.TabIndex = 6;
+            this.NFID.CustomFormat = "MMM dd yyyy";
+            this.NFID.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NFID.Location = new System.Drawing.Point(509, 11);
+            this.NFID.Name = "NFID";
+            this.NFID.Size = new System.Drawing.Size(109, 20);
+            this.NFID.TabIndex = 6;
             // 
-            // checkBox24
+            // NFIP
             // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(452, 15);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(15, 14);
-            this.checkBox24.TabIndex = 4;
-            this.checkBox24.UseVisualStyleBackColor = true;
+            this.NFIP.AutoSize = true;
+            this.NFIP.Location = new System.Drawing.Point(452, 15);
+            this.NFIP.Name = "NFIP";
+            this.NFIP.Size = new System.Drawing.Size(15, 14);
+            this.NFIP.TabIndex = 4;
+            this.NFIP.UseVisualStyleBackColor = true;
             // 
-            // checkBox25
+            // NFIR
             // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(363, 14);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(15, 14);
-            this.checkBox25.TabIndex = 3;
-            this.checkBox25.UseVisualStyleBackColor = true;
+            this.NFIR.AutoSize = true;
+            this.NFIR.Location = new System.Drawing.Point(363, 14);
+            this.NFIR.Name = "NFIR";
+            this.NFIR.Size = new System.Drawing.Size(15, 14);
+            this.NFIR.TabIndex = 3;
+            this.NFIR.UseVisualStyleBackColor = true;
             // 
             // label67
             // 
@@ -3515,52 +3515,52 @@
             this.label67.TabIndex = 2;
             this.label67.Text = "Non-Food Items (Family module)";
             // 
-            // groupBox16
+            // Q19WFP
             // 
-            this.groupBox16.Controls.Add(this.textBox13);
-            this.groupBox16.Controls.Add(this.dateTimePicker10);
-            this.groupBox16.Controls.Add(this.checkBox20);
-            this.groupBox16.Controls.Add(this.checkBox21);
-            this.groupBox16.Controls.Add(this.label65);
-            this.groupBox16.Location = new System.Drawing.Point(1, 373);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(956, 38);
-            this.groupBox16.TabIndex = 16;
-            this.groupBox16.TabStop = false;
+            this.Q19WFP.Controls.Add(this.WFPC);
+            this.Q19WFP.Controls.Add(this.WFPD);
+            this.Q19WFP.Controls.Add(this.WFPP);
+            this.Q19WFP.Controls.Add(this.WFPR);
+            this.Q19WFP.Controls.Add(this.label65);
+            this.Q19WFP.Location = new System.Drawing.Point(1, 373);
+            this.Q19WFP.Name = "Q19WFP";
+            this.Q19WFP.Size = new System.Drawing.Size(956, 38);
+            this.Q19WFP.TabIndex = 16;
+            this.Q19WFP.TabStop = false;
             // 
-            // textBox13
+            // WFPC
             // 
-            this.textBox13.Location = new System.Drawing.Point(642, 11);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(308, 20);
-            this.textBox13.TabIndex = 7;
+            this.WFPC.Location = new System.Drawing.Point(642, 11);
+            this.WFPC.Name = "WFPC";
+            this.WFPC.Size = new System.Drawing.Size(308, 20);
+            this.WFPC.TabIndex = 7;
             // 
-            // dateTimePicker10
+            // WFPD
             // 
-            this.dateTimePicker10.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker10.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker10.Name = "dateTimePicker10";
-            this.dateTimePicker10.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker10.TabIndex = 6;
+            this.WFPD.CustomFormat = "MMM dd yyyy";
+            this.WFPD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.WFPD.Location = new System.Drawing.Point(509, 11);
+            this.WFPD.Name = "WFPD";
+            this.WFPD.Size = new System.Drawing.Size(109, 20);
+            this.WFPD.TabIndex = 6;
             // 
-            // checkBox20
+            // WFPP
             // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(452, 15);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(15, 14);
-            this.checkBox20.TabIndex = 4;
-            this.checkBox20.UseVisualStyleBackColor = true;
+            this.WFPP.AutoSize = true;
+            this.WFPP.Location = new System.Drawing.Point(452, 15);
+            this.WFPP.Name = "WFPP";
+            this.WFPP.Size = new System.Drawing.Size(15, 14);
+            this.WFPP.TabIndex = 4;
+            this.WFPP.UseVisualStyleBackColor = true;
             // 
-            // checkBox21
+            // WFPR
             // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(363, 14);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(15, 14);
-            this.checkBox21.TabIndex = 3;
-            this.checkBox21.UseVisualStyleBackColor = true;
+            this.WFPR.AutoSize = true;
+            this.WFPR.Location = new System.Drawing.Point(363, 14);
+            this.WFPR.Name = "WFPR";
+            this.WFPR.Size = new System.Drawing.Size(15, 14);
+            this.WFPR.TabIndex = 3;
+            this.WFPR.UseVisualStyleBackColor = true;
             // 
             // label65
             // 
@@ -3572,52 +3572,52 @@
             this.label65.TabIndex = 2;
             this.label65.Text = "WFP food package";
             // 
-            // groupBox15
+            // Q19DDR
             // 
-            this.groupBox15.Controls.Add(this.textBox12);
-            this.groupBox15.Controls.Add(this.dateTimePicker9);
-            this.groupBox15.Controls.Add(this.checkBox18);
-            this.groupBox15.Controls.Add(this.checkBox19);
-            this.groupBox15.Controls.Add(this.label64);
-            this.groupBox15.Location = new System.Drawing.Point(1, 336);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(956, 38);
-            this.groupBox15.TabIndex = 15;
-            this.groupBox15.TabStop = false;
+            this.Q19DDR.Controls.Add(this.DDRC);
+            this.Q19DDR.Controls.Add(this.DDRD);
+            this.Q19DDR.Controls.Add(this.DDRP);
+            this.Q19DDR.Controls.Add(this.DDRR);
+            this.Q19DDR.Controls.Add(this.label64);
+            this.Q19DDR.Location = new System.Drawing.Point(1, 336);
+            this.Q19DDR.Name = "Q19DDR";
+            this.Q19DDR.Size = new System.Drawing.Size(956, 38);
+            this.Q19DDR.TabIndex = 15;
+            this.Q19DDR.TabStop = false;
             // 
-            // textBox12
+            // DDRC
             // 
-            this.textBox12.Location = new System.Drawing.Point(642, 11);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(308, 20);
-            this.textBox12.TabIndex = 7;
+            this.DDRC.Location = new System.Drawing.Point(642, 11);
+            this.DDRC.Name = "DDRC";
+            this.DDRC.Size = new System.Drawing.Size(308, 20);
+            this.DDRC.TabIndex = 7;
             // 
-            // dateTimePicker9
+            // DDRD
             // 
-            this.dateTimePicker9.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker9.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker9.TabIndex = 6;
+            this.DDRD.CustomFormat = "MMM dd yyyy";
+            this.DDRD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DDRD.Location = new System.Drawing.Point(509, 11);
+            this.DDRD.Name = "DDRD";
+            this.DDRD.Size = new System.Drawing.Size(109, 20);
+            this.DDRD.TabIndex = 6;
             // 
-            // checkBox18
+            // DDRP
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(452, 15);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(15, 14);
-            this.checkBox18.TabIndex = 4;
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.DDRP.AutoSize = true;
+            this.DDRP.Location = new System.Drawing.Point(452, 15);
+            this.DDRP.Name = "DDRP";
+            this.DDRP.Size = new System.Drawing.Size(15, 14);
+            this.DDRP.TabIndex = 4;
+            this.DDRP.UseVisualStyleBackColor = true;
             // 
-            // checkBox19
+            // DDRR
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(363, 14);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(15, 14);
-            this.checkBox19.TabIndex = 3;
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.DDRR.AutoSize = true;
+            this.DDRR.Location = new System.Drawing.Point(363, 14);
+            this.DDRR.Name = "DDRR";
+            this.DDRR.Size = new System.Drawing.Size(15, 14);
+            this.DDRR.TabIndex = 3;
+            this.DDRR.UseVisualStyleBackColor = true;
             // 
             // label64
             // 
@@ -3629,52 +3629,52 @@
             this.label64.TabIndex = 2;
             this.label64.Text = "Drug demand reduction";
             // 
-            // groupBox14
+            // Q19E
             // 
-            this.groupBox14.Controls.Add(this.textBox11);
-            this.groupBox14.Controls.Add(this.dateTimePicker8);
-            this.groupBox14.Controls.Add(this.checkBox16);
-            this.groupBox14.Controls.Add(this.checkBox17);
-            this.groupBox14.Controls.Add(this.label63);
-            this.groupBox14.Location = new System.Drawing.Point(0, 299);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(956, 38);
-            this.groupBox14.TabIndex = 14;
-            this.groupBox14.TabStop = false;
+            this.Q19E.Controls.Add(this.EC);
+            this.Q19E.Controls.Add(this.ED);
+            this.Q19E.Controls.Add(this.EP);
+            this.Q19E.Controls.Add(this.ER);
+            this.Q19E.Controls.Add(this.label63);
+            this.Q19E.Location = new System.Drawing.Point(0, 299);
+            this.Q19E.Name = "Q19E";
+            this.Q19E.Size = new System.Drawing.Size(956, 38);
+            this.Q19E.TabIndex = 14;
+            this.Q19E.TabStop = false;
             // 
-            // textBox11
+            // EC
             // 
-            this.textBox11.Location = new System.Drawing.Point(642, 11);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(308, 20);
-            this.textBox11.TabIndex = 7;
+            this.EC.Location = new System.Drawing.Point(642, 11);
+            this.EC.Name = "EC";
+            this.EC.Size = new System.Drawing.Size(308, 20);
+            this.EC.TabIndex = 7;
             // 
-            // dateTimePicker8
+            // ED
             // 
-            this.dateTimePicker8.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker8.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker8.TabIndex = 6;
+            this.ED.CustomFormat = "MMM dd yyyy";
+            this.ED.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ED.Location = new System.Drawing.Point(509, 11);
+            this.ED.Name = "ED";
+            this.ED.Size = new System.Drawing.Size(109, 20);
+            this.ED.TabIndex = 6;
             // 
-            // checkBox16
+            // EP
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(452, 15);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(15, 14);
-            this.checkBox16.TabIndex = 4;
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.EP.AutoSize = true;
+            this.EP.Location = new System.Drawing.Point(452, 15);
+            this.EP.Name = "EP";
+            this.EP.Size = new System.Drawing.Size(15, 14);
+            this.EP.TabIndex = 4;
+            this.EP.UseVisualStyleBackColor = true;
             // 
-            // checkBox17
+            // ER
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(363, 14);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(15, 14);
-            this.checkBox17.TabIndex = 3;
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.ER.AutoSize = true;
+            this.ER.Location = new System.Drawing.Point(363, 14);
+            this.ER.Name = "ER";
+            this.ER.Size = new System.Drawing.Size(15, 14);
+            this.ER.TabIndex = 3;
+            this.ER.UseVisualStyleBackColor = true;
             // 
             // label63
             // 
@@ -3686,52 +3686,52 @@
             this.label63.TabIndex = 2;
             this.label63.Text = "Escort";
             // 
-            // groupBox13
+            // Q19EMC
             // 
-            this.groupBox13.Controls.Add(this.textBox10);
-            this.groupBox13.Controls.Add(this.dateTimePicker7);
-            this.groupBox13.Controls.Add(this.checkBox14);
-            this.groupBox13.Controls.Add(this.checkBox15);
-            this.groupBox13.Controls.Add(this.label62);
-            this.groupBox13.Location = new System.Drawing.Point(1, 261);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(956, 38);
-            this.groupBox13.TabIndex = 13;
-            this.groupBox13.TabStop = false;
+            this.Q19EMC.Controls.Add(this.EMCC);
+            this.Q19EMC.Controls.Add(this.EMCD);
+            this.Q19EMC.Controls.Add(this.EMCP);
+            this.Q19EMC.Controls.Add(this.EMCR);
+            this.Q19EMC.Controls.Add(this.label62);
+            this.Q19EMC.Location = new System.Drawing.Point(1, 261);
+            this.Q19EMC.Name = "Q19EMC";
+            this.Q19EMC.Size = new System.Drawing.Size(956, 38);
+            this.Q19EMC.TabIndex = 13;
+            this.Q19EMC.TabStop = false;
             // 
-            // textBox10
+            // EMCC
             // 
-            this.textBox10.Location = new System.Drawing.Point(642, 11);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(308, 20);
-            this.textBox10.TabIndex = 7;
+            this.EMCC.Location = new System.Drawing.Point(642, 11);
+            this.EMCC.Name = "EMCC";
+            this.EMCC.Size = new System.Drawing.Size(308, 20);
+            this.EMCC.TabIndex = 7;
             // 
-            // dateTimePicker7
+            // EMCD
             // 
-            this.dateTimePicker7.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker7.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker7.TabIndex = 6;
+            this.EMCD.CustomFormat = "MMM dd yyyy";
+            this.EMCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.EMCD.Location = new System.Drawing.Point(509, 11);
+            this.EMCD.Name = "EMCD";
+            this.EMCD.Size = new System.Drawing.Size(109, 20);
+            this.EMCD.TabIndex = 6;
             // 
-            // checkBox14
+            // EMCP
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(452, 15);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(15, 14);
-            this.checkBox14.TabIndex = 4;
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.EMCP.AutoSize = true;
+            this.EMCP.Location = new System.Drawing.Point(452, 15);
+            this.EMCP.Name = "EMCP";
+            this.EMCP.Size = new System.Drawing.Size(15, 14);
+            this.EMCP.TabIndex = 4;
+            this.EMCP.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // EMCR
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(363, 14);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(15, 14);
-            this.checkBox15.TabIndex = 3;
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.EMCR.AutoSize = true;
+            this.EMCR.Location = new System.Drawing.Point(363, 14);
+            this.EMCR.Name = "EMCR";
+            this.EMCR.Size = new System.Drawing.Size(15, 14);
+            this.EMCR.TabIndex = 3;
+            this.EMCR.UseVisualStyleBackColor = true;
             // 
             // label62
             // 
@@ -3743,52 +3743,52 @@
             this.label62.TabIndex = 2;
             this.label62.Text = "External medical care";
             // 
-            // groupBox12
+            // Q19AITC
             // 
-            this.groupBox12.Controls.Add(this.textBox9);
-            this.groupBox12.Controls.Add(this.dateTimePicker6);
-            this.groupBox12.Controls.Add(this.checkBox12);
-            this.groupBox12.Controls.Add(this.checkBox13);
-            this.groupBox12.Controls.Add(this.label61);
-            this.groupBox12.Location = new System.Drawing.Point(1, 223);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(956, 38);
-            this.groupBox12.TabIndex = 12;
-            this.groupBox12.TabStop = false;
+            this.Q19AITC.Controls.Add(this.AITCC);
+            this.Q19AITC.Controls.Add(this.AITCD);
+            this.Q19AITC.Controls.Add(this.AITCP);
+            this.Q19AITC.Controls.Add(this.AITCR);
+            this.Q19AITC.Controls.Add(this.label61);
+            this.Q19AITC.Location = new System.Drawing.Point(1, 223);
+            this.Q19AITC.Name = "Q19AITC";
+            this.Q19AITC.Size = new System.Drawing.Size(956, 38);
+            this.Q19AITC.TabIndex = 12;
+            this.Q19AITC.TabStop = false;
             // 
-            // textBox9
+            // AITCC
             // 
-            this.textBox9.Location = new System.Drawing.Point(642, 11);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(308, 20);
-            this.textBox9.TabIndex = 7;
+            this.AITCC.Location = new System.Drawing.Point(642, 11);
+            this.AITCC.Name = "AITCC";
+            this.AITCC.Size = new System.Drawing.Size(308, 20);
+            this.AITCC.TabIndex = 7;
             // 
-            // dateTimePicker6
+            // AITCD
             // 
-            this.dateTimePicker6.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker6.TabIndex = 6;
+            this.AITCD.CustomFormat = "MMM dd yyyy";
+            this.AITCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.AITCD.Location = new System.Drawing.Point(509, 11);
+            this.AITCD.Name = "AITCD";
+            this.AITCD.Size = new System.Drawing.Size(109, 20);
+            this.AITCD.TabIndex = 6;
             // 
-            // checkBox12
+            // AITCP
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(452, 15);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(15, 14);
-            this.checkBox12.TabIndex = 4;
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.AITCP.AutoSize = true;
+            this.AITCP.Location = new System.Drawing.Point(452, 15);
+            this.AITCP.Name = "AITCP";
+            this.AITCP.Size = new System.Drawing.Size(15, 14);
+            this.AITCP.TabIndex = 4;
+            this.AITCP.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // AITCR
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(363, 14);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(15, 14);
-            this.checkBox13.TabIndex = 3;
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.AITCR.AutoSize = true;
+            this.AITCR.Location = new System.Drawing.Point(363, 14);
+            this.AITCR.Name = "AITCR";
+            this.AITCR.Size = new System.Drawing.Size(15, 14);
+            this.AITCR.TabIndex = 3;
+            this.AITCR.UseVisualStyleBackColor = true;
             // 
             // label61
             // 
@@ -3800,52 +3800,52 @@
             this.label61.TabIndex = 2;
             this.label61.Text = "Accommodation in transit center";
             // 
-            // groupBox11
+            // Q19STA
             // 
-            this.groupBox11.Controls.Add(this.textBox8);
-            this.groupBox11.Controls.Add(this.dateTimePicker5);
-            this.groupBox11.Controls.Add(this.checkBox10);
-            this.groupBox11.Controls.Add(this.checkBox11);
-            this.groupBox11.Controls.Add(this.label60);
-            this.groupBox11.Location = new System.Drawing.Point(0, 186);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(956, 38);
-            this.groupBox11.TabIndex = 11;
-            this.groupBox11.TabStop = false;
+            this.Q19STA.Controls.Add(this.STAC);
+            this.Q19STA.Controls.Add(this.STAD);
+            this.Q19STA.Controls.Add(this.STAP);
+            this.Q19STA.Controls.Add(this.STAR);
+            this.Q19STA.Controls.Add(this.label60);
+            this.Q19STA.Location = new System.Drawing.Point(0, 186);
+            this.Q19STA.Name = "Q19STA";
+            this.Q19STA.Size = new System.Drawing.Size(956, 38);
+            this.Q19STA.TabIndex = 11;
+            this.Q19STA.TabStop = false;
             // 
-            // textBox8
+            // STAC
             // 
-            this.textBox8.Location = new System.Drawing.Point(642, 11);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(308, 20);
-            this.textBox8.TabIndex = 7;
+            this.STAC.Location = new System.Drawing.Point(642, 11);
+            this.STAC.Name = "STAC";
+            this.STAC.Size = new System.Drawing.Size(308, 20);
+            this.STAC.TabIndex = 7;
             // 
-            // dateTimePicker5
+            // STAD
             // 
-            this.dateTimePicker5.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker5.TabIndex = 6;
+            this.STAD.CustomFormat = "MMM dd yyyy";
+            this.STAD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.STAD.Location = new System.Drawing.Point(509, 11);
+            this.STAD.Name = "STAD";
+            this.STAD.Size = new System.Drawing.Size(109, 20);
+            this.STAD.TabIndex = 6;
             // 
-            // checkBox10
+            // STAP
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(452, 15);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(15, 14);
-            this.checkBox10.TabIndex = 4;
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.STAP.AutoSize = true;
+            this.STAP.Location = new System.Drawing.Point(452, 15);
+            this.STAP.Name = "STAP";
+            this.STAP.Size = new System.Drawing.Size(15, 14);
+            this.STAP.TabIndex = 4;
+            this.STAP.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // STAR
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(363, 14);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(15, 14);
-            this.checkBox11.TabIndex = 3;
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.STAR.AutoSize = true;
+            this.STAR.Location = new System.Drawing.Point(363, 14);
+            this.STAR.Name = "STAR";
+            this.STAR.Size = new System.Drawing.Size(15, 14);
+            this.STAR.TabIndex = 3;
+            this.STAR.UseVisualStyleBackColor = true;
             // 
             // label60
             // 
@@ -3857,52 +3857,52 @@
             this.label60.TabIndex = 2;
             this.label60.Text = "Special transportation arrangement";
             // 
-            // groupBox10
+            // Q19FT
             // 
-            this.groupBox10.Controls.Add(this.textBox7);
-            this.groupBox10.Controls.Add(this.dateTimePicker4);
-            this.groupBox10.Controls.Add(this.checkBox8);
-            this.groupBox10.Controls.Add(this.checkBox9);
-            this.groupBox10.Controls.Add(this.label59);
-            this.groupBox10.Location = new System.Drawing.Point(1, 149);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(956, 38);
-            this.groupBox10.TabIndex = 10;
-            this.groupBox10.TabStop = false;
+            this.Q19FT.Controls.Add(this.FTC);
+            this.Q19FT.Controls.Add(this.FTD);
+            this.Q19FT.Controls.Add(this.FTP);
+            this.Q19FT.Controls.Add(this.FTR);
+            this.Q19FT.Controls.Add(this.label59);
+            this.Q19FT.Location = new System.Drawing.Point(1, 149);
+            this.Q19FT.Name = "Q19FT";
+            this.Q19FT.Size = new System.Drawing.Size(956, 38);
+            this.Q19FT.TabIndex = 10;
+            this.Q19FT.TabStop = false;
             // 
-            // textBox7
+            // FTC
             // 
-            this.textBox7.Location = new System.Drawing.Point(642, 11);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(308, 20);
-            this.textBox7.TabIndex = 7;
+            this.FTC.Location = new System.Drawing.Point(642, 11);
+            this.FTC.Name = "FTC";
+            this.FTC.Size = new System.Drawing.Size(308, 20);
+            this.FTC.TabIndex = 7;
             // 
-            // dateTimePicker4
+            // FTD
             // 
-            this.dateTimePicker4.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker4.TabIndex = 6;
+            this.FTD.CustomFormat = "MMM dd yyyy";
+            this.FTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FTD.Location = new System.Drawing.Point(509, 11);
+            this.FTD.Name = "FTD";
+            this.FTD.Size = new System.Drawing.Size(109, 20);
+            this.FTD.TabIndex = 6;
             // 
-            // checkBox8
+            // FTP
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(452, 15);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 4;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.FTP.AutoSize = true;
+            this.FTP.Location = new System.Drawing.Point(452, 15);
+            this.FTP.Name = "FTP";
+            this.FTP.Size = new System.Drawing.Size(15, 14);
+            this.FTP.TabIndex = 4;
+            this.FTP.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // FTR
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(363, 14);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(15, 14);
-            this.checkBox9.TabIndex = 3;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.FTR.AutoSize = true;
+            this.FTR.Location = new System.Drawing.Point(363, 14);
+            this.FTR.Name = "FTR";
+            this.FTR.Size = new System.Drawing.Size(15, 14);
+            this.FTR.TabIndex = 3;
+            this.FTR.UseVisualStyleBackColor = true;
             // 
             // label59
             // 
@@ -3914,52 +3914,52 @@
             this.label59.TabIndex = 2;
             this.label59.Text = "Family tracing";
             // 
-            // groupBox9
+            // Q19CFT
             // 
-            this.groupBox9.Controls.Add(this.textBox6);
-            this.groupBox9.Controls.Add(this.dateTimePicker3);
-            this.groupBox9.Controls.Add(this.checkBox6);
-            this.groupBox9.Controls.Add(this.checkBox7);
-            this.groupBox9.Controls.Add(this.label53);
-            this.groupBox9.Location = new System.Drawing.Point(0, 112);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(956, 38);
-            this.groupBox9.TabIndex = 9;
-            this.groupBox9.TabStop = false;
+            this.Q19CFT.Controls.Add(this.CFTC);
+            this.Q19CFT.Controls.Add(this.CFTD);
+            this.Q19CFT.Controls.Add(this.CFTP);
+            this.Q19CFT.Controls.Add(this.CFTR);
+            this.Q19CFT.Controls.Add(this.label53);
+            this.Q19CFT.Location = new System.Drawing.Point(0, 112);
+            this.Q19CFT.Name = "Q19CFT";
+            this.Q19CFT.Size = new System.Drawing.Size(956, 38);
+            this.Q19CFT.TabIndex = 9;
+            this.Q19CFT.TabStop = false;
             // 
-            // textBox6
+            // CFTC
             // 
-            this.textBox6.Location = new System.Drawing.Point(642, 11);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(308, 20);
-            this.textBox6.TabIndex = 7;
+            this.CFTC.Location = new System.Drawing.Point(642, 11);
+            this.CFTC.Name = "CFTC";
+            this.CFTC.Size = new System.Drawing.Size(308, 20);
+            this.CFTC.TabIndex = 7;
             // 
-            // dateTimePicker3
+            // CFTD
             // 
-            this.dateTimePicker3.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker3.TabIndex = 6;
+            this.CFTD.CustomFormat = "MMM dd yyyy";
+            this.CFTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.CFTD.Location = new System.Drawing.Point(509, 11);
+            this.CFTD.Name = "CFTD";
+            this.CFTD.Size = new System.Drawing.Size(109, 20);
+            this.CFTD.TabIndex = 6;
             // 
-            // checkBox6
+            // CFTP
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(452, 15);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 4;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.CFTP.AutoSize = true;
+            this.CFTP.Location = new System.Drawing.Point(452, 15);
+            this.CFTP.Name = "CFTP";
+            this.CFTP.Size = new System.Drawing.Size(15, 14);
+            this.CFTP.TabIndex = 4;
+            this.CFTP.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // CFTR
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(363, 14);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 3;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.CFTR.AutoSize = true;
+            this.CFTR.Location = new System.Drawing.Point(363, 14);
+            this.CFTR.Name = "CFTR";
+            this.CFTR.Size = new System.Drawing.Size(15, 14);
+            this.CFTR.TabIndex = 3;
+            this.CFTR.UseVisualStyleBackColor = true;
             // 
             // label53
             // 
@@ -3971,52 +3971,52 @@
             this.label53.TabIndex = 2;
             this.label53.Text = "Cash for transportation";
             // 
-            // groupBox8
+            // Q19FLT
             // 
-            this.groupBox8.Controls.Add(this.textBox5);
-            this.groupBox8.Controls.Add(this.dateTimePicker2);
-            this.groupBox8.Controls.Add(this.checkBox4);
-            this.groupBox8.Controls.Add(this.checkBox5);
-            this.groupBox8.Controls.Add(this.label52);
-            this.groupBox8.Location = new System.Drawing.Point(0, 82);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(956, 38);
-            this.groupBox8.TabIndex = 8;
-            this.groupBox8.TabStop = false;
+            this.Q19FLT.Controls.Add(this.FLTC);
+            this.Q19FLT.Controls.Add(this.FLTD);
+            this.Q19FLT.Controls.Add(this.FLTP);
+            this.Q19FLT.Controls.Add(this.FLTR);
+            this.Q19FLT.Controls.Add(this.label52);
+            this.Q19FLT.Location = new System.Drawing.Point(0, 82);
+            this.Q19FLT.Name = "Q19FLT";
+            this.Q19FLT.Size = new System.Drawing.Size(956, 38);
+            this.Q19FLT.TabIndex = 8;
+            this.Q19FLT.TabStop = false;
             // 
-            // textBox5
+            // FLTC
             // 
-            this.textBox5.Location = new System.Drawing.Point(642, 11);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(308, 20);
-            this.textBox5.TabIndex = 7;
+            this.FLTC.Location = new System.Drawing.Point(642, 10);
+            this.FLTC.Name = "FLTC";
+            this.FLTC.Size = new System.Drawing.Size(308, 20);
+            this.FLTC.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // FLTD
             // 
-            this.dateTimePicker2.CustomFormat = "MMM dd yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(509, 11);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(109, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.FLTD.CustomFormat = "MMM dd yyyy";
+            this.FLTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FLTD.Location = new System.Drawing.Point(509, 11);
+            this.FLTD.Name = "FLTD";
+            this.FLTD.Size = new System.Drawing.Size(109, 20);
+            this.FLTD.TabIndex = 6;
             // 
-            // checkBox4
+            // FLTP
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(452, 15);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.FLTP.AutoSize = true;
+            this.FLTP.Location = new System.Drawing.Point(452, 15);
+            this.FLTP.Name = "FLTP";
+            this.FLTP.Size = new System.Drawing.Size(15, 14);
+            this.FLTP.TabIndex = 4;
+            this.FLTP.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // FLTR
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(363, 15);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 3;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.FLTR.AutoSize = true;
+            this.FLTR.Location = new System.Drawing.Point(363, 15);
+            this.FLTR.Name = "FLTR";
+            this.FLTR.Size = new System.Drawing.Size(15, 14);
+            this.FLTR.TabIndex = 3;
+            this.FLTR.UseVisualStyleBackColor = true;
             // 
             // label52
             // 
@@ -4030,11 +4030,13 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.Color.LightBlue;
             this.groupBox7.Controls.Add(this.label58);
             this.groupBox7.Controls.Add(this.label57);
             this.groupBox7.Controls.Add(this.label54);
             this.groupBox7.Controls.Add(this.label55);
             this.groupBox7.Controls.Add(this.label56);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(0, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(956, 42);
@@ -4091,52 +4093,52 @@
             this.label56.TabIndex = 2;
             this.label56.Text = "Need/Assistance";
             // 
-            // groupBox6
+            // Q19TBRC
             // 
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.dtpProvidedDate);
-            this.groupBox6.Controls.Add(this.chkProvided);
-            this.groupBox6.Controls.Add(this.chk);
-            this.groupBox6.Controls.Add(this.label51);
-            this.groupBox6.Location = new System.Drawing.Point(0, 42);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(956, 41);
-            this.groupBox6.TabIndex = 2;
-            this.groupBox6.TabStop = false;
+            this.Q19TBRC.Controls.Add(this.TBRCC);
+            this.Q19TBRC.Controls.Add(this.TBRCD);
+            this.Q19TBRC.Controls.Add(this.TBRCP);
+            this.Q19TBRC.Controls.Add(this.TBRCR);
+            this.Q19TBRC.Controls.Add(this.label51);
+            this.Q19TBRC.Location = new System.Drawing.Point(0, 42);
+            this.Q19TBRC.Name = "Q19TBRC";
+            this.Q19TBRC.Size = new System.Drawing.Size(956, 41);
+            this.Q19TBRC.TabIndex = 2;
+            this.Q19TBRC.TabStop = false;
             // 
-            // textBox4
+            // TBRCC
             // 
-            this.textBox4.Location = new System.Drawing.Point(642, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(308, 20);
-            this.textBox4.TabIndex = 7;
+            this.TBRCC.Location = new System.Drawing.Point(642, 11);
+            this.TBRCC.Name = "TBRCC";
+            this.TBRCC.Size = new System.Drawing.Size(308, 20);
+            this.TBRCC.TabIndex = 7;
             // 
-            // dtpProvidedDate
+            // TBRCD
             // 
-            this.dtpProvidedDate.CustomFormat = "MMM dd yyyy";
-            this.dtpProvidedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpProvidedDate.Location = new System.Drawing.Point(509, 11);
-            this.dtpProvidedDate.Name = "dtpProvidedDate";
-            this.dtpProvidedDate.Size = new System.Drawing.Size(109, 20);
-            this.dtpProvidedDate.TabIndex = 6;
+            this.TBRCD.CustomFormat = "MMM dd yyyy";
+            this.TBRCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TBRCD.Location = new System.Drawing.Point(509, 11);
+            this.TBRCD.Name = "TBRCD";
+            this.TBRCD.Size = new System.Drawing.Size(109, 20);
+            this.TBRCD.TabIndex = 6;
             // 
-            // chkProvided
+            // TBRCP
             // 
-            this.chkProvided.AutoSize = true;
-            this.chkProvided.Location = new System.Drawing.Point(452, 19);
-            this.chkProvided.Name = "chkProvided";
-            this.chkProvided.Size = new System.Drawing.Size(15, 14);
-            this.chkProvided.TabIndex = 4;
-            this.chkProvided.UseVisualStyleBackColor = true;
+            this.TBRCP.AutoSize = true;
+            this.TBRCP.Location = new System.Drawing.Point(452, 19);
+            this.TBRCP.Name = "TBRCP";
+            this.TBRCP.Size = new System.Drawing.Size(15, 14);
+            this.TBRCP.TabIndex = 4;
+            this.TBRCP.UseVisualStyleBackColor = true;
             // 
-            // chk
+            // TBRCR
             // 
-            this.chk.AutoSize = true;
-            this.chk.Location = new System.Drawing.Point(363, 19);
-            this.chk.Name = "chk";
-            this.chk.Size = new System.Drawing.Size(15, 14);
-            this.chk.TabIndex = 3;
-            this.chk.UseVisualStyleBackColor = true;
+            this.TBRCR.AutoSize = true;
+            this.TBRCR.Location = new System.Drawing.Point(363, 19);
+            this.TBRCR.Name = "TBRCR";
+            this.TBRCR.Size = new System.Drawing.Size(15, 14);
+            this.TBRCR.TabIndex = 3;
+            this.TBRCR.UseVisualStyleBackColor = true;
             // 
             // label51
             // 
@@ -4176,7 +4178,7 @@
             this.tabAssistanceNeeds2.Location = new System.Drawing.Point(4, 22);
             this.tabAssistanceNeeds2.Name = "tabAssistanceNeeds2";
             this.tabAssistanceNeeds2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssistanceNeeds2.Size = new System.Drawing.Size(1001, 735);
+            this.tabAssistanceNeeds2.Size = new System.Drawing.Size(1001, 723);
             this.tabAssistanceNeeds2.TabIndex = 5;
             this.tabAssistanceNeeds2.Text = "Assistance Needs 2";
             this.tabAssistanceNeeds2.UseVisualStyleBackColor = true;
@@ -4225,43 +4227,43 @@
             // 
             // gbTransportationDiff
             // 
-            this.gbTransportationDiff.Controls.Add(this.txtTransportationOther);
-            this.gbTransportationDiff.Controls.Add(this.chkTransportationOther);
+            this.gbTransportationDiff.Controls.Add(this.txtTransportOther);
+            this.gbTransportationDiff.Controls.Add(this.TRNSPORTOther);
             this.gbTransportationDiff.Controls.Add(this.txtTransMobile);
             this.gbTransportationDiff.Controls.Add(this.label82);
             this.gbTransportationDiff.Controls.Add(this.txtTransAccompaniedBy);
             this.gbTransportationDiff.Controls.Add(this.label81);
             this.gbTransportationDiff.Controls.Add(this.txtTransAdditionalInfo);
             this.gbTransportationDiff.Controls.Add(this.label80);
-            this.gbTransportationDiff.Controls.Add(this.chkTransUnderSupport);
-            this.gbTransportationDiff.Controls.Add(this.chkTransLeftTransitCenter);
-            this.gbTransportationDiff.Controls.Add(this.chkTransHandedOverToFamily);
-            this.gbTransportationDiff.Controls.Add(this.chkTransProvideTransFacilities);
-            this.gbTransportationDiff.Controls.Add(this.chkTransRerredToOtherPlace);
-            this.gbTransportationDiff.Controls.Add(this.chkTransByHim);
-            this.gbTransportationDiff.Controls.Add(this.chkTransEscort);
+            this.gbTransportationDiff.Controls.Add(this.US);
+            this.gbTransportationDiff.Controls.Add(this.LTTC);
+            this.gbTransportationDiff.Controls.Add(this.HOTH);
+            this.gbTransportationDiff.Controls.Add(this.PWT);
+            this.gbTransportationDiff.Controls.Add(this.RTOP);
+            this.gbTransportationDiff.Controls.Add(this.TBH);
+            this.gbTransportationDiff.Controls.Add(this.TWE);
             this.gbTransportationDiff.Location = new System.Drawing.Point(33, 218);
             this.gbTransportationDiff.Name = "gbTransportationDiff";
             this.gbTransportationDiff.Size = new System.Drawing.Size(951, 209);
             this.gbTransportationDiff.TabIndex = 9;
             this.gbTransportationDiff.TabStop = false;
             // 
-            // txtTransportationOther
+            // txtTransportOther
             // 
-            this.txtTransportationOther.Location = new System.Drawing.Point(397, 62);
-            this.txtTransportationOther.Name = "txtTransportationOther";
-            this.txtTransportationOther.Size = new System.Drawing.Size(522, 20);
-            this.txtTransportationOther.TabIndex = 63;
+            this.txtTransportOther.Location = new System.Drawing.Point(397, 62);
+            this.txtTransportOther.Name = "txtTransportOther";
+            this.txtTransportOther.Size = new System.Drawing.Size(522, 20);
+            this.txtTransportOther.TabIndex = 63;
             // 
-            // chkTransportationOther
+            // TRNSPORTOther
             // 
-            this.chkTransportationOther.AutoSize = true;
-            this.chkTransportationOther.Location = new System.Drawing.Point(339, 65);
-            this.chkTransportationOther.Name = "chkTransportationOther";
-            this.chkTransportationOther.Size = new System.Drawing.Size(52, 17);
-            this.chkTransportationOther.TabIndex = 62;
-            this.chkTransportationOther.Text = "Other";
-            this.chkTransportationOther.UseVisualStyleBackColor = true;
+            this.TRNSPORTOther.AutoSize = true;
+            this.TRNSPORTOther.Location = new System.Drawing.Point(339, 65);
+            this.TRNSPORTOther.Name = "TRNSPORTOther";
+            this.TRNSPORTOther.Size = new System.Drawing.Size(52, 17);
+            this.TRNSPORTOther.TabIndex = 62;
+            this.TRNSPORTOther.Text = "Other";
+            this.TRNSPORTOther.UseVisualStyleBackColor = true;
             // 
             // txtTransMobile
             // 
@@ -4314,75 +4316,75 @@
             this.label80.TabIndex = 22;
             this.label80.Text = "Additional information";
             // 
-            // chkTransUnderSupport
+            // US
             // 
-            this.chkTransUnderSupport.AutoSize = true;
-            this.chkTransUnderSupport.Location = new System.Drawing.Point(635, 41);
-            this.chkTransUnderSupport.Name = "chkTransUnderSupport";
-            this.chkTransUnderSupport.Size = new System.Drawing.Size(248, 17);
-            this.chkTransUnderSupport.TabIndex = 21;
-            this.chkTransUnderSupport.Text = "Under support/pending in TC or in other places";
-            this.chkTransUnderSupport.UseVisualStyleBackColor = true;
+            this.US.AutoSize = true;
+            this.US.Location = new System.Drawing.Point(635, 41);
+            this.US.Name = "US";
+            this.US.Size = new System.Drawing.Size(248, 17);
+            this.US.TabIndex = 21;
+            this.US.Text = "Under support/pending in TC or in other places";
+            this.US.UseVisualStyleBackColor = true;
             // 
-            // chkTransLeftTransitCenter
+            // LTTC
             // 
-            this.chkTransLeftTransitCenter.AutoSize = true;
-            this.chkTransLeftTransitCenter.Location = new System.Drawing.Point(339, 41);
-            this.chkTransLeftTransitCenter.Name = "chkTransLeftTransitCenter";
-            this.chkTransLeftTransitCenter.Size = new System.Drawing.Size(285, 17);
-            this.chkTransLeftTransitCenter.TabIndex = 20;
-            this.chkTransLeftTransitCenter.Text = "Left the Transit Center before getting further assistance";
-            this.chkTransLeftTransitCenter.UseVisualStyleBackColor = true;
+            this.LTTC.AutoSize = true;
+            this.LTTC.Location = new System.Drawing.Point(339, 41);
+            this.LTTC.Name = "LTTC";
+            this.LTTC.Size = new System.Drawing.Size(285, 17);
+            this.LTTC.TabIndex = 20;
+            this.LTTC.Text = "Left the Transit Center before getting further assistance";
+            this.LTTC.UseVisualStyleBackColor = true;
             // 
-            // chkTransHandedOverToFamily
+            // HOTH
             // 
-            this.chkTransHandedOverToFamily.AutoSize = true;
-            this.chkTransHandedOverToFamily.Location = new System.Drawing.Point(339, 14);
-            this.chkTransHandedOverToFamily.Name = "chkTransHandedOverToFamily";
-            this.chkTransHandedOverToFamily.Size = new System.Drawing.Size(280, 17);
-            this.chkTransHandedOverToFamily.TabIndex = 19;
-            this.chkTransHandedOverToFamily.Text = "Handed over to his/her family at TC or nearby shelters";
-            this.chkTransHandedOverToFamily.UseVisualStyleBackColor = true;
+            this.HOTH.AutoSize = true;
+            this.HOTH.Location = new System.Drawing.Point(339, 14);
+            this.HOTH.Name = "HOTH";
+            this.HOTH.Size = new System.Drawing.Size(280, 17);
+            this.HOTH.TabIndex = 19;
+            this.HOTH.Text = "Handed over to his/her family at TC or nearby shelters";
+            this.HOTH.UseVisualStyleBackColor = true;
             // 
-            // chkTransProvideTransFacilities
+            // PWT
             // 
-            this.chkTransProvideTransFacilities.AutoSize = true;
-            this.chkTransProvideTransFacilities.Location = new System.Drawing.Point(11, 65);
-            this.chkTransProvideTransFacilities.Name = "chkTransProvideTransFacilities";
-            this.chkTransProvideTransFacilities.Size = new System.Drawing.Size(219, 17);
-            this.chkTransProvideTransFacilities.TabIndex = 18;
-            this.chkTransProvideTransFacilities.Text = "Provided with transportation facilities only";
-            this.chkTransProvideTransFacilities.UseVisualStyleBackColor = true;
+            this.PWT.AutoSize = true;
+            this.PWT.Location = new System.Drawing.Point(11, 65);
+            this.PWT.Name = "PWT";
+            this.PWT.Size = new System.Drawing.Size(219, 17);
+            this.PWT.TabIndex = 18;
+            this.PWT.Text = "Provided with transportation facilities only";
+            this.PWT.UseVisualStyleBackColor = true;
             // 
-            // chkTransRerredToOtherPlace
+            // RTOP
             // 
-            this.chkTransRerredToOtherPlace.AutoSize = true;
-            this.chkTransRerredToOtherPlace.Location = new System.Drawing.Point(635, 14);
-            this.chkTransRerredToOtherPlace.Name = "chkTransRerredToOtherPlace";
-            this.chkTransRerredToOtherPlace.Size = new System.Drawing.Size(287, 17);
-            this.chkTransRerredToOtherPlace.TabIndex = 17;
-            this.chkTransRerredToOtherPlace.Text = "Referred to other place for support and closed the case";
-            this.chkTransRerredToOtherPlace.UseVisualStyleBackColor = true;
+            this.RTOP.AutoSize = true;
+            this.RTOP.Location = new System.Drawing.Point(635, 14);
+            this.RTOP.Name = "RTOP";
+            this.RTOP.Size = new System.Drawing.Size(287, 17);
+            this.RTOP.TabIndex = 17;
+            this.RTOP.Text = "Referred to other place for support and closed the case";
+            this.RTOP.UseVisualStyleBackColor = true;
             // 
-            // chkTransByHim
+            // TBH
             // 
-            this.chkTransByHim.AutoSize = true;
-            this.chkTransByHim.Location = new System.Drawing.Point(11, 41);
-            this.chkTransByHim.Name = "chkTransByHim";
-            this.chkTransByHim.Size = new System.Drawing.Size(214, 17);
-            this.chkTransByHim.TabIndex = 16;
-            this.chkTransByHim.Text = "Travelled by him/herself (without escort)";
-            this.chkTransByHim.UseVisualStyleBackColor = true;
+            this.TBH.AutoSize = true;
+            this.TBH.Location = new System.Drawing.Point(11, 41);
+            this.TBH.Name = "TBH";
+            this.TBH.Size = new System.Drawing.Size(214, 17);
+            this.TBH.TabIndex = 16;
+            this.TBH.Text = "Travelled by him/herself (without escort)";
+            this.TBH.UseVisualStyleBackColor = true;
             // 
-            // chkTransEscort
+            // TWE
             // 
-            this.chkTransEscort.AutoSize = true;
-            this.chkTransEscort.Location = new System.Drawing.Point(11, 14);
-            this.chkTransEscort.Name = "chkTransEscort";
-            this.chkTransEscort.Size = new System.Drawing.Size(188, 17);
-            this.chkTransEscort.TabIndex = 0;
-            this.chkTransEscort.Text = "Travelled with escort and reunified";
-            this.chkTransEscort.UseVisualStyleBackColor = true;
+            this.TWE.AutoSize = true;
+            this.TWE.Location = new System.Drawing.Point(11, 14);
+            this.TWE.Name = "TWE";
+            this.TWE.Size = new System.Drawing.Size(188, 17);
+            this.TWE.TabIndex = 0;
+            this.TWE.Text = "Travelled with escort and reunified";
+            this.TWE.UseVisualStyleBackColor = true;
             // 
             // label78
             // 
@@ -4676,10 +4678,35 @@
             this.txtReintegrationNeeds1.Location = new System.Drawing.Point(4, 22);
             this.txtReintegrationNeeds1.Name = "txtReintegrationNeeds1";
             this.txtReintegrationNeeds1.Padding = new System.Windows.Forms.Padding(3);
-            this.txtReintegrationNeeds1.Size = new System.Drawing.Size(1001, 735);
+            this.txtReintegrationNeeds1.Size = new System.Drawing.Size(1001, 723);
             this.txtReintegrationNeeds1.TabIndex = 6;
             this.txtReintegrationNeeds1.Text = "Reintegration Needs 1";
             this.txtReintegrationNeeds1.UseVisualStyleBackColor = true;
+            // 
+            // lblHoHEducationOther
+            // 
+            this.lblHoHEducationOther.AutoSize = true;
+            this.lblHoHEducationOther.Location = new System.Drawing.Point(620, 433);
+            this.lblHoHEducationOther.Name = "lblHoHEducationOther";
+            this.lblHoHEducationOther.Size = new System.Drawing.Size(33, 13);
+            this.lblHoHEducationOther.TabIndex = 62;
+            this.lblHoHEducationOther.Text = "Other";
+            // 
+            // txtHoHEducationOther
+            // 
+            this.txtHoHEducationOther.Location = new System.Drawing.Point(662, 430);
+            this.txtHoHEducationOther.Name = "txtHoHEducationOther";
+            this.txtHoHEducationOther.Size = new System.Drawing.Size(324, 20);
+            this.txtHoHEducationOther.TabIndex = 41;
+            // 
+            // cmbHoHEducationLevel
+            // 
+            this.cmbHoHEducationLevel.FormattingEnabled = true;
+            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 429);
+            this.cmbHoHEducationLevel.Name = "cmbHoHEducationLevel";
+            this.cmbHoHEducationLevel.Size = new System.Drawing.Size(170, 21);
+            this.cmbHoHEducationLevel.TabIndex = 61;
+            this.cmbHoHEducationLevel.SelectionChangeCommitted += new System.EventHandler(this.cmbHoHEducationLevel_SelectionChangeCommitted);
             // 
             // lblProOther
             // 
@@ -4893,13 +4920,6 @@
             this.label93.TabIndex = 38;
             this.label93.Text = "28. What are your 3 main concerns in Afghanistan? (select 3)";
             // 
-            // txtHoHEducationOther
-            // 
-            this.txtHoHEducationOther.Location = new System.Drawing.Point(662, 430);
-            this.txtHoHEducationOther.Name = "txtHoHEducationOther";
-            this.txtHoHEducationOther.Size = new System.Drawing.Size(324, 20);
-            this.txtHoHEducationOther.TabIndex = 41;
-            // 
             // label92
             // 
             this.label92.AutoSize = true;
@@ -5006,7 +5026,7 @@
             // chkWhatCanHelpProvisionOfTools
             // 
             this.chkWhatCanHelpProvisionOfTools.AutoSize = true;
-            this.chkWhatCanHelpProvisionOfTools.Location = new System.Drawing.Point(319, 268);
+            this.chkWhatCanHelpProvisionOfTools.Location = new System.Drawing.Point(325, 268);
             this.chkWhatCanHelpProvisionOfTools.Name = "chkWhatCanHelpProvisionOfTools";
             this.chkWhatCanHelpProvisionOfTools.Size = new System.Drawing.Size(201, 17);
             this.chkWhatCanHelpProvisionOfTools.TabIndex = 29;
@@ -5138,7 +5158,7 @@
             this.tabReintegrationNeeds2.Location = new System.Drawing.Point(4, 22);
             this.tabReintegrationNeeds2.Name = "tabReintegrationNeeds2";
             this.tabReintegrationNeeds2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReintegrationNeeds2.Size = new System.Drawing.Size(1001, 735);
+            this.tabReintegrationNeeds2.Size = new System.Drawing.Size(1001, 723);
             this.tabReintegrationNeeds2.TabIndex = 7;
             this.tabReintegrationNeeds2.Text = "Reintegration Needs 2";
             this.tabReintegrationNeeds2.UseVisualStyleBackColor = true;
@@ -5406,35 +5426,17 @@
             this.tabImageAndCard.Location = new System.Drawing.Point(4, 22);
             this.tabImageAndCard.Name = "tabImageAndCard";
             this.tabImageAndCard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabImageAndCard.Size = new System.Drawing.Size(1001, 735);
+            this.tabImageAndCard.Size = new System.Drawing.Size(1001, 723);
             this.tabImageAndCard.TabIndex = 8;
             this.tabImageAndCard.Text = "Card and Image";
             this.tabImageAndCard.UseVisualStyleBackColor = true;
-            // 
-            // cmbHoHEducationLevel
-            // 
-            this.cmbHoHEducationLevel.FormattingEnabled = true;
-            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 429);
-            this.cmbHoHEducationLevel.Name = "cmbHoHEducationLevel";
-            this.cmbHoHEducationLevel.Size = new System.Drawing.Size(170, 21);
-            this.cmbHoHEducationLevel.TabIndex = 61;
-            this.cmbHoHEducationLevel.SelectionChangeCommitted += new System.EventHandler(this.cmbHoHEducationLevel_SelectionChangeCommitted);
-            // 
-            // lblHoHEducationOther
-            // 
-            this.lblHoHEducationOther.AutoSize = true;
-            this.lblHoHEducationOther.Location = new System.Drawing.Point(620, 433);
-            this.lblHoHEducationOther.Name = "lblHoHEducationOther";
-            this.lblHoHEducationOther.Size = new System.Drawing.Size(33, 13);
-            this.lblHoHEducationOther.TabIndex = 62;
-            this.lblHoHEducationOther.Text = "Other";
             // 
             // BeneficiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1009, 761);
+            this.ClientSize = new System.Drawing.Size(1009, 749);
             this.Controls.Add(this.tabeBeneficiary);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "BeneficiaryForm";
@@ -5470,24 +5472,24 @@
             this.pnlOwnHouse.ResumeLayout(false);
             this.pnlOwnHouse.PerformLayout();
             this.gbQes8Answer.ResumeLayout(false);
-            this.gbQues8AccessJob.ResumeLayout(false);
-            this.gbQues8AccessJob.PerformLayout();
-            this.gbQues8Other.ResumeLayout(false);
-            this.gbQues8Other.PerformLayout();
-            this.gbQues8AccessToHouse.ResumeLayout(false);
-            this.gbQues8AccessToHouse.PerformLayout();
-            this.gbQues8AbillityToReturn.ResumeLayout(false);
-            this.gbQues8AbillityToReturn.PerformLayout();
-            this.gbQues8AccessToFarmland.ResumeLayout(false);
-            this.gbQues8AccessToFarmland.PerformLayout();
-            this.gbQues8FamilyMember.ResumeLayout(false);
-            this.gbQues8FamilyMember.PerformLayout();
-            this.gbQues8Security.ResumeLayout(false);
-            this.gbQues8Security.PerformLayout();
-            this.gbQues8EthnicGroup.ResumeLayout(false);
-            this.gbQues8EthnicGroup.PerformLayout();
-            this.gbQues8Education.ResumeLayout(false);
-            this.gbQues8Education.PerformLayout();
+            this.Q8ATJ.ResumeLayout(false);
+            this.Q8ATJ.PerformLayout();
+            this.Q8OTher.ResumeLayout(false);
+            this.Q8OTher.PerformLayout();
+            this.Q8ATH.ResumeLayout(false);
+            this.Q8ATH.PerformLayout();
+            this.Q8AROH.ResumeLayout(false);
+            this.Q8AROH.PerformLayout();
+            this.Q8ATF.ResumeLayout(false);
+            this.Q8ATF.PerformLayout();
+            this.Q8POFM.ResumeLayout(false);
+            this.Q8POFM.PerformLayout();
+            this.Q8S.ResumeLayout(false);
+            this.Q8S.PerformLayout();
+            this.Q8SEG.ResumeLayout(false);
+            this.Q8SEG.PerformLayout();
+            this.Q8EFC.ResumeLayout(false);
+            this.Q8EFC.PerformLayout();
             this.tabHostCountrySection.ResumeLayout(false);
             this.tabHostCountrySection.PerformLayout();
             this.pnlItemBrought.ResumeLayout(false);
@@ -5500,37 +5502,37 @@
             this.pnlHostCountry.PerformLayout();
             this.tabAssistanceNeeds1.ResumeLayout(false);
             this.tabAssistanceNeeds1.PerformLayout();
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            this.gbAssistanceNeeds.ResumeLayout(false);
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.Q19SC.ResumeLayout(false);
+            this.Q19SC.PerformLayout();
+            this.Q19PC.ResumeLayout(false);
+            this.Q19PC.PerformLayout();
+            this.Q19.ResumeLayout(false);
+            this.Q19PR.ResumeLayout(false);
+            this.Q19PR.PerformLayout();
+            this.Q19NFI.ResumeLayout(false);
+            this.Q19NFI.PerformLayout();
+            this.Q19WFP.ResumeLayout(false);
+            this.Q19WFP.PerformLayout();
+            this.Q19DDR.ResumeLayout(false);
+            this.Q19DDR.PerformLayout();
+            this.Q19E.ResumeLayout(false);
+            this.Q19E.PerformLayout();
+            this.Q19EMC.ResumeLayout(false);
+            this.Q19EMC.PerformLayout();
+            this.Q19AITC.ResumeLayout(false);
+            this.Q19AITC.PerformLayout();
+            this.Q19STA.ResumeLayout(false);
+            this.Q19STA.PerformLayout();
+            this.Q19FT.ResumeLayout(false);
+            this.Q19FT.PerformLayout();
+            this.Q19CFT.ResumeLayout(false);
+            this.Q19CFT.PerformLayout();
+            this.Q19FLT.ResumeLayout(false);
+            this.Q19FLT.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.Q19TBRC.ResumeLayout(false);
+            this.Q19TBRC.PerformLayout();
             this.tabAssistanceNeeds2.ResumeLayout(false);
             this.tabAssistanceNeeds2.PerformLayout();
             this.gbTransportationDiff.ResumeLayout(false);
@@ -5671,60 +5673,60 @@
         private System.Windows.Forms.CheckBox chkMH;
         private System.Windows.Forms.TabPage txtOther;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox gbQues8AccessJob;
+        private System.Windows.Forms.GroupBox Q8ATJ;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.GroupBox gbQues8AccessToHouse;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.GroupBox Q8ATH;
+        private System.Windows.Forms.RadioButton ATHV;
+        private System.Windows.Forms.RadioButton ATHI;
+        private System.Windows.Forms.RadioButton ATHS;
+        private System.Windows.Forms.RadioButton ATHN;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.RadioButton chkVeryImportant;
-        private System.Windows.Forms.RadioButton chkImportant;
-        private System.Windows.Forms.RadioButton chkSlightlyImportant;
-        private System.Windows.Forms.RadioButton chkNotAtAllImportant;
-        private System.Windows.Forms.GroupBox gbQues8AbillityToReturn;
-        private System.Windows.Forms.RadioButton radioButton25;
-        private System.Windows.Forms.RadioButton radioButton26;
-        private System.Windows.Forms.RadioButton radioButton27;
-        private System.Windows.Forms.RadioButton radioButton28;
+        private System.Windows.Forms.RadioButton ATJV;
+        private System.Windows.Forms.RadioButton ATJI;
+        private System.Windows.Forms.RadioButton ATJS;
+        private System.Windows.Forms.RadioButton ATJN;
+        private System.Windows.Forms.GroupBox Q8AROH;
+        private System.Windows.Forms.RadioButton AROHV;
+        private System.Windows.Forms.RadioButton AROHI;
+        private System.Windows.Forms.RadioButton AROHS;
+        private System.Windows.Forms.RadioButton AROHN;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.GroupBox gbQues8FamilyMember;
-        private System.Windows.Forms.RadioButton radioButton21;
-        private System.Windows.Forms.RadioButton radioButton22;
-        private System.Windows.Forms.RadioButton radioButton23;
-        private System.Windows.Forms.RadioButton radioButton24;
+        private System.Windows.Forms.GroupBox Q8POFM;
+        private System.Windows.Forms.RadioButton POFMV;
+        private System.Windows.Forms.RadioButton POFMI;
+        private System.Windows.Forms.RadioButton POFMS;
+        private System.Windows.Forms.RadioButton POFMN;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.GroupBox gbQues8EthnicGroup;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton18;
-        private System.Windows.Forms.RadioButton radioButton19;
-        private System.Windows.Forms.RadioButton radioButton20;
+        private System.Windows.Forms.GroupBox Q8SEG;
+        private System.Windows.Forms.RadioButton SEGV;
+        private System.Windows.Forms.RadioButton SEGI;
+        private System.Windows.Forms.RadioButton SEGS;
+        private System.Windows.Forms.RadioButton SEGN;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.GroupBox gbQues8Education;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton16;
+        private System.Windows.Forms.GroupBox Q8EFC;
+        private System.Windows.Forms.RadioButton EFCV;
+        private System.Windows.Forms.RadioButton EFCI;
+        private System.Windows.Forms.RadioButton EFCS;
+        private System.Windows.Forms.RadioButton EFCN;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox gbQues8Security;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.GroupBox Q8S;
+        private System.Windows.Forms.RadioButton SV;
+        private System.Windows.Forms.RadioButton SI;
+        private System.Windows.Forms.RadioButton SS;
+        private System.Windows.Forms.RadioButton SN;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.GroupBox gbQues8AccessToFarmland;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.GroupBox Q8ATF;
+        private System.Windows.Forms.RadioButton ATFV;
+        private System.Windows.Forms.RadioButton ATFI;
+        private System.Windows.Forms.RadioButton ATFS;
+        private System.Windows.Forms.RadioButton ATFN;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.GroupBox gbQues8Other;
+        private System.Windows.Forms.GroupBox Q8OTher;
         private System.Windows.Forms.TextBox txtQues8Other;
-        private System.Windows.Forms.RadioButton radioButton29;
-        private System.Windows.Forms.RadioButton radioButton30;
-        private System.Windows.Forms.RadioButton radioButton31;
-        private System.Windows.Forms.RadioButton radioButton32;
+        private System.Windows.Forms.RadioButton OTherV;
+        private System.Windows.Forms.RadioButton OTherI;
+        private System.Windows.Forms.RadioButton OTherS;
+        private System.Windows.Forms.RadioButton OThern;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button btnProtection1Next;
         private System.Windows.Forms.TextBox txtOriginVillage;
@@ -5784,16 +5786,16 @@
         private System.Windows.Forms.Button btnHostCountryNext;
         private System.Windows.Forms.Button btnHostCountryPrevious;
         private System.Windows.Forms.TabPage tabAssistanceNeeds1;
-        private System.Windows.Forms.GroupBox gbAssistanceNeeds;
+        private System.Windows.Forms.GroupBox Q19;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox chk;
+        private System.Windows.Forms.GroupBox Q19TBRC;
+        private System.Windows.Forms.CheckBox TBRCR;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.GroupBox Q19FLT;
+        private System.Windows.Forms.TextBox FLTC;
+        private System.Windows.Forms.DateTimePicker FLTD;
+        private System.Windows.Forms.CheckBox FLTP;
+        private System.Windows.Forms.CheckBox FLTR;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label58;
@@ -5801,80 +5803,80 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dtpProvidedDate;
-        private System.Windows.Forms.CheckBox chkProvided;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.TextBox TBRCC;
+        private System.Windows.Forms.DateTimePicker TBRCD;
+        private System.Windows.Forms.CheckBox TBRCP;
+        private System.Windows.Forms.GroupBox Q19CFT;
+        private System.Windows.Forms.TextBox CFTC;
+        private System.Windows.Forms.DateTimePicker CFTD;
+        private System.Windows.Forms.CheckBox CFTP;
+        private System.Windows.Forms.CheckBox CFTR;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.GroupBox Q19FT;
+        private System.Windows.Forms.TextBox FTC;
+        private System.Windows.Forms.DateTimePicker FTD;
+        private System.Windows.Forms.CheckBox FTP;
+        private System.Windows.Forms.CheckBox FTR;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker13;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.CheckBox checkBox27;
+        private System.Windows.Forms.GroupBox Q19SC;
+        private System.Windows.Forms.TextBox SCC;
+        private System.Windows.Forms.DateTimePicker SCD;
+        private System.Windows.Forms.CheckBox SCP;
+        private System.Windows.Forms.CheckBox SCR;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker11;
-        private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.GroupBox Q19PC;
+        private System.Windows.Forms.TextBox PCC;
+        private System.Windows.Forms.DateTimePicker PCD;
+        private System.Windows.Forms.CheckBox PCP;
+        private System.Windows.Forms.CheckBox PCR;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker14;
-        private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.CheckBox checkBox29;
+        private System.Windows.Forms.GroupBox Q19PR;
+        private System.Windows.Forms.TextBox PRC;
+        private System.Windows.Forms.DateTimePicker PRD;
+        private System.Windows.Forms.CheckBox PRP;
+        private System.Windows.Forms.CheckBox PRR;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker12;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox25;
+        private System.Windows.Forms.GroupBox Q19NFI;
+        private System.Windows.Forms.TextBox NFIC;
+        private System.Windows.Forms.DateTimePicker NFID;
+        private System.Windows.Forms.CheckBox NFIP;
+        private System.Windows.Forms.CheckBox NFIR;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker10;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.GroupBox Q19WFP;
+        private System.Windows.Forms.TextBox WFPC;
+        private System.Windows.Forms.DateTimePicker WFPD;
+        private System.Windows.Forms.CheckBox WFPP;
+        private System.Windows.Forms.CheckBox WFPR;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker9;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.GroupBox Q19DDR;
+        private System.Windows.Forms.TextBox DDRC;
+        private System.Windows.Forms.DateTimePicker DDRD;
+        private System.Windows.Forms.CheckBox DDRP;
+        private System.Windows.Forms.CheckBox DDRR;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker8;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.GroupBox Q19E;
+        private System.Windows.Forms.TextBox EC;
+        private System.Windows.Forms.DateTimePicker ED;
+        private System.Windows.Forms.CheckBox EP;
+        private System.Windows.Forms.CheckBox ER;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.GroupBox Q19EMC;
+        private System.Windows.Forms.TextBox EMCC;
+        private System.Windows.Forms.DateTimePicker EMCD;
+        private System.Windows.Forms.CheckBox EMCP;
+        private System.Windows.Forms.CheckBox EMCR;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.GroupBox Q19AITC;
+        private System.Windows.Forms.TextBox AITCC;
+        private System.Windows.Forms.DateTimePicker AITCD;
+        private System.Windows.Forms.CheckBox AITCP;
+        private System.Windows.Forms.CheckBox AITCR;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.GroupBox Q19STA;
+        private System.Windows.Forms.TextBox STAC;
+        private System.Windows.Forms.DateTimePicker STAD;
+        private System.Windows.Forms.CheckBox STAP;
+        private System.Windows.Forms.CheckBox STAR;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Button btnAssistanceNeedsPrevious1;
         private System.Windows.Forms.Button btnAssistanceNeedsNext1;
@@ -5890,13 +5892,13 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.TextBox txtTransAdditionalInfo;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.CheckBox chkTransUnderSupport;
-        private System.Windows.Forms.CheckBox chkTransLeftTransitCenter;
-        private System.Windows.Forms.CheckBox chkTransHandedOverToFamily;
-        private System.Windows.Forms.CheckBox chkTransProvideTransFacilities;
-        private System.Windows.Forms.CheckBox chkTransRerredToOtherPlace;
-        private System.Windows.Forms.CheckBox chkTransByHim;
-        private System.Windows.Forms.CheckBox chkTransEscort;
+        private System.Windows.Forms.CheckBox US;
+        private System.Windows.Forms.CheckBox LTTC;
+        private System.Windows.Forms.CheckBox HOTH;
+        private System.Windows.Forms.CheckBox PWT;
+        private System.Windows.Forms.CheckBox RTOP;
+        private System.Windows.Forms.CheckBox TBH;
+        private System.Windows.Forms.CheckBox TWE;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.TextBox txtAssistance1;
@@ -6019,8 +6021,8 @@
         private System.Windows.Forms.RadioButton rdoFMemberStayedBehindYes;
         private System.Windows.Forms.RadioButton rdoBenefitedNo;
         private System.Windows.Forms.RadioButton rdoBenefitedYes;
-        private System.Windows.Forms.CheckBox chkTransportationOther;
-        private System.Windows.Forms.TextBox txtTransportationOther;
+        private System.Windows.Forms.CheckBox TRNSPORTOther;
+        private System.Windows.Forms.TextBox txtTransportOther;
         private System.Windows.Forms.Label lblSecondNeed;
         private System.Windows.Forms.TextBox txtSecondNeed;
         private System.Windows.Forms.Label lblThirdNeed;
