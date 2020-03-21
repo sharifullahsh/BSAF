@@ -24,4 +24,5 @@ namespace BSAF.Helper
         public string ValueCode { get; set; }
         public string LookupName { get; set; }
     }
+
 }
