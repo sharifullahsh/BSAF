@@ -82,8 +82,7 @@ namespace BSAF.Models.ViewModels
         [StringLength(50)]
         public string CountryOfExilOther { get; set; }
 
-        [StringLength(50)]
-        public string BeforReturnProvince { get; set; }
+        public int BeforReturnProvince { get; set; }
 
         public int? BeforReturnDistrictID { get; set; }
 
@@ -113,7 +112,7 @@ namespace BSAF.Models.ViewModels
         public string TransportAccompaniedBy { get; set; }
 
         [StringLength(50)]
-        public string AccompaniedByMobileNo { get; set; }
+        public string TransportAccomByNo { get; set; }
 
         [StringLength(50)]
         public string TopNeed1 { get; set; }
@@ -139,6 +138,11 @@ namespace BSAF.Models.ViewModels
         [StringLength(500)]
         public string IntendToDoOther { get; set; }
 
+        public string ProfessionInHostCountry { get; set; }
+
+        public string ProfessionInHostCountryOther { get; set; }
+
+
         public bool? HoHCanReadWrite { get; set; }
 
         [StringLength(50)]
@@ -151,7 +155,7 @@ namespace BSAF.Models.ViewModels
 
         public int? NumHHHavePassport { get; set; }
 
-        public int? NumHHHaveOther { get; set; }
+        public int? NumHHHaveDocOther { get; set; }
 
         public bool? DoHaveSecureLivelihood { get; set; }
 
@@ -189,6 +193,7 @@ namespace BSAF.Models.ViewModels
         {
             Individuals = new List<IndividualVM>();
             PSNs = new List<PSN>();
+            ReturnReasons = new List<ReturnReason>();
             LeavingReasons = new List<LeavingReason>();
             Determinations = new List<Determination>();
             MoneySources = new List<MoneySource>();

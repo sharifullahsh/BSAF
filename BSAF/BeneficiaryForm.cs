@@ -17,11 +17,15 @@ namespace BSAF
     public partial class BeneficiaryForm : Form
     {
         dbContext db = new dbContext();
-        BeneficiaryVM beneficiary;
+        public BeneficiaryVM beneficiary;
+        //public BeneficiaryVM beneficiary { get; set; }
         public BeneficiaryForm()
         {
             InitializeComponent();
             beneficiary = new BeneficiaryVM();
+
+            //selected tab
+            this.tabBeneficiary.SelectedTab = this.tabProfile;
         }
 
         private void btnProfileNext_Click(object sender, EventArgs e)
@@ -52,14 +56,14 @@ namespace BSAF
             }
             
             var originProvince = this.cmbOriginProvince.SelectedValue != null ? this.cmbOriginProvince.SelectedValue.ToString() : "0";
-            var originDistrict = this.cmbOriginProvince.SelectedValue != null ? int.Parse(this.cmbOriginProvince.SelectedValue.ToString()) : 0;
+            var originDistrict = this.cmbOriginDistrict.SelectedValue != null ? int.Parse(this.cmbOriginDistrict.SelectedValue.ToString()) : 0;
             var originVillage = this.txtOriginVillage.Text;
             var returnProvince = this.cmbReturnProvince.SelectedValue != null ? this.cmbReturnProvince.SelectedValue.ToString() : "0";
             var returnDistrict = this.cmbReturnDistrict.SelectedValue != null ? (int)this.cmbReturnDistrict.SelectedValue : 0;
             var returnVillage = this.txtReturnVillage.Text;
 
-            if (provinceBCP != "0" && !string.IsNullOrEmpty(beneficiaryType) && string.IsNullOrEmpty(returnStatus)
-                 && !string.IsNullOrWhiteSpace(this.txtTotalIndividual.Text) 
+            if (provinceBCP != "0" && !string.IsNullOrEmpty(beneficiaryType) && !string.IsNullOrEmpty(returnStatus)
+                 && !string.IsNullOrEmpty(this.txtTotalIndividual.Text) 
                  && originProvince != "0" && originProvince != "0" && originDistrict != 0 && !string.IsNullOrWhiteSpace(originVillage) 
                  && returnProvince != "0" && returnDistrict != 0 && !string.IsNullOrWhiteSpace(returnVillage))
             {
@@ -74,7 +78,6 @@ namespace BSAF
                 this.beneficiary.ReturnProvince = returnProvince;
                 this.beneficiary.ReturnDistrict = returnDistrict;
                 this.beneficiary.ReturnVillage = returnVillage;
-                this.beneficiary.GUID = Guid.NewGuid();
             }
             else
             {
@@ -92,12 +95,12 @@ namespace BSAF
                 return;
             }
 
-            this.tabeBeneficiary.SelectedIndex = 1;
+            this.tabBeneficiary.SelectedIndex = 1;
         }
 
         private void chkReturnReasonOther_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.chkReturnReasonOther.Checked)
+            if (this.RROther.Checked)
             {
                 this.txtReturnReasonOther.Visible = true;
                 this.lblReturnReasonOther.Visible = true;
@@ -114,18 +117,16 @@ namespace BSAF
             if (this.ITEMSOther.Checked)
             {
                 this.txtITEMSOther.Visible = true;
-                this.lblItemBroughtIOther.Visible = true;
             }
             else
             {
                 this.txtITEMSOther.Visible = false;
-                this.lblItemBroughtIOther.Visible = false;
             }
         }
 
         private void chkWhatCanHelpProvisionOfTools_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.chkWhatCanHelpProvisionOfTools.Checked)
+            if (this.chkProvisionOfTools.Checked)
             {
                 this.gbToolsNeeded.Visible = true;
             }
@@ -137,18 +138,21 @@ namespace BSAF
 
         private void chkToolsNeedOther_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.chkToolsNeedOther.Checked)
+            if (this.ToolsOther.Checked)
             {
-                this.txtToolsNeedsOther.Visible = true;
+                this.txtToolsOther.Visible = true;
             }
             else
             {
-                this.txtToolsNeedsOther.Visible = false;
+                this.txtToolsOther.Visible = false;
             }
         }
 
         private void btnProtection1Next_Click(object sender, EventArgs e)
         {
+            //Clear list first
+            this.beneficiary.PSNs.Clear();
+            this.beneficiary.ReturnReasons.Clear();
             var psns = this.gbPSN.Controls.OfType<CheckBox>().Where(c=>c.Checked);
             foreach(CheckBox cbx in psns)
             {
@@ -156,9 +160,12 @@ namespace BSAF
                 {
                     PSNCode = cbx.Name
                 };
-                if(cbx.Name == "PSNOther")
+                if(cbx.Name == "PSNOther" && !string.IsNullOrWhiteSpace(this.txtPSNOther.Text))
                 {
                     psn.PSNOther = this.txtPSNOther.Text;
+                }else if(cbx.Name == "PSNOther" && string.IsNullOrWhiteSpace(this.txtPSNOther.Text))
+                {
+                    MessageBox.Show("Please speciry other type PSN.");
                 }
                this.beneficiary.PSNs.Add(psn);
             }
@@ -169,7 +176,8 @@ namespace BSAF
                 {
                     this.beneficiary.LeavingReason1Other = this.txt1LeavingReasonOther.Text;
                 }
-                else { MessageBox.Show("Please provide first other reason."); return; }
+                else if(firstLReason == "LROther" && string.IsNullOrEmpty(this.txt1LeavingReasonOther.Text)) {
+                    MessageBox.Show("Please provide first other reason."); return; }
             }
             else
             {
@@ -183,8 +191,8 @@ namespace BSAF
                 if (secondLReason == "LROther" && !string.IsNullOrEmpty(this.txt2LeavingReasonOther.Text))
                 {
                     this.beneficiary.LeavingReason2Other = this.txt2LeavingReasonOther.Text;
-                }
-                else { MessageBox.Show("Please provide second other reason."); return; }
+                }else if(secondLReason == "LROther" && string.IsNullOrEmpty(this.txt2LeavingReasonOther.Text)) {
+                    MessageBox.Show("Please provide second other reason."); return; }
             }
             var thirdLReason = this.cmb3ReasonForLeaving.SelectedValue != null ? this.cmb3ReasonForLeaving.SelectedValue.ToString() : "0";
             if (thirdLReason != "0")
@@ -194,7 +202,8 @@ namespace BSAF
                 {
                     this.beneficiary.LeavingReason3Other = this.txt3LeavingReasonOther.Text;
                 }
-                else { MessageBox.Show("Please provide third other reason."); return; }
+                else if(thirdLReason == "LROther" && string.IsNullOrEmpty(this.txt3LeavingReasonOther.Text)) {
+                    MessageBox.Show("Please provide third other reason."); return; }
             }
             var returningReasons = this.gbReturnReason.Controls.OfType<CheckBox>().Where(c => c.Checked);
             if (returningReasons.Count() <= 0)
@@ -202,32 +211,35 @@ namespace BSAF
                 MessageBox.Show("Please select returning reason.");
                 return;
             }
-            if (!string.IsNullOrWhiteSpace(this.txtReturnReasonOther.Text))
-            {
-                MessageBox.Show("Please other retuning reaons.");
-            }
-            foreach (CheckBox cbx in psns)
+            foreach (CheckBox cbx in returningReasons)
             {
                 var reason = new ReturnReason
                 {
                     ReasonCode = cbx.Name
                 };
-                if (cbx.Name == "RROther")
+                if (cbx.Name == "RROther" && !string.IsNullOrWhiteSpace(this.txtReturnReasonOther.Text))
                 {
                     reason.Other = this.txtReturnReasonOther.Text;
+                }else if(cbx.Name == "RROther" && !string.IsNullOrWhiteSpace(this.txtReturnReasonOther.Text))
+                {
+                    MessageBox.Show("Please specify other retuning reaons.");
                 }
                 this.beneficiary.ReturnReasons.Add(reason);
             }
-            this.tabeBeneficiary.SelectedIndex = 2;
+            this.tabBeneficiary.SelectedIndex = 2;
         }
 
         private void btnProtection1Previous_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 0;
+            this.tabBeneficiary.SelectedIndex = 0;
         }
 
         private void btnProtection2Next_Click(object sender, EventArgs e)
         {
+            //Clear list
+            this.beneficiary.Determinations.Clear();
+            this.beneficiary.MoneySources.Clear();
+
             var rankImportantsGB = gbRankImportant.Controls.OfType<GroupBox>();
             foreach(var gb in rankImportantsGB)
             {
@@ -236,13 +248,13 @@ namespace BSAF
                 {
                     var rank = new Determination {
                         DeterminationCode = gb.Name,
-                        AnswerCode = ranksAnswer.Name
+                        AnswerCode = ranksAnswer.Name.Split('_')[1]
                     };
                     if(gb.Name == "RankImpOther" && !string.IsNullOrWhiteSpace(this.txtRankImpOther.Text))
                     {
                         rank.Other = this.txtRankImpOther.Text;
                     }
-                    else
+                    else if(gb.Name == "RankImpOther" && string.IsNullOrWhiteSpace(this.txtRankImpOther.Text))
                     {
                         MessageBox.Show("Please provide other option to determine your destination in Aghanistan.");
                         return;
@@ -285,11 +297,13 @@ namespace BSAF
                     {
                         MoneySourceCode = cbx.Name
                     };
-                    if(cbx.Name == "MFRPOther")
+                    if(cbx.Name == "MFRPOther" && !string.IsNullOrWhiteSpace(this.txtMFRPOther.Text))
                     {
                         source.MoneySourceOther = this.txtMFRPOther.Text;
                     }
-                    else { MessageBox.Show("Please specify other source."); return; }
+                    else if(cbx.Name == "MFRPOther" && string.IsNullOrWhiteSpace(this.txtMFRPOther.Text)) {
+                        MessageBox.Show("Please specify other source."); return; }
+                    this.beneficiary.MoneySources.Add(source);
                 }
             }
             if (this.rdoAllowFamilyForJobYes.Checked)
@@ -300,35 +314,41 @@ namespace BSAF
                 this.beneficiary.AllowForJob = false;
             }
             else { MessageBox.Show("Please answer do you allow family member for job."); return; }
-            this.tabeBeneficiary.SelectedIndex = 3;
+            this.tabBeneficiary.SelectedIndex = 3;
         }
 
         private void btnProtection2Previous_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 1;
+            this.tabBeneficiary.SelectedIndex = 1;
         }
 
         private void btnHostCountryNext_Click(object sender, EventArgs e)
         {
-            if (this.rdoIRN.Checked)
+            // Clear list
+            this.beneficiary.BroughtItems.Clear();
+
+            if (this.Iran.Checked)
             {
-                this.beneficiary.CountryOfExile = this.rdoIRN.Name;
-            }if (this.rdoPAK.Checked) {
-                this.beneficiary.CountryOfExile = this.rdoPAK.Name;
+                this.beneficiary.CountryOfExile = "Iran";
+            }else if (this.Pakistan.Checked) {
+                this.beneficiary.CountryOfExile = this.Pakistan.Name;
             }else if (this.COther.Checked && !string.IsNullOrWhiteSpace(this.txtCOther.Text))
             {
                this.beneficiary.CountryOfExile =  this.COther.Name;
                 this.beneficiary.CountryOfExilOther = this.txtCOther.Text;
             }
-            else { MessageBox.Show("Please specify country of exile."); }
-            if(this.rdoIRN.Checked || this.rdoPAK.Checked)
+            else {
+                MessageBox.Show("Please specify country of exile.");
+                return;
+            }
+            if(this.Iran.Checked || this.Pakistan.Checked)
             {
-                var hostProvince = this.cmbBeforReturnProvince.SelectedValue != null ? this.cmbBeforReturnProvince.SelectedValue.ToString() : "0";
-                if(hostProvince != "0")
+                var hostProvince = this.cmbBeforReturnProvince.SelectedValue != null ? int.Parse(this.cmbBeforReturnProvince.SelectedValue.ToString()) : 0;
+                if(hostProvince != 0)
                 {
                     this.beneficiary.BeforReturnProvince = hostProvince;
                 }
-                var hostDistrict = this.cmbBeforReturnProvince.SelectedValue != null ? int.Parse(this.cmbBeforReturnProvince.SelectedValue.ToString()) : 0;
+                var hostDistrict = this.cmbBeforReturnDistrict.SelectedValue != null ? int.Parse(this.cmbBeforReturnDistrict.SelectedValue.ToString()) : 0;
                 if (hostDistrict != 0)
                 {
                     this.beneficiary.BeforReturnDistrictID = hostDistrict;
@@ -345,12 +365,19 @@ namespace BSAF
                 {
                     this.beneficiary.FamilyMemStayedBehindNo = int.Parse(this.txtFMemberStyedBehind.Text);
                 }
-                else { MessageBox.Show("Please specify the number of family member stayed behind."); }
+                else {
+                    MessageBox.Show("Please specify the number of family member stayed behind.");
+                    return;
+                }
             }else if (this.rdoFMemberStayedBehindNo.Checked)
             {
                 this.beneficiary.FamilyMemStayedBehind = false;
             }
-            else { MessageBox.Show("Please specify 'do you have family member stayed behind'"); }
+            else {
+                MessageBox.Show("Please specify 'do you have family member stayed behind'");
+                return;
+            }
+
             if (!string.IsNullOrEmpty(this.txtYearsStay.Text))
             {
                 this.beneficiary.LengthOfStayYears = int.Parse(this.txtYearsStay.Text);
@@ -363,6 +390,11 @@ namespace BSAF
             {
                 this.beneficiary.LengthOfStayDays = int.Parse(this.txtDaysStay.Text);
             }
+            if(string.IsNullOrEmpty(this.txtYearsStay.Text) && string.IsNullOrEmpty(this.txtMonthsStay.Text) && string.IsNullOrEmpty(this.txtDaysStay.Text))
+            {
+                MessageBox.Show("Please specify length of stay in host country.");
+                return;
+            }
             var itemsBrought = pnlItemBrought.Controls.OfType<CheckBox>().Where(c => c.Checked);
             foreach(var chb in itemsBrought)
             {
@@ -370,9 +402,13 @@ namespace BSAF
                 {
                     ItemCode = chb.Name
                 };
-                if(chb.Name == "ITEMSOther")
+                if(chb.Name == "ITEMSOther" && !string.IsNullOrWhiteSpace(this.txtITEMSOther.Text))
                 {
                     item.ItemOther = chb.Name;
+                }else if(chb.Name == "ITEMSOther" && string.IsNullOrWhiteSpace(this.txtITEMSOther.Text))
+                {
+                  MessageBox.Show("Please specify other item brought from host country.");
+                    return;
                 }
                 this.beneficiary.BroughtItems.Add(item);
             }
@@ -385,18 +421,21 @@ namespace BSAF
             }
             else
             {
-                MessageBox.Show("Please specify whould your return to Pakistan/Iran.");
+                MessageBox.Show("Please specify would you return to Pakistan/Iran.");
+                return;
             }
-            this.tabeBeneficiary.SelectedIndex = 4;
+            this.tabBeneficiary.SelectedIndex = 4;
         }
 
         private void btnHostCountryPrevious_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 2;
+            this.tabBeneficiary.SelectedIndex = 2;
         }
 
         private void btnAssistanceNeedsNext1_Click(object sender, EventArgs e)
         {
+            //Clear list
+            this.beneficiary.PostArrivalNeeds.Clear();
             // Transportation
             if (this.chkTBRCR.Checked)
             {
@@ -650,42 +689,328 @@ namespace BSAF
                 this.beneficiary.PostArrivalNeeds.Add(need);
             }
             var bneed = this.beneficiary.PostArrivalNeeds;
-            this.tabeBeneficiary.SelectedIndex = 5;
+            this.tabBeneficiary.SelectedIndex = 5;
         }
 
         private void btnAssistanceNeedsPrevious1_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 3;
+            this.tabBeneficiary.SelectedIndex = 3;
         }
 
         private void btnAssistanceNeedsNext2_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 6;
+            //Clear list
+            this.beneficiary.Transports.Clear();
+
+            if (this.rdoBenefitedYes.Checked)
+            {
+                var assis1Province = this.cmbAssistedInProvince1.SelectedValue != null ? this.cmbAssistedInProvince1.SelectedValue.ToString() : "0";
+                var assis1District = this.cmbAssistedInDistrict1.SelectedValue != null ? int.Parse(this.cmbAssistedInDistrict1.SelectedValue.ToString()) : 0;
+                var assis1Org = this.cmbAssistedOrg1.SelectedValue != null ? this.cmbAssistedOrg1.SelectedValue.ToString() : "0";
+                if(assis1Province != "0" && assis1District != 0 && assis1Org != "0" && !string.IsNullOrWhiteSpace(this.txtAssistance1.Text))
+                {
+                    var assistanceInfo = new BenefitedFromOrg
+                    {
+                        Date = this.AssistedDate1.Value,
+                        ProvinceCode = assis1Province,
+                        DistrictID = assis1District,
+                        AssistanceProvided = this.txtAssistance1.Text,
+                        OrgCode = assis1Org,
+                    };
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage1.Text)) { assistanceInfo.Village = this.txtAssistedVillage1.Text; }
+                }
+                else {
+                    MessageBox.Show("Please provide organization and assistance informaiton.");
+                    return;
+                }
+                var assis2Province = this.cmbAssistedInProvince2.SelectedValue != null ? this.cmbAssistedInProvince2.SelectedValue.ToString() : "0";
+                var assis2District = this.cmbAssistedInDistrict2.SelectedValue != null ? int.Parse(this.cmbAssistedInDistrict2.SelectedValue.ToString()) : 0;
+                var assis2Org = this.cmbAssistedOrg2.SelectedValue != null ? this.cmbAssistedOrg2.SelectedValue.ToString() : "0";
+                if (assis2Province != "0" && assis2District != 0 && assis2Org != "0" && !string.IsNullOrWhiteSpace(this.txtAssistance2.Text))
+                {
+                    var assistanceInfo = new BenefitedFromOrg
+                    {
+                        Date = this.AssistedDate2.Value,
+                        ProvinceCode = assis2Province,
+                        DistrictID = assis2District,
+                        AssistanceProvided = this.txtAssistance2.Text,
+                        OrgCode = assis2Org,
+                    };
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage2.Text)) { assistanceInfo.Village = this.txtAssistedVillage2.Text; }
+                }
+            }
+            if(!this.rdoBenefitedYes.Checked && !this.rdoBenefitedNo.Checked)
+            {
+                MessageBox.Show("Please answer: How you benefited from UNHCR or IOM.");
+                return;
+            }
+            this.beneficiary.TransportationDate = this.dateTransportationDate.Value;
+            var transportOptions = gbTransportation.Controls.OfType<CheckBox>().Where(c => c.Checked);
+            foreach(var chb in transportOptions)
+            {
+                var transOption = new Transport() {
+                    TypedCode = chb.Name,
+                };
+                if(chb.Name == "TransportOther" && !string.IsNullOrWhiteSpace(this.txtTransportOther.Text))
+                {
+                    transOption.Other = this.txtTransportOther.Text;
+                }
+                else if(chb.Name == "TransportOther" && string.IsNullOrWhiteSpace(this.txtTransportOther.Text)) {
+                    MessageBox.Show("Please specify transportation other case");
+                    return;
+                }
+                this.beneficiary.Transports.Add(transOption);
+            }
+            if (!string.IsNullOrWhiteSpace(this.txtTransAdditionalInfo.Text))
+            {
+                this.beneficiary.TransportationInfo = this.txtTransAdditionalInfo.Text;
+            }
+            if (!string.IsNullOrWhiteSpace(this.txtTransAccompaniedBy.Text))
+            {
+                this.beneficiary.TransportAccompaniedBy = this.txtTransAccompaniedBy.Text;
+            }
+            if (!string.IsNullOrWhiteSpace(this.txtTransMobile.Text))
+            {
+                this.beneficiary.TransportAccomByNo = this.txtTransMobile.Text;
+            }
+            this.tabBeneficiary.SelectedIndex = 6;
         }
 
         private void btnAssistanceNeedsPrevious2_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 4;
+            this.tabBeneficiary.SelectedIndex = 4;
         }
 
         private void btnReintegNeed1NeedNext_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 7;
+            //Clear list
+            this.beneficiary.LivelihoodEmpNeeds.Clear();
+            this.beneficiary.NeedTools.Clear();
+            this.beneficiary.MainConcerns.Clear();
+
+            var reing1Need = this.cmbReintegrationNeeds1.SelectedValue != null ? this.cmbReintegrationNeeds1.SelectedValue.ToString() : "0";
+            if(reing1Need != "0")
+            {
+                this.beneficiary.TopNeed1 = reing1Need;
+                if(reing1Need == "TNOther" && !string.IsNullOrWhiteSpace(this.txtReintegrationNeeds1Other.Text))
+                {
+                    this.beneficiary.TopNeed1Other = this.tabReintegrationNeeds1.Text;
+                }
+                else if(reing1Need == "TNOther" && string.IsNullOrWhiteSpace(this.txtReintegrationNeeds1Other.Text))
+                {
+                    MessageBox.Show("Please specify other first need.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please specify first need.");
+                return;
+            }
+            var reing2Need = this.cmbReintegrationNeeds2.SelectedValue != null ? this.cmbReintegrationNeeds2.SelectedValue.ToString() : "0";
+            if(reing2Need != "0")
+            {
+                this.beneficiary.TopNeed2 = reing2Need;
+                if(reing2Need == "TNOther" && !string.IsNullOrWhiteSpace(this.txtReintegrationNeeds2Other.Text))
+                {
+                    this.beneficiary.TopNeed2Other = this.txtReintegrationNeeds2Other.Text;
+                }
+                else {
+                    MessageBox.Show("Please specify other second need.");
+                    return;
+                }
+            }
+            var reing3Need = this.cmbReintegrationNeeds3.SelectedValue != null ? this.cmbReintegrationNeeds3.SelectedValue.ToString() : "0";
+            if(reing3Need != "0")
+            {
+                this.beneficiary.TopNeed3 = reing3Need;
+                if(reing3Need == "TNOther" && !string.IsNullOrWhiteSpace(this.txtReintegrationNeeds3Other.Text))
+                {
+                    this.beneficiary.TopNeed3Other = this.txtReintegrationNeeds3Other.Text;
+                }
+                else { MessageBox.Show("Please specify other third need."); return; }
+            }
+            var intendToDo = this.cmbIntendToDo.SelectedValue != null ? this.cmbIntendToDo.SelectedValue.ToString() : "0";
+            if(intendToDo != "0")
+            {
+                this.beneficiary.IntendToDo = intendToDo;
+                if(intendToDo == "RTH" && !string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
+                {
+                    this.beneficiary.IntendToDoOther = this.txtReturnToHostReason.Text;
+                }
+                else if (intendToDo == "RTH" && string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
+                {
+                    MessageBox.Show("Please state the reason for returning back to host country.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please specify what are you intend to do.");
+                return;
+            }
+            var profession = this.cmbProfession.SelectedValue != null ? this.cmbProfession.SelectedValue.ToString() : "0";
+            if(profession != "0")
+            {
+                this.beneficiary.ProfessionInHostCountry = profession;
+                if(profession == "ProfOther" && !string.IsNullOrWhiteSpace(this.txtProfessionOther.Text))
+                {
+                    this.beneficiary.ProfessionInHostCountryOther = this.txtProfessionOther.Text;
+                }
+                else if(profession == "ProfOther" && string.IsNullOrWhiteSpace(this.txtProfessionOther.Text)) {
+                    MessageBox.Show("Please specify other profession.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please specify your profession in host country.");
+            }
+            if (this.chkVocationalTraining.Checked)
+            {
+                var whatCanHelp = new LivelihoodEmpNeed {
+                    NeedCode = "VTFH"
+                };
+                this.beneficiary.LivelihoodEmpNeeds.Add(whatCanHelp);
+            }
+            if (this.chkProvisionOfTools.Checked)
+            {
+                var whatCanHelp = new LivelihoodEmpNeed {
+                    NeedCode = "POT"
+                };
+                this.beneficiary.LivelihoodEmpNeeds.Add(whatCanHelp);
+                var tools = gbToolsNeeded.Controls.OfType<CheckBox>().Where(c => c.Checked);
+                foreach(var tool in tools)
+                {
+                    var needTool = new NeedTool
+                    {
+                        ToolCode = tool.Name
+                    };
+                    if(tool.Name == "ToolsOther" && !string.IsNullOrWhiteSpace(this.txtToolsOther.Text))
+                    {
+                        needTool.Other = this.txtToolsOther.Text;
+                    }
+                    else if(tool.Name == "ToolsOther" && string.IsNullOrWhiteSpace(this.txtToolsOther.Text))
+                    {
+                        MessageBox.Show("Plase speciry other tool.");
+                        return;
+                    }
+                    this.beneficiary.NeedTools.Add(needTool);
+                }
+            }
+            if (this.rdoCanYouReadWriteYes.Checked)
+            {
+                this.beneficiary.HoHCanReadWrite = true;
+                var HoHEducationLevel = this.cmbHoHEducationLevel.SelectedValue != null ? this.cmbHoHEducationLevel.SelectedValue.ToString() : "0";
+                if(HoHEducationLevel != "0")
+                {
+                    this.beneficiary.HoHEducationLevel = HoHEducationLevel;
+                    if(HoHEducationLevel == "EDUOther" && !string.IsNullOrWhiteSpace(this.txtHoHEducationOther.Text))
+                    {
+                        this.beneficiary.HoHEducationLevelOther = this.txtHoHEducationOther.Text;
+                    }
+                    else if(HoHEducationLevel == "EDUOther" && string.IsNullOrWhiteSpace(this.txtHoHEducationOther.Text))
+                    {
+                        MessageBox.Show("Please specify: HoH education level other");
+                        return;
+                    }
+                }
+            }
+            else if (this.rdoCanYouReadWriteNo.Checked)
+            {
+                this.beneficiary.HoHCanReadWrite = false;
+            }
+            else
+            {
+                MessageBox.Show("Please specify: Can HoH read and write.");
+                return;
+            }
+            var mainConcerns = this.gbMainConcerns.Controls.OfType<CheckBox>().Where(c => c.Checked);
+            if(mainConcerns.Count() <= 3) {
+                foreach (var concern in mainConcerns)
+                {
+                    var mcon = new MainConcern
+                    {
+                        ConcernCode = concern.Name
+                    };
+                    this.beneficiary.MainConcerns.Add(mcon);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please specify your 3 main concern in Afghanistan.");
+                return;
+            }
+            this.tabBeneficiary.SelectedIndex = 7;
         }
 
         private void btnReintegNeed1Previous_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 5;
+            this.tabBeneficiary.SelectedIndex = 5;
         }
 
         private void btnReintegNeeds2Next_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 8;
+            //Clear list
+            this.beneficiary.HostCountrySchools.Clear();
+            if (!string.IsNullOrWhiteSpace(this.txtNumHaveTaskira.Text))
+            {
+                this.beneficiary.NumHHHaveTaskira = int.Parse(this.txtNumHaveTaskira.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(this.txtNumHavePassport.Text))
+            {
+                this.beneficiary.NumHHHavePassport = int.Parse(this.txtNumHavePassport.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(this.txtchkNumHaveOtherDoc.Text))
+            {
+                this.beneficiary.NumHHHaveDocOther = int.Parse(this.txtchkNumHaveOtherDoc.Text);
+            }
+            if (this.rdoHaveLivelihoodOrSavingYes.Checked)
+            {
+                this.beneficiary.DoHaveSecureLivelihood = true;
+            }
+            else if(this.rdoHaveLivelihoodOrSavingNo.Checked){
+                this.beneficiary.DoHaveSecureLivelihood = false;
+            }
+            else
+            {
+                MessageBox.Show("Please specify: Do you have secure means of livelihood or savings to subsist from? ");
+                return;
+            }
+            if (this.rdoDidChildrenGoToSchoolYes.Checked)
+            {
+                this.beneficiary.DidChildrenGoToSchoole = true;
+                var schoolsType = this.pnlSchoolTypeInHostCountry.Controls.OfType<CheckBox>().Where(c => c.Checked);
+                if(schoolsType.Count()  > 0)
+                {
+                    foreach(var chb in schoolsType)
+                    {
+                        var schoolType = new HostCountrySchool {
+                            SchoolTypeCode = chb.Name
+                        };
+                        this.beneficiary.HostCountrySchools.Add(schoolType);
+                    }
+                }
+                else { MessageBox.Show("Please speciry shcool type in host country");return; }
+            }else if (this.rdoDidChildrenGoToSchoolNo.Checked)
+            {
+                this.beneficiary.DidChildrenGoToSchoole = false;
+            }
+            else
+            {
+                MessageBox.Show("Please specify did your children go school in host country.");
+                return;
+            }
+            if (!string.IsNullOrEmpty(this.txtNumChildrenAttendSchool.Text))
+            {
+                this.beneficiary.NumChildrenAttendedSchoole = int.Parse(this.txtNumChildrenAttendSchool.Text);
+            }
+            this.tabBeneficiary.SelectedIndex = 8;
         }
 
         private void btnReintegNeeds2Previous_Click(object sender, EventArgs e)
         {
-            this.tabeBeneficiary.SelectedIndex = 6;
+            this.tabBeneficiary.SelectedIndex = 6;
         }
 
         private void BeneficiaryForm_Load(object sender, EventArgs e)
@@ -878,7 +1203,7 @@ namespace BSAF
 
         private void rdoIRN_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.rdoIRN.Checked)
+            if (this.Iran.Checked)
             {
                 var hostProvinceList = db.HostCountryProvinces.Where(p => p.CountryCode == "IRN").Select(p => new { p.ProvinceId, ProvinceName = p.EnName }).ToList();
                 hostProvinceList.Insert(0, new { ProvinceId = 0, ProvinceName = "-- Please Select --" });
@@ -894,7 +1219,7 @@ namespace BSAF
 
         private void rdoPAK_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.rdoPAK.Checked)
+            if (this.Pakistan.Checked)
             {
                 var hostProvinceList = db.HostCountryProvinces.Where(p => p.CountryCode == "PAK").Select(p => new { p.ProvinceId, ProvinceName = p.EnName }).ToList();
                 hostProvinceList.Insert(0, new { ProvinceId = 0, ProvinceName = "-- Please Select --" });
@@ -915,7 +1240,9 @@ namespace BSAF
                 this.cmbBeforReturnProvince.DataSource = null;
                 this.cmbBeforReturnDistrict.DataSource = null;
                 this.gbIranPakAddress.Visible = false;
+                this.txtCOther.Visible = true;
             }
+            else { this.txtCOther.Visible = false; }
         }
 
         private void cmbBeforReturnProvince_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1019,6 +1346,14 @@ namespace BSAF
                 this.cmbReintegrationNeeds2.ValueMember = "ValueCode";
                 this.cmbReintegrationNeeds2.SelectedIndex = 0;
             }
+            if (firstNeed == "TNOther")
+            {
+                this.pnlFirstNeed.Visible = true;
+            }
+            else
+            {
+                this.pnlFirstNeed.Visible = false;
+            }
         }
 
         private void cmbReintegrationNeeds2_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1032,6 +1367,14 @@ namespace BSAF
                 this.cmbReintegrationNeeds3.DisplayMember = "LookupName";
                 this.cmbReintegrationNeeds3.ValueMember = "ValueCode";
                 this.cmbReintegrationNeeds3.SelectedIndex = 0;
+            }
+            if (seconNeed == "TNOther")
+            {
+                this.pnlSecondNeed.Visible = true;
+            }
+            else
+            {
+                this.pnlSecondNeed.Visible = false;
             }
         }
 
@@ -1146,7 +1489,7 @@ namespace BSAF
 
         private void btnSaveBeneficiary_Click(object sender, EventArgs e)
         {
-            
+            BeneficiaryController.Save(this.beneficiary);
         }
 
         private void Number_Field_KeyPress(object sender, KeyPressEventArgs e)
@@ -1167,6 +1510,106 @@ namespace BSAF
             {
                 this.lbl3LeavingResonOther.Visible = false;
                 this.txt3LeavingReasonOther.Visible = false;
+            }
+        }
+
+        private void rdoBenefitedYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rdoBenefitedYes.Checked)
+            {
+                this.gbBenefited.Visible = true;
+            }
+            else
+            {
+                this.gbBenefited.Visible = false;
+            }
+        }
+
+        private void cmbReintegrationNeeds3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var thirdNeed = this.cmbReintegrationNeeds3.SelectedValue.ToString();
+            if (thirdNeed != "TNOther")
+            {
+                this.pnlThirdNeed.Visible = true;
+            }
+            else
+            {
+                this.pnlThirdNeed.Visible = false;
+            }
+        }
+
+        private void rdoDidChildrenGoToSchoolYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rdoDidChildrenGoToSchoolYes.Checked)
+            {
+                this.pnlSchoolTypeInHostCountry.Visible = true;
+            }
+            else
+            {
+                this.pnlSchoolTypeInHostCountry.Visible = false;
+            }
+        }
+
+        private void PSNOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.PSNOther.Checked)
+            {
+                this.txtPSNOther.Visible = true;
+            }
+            else
+            {
+                this.txtPSNOther.Visible = false;
+            }
+        }
+
+        private void MFRPOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.MFRPOther.Checked)
+            {
+                this.txtMFRPOther.Visible = true;
+            }
+            else
+            {
+                this.txtMFRPOther.Visible = false;
+            }
+        }
+
+        private void rdoFMemberStayedBehindYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rdoFMemberStayedBehindYes.Checked)
+            {
+                this.pnlFamilyMemStayYesHowMany.Visible = true;
+            }
+            else
+            {
+                this.pnlFamilyMemStayYesHowMany.Visible = false;
+            }
+        }
+
+        private void TransportOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.TransportOther.Checked)
+            {
+                this.txtTransportOther.Visible = true;
+            }
+            else
+            {
+                this.txtTransportOther.Visible = false;
+            }
+        }
+
+        private void cmbProfession_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var profession = this.cmbProfession.SelectedValue != null ? this.cmbProfession.SelectedValue.ToString() : "0";
+            if (profession == "ProfOther")
+            {
+                this.lblProOther.Visible = true;
+                this.txtProfessionOther.Visible = true;
+            }
+            else
+            {
+                this.lblProOther.Visible = false;
+                this.txtProfessionOther.Visible = false;
             }
         }
     }

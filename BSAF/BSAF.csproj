@@ -156,6 +156,7 @@
     <Compile Include="BeneficiaryForm.Designer.cs">
       <DependentUpon>BeneficiaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\BeneficiaryController.cs" />
     <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Helper\Validation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
