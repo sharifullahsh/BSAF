@@ -12,7 +12,7 @@ namespace BSAF.Models.ViewModels
         [Key]
         public int FamilyMemeberID { get; set; }
 
-        public Guid? BeneficiaryID { get; set; }
+        public int? BeneficiaryID { get; set; }
 
         [StringLength(20)]
         public string Name { get; set; }

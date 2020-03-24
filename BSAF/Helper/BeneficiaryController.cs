@@ -11,11 +11,12 @@ namespace BSAF.Helper
 {
     public class BeneficiaryController
     {
-        public static void Save(BeneficiaryVM model)
+        public static void Add(BeneficiaryVM model)
         {
             dbContext db = new dbContext();
-
+       
             var bene = model;
+            
             using (var trans = db.Database.BeginTransaction())
             {
                 try
@@ -87,11 +88,151 @@ namespace BSAF.Helper
                         //END TODO
                         IsActive = true
                     };
+                    db.Beneficiaries.Add(beneficiary);
+                    db.SaveChanges();
+
+                    foreach(var ind in model.Individuals)
+                    {
+                        var member = new Individual {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            Name = ind.Name,
+                            FName = ind.FName,
+                            GenderCode = ind.GenderCode,
+                            MaritalStatusCode = ind.MaritalStatusCode,
+                            Age = ind.Age,
+                            IDTypeCode = ind.IDTypeCode,
+                            IDNo = ind.IDNo,
+                            RelationshipCode = ind.RelationshipCode,
+                            ContactNumber = ind.ContactNumber,
+                            IsActive = true,
+                            InsertedBy = 1,
+                            InsertedDate = DateTime.Now
+                        };
+                        db.Individuals.Add(member);
+                    }
+
+                    foreach(var psn in model.PSNs)
+                    {
+                        var psnObj = new PSN {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            PSNCode = psn.PSNCode,
+                            PSNOther = psn.PSNOther
+                        };
+                        db.PSNs.Add(psnObj);
+                    }
+
+                    foreach (var rReason in model.ReturnReasons)
+                    {
+                        var rrObj = new ReturnReason {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            ReasonCode = rReason.ReasonCode,
+                            Other = rReason.Other
+                        };
+                        db.ReturnReasons.Add(rrObj);
+                    }
+
+                    foreach (var lReason in model.LeavingReasons)
+                    {
+                        var lrObj = new LeavingReason {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            LeavingReasonCode = lReason.LeavingReasonCode,
+                            LeavingReasonOther = lReason.LeavingReasonOther
+                        };
+                        db.LeavingReasons.Add(lrObj);
+                    }
+
+                    foreach(var d in model.Determinations)
+                    {
+                        var dObj = new Determination {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            DeterminationCode = d.DeterminationCode,
+                            AnswerCode = d.AnswerCode,
+                            Other = d.Other
+                        };
+                        db.Determinations.Add(dObj);
+                    }
+
+                    foreach(var m in model.MoneySources)
+                    {
+                        var moneySObj = new MoneySource {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            MoneySourceCode = m.MoneySourceCode,
+                            MoneySourceOther = m.MoneySourceOther
+                        };
+                        db.MoneySources.Add(moneySObj);
+                    }
+
+                    foreach(var bi in model.BroughtItems)
+                    {
+                        var biObj = new BroughtItem {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            ItemCode = bi.ItemCode,
+                            ItemOther = bi.ItemOther
+                        };
+                        db.BroughtItems.Add(biObj);
+                    }
+
+                    foreach (var p in model.PostArrivalNeeds) {
+                        var panObj = new PostArrivalNeed {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            NeedCode = p.NeedCode,
+                            Requested = p.Requested,
+                            Provided = p.Provided,
+                            ProvidedDate = p.ProvidedDate,
+                            Comment = p.Comment
+                        };
+                        db.PostArrivalNeeds.Add(panObj);
+                    }
+                    foreach(var tran  in model.Transports)
+                    {
+                        var tranObj = new Transport {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            TypedCode = tran.TypedCode,
+                            Other = tran.Other
+                        };
+                        db.Transports.Add(tranObj);
+                    }
+                    foreach(var li in model.LivelihoodEmpNeeds)
+                    {
+                        var liObj = new LivelihoodEmpNeed{
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            NeedCode = li.NeedCode
+                        };
+                        db.LivelihoodEmpNeeds.Add(liObj);
+                    }
+                    foreach(var needTool in model.NeedTools)
+                    {
+                        var needToolObj = new NeedTool {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            ToolCode = needTool.ToolCode,
+                            Other = needTool.Other
+                        };
+                        db.NeedTools.Add(needToolObj);
+                    }
+                    foreach(var mConcern in model.MainConcerns)
+                    {
+                        var mcObj = new MainConcern {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            ConcernCode = mConcern.ConcernCode
+                        };
+                        db.MainConcerns.Add(mcObj);
+                    }
+                    foreach(var hc in model.HostCountrySchools)
+                    {
+                        var hcObj = new HostCountrySchool {
+                            BeneficiaryID = beneficiary.BeneficiaryID,
+                            SchoolTypeCode = hc.SchoolTypeCode
+                        };
+                        db.HostCountrySchools.Add(hcObj);
+                    }
+                    db.SaveChanges();
+                    
                     trans.Commit();
                 }
                 catch (Exception e)
                 {
                     trans.Rollback();
+                    
                 }
             }
 

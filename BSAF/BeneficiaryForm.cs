@@ -1489,7 +1489,7 @@ namespace BSAF
 
         private void btnSaveBeneficiary_Click(object sender, EventArgs e)
         {
-            BeneficiaryController.Save(this.beneficiary);
+            BeneficiaryController.Add(this.beneficiary);
         }
 
         private void Number_Field_KeyPress(object sender, KeyPressEventArgs e)
