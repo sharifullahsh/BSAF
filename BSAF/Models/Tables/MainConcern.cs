@@ -13,7 +13,8 @@ namespace BSAF.Models.Tables
         public int BeneficiaryID { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string ConcernCode { get; set; }
+
+        public string Other { get; set; }
     }
 }

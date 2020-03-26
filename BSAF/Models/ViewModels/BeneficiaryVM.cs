@@ -16,58 +16,42 @@ namespace BSAF.Models.ViewModels
 
         public DateTime? ScreeningDate { get; set; }
 
-        [StringLength(50)]
         public string ProvinceBCP { get; set; }
 
-        [StringLength(50)]
         public string BorderPoint { get; set; }
 
-        [StringLength(50)]
         public string BeneficiaryCardNo { get; set; }
 
-        [StringLength(50)]
         public string BeneficiaryType { get; set; }
 
-        [StringLength(50)]
         public string ReturnStatus { get; set; }
 
-        [StringLength(50)]
         public string OriginProvince { get; set; }
 
         public int? OriginDistrict { get; set; }
 
-        [StringLength(200)]
         public string OriginVillage { get; set; }
 
-        [StringLength(50)]
         public string ReturnProvince { get; set; }
 
         public int? ReturnDistrict { get; set; }
 
-        [StringLength(200)]
         public string ReturnVillage { get; set; }
 
-        [StringLength(50)]
         public string LeavingReason1 { get; set; }
 
-        [StringLength(500)]
         public string LeavingReason1Other { get; set; }
 
-        [StringLength(50)]
         public string LeavingReason2 { get; set; }
 
-        [StringLength(500)]
         public string LeavingReason2Other { get; set; }
 
-        [StringLength(50)]
         public string LeavingReason3 { get; set; }
 
-        [StringLength(500)]
         public string LeavingReason3Other { get; set; }
 
         public bool? OwnHouse { get; set; }
 
-        [StringLength(50)]
         public string WhereWillLive { get; set; }
 
         public int? RentPayForAccom { get; set; }
@@ -76,17 +60,14 @@ namespace BSAF.Models.ViewModels
 
         public bool? AllowForJob { get; set; }
 
-        [StringLength(50)]
         public string CountryOfExile { get; set; }
 
-        [StringLength(50)]
         public string CountryOfExilOther { get; set; }
 
         public int BeforReturnProvince { get; set; }
 
         public int? BeforReturnDistrictID { get; set; }
 
-        [StringLength(500)]
         public string BeforReturnRemarks { get; set; }
 
         public bool? FamilyMemStayedBehind { get; set; }
@@ -105,37 +86,26 @@ namespace BSAF.Models.ViewModels
 
         public DateTime? TransportationDate { get; set; }
 
-        [StringLength(500)]
         public string TransportationInfo { get; set; }
 
-        [StringLength(10)]
         public string TransportAccompaniedBy { get; set; }
 
-        [StringLength(50)]
         public string TransportAccomByNo { get; set; }
 
-        [StringLength(50)]
         public string TopNeed1 { get; set; }
 
-        [StringLength(500)]
         public string TopNeed1Other { get; set; }
 
-        [StringLength(50)]
         public string TopNeed2 { get; set; }
 
-        [StringLength(500)]
         public string TopNeed2Other { get; set; }
 
-        [StringLength(50)]
         public string TopNeed3 { get; set; }
 
-        [StringLength(500)]
         public string TopNeed3Other { get; set; }
 
-        [StringLength(50)]
         public string IntendToDo { get; set; }
 
-        [StringLength(500)]
         public string IntendToDoOther { get; set; }
 
         public string ProfessionInHostCountry { get; set; }
@@ -145,10 +115,8 @@ namespace BSAF.Models.ViewModels
 
         public bool? HoHCanReadWrite { get; set; }
 
-        [StringLength(50)]
         public string HoHEducationLevel { get; set; }
 
-        [StringLength(300)]
         public string HoHEducationLevelOther { get; set; }
 
         public int? NumHHHaveTaskira { get; set; }
@@ -179,7 +147,7 @@ namespace BSAF.Models.ViewModels
 
         public List<PostArrivalNeed> PostArrivalNeeds { get; set; }
 
-        public List<Transport> Transports { get; set; }
+        public List<Transportation> Transports { get; set; }
 
         public List<LivelihoodEmpNeed> LivelihoodEmpNeeds { get; set; }
 
@@ -199,7 +167,7 @@ namespace BSAF.Models.ViewModels
             MoneySources = new List<MoneySource>();
             BroughtItems = new List<BroughtItem>();
             PostArrivalNeeds = new List<PostArrivalNeed>();
-            Transports = new List<Transport>();
+            Transports = new List<Transportation>();
             LivelihoodEmpNeeds = new List<LivelihoodEmpNeed>();
             NeedTools = new List<NeedTool>();
             MainConcerns = new List<MainConcern>();

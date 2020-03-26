@@ -14,7 +14,6 @@ namespace BSAF.Models.Tables
         public int BeneficiaryID { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string SchoolTypeCode { get; set; }
     }
 }

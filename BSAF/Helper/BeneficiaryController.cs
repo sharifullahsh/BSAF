@@ -11,7 +11,7 @@ namespace BSAF.Helper
 {
     public class BeneficiaryController
     {
-        public static void Add(BeneficiaryVM model)
+        public static bool Add(BeneficiaryVM model)
         {
             dbContext db = new dbContext();
        
@@ -96,7 +96,9 @@ namespace BSAF.Helper
                         var member = new Individual {
                             BeneficiaryID = beneficiary.BeneficiaryID,
                             Name = ind.Name,
+                            DrName = ind.DrName,
                             FName = ind.FName,
+                            DrFName = ind.DrFName,
                             GenderCode = ind.GenderCode,
                             MaritalStatusCode = ind.MaritalStatusCode,
                             Age = ind.Age,
@@ -176,7 +178,6 @@ namespace BSAF.Helper
                         var panObj = new PostArrivalNeed {
                             BeneficiaryID = beneficiary.BeneficiaryID,
                             NeedCode = p.NeedCode,
-                            Requested = p.Requested,
                             Provided = p.Provided,
                             ProvidedDate = p.ProvidedDate,
                             Comment = p.Comment
@@ -185,12 +186,12 @@ namespace BSAF.Helper
                     }
                     foreach(var tran  in model.Transports)
                     {
-                        var tranObj = new Transport {
+                        var tranObj = new Transportation {
                             BeneficiaryID = beneficiary.BeneficiaryID,
                             TypedCode = tran.TypedCode,
                             Other = tran.Other
                         };
-                        db.Transports.Add(tranObj);
+                        db.Transportations.Add(tranObj);
                     }
                     foreach(var li in model.LivelihoodEmpNeeds)
                     {
@@ -228,11 +229,12 @@ namespace BSAF.Helper
                     db.SaveChanges();
                     
                     trans.Commit();
+                    return true;
                 }
                 catch (Exception e)
                 {
                     trans.Rollback();
-                    
+                    return false;
                 }
             }
 

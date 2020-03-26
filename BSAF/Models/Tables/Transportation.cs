@@ -6,16 +6,14 @@ namespace BSAF.Models.Tables
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Transport
+    public partial class Transportation
     {
         public int ID { get; set; }
 
         public int? BeneficiaryID { get; set; }
 
-        [StringLength(50)]
         public string TypedCode { get; set; }
 
-        [StringLength(500)]
         public string Other { get; set; }
     }
 }

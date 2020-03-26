@@ -60,7 +60,7 @@ namespace BSAF
 
         private void searchBeneficiaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchBeneficiary sForm = new SearchBeneficiary
+            SearchBeneficiaryForm sForm = new SearchBeneficiaryForm
             {
                 MdiParent = this
             };

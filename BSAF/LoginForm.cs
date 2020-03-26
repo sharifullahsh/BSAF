@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BSAF.Helper;
 
 namespace BSAF
 {
@@ -19,6 +20,11 @@ namespace BSAF
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(this.txtUserName.Text) && !string.IsNullOrWhiteSpace(this.txtPassword.Text))
+            {
+               var isAuth =  UserController.Login(this.txtUserName.Text,this.txtPassword.Text);
+            }
+            //this.UserController.
             MDIParent mdi = new MDIParent();
             mdi.Show();
             mdi.Owner = this;
@@ -32,7 +38,7 @@ namespace BSAF
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
         }
     }
 }

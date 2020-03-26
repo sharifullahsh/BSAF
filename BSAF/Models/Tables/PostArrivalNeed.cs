@@ -12,16 +12,12 @@ namespace BSAF.Models.Tables
 
         public int? BeneficiaryID { get; set; }
 
-        [StringLength(50)]
         public string NeedCode { get; set; }
-
-        public bool? Requested { get; set; }
 
         public bool? Provided { get; set; }
 
         public DateTime? ProvidedDate { get; set; }
 
-        [StringLength(500)]
         public string Comment { get; set; }
     }
 }

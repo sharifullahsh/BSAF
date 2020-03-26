@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cmbOriginProvince = new System.Windows.Forms.ComboBox();
@@ -35,6 +36,7 @@
             this.txtOriginVillage = new System.Windows.Forms.TextBox();
             this.lblOriginVillage = new System.Windows.Forms.Label();
             this.cmbOriginDistrict = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblOriginDistrict = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -42,7 +44,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cmbReturnDistrict = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbReturnProvince = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -81,10 +82,11 @@
             this.txtMName = new System.Windows.Forms.TextBox();
             this.lblMName = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lnkAddFamilyMember = new System.Windows.Forms.LinkLabel();
             this.lvFamilyMember = new System.Windows.Forms.ListView();
             this.BName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DrName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BFatherName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DrFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MaritalStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -92,6 +94,8 @@
             this.IDNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Relationship = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ContactNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ctxFamailyMemeberMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmDeleteMemeber = new System.Windows.Forms.ToolStripMenuItem();
             this.tabBeneficiary = new System.Windows.Forms.TabControl();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.pnlReturnStatus = new System.Windows.Forms.Panel();
@@ -102,10 +106,14 @@
             this.rdoBeneficiaryTypeFamily = new System.Windows.Forms.RadioButton();
             this.rdoBeneficiaryTypeIndividual = new System.Windows.Forms.RadioButton();
             this.pnlFamilyMember = new System.Windows.Forms.Panel();
+            this.label105 = new System.Windows.Forms.Label();
+            this.txtDrFName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDrName = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.btnProfileNext = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gbOriginAndReturnPlace = new System.Windows.Forms.GroupBox();
             this.tabProtection1 = new System.Windows.Forms.TabPage();
             this.lbl3LeavingResonOther = new System.Windows.Forms.Label();
             this.lbl2LeavingResonOther = new System.Windows.Forms.Label();
@@ -152,13 +160,13 @@
             this.DP = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tabProtection2 = new System.Windows.Forms.TabPage();
-            this.cmbWhereWillYouLive = new System.Windows.Forms.ComboBox();
-            this.btnProtection2Previous = new System.Windows.Forms.Button();
-            this.btnProtection2Next = new System.Windows.Forms.Button();
-            this.pnlAllowFamilyToWork = new System.Windows.Forms.Panel();
-            this.rdoAllowFamilyForJobNo = new System.Windows.Forms.RadioButton();
-            this.rdoAllowFamilyForJobYes = new System.Windows.Forms.RadioButton();
-            this.label37 = new System.Windows.Forms.Label();
+            this.pnlRentHouseInfo = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.pnlQes11RentPay = new System.Windows.Forms.Panel();
+            this.rdoAFG = new System.Windows.Forms.RadioButton();
+            this.rdoUSD = new System.Windows.Forms.RadioButton();
+            this.txtRentPayForAccom = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.gbFindMonyForRentHouse = new System.Windows.Forms.GroupBox();
             this.MFRPOther = new System.Windows.Forms.CheckBox();
             this.txtMFRPOther = new System.Windows.Forms.TextBox();
@@ -166,12 +174,13 @@
             this.BFM = new System.Windows.Forms.CheckBox();
             this.BFFF = new System.Windows.Forms.CheckBox();
             this.Savings = new System.Windows.Forms.CheckBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.pnlQes11RentPay = new System.Windows.Forms.Panel();
-            this.rdoAFG = new System.Windows.Forms.RadioButton();
-            this.rdoUSD = new System.Windows.Forms.RadioButton();
-            this.txtRentPayForAccom = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
+            this.cmbWhereWillYouLive = new System.Windows.Forms.ComboBox();
+            this.btnProtection2Previous = new System.Windows.Forms.Button();
+            this.btnProtection2Next = new System.Windows.Forms.Button();
+            this.pnlAllowFamilyToWork = new System.Windows.Forms.Panel();
+            this.rdoAllowFamilyForJobNo = new System.Windows.Forms.RadioButton();
+            this.rdoAllowFamilyForJobYes = new System.Windows.Forms.RadioButton();
+            this.label37 = new System.Windows.Forms.Label();
             this.pnlOwnHouse = new System.Windows.Forms.Panel();
             this.rdoOwnHouseNo = new System.Windows.Forms.RadioButton();
             this.rdoOwnHouseYes = new System.Windows.Forms.RadioButton();
@@ -235,12 +244,18 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tabHostCountrySection = new System.Windows.Forms.TabPage();
+            this.pnlFamilyMemStayYesHowMany = new System.Windows.Forms.Panel();
+            this.txtFMemberStyedBehind = new System.Windows.Forms.TextBox();
+            this.lblIfFMemStyedHowMany = new System.Windows.Forms.Label();
             this.pnlWouldReturnToHost = new System.Windows.Forms.Panel();
             this.rdoWantReturnYes = new System.Windows.Forms.RadioButton();
             this.rdoWantReturnNo = new System.Windows.Forms.RadioButton();
             this.btnHostCountryPrevious = new System.Windows.Forms.Button();
+            this.rdoFMemberStayedBehindNo = new System.Windows.Forms.RadioButton();
             this.btnHostCountryNext = new System.Windows.Forms.Button();
+            this.rdoFMemberStayedBehindYes = new System.Windows.Forms.RadioButton();
             this.label49 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.pnlItemBrought = new System.Windows.Forms.Panel();
             this.ITEMSOther = new System.Windows.Forms.CheckBox();
             this.Nothing = new System.Windows.Forms.CheckBox();
@@ -259,7 +274,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.pnlHoustCountryPlace = new System.Windows.Forms.Panel();
+            this.pnlHousetCountryPlace = new System.Windows.Forms.Panel();
             this.gbIranPakAddress = new System.Windows.Forms.GroupBox();
             this.cmbBeforReturnProvince = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -267,11 +282,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.txtBeforReturnRemarks = new System.Windows.Forms.TextBox();
             this.cmbBeforReturnDistrict = new System.Windows.Forms.ComboBox();
-            this.rdoFMemberStayedBehindNo = new System.Windows.Forms.RadioButton();
-            this.rdoFMemberStayedBehindYes = new System.Windows.Forms.RadioButton();
-            this.lblIfFMemStyedHowMany = new System.Windows.Forms.Label();
-            this.txtFMemberStyedBehind = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.pnlHostCountry = new System.Windows.Forms.Panel();
             this.COther = new System.Windows.Forms.RadioButton();
@@ -286,84 +296,70 @@
             this.txtSCC = new System.Windows.Forms.TextBox();
             this.dateSCD = new System.Windows.Forms.DateTimePicker();
             this.chkSCP = new System.Windows.Forms.CheckBox();
-            this.chkSCR = new System.Windows.Forms.CheckBox();
             this.label68 = new System.Windows.Forms.Label();
             this.PC = new System.Windows.Forms.GroupBox();
             this.txtPCC = new System.Windows.Forms.TextBox();
             this.datePCD = new System.Windows.Forms.DateTimePicker();
             this.chkPCP = new System.Windows.Forms.CheckBox();
-            this.chkPCR = new System.Windows.Forms.CheckBox();
             this.label66 = new System.Windows.Forms.Label();
             this.gbPostArrivalNeeds = new System.Windows.Forms.GroupBox();
             this.PR = new System.Windows.Forms.GroupBox();
             this.txtPRC = new System.Windows.Forms.TextBox();
             this.datePRD = new System.Windows.Forms.DateTimePicker();
             this.chkPRP = new System.Windows.Forms.CheckBox();
-            this.chkPRR = new System.Windows.Forms.CheckBox();
             this.label69 = new System.Windows.Forms.Label();
             this.NFI = new System.Windows.Forms.GroupBox();
             this.txtNFIC = new System.Windows.Forms.TextBox();
             this.dateNFID = new System.Windows.Forms.DateTimePicker();
             this.chkNFIP = new System.Windows.Forms.CheckBox();
-            this.chkNFIR = new System.Windows.Forms.CheckBox();
             this.label67 = new System.Windows.Forms.Label();
             this.WFP = new System.Windows.Forms.GroupBox();
             this.txtWFPC = new System.Windows.Forms.TextBox();
             this.dateWFPD = new System.Windows.Forms.DateTimePicker();
             this.chkWFPP = new System.Windows.Forms.CheckBox();
-            this.chkWFPR = new System.Windows.Forms.CheckBox();
             this.label65 = new System.Windows.Forms.Label();
             this.DDR = new System.Windows.Forms.GroupBox();
             this.txtDDRC = new System.Windows.Forms.TextBox();
             this.dateDDRD = new System.Windows.Forms.DateTimePicker();
             this.chkDDRP = new System.Windows.Forms.CheckBox();
-            this.chkDDRR = new System.Windows.Forms.CheckBox();
             this.label64 = new System.Windows.Forms.Label();
             this.Escort = new System.Windows.Forms.GroupBox();
             this.txtEC = new System.Windows.Forms.TextBox();
             this.dateED = new System.Windows.Forms.DateTimePicker();
             this.chkEP = new System.Windows.Forms.CheckBox();
-            this.chkER = new System.Windows.Forms.CheckBox();
             this.label63 = new System.Windows.Forms.Label();
             this.EMC = new System.Windows.Forms.GroupBox();
             this.txtEMCC = new System.Windows.Forms.TextBox();
             this.dateEMCD = new System.Windows.Forms.DateTimePicker();
             this.chkEMCP = new System.Windows.Forms.CheckBox();
-            this.chkEMCR = new System.Windows.Forms.CheckBox();
             this.label62 = new System.Windows.Forms.Label();
             this.AITC = new System.Windows.Forms.GroupBox();
             this.txtAITCC = new System.Windows.Forms.TextBox();
             this.dateAITCD = new System.Windows.Forms.DateTimePicker();
             this.chkAITCP = new System.Windows.Forms.CheckBox();
-            this.chkAITCR = new System.Windows.Forms.CheckBox();
             this.label61 = new System.Windows.Forms.Label();
             this.STA = new System.Windows.Forms.GroupBox();
             this.txtSTAC = new System.Windows.Forms.TextBox();
             this.dateSTAD = new System.Windows.Forms.DateTimePicker();
             this.chkSTAP = new System.Windows.Forms.CheckBox();
-            this.chkSTAR = new System.Windows.Forms.CheckBox();
             this.label60 = new System.Windows.Forms.Label();
             this.FT = new System.Windows.Forms.GroupBox();
             this.txtFTC = new System.Windows.Forms.TextBox();
             this.dateFTD = new System.Windows.Forms.DateTimePicker();
             this.chkFTP = new System.Windows.Forms.CheckBox();
-            this.chkFTR = new System.Windows.Forms.CheckBox();
             this.label59 = new System.Windows.Forms.Label();
             this.CFT = new System.Windows.Forms.GroupBox();
             this.txtCFTC = new System.Windows.Forms.TextBox();
             this.dateCFTD = new System.Windows.Forms.DateTimePicker();
             this.chkCFTP = new System.Windows.Forms.CheckBox();
-            this.chkCFTR = new System.Windows.Forms.CheckBox();
             this.label53 = new System.Windows.Forms.Label();
             this.FLT = new System.Windows.Forms.GroupBox();
             this.txtFLTC = new System.Windows.Forms.TextBox();
             this.dateFLTD = new System.Windows.Forms.DateTimePicker();
             this.chkFLTP = new System.Windows.Forms.CheckBox();
-            this.chkFLTR = new System.Windows.Forms.CheckBox();
             this.label52 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label58 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -371,7 +367,6 @@
             this.txtTBRCC = new System.Windows.Forms.TextBox();
             this.dateTBRCD = new System.Windows.Forms.DateTimePicker();
             this.chkTBRCP = new System.Windows.Forms.CheckBox();
-            this.chkTBRCR = new System.Windows.Forms.CheckBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tabAssistanceNeeds2 = new System.Windows.Forms.TabPage();
@@ -451,6 +446,8 @@
             this.btnReintegNeed1Previous = new System.Windows.Forms.Button();
             this.btnReintegNeed1NeedNext = new System.Windows.Forms.Button();
             this.gbMainConcerns = new System.Windows.Forms.GroupBox();
+            this.txtWAY3MCOther = new System.Windows.Forms.TextBox();
+            this.WAY3MCOther = new System.Windows.Forms.CheckBox();
             this.LackOfEdu = new System.Windows.Forms.CheckBox();
             this.LackOfLand = new System.Windows.Forms.CheckBox();
             this.LackOfLiv = new System.Windows.Forms.CheckBox();
@@ -510,23 +507,24 @@
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
-            this.pnlFamilyMemStayYesHowMany = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.ctxFamailyMemeberMenu.SuspendLayout();
             this.tabBeneficiary.SuspendLayout();
             this.tabProfile.SuspendLayout();
             this.pnlReturnStatus.SuspendLayout();
             this.pnlBeneficiaryInfo.SuspendLayout();
             this.pnlFamilyMember.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.gbOriginAndReturnPlace.SuspendLayout();
             this.tabProtection1.SuspendLayout();
             this.gbReturnReason.SuspendLayout();
             this.gbPSN.SuspendLayout();
             this.tabProtection2.SuspendLayout();
-            this.pnlAllowFamilyToWork.SuspendLayout();
-            this.gbFindMonyForRentHouse.SuspendLayout();
+            this.pnlRentHouseInfo.SuspendLayout();
             this.pnlQes11RentPay.SuspendLayout();
+            this.gbFindMonyForRentHouse.SuspendLayout();
+            this.pnlAllowFamilyToWork.SuspendLayout();
             this.pnlOwnHouse.SuspendLayout();
             this.gbRankImportant.SuspendLayout();
             this.ATJ.SuspendLayout();
@@ -539,10 +537,11 @@
             this.SEG.SuspendLayout();
             this.EFC.SuspendLayout();
             this.tabHostCountrySection.SuspendLayout();
+            this.pnlFamilyMemStayYesHowMany.SuspendLayout();
             this.pnlWouldReturnToHost.SuspendLayout();
             this.pnlItemBrought.SuspendLayout();
             this.pnlLengthOfStayInHostC.SuspendLayout();
-            this.pnlHoustCountryPlace.SuspendLayout();
+            this.pnlHousetCountryPlace.SuspendLayout();
             this.gbIranPakAddress.SuspendLayout();
             this.pnlHostCountry.SuspendLayout();
             this.tabAssistanceNeeds1.SuspendLayout();
@@ -587,7 +586,6 @@
             this.groupBox26.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.tabImageAndCard.SuspendLayout();
-            this.pnlFamilyMemStayYesHowMany.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -596,7 +594,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.Window;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label11.Location = new System.Drawing.Point(14, 391);
+            this.label11.Location = new System.Drawing.Point(14, 400);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(432, 18);
             this.label11.TabIndex = 36;
@@ -629,13 +627,14 @@
             this.groupBox2.Controls.Add(this.txtOriginVillage);
             this.groupBox2.Controls.Add(this.lblOriginVillage);
             this.groupBox2.Controls.Add(this.cmbOriginDistrict);
+            this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.lblOriginDistrict);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.cmbOriginProvince);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(8, 10);
+            this.groupBox2.Location = new System.Drawing.Point(2, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(423, 149);
+            this.groupBox2.Size = new System.Drawing.Size(429, 138);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             // 
@@ -666,6 +665,15 @@
             this.cmbOriginDistrict.Size = new System.Drawing.Size(173, 21);
             this.cmbOriginDistrict.TabIndex = 26;
             this.cmbOriginDistrict.SelectedIndexChanged += new System.EventHandler(this.cmbOriginDistrict_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Location = new System.Drawing.Point(239, 105);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(984, 156);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
             // 
             // lblOriginDistrict
             // 
@@ -698,7 +706,6 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.cmbReturnDistrict);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.cmbReturnProvince);
             this.groupBox3.Controls.Add(this.label17);
@@ -746,15 +753,6 @@
             this.label15.Size = new System.Drawing.Size(54, 18);
             this.label15.TabIndex = 40;
             this.label15.Text = "District";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Location = new System.Drawing.Point(269, 109);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(984, 156);
-            this.groupBox1.TabIndex = 47;
-            this.groupBox1.TabStop = false;
             // 
             // label16
             // 
@@ -851,7 +849,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label6.Location = new System.Drawing.Point(6, 73);
+            this.label6.Location = new System.Drawing.Point(6, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 18);
             this.label6.TabIndex = 9;
@@ -863,7 +861,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Location = new System.Drawing.Point(3, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 18);
             this.label1.TabIndex = 8;
@@ -875,7 +873,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(640, 37);
+            this.label4.Location = new System.Drawing.Point(640, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 18);
             this.label4.TabIndex = 13;
@@ -885,7 +883,7 @@
             // 
             this.screeningDate.CustomFormat = "MMM dd yyyy";
             this.screeningDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.screeningDate.Location = new System.Drawing.Point(145, 35);
+            this.screeningDate.Location = new System.Drawing.Point(145, 43);
             this.screeningDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
             this.screeningDate.Name = "screeningDate";
             this.screeningDate.Size = new System.Drawing.Size(162, 20);
@@ -897,7 +895,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(344, 35);
+            this.label3.Location = new System.Drawing.Point(344, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 18);
             this.label3.TabIndex = 11;
@@ -906,7 +904,7 @@
             // cmbProvinceBCP
             // 
             this.cmbProvinceBCP.FormattingEnabled = true;
-            this.cmbProvinceBCP.Location = new System.Drawing.Point(424, 37);
+            this.cmbProvinceBCP.Location = new System.Drawing.Point(424, 45);
             this.cmbProvinceBCP.Name = "cmbProvinceBCP";
             this.cmbProvinceBCP.Size = new System.Drawing.Size(178, 21);
             this.cmbProvinceBCP.TabIndex = 2;
@@ -914,7 +912,7 @@
             // cmbBorderPoint
             // 
             this.cmbBorderPoint.FormattingEnabled = true;
-            this.cmbBorderPoint.Location = new System.Drawing.Point(754, 36);
+            this.cmbBorderPoint.Location = new System.Drawing.Point(754, 44);
             this.cmbBorderPoint.Name = "cmbBorderPoint";
             this.cmbBorderPoint.Size = new System.Drawing.Size(178, 21);
             this.cmbBorderPoint.TabIndex = 3;
@@ -925,7 +923,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 18);
             this.label2.TabIndex = 10;
@@ -937,7 +935,7 @@
             this.lblBeneficiaryType.BackColor = System.Drawing.SystemColors.Window;
             this.lblBeneficiaryType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeneficiaryType.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblBeneficiaryType.Location = new System.Drawing.Point(23, 106);
+            this.lblBeneficiaryType.Location = new System.Drawing.Point(23, 100);
             this.lblBeneficiaryType.Name = "lblBeneficiaryType";
             this.lblBeneficiaryType.Size = new System.Drawing.Size(120, 18);
             this.lblBeneficiaryType.TabIndex = 38;
@@ -949,7 +947,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Window;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(22, 143);
+            this.label8.Location = new System.Drawing.Point(22, 136);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 18);
             this.label8.TabIndex = 41;
@@ -957,7 +955,7 @@
             // 
             // txtTotalIndividual
             // 
-            this.txtTotalIndividual.Location = new System.Drawing.Point(218, 175);
+            this.txtTotalIndividual.Location = new System.Drawing.Point(218, 180);
             this.txtTotalIndividual.Name = "txtTotalIndividual";
             this.txtTotalIndividual.Size = new System.Drawing.Size(162, 20);
             this.txtTotalIndividual.TabIndex = 9;
@@ -969,7 +967,7 @@
             this.label9.BackColor = System.Drawing.SystemColors.Window;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label9.Location = new System.Drawing.Point(24, 174);
+            this.label9.Location = new System.Drawing.Point(24, 179);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(191, 18);
             this.label9.TabIndex = 45;
@@ -977,7 +975,7 @@
             // 
             // btnAddMemeber
             // 
-            this.btnAddMemeber.Location = new System.Drawing.Point(900, 25);
+            this.btnAddMemeber.Location = new System.Drawing.Point(900, 54);
             this.btnAddMemeber.Name = "btnAddMemeber";
             this.btnAddMemeber.Size = new System.Drawing.Size(77, 23);
             this.btnAddMemeber.TabIndex = 19;
@@ -988,7 +986,7 @@
             // lblContactNumber
             // 
             this.lblContactNumber.AutoSize = true;
-            this.lblContactNumber.Location = new System.Drawing.Point(803, 12);
+            this.lblContactNumber.Location = new System.Drawing.Point(885, 12);
             this.lblContactNumber.Name = "lblContactNumber";
             this.lblContactNumber.Size = new System.Drawing.Size(82, 13);
             this.lblContactNumber.TabIndex = 31;
@@ -998,14 +996,14 @@
             // cmbRelationship
             // 
             this.cmbRelationship.FormattingEnabled = true;
-            this.cmbRelationship.Location = new System.Drawing.Point(693, 29);
+            this.cmbRelationship.Location = new System.Drawing.Point(754, 27);
             this.cmbRelationship.Name = "cmbRelationship";
-            this.cmbRelationship.Size = new System.Drawing.Size(102, 21);
+            this.cmbRelationship.Size = new System.Drawing.Size(126, 21);
             this.cmbRelationship.TabIndex = 17;
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(801, 28);
+            this.txtContactNumber.Location = new System.Drawing.Point(886, 28);
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(93, 20);
             this.txtContactNumber.TabIndex = 18;
@@ -1013,7 +1011,7 @@
             // lblRelationship
             // 
             this.lblRelationship.AutoSize = true;
-            this.lblRelationship.Location = new System.Drawing.Point(692, 12);
+            this.lblRelationship.Location = new System.Drawing.Point(751, 13);
             this.lblRelationship.Name = "lblRelationship";
             this.lblRelationship.Size = new System.Drawing.Size(65, 13);
             this.lblRelationship.TabIndex = 29;
@@ -1023,14 +1021,15 @@
             // cmbGender
             // 
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(257, 30);
+            this.cmbGender.Location = new System.Drawing.Point(265, 30);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(67, 21);
             this.cmbGender.TabIndex = 12;
             // 
             // txtIDNo
             // 
-            this.txtIDNo.Location = new System.Drawing.Point(601, 29);
+            this.txtIDNo.Enabled = false;
+            this.txtIDNo.Location = new System.Drawing.Point(659, 28);
             this.txtIDNo.Name = "txtIDNo";
             this.txtIDNo.Size = new System.Drawing.Size(86, 20);
             this.txtIDNo.TabIndex = 16;
@@ -1038,7 +1037,7 @@
             // lblIDNo
             // 
             this.lblIDNo.AutoSize = true;
-            this.lblIDNo.Location = new System.Drawing.Point(602, 14);
+            this.lblIDNo.Location = new System.Drawing.Point(662, 13);
             this.lblIDNo.Name = "lblIDNo";
             this.lblIDNo.Size = new System.Drawing.Size(35, 13);
             this.lblIDNo.TabIndex = 26;
@@ -1048,15 +1047,16 @@
             // cmbIDType
             // 
             this.cmbIDType.FormattingEnabled = true;
-            this.cmbIDType.Location = new System.Drawing.Point(479, 29);
+            this.cmbIDType.Location = new System.Drawing.Point(531, 29);
             this.cmbIDType.Name = "cmbIDType";
             this.cmbIDType.Size = new System.Drawing.Size(118, 21);
             this.cmbIDType.TabIndex = 15;
+            this.cmbIDType.SelectionChangeCommitted += new System.EventHandler(this.cmbIDType_SelectionChangeCommitted);
             // 
             // lblIDType
             // 
             this.lblIDType.AutoSize = true;
-            this.lblIDType.Location = new System.Drawing.Point(480, 15);
+            this.lblIDType.Location = new System.Drawing.Point(532, 15);
             this.lblIDType.Name = "lblIDType";
             this.lblIDType.Size = new System.Drawing.Size(45, 13);
             this.lblIDType.TabIndex = 24;
@@ -1066,15 +1066,15 @@
             // cmbMaritalStatus
             // 
             this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(331, 30);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(338, 30);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(86, 21);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(123, 21);
             this.cmbMaritalStatus.TabIndex = 13;
             // 
             // lblMaritalStatus
             // 
             this.lblMaritalStatus.AutoSize = true;
-            this.lblMaritalStatus.Location = new System.Drawing.Point(330, 14);
+            this.lblMaritalStatus.Location = new System.Drawing.Point(339, 14);
             this.lblMaritalStatus.Name = "lblMaritalStatus";
             this.lblMaritalStatus.Size = new System.Drawing.Size(71, 13);
             this.lblMaritalStatus.TabIndex = 22;
@@ -1084,7 +1084,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(257, 16);
+            this.lblGender.Location = new System.Drawing.Point(266, 16);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(42, 13);
             this.lblGender.TabIndex = 21;
@@ -1093,15 +1093,15 @@
             // 
             // txtMFName
             // 
-            this.txtMFName.Location = new System.Drawing.Point(133, 32);
+            this.txtMFName.Location = new System.Drawing.Point(135, 32);
             this.txtMFName.Name = "txtMFName";
-            this.txtMFName.Size = new System.Drawing.Size(118, 20);
+            this.txtMFName.Size = new System.Drawing.Size(121, 20);
             this.txtMFName.TabIndex = 11;
             // 
             // lblMFatherName
             // 
             this.lblMFatherName.AutoSize = true;
-            this.lblMFatherName.Location = new System.Drawing.Point(131, 14);
+            this.lblMFatherName.Location = new System.Drawing.Point(137, 14);
             this.lblMFatherName.Name = "lblMFatherName";
             this.lblMFatherName.Size = new System.Drawing.Size(75, 13);
             this.lblMFatherName.TabIndex = 19;
@@ -1112,13 +1112,13 @@
             // 
             this.txtMName.Location = new System.Drawing.Point(2, 33);
             this.txtMName.Name = "txtMName";
-            this.txtMName.Size = new System.Drawing.Size(126, 20);
+            this.txtMName.Size = new System.Drawing.Size(125, 20);
             this.txtMName.TabIndex = 10;
             // 
             // lblMName
             // 
             this.lblMName.AutoSize = true;
-            this.lblMName.Location = new System.Drawing.Point(2, 18);
+            this.lblMName.Location = new System.Drawing.Point(4, 18);
             this.lblMName.Name = "lblMName";
             this.lblMName.Size = new System.Drawing.Size(35, 13);
             this.lblMName.TabIndex = 17;
@@ -1135,22 +1135,13 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Family member";
             // 
-            // lnkAddFamilyMember
-            // 
-            this.lnkAddFamilyMember.AutoSize = true;
-            this.lnkAddFamilyMember.Location = new System.Drawing.Point(881, 51);
-            this.lnkAddFamilyMember.Name = "lnkAddFamilyMember";
-            this.lnkAddFamilyMember.Size = new System.Drawing.Size(95, 13);
-            this.lnkAddFamilyMember.TabIndex = 1;
-            this.lnkAddFamilyMember.TabStop = true;
-            this.lnkAddFamilyMember.Text = "Add family member";
-            this.lnkAddFamilyMember.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddFamilyMember_LinkClicked_1);
-            // 
             // lvFamilyMember
             // 
             this.lvFamilyMember.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.BName,
+            this.DrName,
             this.BFatherName,
+            this.DrFName,
             this.Gender,
             this.MaritalStatus,
             this.Age,
@@ -1158,12 +1149,13 @@
             this.IDNo,
             this.Relationship,
             this.ContactNumber});
+            this.lvFamilyMember.ContextMenuStrip = this.ctxFamailyMemeberMenu;
             this.lvFamilyMember.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvFamilyMember.FullRowSelect = true;
             this.lvFamilyMember.GridLines = true;
-            this.lvFamilyMember.Location = new System.Drawing.Point(0, 67);
+            this.lvFamilyMember.Location = new System.Drawing.Point(0, 78);
             this.lvFamilyMember.Name = "lvFamilyMember";
-            this.lvFamilyMember.Size = new System.Drawing.Size(984, 120);
+            this.lvFamilyMember.Size = new System.Drawing.Size(984, 109);
             this.lvFamilyMember.TabIndex = 0;
             this.lvFamilyMember.UseCompatibleStateImageBehavior = false;
             this.lvFamilyMember.View = System.Windows.Forms.View.Details;
@@ -1171,32 +1163,42 @@
             // BName
             // 
             this.BName.Text = "Name";
-            this.BName.Width = 117;
+            this.BName.Width = 96;
+            // 
+            // DrName
+            // 
+            this.DrName.Text = "نام/نوم";
+            this.DrName.Width = 71;
             // 
             // BFatherName
             // 
             this.BFatherName.Text = "Father\'s Name";
-            this.BFatherName.Width = 121;
+            this.BFatherName.Width = 105;
+            // 
+            // DrFName
+            // 
+            this.DrFName.Text = "ولد/پلار نوم";
+            this.DrFName.Width = 70;
             // 
             // Gender
             // 
             this.Gender.Text = "Gender";
-            this.Gender.Width = 61;
+            this.Gender.Width = 53;
             // 
             // MaritalStatus
             // 
             this.MaritalStatus.Text = "Marital Status";
-            this.MaritalStatus.Width = 108;
+            this.MaritalStatus.Width = 96;
             // 
             // Age
             // 
             this.Age.Text = "Age";
-            this.Age.Width = 48;
+            this.Age.Width = 40;
             // 
             // IDType
             // 
             this.IDType.Text = "ID Type";
-            this.IDType.Width = 104;
+            this.IDType.Width = 99;
             // 
             // IDNo
             // 
@@ -1211,7 +1213,21 @@
             // ContactNumber
             // 
             this.ContactNumber.Text = "ContactNumber";
-            this.ContactNumber.Width = 147;
+            this.ContactNumber.Width = 100;
+            // 
+            // ctxFamailyMemeberMenu
+            // 
+            this.ctxFamailyMemeberMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDeleteMemeber});
+            this.ctxFamailyMemeberMenu.Name = "ctxFamailyMemeberMenu";
+            this.ctxFamailyMemeberMenu.Size = new System.Drawing.Size(108, 26);
+            // 
+            // tsmDeleteMemeber
+            // 
+            this.tsmDeleteMemeber.Name = "tsmDeleteMemeber";
+            this.tsmDeleteMemeber.Size = new System.Drawing.Size(107, 22);
+            this.tsmDeleteMemeber.Text = "Delete";
+            this.tsmDeleteMemeber.Click += new System.EventHandler(this.tsmDeleteMemeber_Click);
             // 
             // tabBeneficiary
             // 
@@ -1237,7 +1253,7 @@
             this.tabProfile.Controls.Add(this.pnlBeneficiaryInfo);
             this.tabProfile.Controls.Add(this.pnlFamilyMember);
             this.tabProfile.Controls.Add(this.btnProfileNext);
-            this.tabProfile.Controls.Add(this.groupBox5);
+            this.tabProfile.Controls.Add(this.gbOriginAndReturnPlace);
             this.tabProfile.Controls.Add(this.label1);
             this.tabProfile.Controls.Add(this.txtTotalIndividual);
             this.tabProfile.Controls.Add(this.label9);
@@ -1264,7 +1280,7 @@
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDeported);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDocClaimant);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusSpontaneous);
-            this.pnlReturnStatus.Location = new System.Drawing.Point(130, 136);
+            this.pnlReturnStatus.Location = new System.Drawing.Point(130, 129);
             this.pnlReturnStatus.Name = "pnlReturnStatus";
             this.pnlReturnStatus.Size = new System.Drawing.Size(486, 34);
             this.pnlReturnStatus.TabIndex = 53;
@@ -1306,9 +1322,9 @@
             // 
             this.pnlBeneficiaryInfo.Controls.Add(this.rdoBeneficiaryTypeFamily);
             this.pnlBeneficiaryInfo.Controls.Add(this.rdoBeneficiaryTypeIndividual);
-            this.pnlBeneficiaryInfo.Location = new System.Drawing.Point(146, 97);
+            this.pnlBeneficiaryInfo.Location = new System.Drawing.Point(146, 92);
             this.pnlBeneficiaryInfo.Name = "pnlBeneficiaryInfo";
-            this.pnlBeneficiaryInfo.Size = new System.Drawing.Size(200, 35);
+            this.pnlBeneficiaryInfo.Size = new System.Drawing.Size(200, 33);
             this.pnlBeneficiaryInfo.TabIndex = 52;
             // 
             // rdoBeneficiaryTypeFamily
@@ -1321,6 +1337,7 @@
             this.rdoBeneficiaryTypeFamily.TabStop = true;
             this.rdoBeneficiaryTypeFamily.Text = "Family";
             this.rdoBeneficiaryTypeFamily.UseVisualStyleBackColor = true;
+            this.rdoBeneficiaryTypeFamily.CheckedChanged += new System.EventHandler(this.rdoBeneficiaryType_CheckedChanged);
             // 
             // rdoBeneficiaryTypeIndividual
             // 
@@ -1332,14 +1349,18 @@
             this.rdoBeneficiaryTypeIndividual.TabStop = true;
             this.rdoBeneficiaryTypeIndividual.Text = "Individual";
             this.rdoBeneficiaryTypeIndividual.UseVisualStyleBackColor = true;
+            this.rdoBeneficiaryTypeIndividual.CheckedChanged += new System.EventHandler(this.rdoBeneficiaryType_CheckedChanged);
             // 
             // pnlFamilyMember
             // 
             this.pnlFamilyMember.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlFamilyMember.Controls.Add(this.label105);
+            this.pnlFamilyMember.Controls.Add(this.txtDrFName);
+            this.pnlFamilyMember.Controls.Add(this.label7);
+            this.pnlFamilyMember.Controls.Add(this.txtDrName);
             this.pnlFamilyMember.Controls.Add(this.label99);
             this.pnlFamilyMember.Controls.Add(this.txtAge);
             this.pnlFamilyMember.Controls.Add(this.lvFamilyMember);
-            this.pnlFamilyMember.Controls.Add(this.lnkAddFamilyMember);
             this.pnlFamilyMember.Controls.Add(this.btnAddMemeber);
             this.pnlFamilyMember.Controls.Add(this.label10);
             this.pnlFamilyMember.Controls.Add(this.lblContactNumber);
@@ -1358,15 +1379,49 @@
             this.pnlFamilyMember.Controls.Add(this.cmbMaritalStatus);
             this.pnlFamilyMember.Controls.Add(this.cmbIDType);
             this.pnlFamilyMember.Controls.Add(this.lblIDType);
-            this.pnlFamilyMember.Location = new System.Drawing.Point(9, 202);
+            this.pnlFamilyMember.Location = new System.Drawing.Point(9, 205);
             this.pnlFamilyMember.Name = "pnlFamilyMember";
             this.pnlFamilyMember.Size = new System.Drawing.Size(984, 187);
             this.pnlFamilyMember.TabIndex = 51;
             // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(219, 60);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(60, 13);
+            this.label105.TabIndex = 38;
+            this.label105.Text = "ولد/پلار نوم";
+            this.label105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDrFName
+            // 
+            this.txtDrFName.Location = new System.Drawing.Point(284, 56);
+            this.txtDrFName.Name = "txtDrFName";
+            this.txtDrFName.Size = new System.Drawing.Size(153, 20);
+            this.txtDrFName.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "نام/نوم";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDrName
+            // 
+            this.txtDrName.Location = new System.Drawing.Point(52, 56);
+            this.txtDrName.Name = "txtDrName";
+            this.txtDrName.Size = new System.Drawing.Size(145, 20);
+            this.txtDrName.TabIndex = 35;
+            // 
             // label99
             // 
             this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(420, 12);
+            this.label99.Location = new System.Drawing.Point(467, 12);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(26, 13);
             this.label99.TabIndex = 34;
@@ -1375,7 +1430,7 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(422, 30);
+            this.txtAge.Location = new System.Drawing.Point(469, 30);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(52, 20);
             this.txtAge.TabIndex = 14;
@@ -1384,7 +1439,7 @@
             // btnProfileNext
             // 
             this.btnProfileNext.BackColor = System.Drawing.Color.Silver;
-            this.btnProfileNext.Location = new System.Drawing.Point(904, 571);
+            this.btnProfileNext.Location = new System.Drawing.Point(904, 575);
             this.btnProfileNext.Name = "btnProfileNext";
             this.btnProfileNext.Size = new System.Drawing.Size(75, 23);
             this.btnProfileNext.TabIndex = 32;
@@ -1392,16 +1447,16 @@
             this.btnProfileNext.UseVisualStyleBackColor = false;
             this.btnProfileNext.Click += new System.EventHandler(this.btnProfileNext_Click);
             // 
-            // groupBox5
+            // gbOriginAndReturnPlace
             // 
-            this.groupBox5.Controls.Add(this.groupBox2);
-            this.groupBox5.Controls.Add(this.groupBox3);
-            this.groupBox5.Controls.Add(this.groupBox4);
-            this.groupBox5.Location = new System.Drawing.Point(25, 410);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(959, 148);
-            this.groupBox5.TabIndex = 48;
-            this.groupBox5.TabStop = false;
+            this.gbOriginAndReturnPlace.Controls.Add(this.groupBox2);
+            this.gbOriginAndReturnPlace.Controls.Add(this.groupBox3);
+            this.gbOriginAndReturnPlace.Controls.Add(this.groupBox4);
+            this.gbOriginAndReturnPlace.Location = new System.Drawing.Point(25, 420);
+            this.gbOriginAndReturnPlace.Name = "gbOriginAndReturnPlace";
+            this.gbOriginAndReturnPlace.Size = new System.Drawing.Size(959, 148);
+            this.gbOriginAndReturnPlace.TabIndex = 48;
+            this.gbOriginAndReturnPlace.TabStop = false;
             // 
             // tabProtection1
             // 
@@ -1905,15 +1960,12 @@
             // 
             // tabProtection2
             // 
+            this.tabProtection2.Controls.Add(this.pnlRentHouseInfo);
             this.tabProtection2.Controls.Add(this.cmbWhereWillYouLive);
             this.tabProtection2.Controls.Add(this.btnProtection2Previous);
             this.tabProtection2.Controls.Add(this.btnProtection2Next);
             this.tabProtection2.Controls.Add(this.pnlAllowFamilyToWork);
             this.tabProtection2.Controls.Add(this.label37);
-            this.tabProtection2.Controls.Add(this.gbFindMonyForRentHouse);
-            this.tabProtection2.Controls.Add(this.label36);
-            this.tabProtection2.Controls.Add(this.pnlQes11RentPay);
-            this.tabProtection2.Controls.Add(this.label35);
             this.tabProtection2.Controls.Add(this.pnlOwnHouse);
             this.tabProtection2.Controls.Add(this.label34);
             this.tabProtection2.Controls.Add(this.label33);
@@ -1927,77 +1979,77 @@
             this.tabProtection2.Text = "Protection 2";
             this.tabProtection2.UseVisualStyleBackColor = true;
             // 
-            // cmbWhereWillYouLive
+            // pnlRentHouseInfo
             // 
-            this.cmbWhereWillYouLive.FormattingEnabled = true;
-            this.cmbWhereWillYouLive.Location = new System.Drawing.Point(238, 376);
-            this.cmbWhereWillYouLive.Name = "cmbWhereWillYouLive";
-            this.cmbWhereWillYouLive.Size = new System.Drawing.Size(203, 21);
-            this.cmbWhereWillYouLive.TabIndex = 47;
+            this.pnlRentHouseInfo.Controls.Add(this.label35);
+            this.pnlRentHouseInfo.Controls.Add(this.pnlQes11RentPay);
+            this.pnlRentHouseInfo.Controls.Add(this.label36);
+            this.pnlRentHouseInfo.Controls.Add(this.gbFindMonyForRentHouse);
+            this.pnlRentHouseInfo.Enabled = false;
+            this.pnlRentHouseInfo.Location = new System.Drawing.Point(11, 413);
+            this.pnlRentHouseInfo.Name = "pnlRentHouseInfo";
+            this.pnlRentHouseInfo.Size = new System.Drawing.Size(982, 108);
+            this.pnlRentHouseInfo.TabIndex = 62;
             // 
-            // btnProtection2Previous
+            // label35
             // 
-            this.btnProtection2Previous.BackColor = System.Drawing.Color.Silver;
-            this.btnProtection2Previous.Location = new System.Drawing.Point(816, 595);
-            this.btnProtection2Previous.Name = "btnProtection2Previous";
-            this.btnProtection2Previous.Size = new System.Drawing.Size(75, 23);
-            this.btnProtection2Previous.TabIndex = 60;
-            this.btnProtection2Previous.Text = "Previous";
-            this.btnProtection2Previous.UseVisualStyleBackColor = false;
-            this.btnProtection2Previous.Click += new System.EventHandler(this.btnProtection2Previous_Click);
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(3, 10);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(444, 18);
+            this.label35.TabIndex = 26;
+            this.label35.Text = "11. How much rent would you pay per month for accommodation?";
             // 
-            // btnProtection2Next
+            // pnlQes11RentPay
             // 
-            this.btnProtection2Next.BackColor = System.Drawing.Color.Silver;
-            this.btnProtection2Next.Location = new System.Drawing.Point(902, 595);
-            this.btnProtection2Next.Name = "btnProtection2Next";
-            this.btnProtection2Next.Size = new System.Drawing.Size(75, 23);
-            this.btnProtection2Next.TabIndex = 61;
-            this.btnProtection2Next.Text = "Next";
-            this.btnProtection2Next.UseVisualStyleBackColor = false;
-            this.btnProtection2Next.Click += new System.EventHandler(this.btnProtection2Next_Click);
+            this.pnlQes11RentPay.Controls.Add(this.rdoAFG);
+            this.pnlQes11RentPay.Controls.Add(this.rdoUSD);
+            this.pnlQes11RentPay.Controls.Add(this.txtRentPayForAccom);
+            this.pnlQes11RentPay.Location = new System.Drawing.Point(466, 5);
+            this.pnlQes11RentPay.Name = "pnlQes11RentPay";
+            this.pnlQes11RentPay.Size = new System.Drawing.Size(511, 29);
+            this.pnlQes11RentPay.TabIndex = 27;
             // 
-            // pnlAllowFamilyToWork
+            // rdoAFG
             // 
-            this.pnlAllowFamilyToWork.Controls.Add(this.rdoAllowFamilyForJobNo);
-            this.pnlAllowFamilyToWork.Controls.Add(this.rdoAllowFamilyForJobYes);
-            this.pnlAllowFamilyToWork.Location = new System.Drawing.Point(820, 521);
-            this.pnlAllowFamilyToWork.Name = "pnlAllowFamilyToWork";
-            this.pnlAllowFamilyToWork.Size = new System.Drawing.Size(157, 23);
-            this.pnlAllowFamilyToWork.TabIndex = 31;
+            this.rdoAFG.AutoSize = true;
+            this.rdoAFG.Location = new System.Drawing.Point(305, 7);
+            this.rdoAFG.Name = "rdoAFG";
+            this.rdoAFG.Size = new System.Drawing.Size(46, 17);
+            this.rdoAFG.TabIndex = 66;
+            this.rdoAFG.TabStop = true;
+            this.rdoAFG.Text = "AFG";
+            this.rdoAFG.UseVisualStyleBackColor = true;
             // 
-            // rdoAllowFamilyForJobNo
+            // rdoUSD
             // 
-            this.rdoAllowFamilyForJobNo.AutoSize = true;
-            this.rdoAllowFamilyForJobNo.Location = new System.Drawing.Point(66, 4);
-            this.rdoAllowFamilyForJobNo.Name = "rdoAllowFamilyForJobNo";
-            this.rdoAllowFamilyForJobNo.Size = new System.Drawing.Size(39, 17);
-            this.rdoAllowFamilyForJobNo.TabIndex = 67;
-            this.rdoAllowFamilyForJobNo.TabStop = true;
-            this.rdoAllowFamilyForJobNo.Text = "No";
-            this.rdoAllowFamilyForJobNo.UseVisualStyleBackColor = true;
+            this.rdoUSD.AutoSize = true;
+            this.rdoUSD.Location = new System.Drawing.Point(235, 8);
+            this.rdoUSD.Name = "rdoUSD";
+            this.rdoUSD.Size = new System.Drawing.Size(48, 17);
+            this.rdoUSD.TabIndex = 65;
+            this.rdoUSD.TabStop = true;
+            this.rdoUSD.Text = "USD";
+            this.rdoUSD.UseVisualStyleBackColor = true;
             // 
-            // rdoAllowFamilyForJobYes
+            // txtRentPayForAccom
             // 
-            this.rdoAllowFamilyForJobYes.AutoSize = true;
-            this.rdoAllowFamilyForJobYes.Location = new System.Drawing.Point(6, 4);
-            this.rdoAllowFamilyForJobYes.Name = "rdoAllowFamilyForJobYes";
-            this.rdoAllowFamilyForJobYes.Size = new System.Drawing.Size(43, 17);
-            this.rdoAllowFamilyForJobYes.TabIndex = 50;
-            this.rdoAllowFamilyForJobYes.TabStop = true;
-            this.rdoAllowFamilyForJobYes.Text = "Yes";
-            this.rdoAllowFamilyForJobYes.UseVisualStyleBackColor = true;
+            this.txtRentPayForAccom.Location = new System.Drawing.Point(3, 6);
+            this.txtRentPayForAccom.Name = "txtRentPayForAccom";
+            this.txtRentPayForAccom.Size = new System.Drawing.Size(223, 20);
+            this.txtRentPayForAccom.TabIndex = 48;
+            this.txtRentPayForAccom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
-            // label37
+            // label36
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(4, 521);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(799, 18);
-            this.label37.TabIndex = 30;
-            this.label37.Text = "13. If there was a job opening for your wife, sister, daughter or adult female fa" +
-    "mily member, would you allow her to work? ";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(4, 46);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(372, 18);
+            this.label36.TabIndex = 28;
+            this.label36.Text = "12. How would you find the money for rental payments?";
             // 
             // gbFindMonyForRentHouse
             // 
@@ -2007,9 +2059,9 @@
             this.gbFindMonyForRentHouse.Controls.Add(this.BFM);
             this.gbFindMonyForRentHouse.Controls.Add(this.BFFF);
             this.gbFindMonyForRentHouse.Controls.Add(this.Savings);
-            this.gbFindMonyForRentHouse.Location = new System.Drawing.Point(402, 448);
+            this.gbFindMonyForRentHouse.Location = new System.Drawing.Point(385, 43);
             this.gbFindMonyForRentHouse.Name = "gbFindMonyForRentHouse";
-            this.gbFindMonyForRentHouse.Size = new System.Drawing.Size(574, 60);
+            this.gbFindMonyForRentHouse.Size = new System.Drawing.Size(592, 60);
             this.gbFindMonyForRentHouse.TabIndex = 29;
             this.gbFindMonyForRentHouse.TabStop = false;
             // 
@@ -2071,71 +2123,84 @@
             this.Savings.Text = "Savings";
             this.Savings.UseVisualStyleBackColor = true;
             // 
-            // label36
+            // cmbWhereWillYouLive
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(5, 451);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(372, 18);
-            this.label36.TabIndex = 28;
-            this.label36.Text = "12. How would you find the money for rental payments?";
+            this.cmbWhereWillYouLive.FormattingEnabled = true;
+            this.cmbWhereWillYouLive.Location = new System.Drawing.Point(238, 384);
+            this.cmbWhereWillYouLive.Name = "cmbWhereWillYouLive";
+            this.cmbWhereWillYouLive.Size = new System.Drawing.Size(203, 21);
+            this.cmbWhereWillYouLive.TabIndex = 47;
+            this.cmbWhereWillYouLive.SelectionChangeCommitted += new System.EventHandler(this.cmbWhereWillYouLive_SelectionChangeCommitted);
             // 
-            // pnlQes11RentPay
+            // btnProtection2Previous
             // 
-            this.pnlQes11RentPay.Controls.Add(this.rdoAFG);
-            this.pnlQes11RentPay.Controls.Add(this.rdoUSD);
-            this.pnlQes11RentPay.Controls.Add(this.txtRentPayForAccom);
-            this.pnlQes11RentPay.Location = new System.Drawing.Point(495, 410);
-            this.pnlQes11RentPay.Name = "pnlQes11RentPay";
-            this.pnlQes11RentPay.Size = new System.Drawing.Size(481, 29);
-            this.pnlQes11RentPay.TabIndex = 27;
+            this.btnProtection2Previous.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection2Previous.Location = new System.Drawing.Point(816, 578);
+            this.btnProtection2Previous.Name = "btnProtection2Previous";
+            this.btnProtection2Previous.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection2Previous.TabIndex = 60;
+            this.btnProtection2Previous.Text = "Previous";
+            this.btnProtection2Previous.UseVisualStyleBackColor = false;
+            this.btnProtection2Previous.Click += new System.EventHandler(this.btnProtection2Previous_Click);
             // 
-            // rdoAFG
+            // btnProtection2Next
             // 
-            this.rdoAFG.AutoSize = true;
-            this.rdoAFG.Location = new System.Drawing.Point(305, 7);
-            this.rdoAFG.Name = "rdoAFG";
-            this.rdoAFG.Size = new System.Drawing.Size(46, 17);
-            this.rdoAFG.TabIndex = 66;
-            this.rdoAFG.TabStop = true;
-            this.rdoAFG.Text = "AFG";
-            this.rdoAFG.UseVisualStyleBackColor = true;
+            this.btnProtection2Next.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection2Next.Location = new System.Drawing.Point(902, 578);
+            this.btnProtection2Next.Name = "btnProtection2Next";
+            this.btnProtection2Next.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection2Next.TabIndex = 61;
+            this.btnProtection2Next.Text = "Next";
+            this.btnProtection2Next.UseVisualStyleBackColor = false;
+            this.btnProtection2Next.Click += new System.EventHandler(this.btnProtection2Next_Click);
             // 
-            // rdoUSD
+            // pnlAllowFamilyToWork
             // 
-            this.rdoUSD.AutoSize = true;
-            this.rdoUSD.Location = new System.Drawing.Point(235, 8);
-            this.rdoUSD.Name = "rdoUSD";
-            this.rdoUSD.Size = new System.Drawing.Size(48, 17);
-            this.rdoUSD.TabIndex = 65;
-            this.rdoUSD.TabStop = true;
-            this.rdoUSD.Text = "USD";
-            this.rdoUSD.UseVisualStyleBackColor = true;
+            this.pnlAllowFamilyToWork.Controls.Add(this.rdoAllowFamilyForJobNo);
+            this.pnlAllowFamilyToWork.Controls.Add(this.rdoAllowFamilyForJobYes);
+            this.pnlAllowFamilyToWork.Location = new System.Drawing.Point(820, 531);
+            this.pnlAllowFamilyToWork.Name = "pnlAllowFamilyToWork";
+            this.pnlAllowFamilyToWork.Size = new System.Drawing.Size(157, 23);
+            this.pnlAllowFamilyToWork.TabIndex = 31;
             // 
-            // txtRentPayForAccom
+            // rdoAllowFamilyForJobNo
             // 
-            this.txtRentPayForAccom.Location = new System.Drawing.Point(3, 6);
-            this.txtRentPayForAccom.Name = "txtRentPayForAccom";
-            this.txtRentPayForAccom.Size = new System.Drawing.Size(223, 20);
-            this.txtRentPayForAccom.TabIndex = 48;
-            this.txtRentPayForAccom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
+            this.rdoAllowFamilyForJobNo.AutoSize = true;
+            this.rdoAllowFamilyForJobNo.Location = new System.Drawing.Point(66, 4);
+            this.rdoAllowFamilyForJobNo.Name = "rdoAllowFamilyForJobNo";
+            this.rdoAllowFamilyForJobNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoAllowFamilyForJobNo.TabIndex = 67;
+            this.rdoAllowFamilyForJobNo.TabStop = true;
+            this.rdoAllowFamilyForJobNo.Text = "No";
+            this.rdoAllowFamilyForJobNo.UseVisualStyleBackColor = true;
             // 
-            // label35
+            // rdoAllowFamilyForJobYes
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(4, 415);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(444, 18);
-            this.label35.TabIndex = 26;
-            this.label35.Text = "11. How much rent would you pay per month for accommodation?";
+            this.rdoAllowFamilyForJobYes.AutoSize = true;
+            this.rdoAllowFamilyForJobYes.Location = new System.Drawing.Point(6, 4);
+            this.rdoAllowFamilyForJobYes.Name = "rdoAllowFamilyForJobYes";
+            this.rdoAllowFamilyForJobYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoAllowFamilyForJobYes.TabIndex = 50;
+            this.rdoAllowFamilyForJobYes.TabStop = true;
+            this.rdoAllowFamilyForJobYes.Text = "Yes";
+            this.rdoAllowFamilyForJobYes.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(4, 531);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(799, 18);
+            this.label37.TabIndex = 30;
+            this.label37.Text = "13. If there was a job opening for your wife, sister, daughter or adult female fa" +
+    "mily member, would you allow her to work? ";
             // 
             // pnlOwnHouse
             // 
             this.pnlOwnHouse.Controls.Add(this.rdoOwnHouseNo);
             this.pnlOwnHouse.Controls.Add(this.rdoOwnHouseYes);
-            this.pnlOwnHouse.Location = new System.Drawing.Point(307, 342);
+            this.pnlOwnHouse.Location = new System.Drawing.Point(307, 351);
             this.pnlOwnHouse.Name = "pnlOwnHouse";
             this.pnlOwnHouse.Size = new System.Drawing.Size(200, 24);
             this.pnlOwnHouse.TabIndex = 24;
@@ -2166,7 +2231,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(5, 379);
+            this.label34.Location = new System.Drawing.Point(5, 387);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(161, 18);
             this.label34.TabIndex = 19;
@@ -2176,7 +2241,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(5, 344);
+            this.label33.Location = new System.Drawing.Point(5, 353);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(293, 18);
             this.label33.TabIndex = 16;
@@ -2193,7 +2258,7 @@
             this.gbRankImportant.Controls.Add(this.S);
             this.gbRankImportant.Controls.Add(this.SEG);
             this.gbRankImportant.Controls.Add(this.EFC);
-            this.gbRankImportant.Location = new System.Drawing.Point(18, 24);
+            this.gbRankImportant.Location = new System.Drawing.Point(18, 30);
             this.gbRankImportant.Name = "gbRankImportant";
             this.gbRankImportant.Size = new System.Drawing.Size(978, 312);
             this.gbRankImportant.TabIndex = 15;
@@ -2814,7 +2879,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(5, 3);
+            this.label23.Location = new System.Drawing.Point(5, 9);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(693, 18);
             this.label23.TabIndex = 0;
@@ -2823,16 +2888,19 @@
             // 
             // tabHostCountrySection
             // 
+            this.tabHostCountrySection.Controls.Add(this.pnlFamilyMemStayYesHowMany);
             this.tabHostCountrySection.Controls.Add(this.pnlWouldReturnToHost);
             this.tabHostCountrySection.Controls.Add(this.btnHostCountryPrevious);
+            this.tabHostCountrySection.Controls.Add(this.rdoFMemberStayedBehindNo);
             this.tabHostCountrySection.Controls.Add(this.btnHostCountryNext);
+            this.tabHostCountrySection.Controls.Add(this.rdoFMemberStayedBehindYes);
             this.tabHostCountrySection.Controls.Add(this.label49);
+            this.tabHostCountrySection.Controls.Add(this.label43);
             this.tabHostCountrySection.Controls.Add(this.pnlItemBrought);
             this.tabHostCountrySection.Controls.Add(this.pnlLengthOfStayInHostC);
             this.tabHostCountrySection.Controls.Add(this.label48);
             this.tabHostCountrySection.Controls.Add(this.label44);
-            this.tabHostCountrySection.Controls.Add(this.pnlHoustCountryPlace);
-            this.tabHostCountrySection.Controls.Add(this.label39);
+            this.tabHostCountrySection.Controls.Add(this.pnlHousetCountryPlace);
             this.tabHostCountrySection.Controls.Add(this.pnlHostCountry);
             this.tabHostCountrySection.Controls.Add(this.label38);
             this.tabHostCountrySection.Location = new System.Drawing.Point(4, 22);
@@ -2843,11 +2911,39 @@
             this.tabHostCountrySection.Text = "Host Country";
             this.tabHostCountrySection.UseVisualStyleBackColor = true;
             // 
+            // pnlFamilyMemStayYesHowMany
+            // 
+            this.pnlFamilyMemStayYesHowMany.Controls.Add(this.txtFMemberStyedBehind);
+            this.pnlFamilyMemStayYesHowMany.Controls.Add(this.lblIfFMemStyedHowMany);
+            this.pnlFamilyMemStayYesHowMany.Location = new System.Drawing.Point(480, 162);
+            this.pnlFamilyMemStayYesHowMany.Name = "pnlFamilyMemStayYesHowMany";
+            this.pnlFamilyMemStayYesHowMany.Size = new System.Drawing.Size(507, 43);
+            this.pnlFamilyMemStayYesHowMany.TabIndex = 71;
+            this.pnlFamilyMemStayYesHowMany.Visible = false;
+            // 
+            // txtFMemberStyedBehind
+            // 
+            this.txtFMemberStyedBehind.Location = new System.Drawing.Point(138, 8);
+            this.txtFMemberStyedBehind.Name = "txtFMemberStyedBehind";
+            this.txtFMemberStyedBehind.Size = new System.Drawing.Size(317, 20);
+            this.txtFMemberStyedBehind.TabIndex = 70;
+            this.txtFMemberStyedBehind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
+            // 
+            // lblIfFMemStyedHowMany
+            // 
+            this.lblIfFMemStyedHowMany.AutoSize = true;
+            this.lblIfFMemStyedHowMany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIfFMemStyedHowMany.Location = new System.Drawing.Point(3, 9);
+            this.lblIfFMemStyedHowMany.Name = "lblIfFMemStyedHowMany";
+            this.lblIfFMemStyedHowMany.Size = new System.Drawing.Size(114, 18);
+            this.lblIfFMemStyedHowMany.TabIndex = 29;
+            this.lblIfFMemStyedHowMany.Text = "If yes how many";
+            // 
             // pnlWouldReturnToHost
             // 
             this.pnlWouldReturnToHost.Controls.Add(this.rdoWantReturnYes);
             this.pnlWouldReturnToHost.Controls.Add(this.rdoWantReturnNo);
-            this.pnlWouldReturnToHost.Location = new System.Drawing.Point(437, 347);
+            this.pnlWouldReturnToHost.Location = new System.Drawing.Point(437, 358);
             this.pnlWouldReturnToHost.Name = "pnlWouldReturnToHost";
             this.pnlWouldReturnToHost.Size = new System.Drawing.Size(244, 35);
             this.pnlWouldReturnToHost.TabIndex = 78;
@@ -2884,6 +2980,17 @@
             this.btnHostCountryPrevious.UseVisualStyleBackColor = true;
             this.btnHostCountryPrevious.Click += new System.EventHandler(this.btnHostCountryPrevious_Click);
             // 
+            // rdoFMemberStayedBehindNo
+            // 
+            this.rdoFMemberStayedBehindNo.AutoSize = true;
+            this.rdoFMemberStayedBehindNo.Location = new System.Drawing.Point(415, 169);
+            this.rdoFMemberStayedBehindNo.Name = "rdoFMemberStayedBehindNo";
+            this.rdoFMemberStayedBehindNo.Size = new System.Drawing.Size(39, 17);
+            this.rdoFMemberStayedBehindNo.TabIndex = 69;
+            this.rdoFMemberStayedBehindNo.Text = "No";
+            this.rdoFMemberStayedBehindNo.UseVisualStyleBackColor = true;
+            this.rdoFMemberStayedBehindNo.CheckedChanged += new System.EventHandler(this.rdoFMemberStayedBehindYes_CheckedChanged);
+            // 
             // btnHostCountryNext
             // 
             this.btnHostCountryNext.Location = new System.Drawing.Point(894, 445);
@@ -2894,15 +3001,36 @@
             this.btnHostCountryNext.UseVisualStyleBackColor = true;
             this.btnHostCountryNext.Click += new System.EventHandler(this.btnHostCountryNext_Click);
             // 
+            // rdoFMemberStayedBehindYes
+            // 
+            this.rdoFMemberStayedBehindYes.AutoSize = true;
+            this.rdoFMemberStayedBehindYes.Location = new System.Drawing.Point(365, 169);
+            this.rdoFMemberStayedBehindYes.Name = "rdoFMemberStayedBehindYes";
+            this.rdoFMemberStayedBehindYes.Size = new System.Drawing.Size(43, 17);
+            this.rdoFMemberStayedBehindYes.TabIndex = 68;
+            this.rdoFMemberStayedBehindYes.Text = "Yes";
+            this.rdoFMemberStayedBehindYes.UseVisualStyleBackColor = true;
+            this.rdoFMemberStayedBehindYes.CheckedChanged += new System.EventHandler(this.rdoFMemberStayedBehindYes_CheckedChanged);
+            // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(8, 356);
+            this.label49.Location = new System.Drawing.Point(8, 367);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(423, 18);
             this.label49.TabIndex = 37;
             this.label49.Text = "18. If you had the opportunity would you return to Pakistan/Iran?";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(25, 169);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(338, 18);
+            this.label43.TabIndex = 26;
+            this.label43.Text = "Do you have family members who stayed behind? ";
             // 
             // pnlItemBrought
             // 
@@ -2914,7 +3042,7 @@
             this.pnlItemBrought.Controls.Add(this.HItems);
             this.pnlItemBrought.Controls.Add(this.Clothes);
             this.pnlItemBrought.Controls.Add(this.txtITEMSOther);
-            this.pnlItemBrought.Location = new System.Drawing.Point(33, 291);
+            this.pnlItemBrought.Location = new System.Drawing.Point(33, 308);
             this.pnlItemBrought.Name = "pnlItemBrought";
             this.pnlItemBrought.Size = new System.Drawing.Size(936, 31);
             this.pnlItemBrought.TabIndex = 36;
@@ -3006,7 +3134,7 @@
             this.pnlLengthOfStayInHostC.Controls.Add(this.label45);
             this.pnlLengthOfStayInHostC.Controls.Add(this.txtYearsStay);
             this.pnlLengthOfStayInHostC.Controls.Add(this.label47);
-            this.pnlLengthOfStayInHostC.Location = new System.Drawing.Point(261, 211);
+            this.pnlLengthOfStayInHostC.Location = new System.Drawing.Point(261, 225);
             this.pnlLengthOfStayInHostC.Name = "pnlLengthOfStayInHostC";
             this.pnlLengthOfStayInHostC.Size = new System.Drawing.Size(708, 31);
             this.pnlLengthOfStayInHostC.TabIndex = 30;
@@ -3017,6 +3145,7 @@
             this.txtDaysStay.Name = "txtDaysStay";
             this.txtDaysStay.Size = new System.Drawing.Size(136, 20);
             this.txtDaysStay.TabIndex = 73;
+            this.txtDaysStay.Text = "0";
             this.txtDaysStay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // label46
@@ -3035,6 +3164,7 @@
             this.txtMonthsStay.Name = "txtMonthsStay";
             this.txtMonthsStay.Size = new System.Drawing.Size(125, 20);
             this.txtMonthsStay.TabIndex = 72;
+            this.txtMonthsStay.Text = "0";
             this.txtMonthsStay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // label45
@@ -3053,6 +3183,7 @@
             this.txtYearsStay.Name = "txtYearsStay";
             this.txtYearsStay.Size = new System.Drawing.Size(122, 20);
             this.txtYearsStay.TabIndex = 71;
+            this.txtYearsStay.Text = "0";
             this.txtYearsStay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // label47
@@ -3069,7 +3200,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(10, 261);
+            this.label48.Location = new System.Drawing.Point(10, 277);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(243, 18);
             this.label48.TabIndex = 29;
@@ -3079,23 +3210,20 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(9, 215);
+            this.label44.Location = new System.Drawing.Point(9, 229);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(225, 18);
             this.label44.TabIndex = 27;
             this.label44.Text = "16. Length of stay in host country\t";
             // 
-            // pnlHoustCountryPlace
+            // pnlHousetCountryPlace
             // 
-            this.pnlHoustCountryPlace.Controls.Add(this.pnlFamilyMemStayYesHowMany);
-            this.pnlHoustCountryPlace.Controls.Add(this.gbIranPakAddress);
-            this.pnlHoustCountryPlace.Controls.Add(this.rdoFMemberStayedBehindNo);
-            this.pnlHoustCountryPlace.Controls.Add(this.rdoFMemberStayedBehindYes);
-            this.pnlHoustCountryPlace.Controls.Add(this.label43);
-            this.pnlHoustCountryPlace.Location = new System.Drawing.Point(33, 84);
-            this.pnlHoustCountryPlace.Name = "pnlHoustCountryPlace";
-            this.pnlHoustCountryPlace.Size = new System.Drawing.Size(936, 109);
-            this.pnlHoustCountryPlace.TabIndex = 26;
+            this.pnlHousetCountryPlace.Controls.Add(this.gbIranPakAddress);
+            this.pnlHousetCountryPlace.Controls.Add(this.label39);
+            this.pnlHousetCountryPlace.Location = new System.Drawing.Point(5, 59);
+            this.pnlHousetCountryPlace.Name = "pnlHousetCountryPlace";
+            this.pnlHousetCountryPlace.Size = new System.Drawing.Size(982, 92);
+            this.pnlHousetCountryPlace.TabIndex = 26;
             // 
             // gbIranPakAddress
             // 
@@ -3105,7 +3233,7 @@
             this.gbIranPakAddress.Controls.Add(this.label42);
             this.gbIranPakAddress.Controls.Add(this.txtBeforReturnRemarks);
             this.gbIranPakAddress.Controls.Add(this.cmbBeforReturnDistrict);
-            this.gbIranPakAddress.Location = new System.Drawing.Point(3, 3);
+            this.gbIranPakAddress.Location = new System.Drawing.Point(3, 30);
             this.gbIranPakAddress.Name = "gbIranPakAddress";
             this.gbIranPakAddress.Size = new System.Drawing.Size(930, 46);
             this.gbIranPakAddress.TabIndex = 32;
@@ -3165,63 +3293,11 @@
             this.cmbBeforReturnDistrict.Size = new System.Drawing.Size(170, 21);
             this.cmbBeforReturnDistrict.TabIndex = 66;
             // 
-            // rdoFMemberStayedBehindNo
-            // 
-            this.rdoFMemberStayedBehindNo.AutoSize = true;
-            this.rdoFMemberStayedBehindNo.Location = new System.Drawing.Point(413, 61);
-            this.rdoFMemberStayedBehindNo.Name = "rdoFMemberStayedBehindNo";
-            this.rdoFMemberStayedBehindNo.Size = new System.Drawing.Size(39, 17);
-            this.rdoFMemberStayedBehindNo.TabIndex = 69;
-            this.rdoFMemberStayedBehindNo.TabStop = true;
-            this.rdoFMemberStayedBehindNo.Text = "No";
-            this.rdoFMemberStayedBehindNo.UseVisualStyleBackColor = true;
-            this.rdoFMemberStayedBehindNo.CheckedChanged += new System.EventHandler(this.rdoFMemberStayedBehindYes_CheckedChanged);
-            // 
-            // rdoFMemberStayedBehindYes
-            // 
-            this.rdoFMemberStayedBehindYes.AutoSize = true;
-            this.rdoFMemberStayedBehindYes.Location = new System.Drawing.Point(352, 61);
-            this.rdoFMemberStayedBehindYes.Name = "rdoFMemberStayedBehindYes";
-            this.rdoFMemberStayedBehindYes.Size = new System.Drawing.Size(43, 17);
-            this.rdoFMemberStayedBehindYes.TabIndex = 68;
-            this.rdoFMemberStayedBehindYes.TabStop = true;
-            this.rdoFMemberStayedBehindYes.Text = "Yes";
-            this.rdoFMemberStayedBehindYes.UseVisualStyleBackColor = true;
-            this.rdoFMemberStayedBehindYes.CheckedChanged += new System.EventHandler(this.rdoFMemberStayedBehindYes_CheckedChanged);
-            // 
-            // lblIfFMemStyedHowMany
-            // 
-            this.lblIfFMemStyedHowMany.AutoSize = true;
-            this.lblIfFMemStyedHowMany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIfFMemStyedHowMany.Location = new System.Drawing.Point(3, 7);
-            this.lblIfFMemStyedHowMany.Name = "lblIfFMemStyedHowMany";
-            this.lblIfFMemStyedHowMany.Size = new System.Drawing.Size(114, 18);
-            this.lblIfFMemStyedHowMany.TabIndex = 29;
-            this.lblIfFMemStyedHowMany.Text = "If yes how many";
-            // 
-            // txtFMemberStyedBehind
-            // 
-            this.txtFMemberStyedBehind.Location = new System.Drawing.Point(138, 6);
-            this.txtFMemberStyedBehind.Name = "txtFMemberStyedBehind";
-            this.txtFMemberStyedBehind.Size = new System.Drawing.Size(317, 20);
-            this.txtFMemberStyedBehind.TabIndex = 70;
-            this.txtFMemberStyedBehind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(8, 61);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(338, 18);
-            this.label43.TabIndex = 26;
-            this.label43.Text = "Do you have family members who stayed behind? ";
-            // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(6, 55);
+            this.label39.Location = new System.Drawing.Point(1, 3);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(324, 18);
             this.label39.TabIndex = 20;
@@ -3248,7 +3324,7 @@
             this.COther.TabStop = true;
             this.COther.Text = "Other";
             this.COther.UseVisualStyleBackColor = true;
-            this.COther.CheckedChanged += new System.EventHandler(this.rdoHostCountryOther_CheckedChanged);
+            this.COther.CheckedChanged += new System.EventHandler(this.HostCountry_CheckedChanged);
             // 
             // Pakistan
             // 
@@ -3260,7 +3336,7 @@
             this.Pakistan.TabStop = true;
             this.Pakistan.Text = "Pakistan";
             this.Pakistan.UseVisualStyleBackColor = true;
-            this.Pakistan.CheckedChanged += new System.EventHandler(this.rdoPAK_CheckedChanged);
+            this.Pakistan.CheckedChanged += new System.EventHandler(this.HostCountry_CheckedChanged);
             // 
             // Iran
             // 
@@ -3272,7 +3348,7 @@
             this.Iran.TabStop = true;
             this.Iran.Text = "Iran";
             this.Iran.UseVisualStyleBackColor = true;
-            this.Iran.CheckedChanged += new System.EventHandler(this.rdoIRN_CheckedChanged);
+            this.Iran.CheckedChanged += new System.EventHandler(this.HostCountry_CheckedChanged);
             // 
             // txtCOther
             // 
@@ -3333,7 +3409,6 @@
             this.SC.Controls.Add(this.txtSCC);
             this.SC.Controls.Add(this.dateSCD);
             this.SC.Controls.Add(this.chkSCP);
-            this.SC.Controls.Add(this.chkSCR);
             this.SC.Controls.Add(this.label68);
             this.SC.Location = new System.Drawing.Point(23, 512);
             this.SC.Name = "SC";
@@ -3343,16 +3418,16 @@
             // 
             // txtSCC
             // 
-            this.txtSCC.Location = new System.Drawing.Point(642, 11);
+            this.txtSCC.Location = new System.Drawing.Point(510, 11);
             this.txtSCC.Name = "txtSCC";
-            this.txtSCC.Size = new System.Drawing.Size(308, 20);
+            this.txtSCC.Size = new System.Drawing.Size(436, 20);
             this.txtSCC.TabIndex = 7;
             // 
             // dateSCD
             // 
             this.dateSCD.CustomFormat = "MMM dd yyyy";
             this.dateSCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateSCD.Location = new System.Drawing.Point(509, 11);
+            this.dateSCD.Location = new System.Drawing.Point(382, 11);
             this.dateSCD.Name = "dateSCD";
             this.dateSCD.Size = new System.Drawing.Size(109, 20);
             this.dateSCD.TabIndex = 6;
@@ -3360,20 +3435,11 @@
             // chkSCP
             // 
             this.chkSCP.AutoSize = true;
-            this.chkSCP.Location = new System.Drawing.Point(452, 15);
+            this.chkSCP.Location = new System.Drawing.Point(330, 15);
             this.chkSCP.Name = "chkSCP";
             this.chkSCP.Size = new System.Drawing.Size(15, 14);
             this.chkSCP.TabIndex = 4;
             this.chkSCP.UseVisualStyleBackColor = true;
-            // 
-            // chkSCR
-            // 
-            this.chkSCR.AutoSize = true;
-            this.chkSCR.Location = new System.Drawing.Point(363, 14);
-            this.chkSCR.Name = "chkSCR";
-            this.chkSCR.Size = new System.Drawing.Size(15, 14);
-            this.chkSCR.TabIndex = 3;
-            this.chkSCR.UseVisualStyleBackColor = true;
             // 
             // label68
             // 
@@ -3390,7 +3456,6 @@
             this.PC.Controls.Add(this.txtPCC);
             this.PC.Controls.Add(this.datePCD);
             this.PC.Controls.Add(this.chkPCP);
-            this.PC.Controls.Add(this.chkPCR);
             this.PC.Controls.Add(this.label66);
             this.PC.Location = new System.Drawing.Point(23, 436);
             this.PC.Name = "PC";
@@ -3400,16 +3465,16 @@
             // 
             // txtPCC
             // 
-            this.txtPCC.Location = new System.Drawing.Point(642, 11);
+            this.txtPCC.Location = new System.Drawing.Point(510, 12);
             this.txtPCC.Name = "txtPCC";
-            this.txtPCC.Size = new System.Drawing.Size(308, 20);
+            this.txtPCC.Size = new System.Drawing.Size(436, 20);
             this.txtPCC.TabIndex = 7;
             // 
             // datePCD
             // 
             this.datePCD.CustomFormat = "MMM dd yyyy";
             this.datePCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePCD.Location = new System.Drawing.Point(509, 11);
+            this.datePCD.Location = new System.Drawing.Point(382, 11);
             this.datePCD.Name = "datePCD";
             this.datePCD.Size = new System.Drawing.Size(109, 20);
             this.datePCD.TabIndex = 6;
@@ -3417,20 +3482,11 @@
             // chkPCP
             // 
             this.chkPCP.AutoSize = true;
-            this.chkPCP.Location = new System.Drawing.Point(452, 15);
+            this.chkPCP.Location = new System.Drawing.Point(330, 15);
             this.chkPCP.Name = "chkPCP";
             this.chkPCP.Size = new System.Drawing.Size(15, 14);
             this.chkPCP.TabIndex = 4;
             this.chkPCP.UseVisualStyleBackColor = true;
-            // 
-            // chkPCR
-            // 
-            this.chkPCR.AutoSize = true;
-            this.chkPCR.Location = new System.Drawing.Point(363, 14);
-            this.chkPCR.Name = "chkPCR";
-            this.chkPCR.Size = new System.Drawing.Size(15, 14);
-            this.chkPCR.TabIndex = 3;
-            this.chkPCR.UseVisualStyleBackColor = true;
             // 
             // label66
             // 
@@ -3468,7 +3524,6 @@
             this.PR.Controls.Add(this.txtPRC);
             this.PR.Controls.Add(this.datePRD);
             this.PR.Controls.Add(this.chkPRP);
-            this.PR.Controls.Add(this.chkPRR);
             this.PR.Controls.Add(this.label69);
             this.PR.Location = new System.Drawing.Point(2, 523);
             this.PR.Name = "PR";
@@ -3478,16 +3533,16 @@
             // 
             // txtPRC
             // 
-            this.txtPRC.Location = new System.Drawing.Point(642, 11);
+            this.txtPRC.Location = new System.Drawing.Point(507, 10);
             this.txtPRC.Name = "txtPRC";
-            this.txtPRC.Size = new System.Drawing.Size(308, 20);
+            this.txtPRC.Size = new System.Drawing.Size(436, 20);
             this.txtPRC.TabIndex = 7;
             // 
             // datePRD
             // 
             this.datePRD.CustomFormat = "MMM dd yyyy";
             this.datePRD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePRD.Location = new System.Drawing.Point(509, 11);
+            this.datePRD.Location = new System.Drawing.Point(382, 11);
             this.datePRD.Name = "datePRD";
             this.datePRD.Size = new System.Drawing.Size(109, 20);
             this.datePRD.TabIndex = 6;
@@ -3495,20 +3550,11 @@
             // chkPRP
             // 
             this.chkPRP.AutoSize = true;
-            this.chkPRP.Location = new System.Drawing.Point(450, 15);
+            this.chkPRP.Location = new System.Drawing.Point(328, 15);
             this.chkPRP.Name = "chkPRP";
             this.chkPRP.Size = new System.Drawing.Size(15, 14);
             this.chkPRP.TabIndex = 4;
             this.chkPRP.UseVisualStyleBackColor = true;
-            // 
-            // chkPRR
-            // 
-            this.chkPRR.AutoSize = true;
-            this.chkPRR.Location = new System.Drawing.Point(361, 14);
-            this.chkPRR.Name = "chkPRR";
-            this.chkPRR.Size = new System.Drawing.Size(15, 14);
-            this.chkPRR.TabIndex = 3;
-            this.chkPRR.UseVisualStyleBackColor = true;
             // 
             // label69
             // 
@@ -3525,7 +3571,6 @@
             this.NFI.Controls.Add(this.txtNFIC);
             this.NFI.Controls.Add(this.dateNFID);
             this.NFI.Controls.Add(this.chkNFIP);
-            this.NFI.Controls.Add(this.chkNFIR);
             this.NFI.Controls.Add(this.label67);
             this.NFI.Location = new System.Drawing.Point(1, 449);
             this.NFI.Name = "NFI";
@@ -3535,16 +3580,16 @@
             // 
             // txtNFIC
             // 
-            this.txtNFIC.Location = new System.Drawing.Point(642, 11);
+            this.txtNFIC.Location = new System.Drawing.Point(508, 12);
             this.txtNFIC.Name = "txtNFIC";
-            this.txtNFIC.Size = new System.Drawing.Size(308, 20);
+            this.txtNFIC.Size = new System.Drawing.Size(438, 20);
             this.txtNFIC.TabIndex = 7;
             // 
             // dateNFID
             // 
             this.dateNFID.CustomFormat = "MMM dd yyyy";
             this.dateNFID.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNFID.Location = new System.Drawing.Point(509, 11);
+            this.dateNFID.Location = new System.Drawing.Point(382, 11);
             this.dateNFID.Name = "dateNFID";
             this.dateNFID.Size = new System.Drawing.Size(109, 20);
             this.dateNFID.TabIndex = 6;
@@ -3552,20 +3597,11 @@
             // chkNFIP
             // 
             this.chkNFIP.AutoSize = true;
-            this.chkNFIP.Location = new System.Drawing.Point(452, 15);
+            this.chkNFIP.Location = new System.Drawing.Point(330, 15);
             this.chkNFIP.Name = "chkNFIP";
             this.chkNFIP.Size = new System.Drawing.Size(15, 14);
             this.chkNFIP.TabIndex = 4;
             this.chkNFIP.UseVisualStyleBackColor = true;
-            // 
-            // chkNFIR
-            // 
-            this.chkNFIR.AutoSize = true;
-            this.chkNFIR.Location = new System.Drawing.Point(363, 14);
-            this.chkNFIR.Name = "chkNFIR";
-            this.chkNFIR.Size = new System.Drawing.Size(15, 14);
-            this.chkNFIR.TabIndex = 3;
-            this.chkNFIR.UseVisualStyleBackColor = true;
             // 
             // label67
             // 
@@ -3582,7 +3618,6 @@
             this.WFP.Controls.Add(this.txtWFPC);
             this.WFP.Controls.Add(this.dateWFPD);
             this.WFP.Controls.Add(this.chkWFPP);
-            this.WFP.Controls.Add(this.chkWFPR);
             this.WFP.Controls.Add(this.label65);
             this.WFP.Location = new System.Drawing.Point(1, 373);
             this.WFP.Name = "WFP";
@@ -3592,16 +3627,16 @@
             // 
             // txtWFPC
             // 
-            this.txtWFPC.Location = new System.Drawing.Point(642, 11);
+            this.txtWFPC.Location = new System.Drawing.Point(508, 12);
             this.txtWFPC.Name = "txtWFPC";
-            this.txtWFPC.Size = new System.Drawing.Size(308, 20);
+            this.txtWFPC.Size = new System.Drawing.Size(436, 20);
             this.txtWFPC.TabIndex = 7;
             // 
             // dateWFPD
             // 
             this.dateWFPD.CustomFormat = "MMM dd yyyy";
             this.dateWFPD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateWFPD.Location = new System.Drawing.Point(509, 11);
+            this.dateWFPD.Location = new System.Drawing.Point(382, 11);
             this.dateWFPD.Name = "dateWFPD";
             this.dateWFPD.Size = new System.Drawing.Size(109, 20);
             this.dateWFPD.TabIndex = 6;
@@ -3609,20 +3644,11 @@
             // chkWFPP
             // 
             this.chkWFPP.AutoSize = true;
-            this.chkWFPP.Location = new System.Drawing.Point(452, 15);
+            this.chkWFPP.Location = new System.Drawing.Point(330, 15);
             this.chkWFPP.Name = "chkWFPP";
             this.chkWFPP.Size = new System.Drawing.Size(15, 14);
             this.chkWFPP.TabIndex = 4;
             this.chkWFPP.UseVisualStyleBackColor = true;
-            // 
-            // chkWFPR
-            // 
-            this.chkWFPR.AutoSize = true;
-            this.chkWFPR.Location = new System.Drawing.Point(363, 14);
-            this.chkWFPR.Name = "chkWFPR";
-            this.chkWFPR.Size = new System.Drawing.Size(15, 14);
-            this.chkWFPR.TabIndex = 3;
-            this.chkWFPR.UseVisualStyleBackColor = true;
             // 
             // label65
             // 
@@ -3639,7 +3665,6 @@
             this.DDR.Controls.Add(this.txtDDRC);
             this.DDR.Controls.Add(this.dateDDRD);
             this.DDR.Controls.Add(this.chkDDRP);
-            this.DDR.Controls.Add(this.chkDDRR);
             this.DDR.Controls.Add(this.label64);
             this.DDR.Location = new System.Drawing.Point(1, 336);
             this.DDR.Name = "DDR";
@@ -3649,16 +3674,16 @@
             // 
             // txtDDRC
             // 
-            this.txtDDRC.Location = new System.Drawing.Point(642, 11);
+            this.txtDDRC.Location = new System.Drawing.Point(508, 12);
             this.txtDDRC.Name = "txtDDRC";
-            this.txtDDRC.Size = new System.Drawing.Size(308, 20);
+            this.txtDDRC.Size = new System.Drawing.Size(436, 20);
             this.txtDDRC.TabIndex = 7;
             // 
             // dateDDRD
             // 
             this.dateDDRD.CustomFormat = "MMM dd yyyy";
             this.dateDDRD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDDRD.Location = new System.Drawing.Point(509, 11);
+            this.dateDDRD.Location = new System.Drawing.Point(382, 11);
             this.dateDDRD.Name = "dateDDRD";
             this.dateDDRD.Size = new System.Drawing.Size(109, 20);
             this.dateDDRD.TabIndex = 6;
@@ -3666,20 +3691,11 @@
             // chkDDRP
             // 
             this.chkDDRP.AutoSize = true;
-            this.chkDDRP.Location = new System.Drawing.Point(452, 15);
+            this.chkDDRP.Location = new System.Drawing.Point(330, 15);
             this.chkDDRP.Name = "chkDDRP";
             this.chkDDRP.Size = new System.Drawing.Size(15, 14);
             this.chkDDRP.TabIndex = 4;
             this.chkDDRP.UseVisualStyleBackColor = true;
-            // 
-            // chkDDRR
-            // 
-            this.chkDDRR.AutoSize = true;
-            this.chkDDRR.Location = new System.Drawing.Point(363, 14);
-            this.chkDDRR.Name = "chkDDRR";
-            this.chkDDRR.Size = new System.Drawing.Size(15, 14);
-            this.chkDDRR.TabIndex = 3;
-            this.chkDDRR.UseVisualStyleBackColor = true;
             // 
             // label64
             // 
@@ -3696,7 +3712,6 @@
             this.Escort.Controls.Add(this.txtEC);
             this.Escort.Controls.Add(this.dateED);
             this.Escort.Controls.Add(this.chkEP);
-            this.Escort.Controls.Add(this.chkER);
             this.Escort.Controls.Add(this.label63);
             this.Escort.Location = new System.Drawing.Point(0, 299);
             this.Escort.Name = "Escort";
@@ -3706,16 +3721,16 @@
             // 
             // txtEC
             // 
-            this.txtEC.Location = new System.Drawing.Point(642, 11);
+            this.txtEC.Location = new System.Drawing.Point(509, 11);
             this.txtEC.Name = "txtEC";
-            this.txtEC.Size = new System.Drawing.Size(308, 20);
+            this.txtEC.Size = new System.Drawing.Size(438, 20);
             this.txtEC.TabIndex = 7;
             // 
             // dateED
             // 
             this.dateED.CustomFormat = "MMM dd yyyy";
             this.dateED.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateED.Location = new System.Drawing.Point(509, 11);
+            this.dateED.Location = new System.Drawing.Point(382, 11);
             this.dateED.Name = "dateED";
             this.dateED.Size = new System.Drawing.Size(109, 20);
             this.dateED.TabIndex = 6;
@@ -3723,20 +3738,11 @@
             // chkEP
             // 
             this.chkEP.AutoSize = true;
-            this.chkEP.Location = new System.Drawing.Point(452, 15);
+            this.chkEP.Location = new System.Drawing.Point(330, 15);
             this.chkEP.Name = "chkEP";
             this.chkEP.Size = new System.Drawing.Size(15, 14);
             this.chkEP.TabIndex = 4;
             this.chkEP.UseVisualStyleBackColor = true;
-            // 
-            // chkER
-            // 
-            this.chkER.AutoSize = true;
-            this.chkER.Location = new System.Drawing.Point(363, 14);
-            this.chkER.Name = "chkER";
-            this.chkER.Size = new System.Drawing.Size(15, 14);
-            this.chkER.TabIndex = 3;
-            this.chkER.UseVisualStyleBackColor = true;
             // 
             // label63
             // 
@@ -3753,7 +3759,6 @@
             this.EMC.Controls.Add(this.txtEMCC);
             this.EMC.Controls.Add(this.dateEMCD);
             this.EMC.Controls.Add(this.chkEMCP);
-            this.EMC.Controls.Add(this.chkEMCR);
             this.EMC.Controls.Add(this.label62);
             this.EMC.Location = new System.Drawing.Point(1, 261);
             this.EMC.Name = "EMC";
@@ -3763,16 +3768,16 @@
             // 
             // txtEMCC
             // 
-            this.txtEMCC.Location = new System.Drawing.Point(642, 11);
+            this.txtEMCC.Location = new System.Drawing.Point(508, 14);
             this.txtEMCC.Name = "txtEMCC";
-            this.txtEMCC.Size = new System.Drawing.Size(308, 20);
+            this.txtEMCC.Size = new System.Drawing.Size(438, 20);
             this.txtEMCC.TabIndex = 7;
             // 
             // dateEMCD
             // 
             this.dateEMCD.CustomFormat = "MMM dd yyyy";
             this.dateEMCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateEMCD.Location = new System.Drawing.Point(509, 11);
+            this.dateEMCD.Location = new System.Drawing.Point(382, 11);
             this.dateEMCD.Name = "dateEMCD";
             this.dateEMCD.Size = new System.Drawing.Size(109, 20);
             this.dateEMCD.TabIndex = 6;
@@ -3780,20 +3785,11 @@
             // chkEMCP
             // 
             this.chkEMCP.AutoSize = true;
-            this.chkEMCP.Location = new System.Drawing.Point(452, 15);
+            this.chkEMCP.Location = new System.Drawing.Point(330, 15);
             this.chkEMCP.Name = "chkEMCP";
             this.chkEMCP.Size = new System.Drawing.Size(15, 14);
             this.chkEMCP.TabIndex = 4;
             this.chkEMCP.UseVisualStyleBackColor = true;
-            // 
-            // chkEMCR
-            // 
-            this.chkEMCR.AutoSize = true;
-            this.chkEMCR.Location = new System.Drawing.Point(363, 14);
-            this.chkEMCR.Name = "chkEMCR";
-            this.chkEMCR.Size = new System.Drawing.Size(15, 14);
-            this.chkEMCR.TabIndex = 3;
-            this.chkEMCR.UseVisualStyleBackColor = true;
             // 
             // label62
             // 
@@ -3810,7 +3806,6 @@
             this.AITC.Controls.Add(this.txtAITCC);
             this.AITC.Controls.Add(this.dateAITCD);
             this.AITC.Controls.Add(this.chkAITCP);
-            this.AITC.Controls.Add(this.chkAITCR);
             this.AITC.Controls.Add(this.label61);
             this.AITC.Location = new System.Drawing.Point(1, 223);
             this.AITC.Name = "AITC";
@@ -3820,16 +3815,16 @@
             // 
             // txtAITCC
             // 
-            this.txtAITCC.Location = new System.Drawing.Point(642, 11);
+            this.txtAITCC.Location = new System.Drawing.Point(508, 11);
             this.txtAITCC.Name = "txtAITCC";
-            this.txtAITCC.Size = new System.Drawing.Size(308, 20);
+            this.txtAITCC.Size = new System.Drawing.Size(436, 20);
             this.txtAITCC.TabIndex = 7;
             // 
             // dateAITCD
             // 
             this.dateAITCD.CustomFormat = "MMM dd yyyy";
             this.dateAITCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateAITCD.Location = new System.Drawing.Point(509, 11);
+            this.dateAITCD.Location = new System.Drawing.Point(382, 11);
             this.dateAITCD.Name = "dateAITCD";
             this.dateAITCD.Size = new System.Drawing.Size(109, 20);
             this.dateAITCD.TabIndex = 6;
@@ -3837,20 +3832,11 @@
             // chkAITCP
             // 
             this.chkAITCP.AutoSize = true;
-            this.chkAITCP.Location = new System.Drawing.Point(452, 15);
+            this.chkAITCP.Location = new System.Drawing.Point(330, 15);
             this.chkAITCP.Name = "chkAITCP";
             this.chkAITCP.Size = new System.Drawing.Size(15, 14);
             this.chkAITCP.TabIndex = 4;
             this.chkAITCP.UseVisualStyleBackColor = true;
-            // 
-            // chkAITCR
-            // 
-            this.chkAITCR.AutoSize = true;
-            this.chkAITCR.Location = new System.Drawing.Point(363, 14);
-            this.chkAITCR.Name = "chkAITCR";
-            this.chkAITCR.Size = new System.Drawing.Size(15, 14);
-            this.chkAITCR.TabIndex = 3;
-            this.chkAITCR.UseVisualStyleBackColor = true;
             // 
             // label61
             // 
@@ -3867,7 +3853,6 @@
             this.STA.Controls.Add(this.txtSTAC);
             this.STA.Controls.Add(this.dateSTAD);
             this.STA.Controls.Add(this.chkSTAP);
-            this.STA.Controls.Add(this.chkSTAR);
             this.STA.Controls.Add(this.label60);
             this.STA.Location = new System.Drawing.Point(0, 186);
             this.STA.Name = "STA";
@@ -3877,16 +3862,16 @@
             // 
             // txtSTAC
             // 
-            this.txtSTAC.Location = new System.Drawing.Point(642, 11);
+            this.txtSTAC.Location = new System.Drawing.Point(509, 12);
             this.txtSTAC.Name = "txtSTAC";
-            this.txtSTAC.Size = new System.Drawing.Size(308, 20);
+            this.txtSTAC.Size = new System.Drawing.Size(440, 20);
             this.txtSTAC.TabIndex = 7;
             // 
             // dateSTAD
             // 
             this.dateSTAD.CustomFormat = "MMM dd yyyy";
             this.dateSTAD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateSTAD.Location = new System.Drawing.Point(509, 11);
+            this.dateSTAD.Location = new System.Drawing.Point(382, 11);
             this.dateSTAD.Name = "dateSTAD";
             this.dateSTAD.Size = new System.Drawing.Size(109, 20);
             this.dateSTAD.TabIndex = 6;
@@ -3894,20 +3879,11 @@
             // chkSTAP
             // 
             this.chkSTAP.AutoSize = true;
-            this.chkSTAP.Location = new System.Drawing.Point(452, 15);
+            this.chkSTAP.Location = new System.Drawing.Point(330, 15);
             this.chkSTAP.Name = "chkSTAP";
             this.chkSTAP.Size = new System.Drawing.Size(15, 14);
             this.chkSTAP.TabIndex = 4;
             this.chkSTAP.UseVisualStyleBackColor = true;
-            // 
-            // chkSTAR
-            // 
-            this.chkSTAR.AutoSize = true;
-            this.chkSTAR.Location = new System.Drawing.Point(363, 14);
-            this.chkSTAR.Name = "chkSTAR";
-            this.chkSTAR.Size = new System.Drawing.Size(15, 14);
-            this.chkSTAR.TabIndex = 3;
-            this.chkSTAR.UseVisualStyleBackColor = true;
             // 
             // label60
             // 
@@ -3924,9 +3900,8 @@
             this.FT.Controls.Add(this.txtFTC);
             this.FT.Controls.Add(this.dateFTD);
             this.FT.Controls.Add(this.chkFTP);
-            this.FT.Controls.Add(this.chkFTR);
             this.FT.Controls.Add(this.label59);
-            this.FT.Location = new System.Drawing.Point(1, 149);
+            this.FT.Location = new System.Drawing.Point(1, 150);
             this.FT.Name = "FT";
             this.FT.Size = new System.Drawing.Size(956, 38);
             this.FT.TabIndex = 10;
@@ -3934,16 +3909,16 @@
             // 
             // txtFTC
             // 
-            this.txtFTC.Location = new System.Drawing.Point(642, 11);
+            this.txtFTC.Location = new System.Drawing.Point(508, 15);
             this.txtFTC.Name = "txtFTC";
-            this.txtFTC.Size = new System.Drawing.Size(308, 20);
+            this.txtFTC.Size = new System.Drawing.Size(441, 20);
             this.txtFTC.TabIndex = 7;
             // 
             // dateFTD
             // 
             this.dateFTD.CustomFormat = "MMM dd yyyy";
             this.dateFTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFTD.Location = new System.Drawing.Point(509, 11);
+            this.dateFTD.Location = new System.Drawing.Point(382, 14);
             this.dateFTD.Name = "dateFTD";
             this.dateFTD.Size = new System.Drawing.Size(109, 20);
             this.dateFTD.TabIndex = 6;
@@ -3951,20 +3926,11 @@
             // chkFTP
             // 
             this.chkFTP.AutoSize = true;
-            this.chkFTP.Location = new System.Drawing.Point(452, 15);
+            this.chkFTP.Location = new System.Drawing.Point(330, 15);
             this.chkFTP.Name = "chkFTP";
             this.chkFTP.Size = new System.Drawing.Size(15, 14);
             this.chkFTP.TabIndex = 4;
             this.chkFTP.UseVisualStyleBackColor = true;
-            // 
-            // chkFTR
-            // 
-            this.chkFTR.AutoSize = true;
-            this.chkFTR.Location = new System.Drawing.Point(363, 14);
-            this.chkFTR.Name = "chkFTR";
-            this.chkFTR.Size = new System.Drawing.Size(15, 14);
-            this.chkFTR.TabIndex = 3;
-            this.chkFTR.UseVisualStyleBackColor = true;
             // 
             // label59
             // 
@@ -3981,9 +3947,8 @@
             this.CFT.Controls.Add(this.txtCFTC);
             this.CFT.Controls.Add(this.dateCFTD);
             this.CFT.Controls.Add(this.chkCFTP);
-            this.CFT.Controls.Add(this.chkCFTR);
             this.CFT.Controls.Add(this.label53);
-            this.CFT.Location = new System.Drawing.Point(0, 112);
+            this.CFT.Location = new System.Drawing.Point(0, 113);
             this.CFT.Name = "CFT";
             this.CFT.Size = new System.Drawing.Size(956, 38);
             this.CFT.TabIndex = 9;
@@ -3991,16 +3956,16 @@
             // 
             // txtCFTC
             // 
-            this.txtCFTC.Location = new System.Drawing.Point(642, 11);
+            this.txtCFTC.Location = new System.Drawing.Point(509, 11);
             this.txtCFTC.Name = "txtCFTC";
-            this.txtCFTC.Size = new System.Drawing.Size(308, 20);
+            this.txtCFTC.Size = new System.Drawing.Size(440, 20);
             this.txtCFTC.TabIndex = 7;
             // 
             // dateCFTD
             // 
             this.dateCFTD.CustomFormat = "MMM dd yyyy";
             this.dateCFTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateCFTD.Location = new System.Drawing.Point(509, 11);
+            this.dateCFTD.Location = new System.Drawing.Point(382, 11);
             this.dateCFTD.Name = "dateCFTD";
             this.dateCFTD.Size = new System.Drawing.Size(109, 20);
             this.dateCFTD.TabIndex = 6;
@@ -4008,20 +3973,11 @@
             // chkCFTP
             // 
             this.chkCFTP.AutoSize = true;
-            this.chkCFTP.Location = new System.Drawing.Point(452, 15);
+            this.chkCFTP.Location = new System.Drawing.Point(330, 15);
             this.chkCFTP.Name = "chkCFTP";
             this.chkCFTP.Size = new System.Drawing.Size(15, 14);
             this.chkCFTP.TabIndex = 4;
             this.chkCFTP.UseVisualStyleBackColor = true;
-            // 
-            // chkCFTR
-            // 
-            this.chkCFTR.AutoSize = true;
-            this.chkCFTR.Location = new System.Drawing.Point(363, 14);
-            this.chkCFTR.Name = "chkCFTR";
-            this.chkCFTR.Size = new System.Drawing.Size(15, 14);
-            this.chkCFTR.TabIndex = 3;
-            this.chkCFTR.UseVisualStyleBackColor = true;
             // 
             // label53
             // 
@@ -4038,7 +3994,6 @@
             this.FLT.Controls.Add(this.txtFLTC);
             this.FLT.Controls.Add(this.dateFLTD);
             this.FLT.Controls.Add(this.chkFLTP);
-            this.FLT.Controls.Add(this.chkFLTR);
             this.FLT.Controls.Add(this.label52);
             this.FLT.Location = new System.Drawing.Point(0, 82);
             this.FLT.Name = "FLT";
@@ -4048,16 +4003,16 @@
             // 
             // txtFLTC
             // 
-            this.txtFLTC.Location = new System.Drawing.Point(642, 10);
+            this.txtFLTC.Location = new System.Drawing.Point(509, 10);
             this.txtFLTC.Name = "txtFLTC";
-            this.txtFLTC.Size = new System.Drawing.Size(308, 20);
+            this.txtFLTC.Size = new System.Drawing.Size(440, 20);
             this.txtFLTC.TabIndex = 7;
             // 
             // dateFLTD
             // 
             this.dateFLTD.CustomFormat = "MMM dd yyyy";
             this.dateFLTD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFLTD.Location = new System.Drawing.Point(509, 11);
+            this.dateFLTD.Location = new System.Drawing.Point(382, 11);
             this.dateFLTD.Name = "dateFLTD";
             this.dateFLTD.Size = new System.Drawing.Size(109, 20);
             this.dateFLTD.TabIndex = 6;
@@ -4065,20 +4020,11 @@
             // chkFLTP
             // 
             this.chkFLTP.AutoSize = true;
-            this.chkFLTP.Location = new System.Drawing.Point(452, 15);
+            this.chkFLTP.Location = new System.Drawing.Point(330, 15);
             this.chkFLTP.Name = "chkFLTP";
             this.chkFLTP.Size = new System.Drawing.Size(15, 14);
             this.chkFLTP.TabIndex = 4;
             this.chkFLTP.UseVisualStyleBackColor = true;
-            // 
-            // chkFLTR
-            // 
-            this.chkFLTR.AutoSize = true;
-            this.chkFLTR.Location = new System.Drawing.Point(363, 15);
-            this.chkFLTR.Name = "chkFLTR";
-            this.chkFLTR.Size = new System.Drawing.Size(15, 14);
-            this.chkFLTR.TabIndex = 3;
-            this.chkFLTR.UseVisualStyleBackColor = true;
             // 
             // label52
             // 
@@ -4094,7 +4040,6 @@
             // 
             this.groupBox7.BackColor = System.Drawing.Color.LightBlue;
             this.groupBox7.Controls.Add(this.label58);
-            this.groupBox7.Controls.Add(this.label57);
             this.groupBox7.Controls.Add(this.label54);
             this.groupBox7.Controls.Add(this.label55);
             this.groupBox7.Controls.Add(this.label56);
@@ -4109,27 +4054,17 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(428, 15);
+            this.label58.Location = new System.Drawing.Point(307, 15);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 17);
             this.label58.TabIndex = 9;
             this.label58.Text = "Provided";
             // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(333, 15);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(77, 17);
-            this.label57.TabIndex = 8;
-            this.label57.Text = "Requested";
-            // 
             // label54
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(639, 15);
+            this.label54.Location = new System.Drawing.Point(506, 15);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(74, 17);
             this.label54.TabIndex = 7;
@@ -4139,7 +4074,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(508, 15);
+            this.label55.Location = new System.Drawing.Point(383, 15);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(98, 17);
             this.label55.TabIndex = 5;
@@ -4160,7 +4095,6 @@
             this.TBRC.Controls.Add(this.txtTBRCC);
             this.TBRC.Controls.Add(this.dateTBRCD);
             this.TBRC.Controls.Add(this.chkTBRCP);
-            this.TBRC.Controls.Add(this.chkTBRCR);
             this.TBRC.Controls.Add(this.label51);
             this.TBRC.Location = new System.Drawing.Point(0, 42);
             this.TBRC.Name = "TBRC";
@@ -4170,16 +4104,16 @@
             // 
             // txtTBRCC
             // 
-            this.txtTBRCC.Location = new System.Drawing.Point(642, 11);
+            this.txtTBRCC.Location = new System.Drawing.Point(509, 11);
             this.txtTBRCC.Name = "txtTBRCC";
-            this.txtTBRCC.Size = new System.Drawing.Size(308, 20);
+            this.txtTBRCC.Size = new System.Drawing.Size(441, 20);
             this.txtTBRCC.TabIndex = 7;
             // 
             // dateTBRCD
             // 
             this.dateTBRCD.CustomFormat = "MMM dd yyyy";
             this.dateTBRCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTBRCD.Location = new System.Drawing.Point(509, 11);
+            this.dateTBRCD.Location = new System.Drawing.Point(382, 12);
             this.dateTBRCD.Name = "dateTBRCD";
             this.dateTBRCD.Size = new System.Drawing.Size(109, 20);
             this.dateTBRCD.TabIndex = 6;
@@ -4187,20 +4121,11 @@
             // chkTBRCP
             // 
             this.chkTBRCP.AutoSize = true;
-            this.chkTBRCP.Location = new System.Drawing.Point(452, 19);
+            this.chkTBRCP.Location = new System.Drawing.Point(330, 19);
             this.chkTBRCP.Name = "chkTBRCP";
             this.chkTBRCP.Size = new System.Drawing.Size(15, 14);
             this.chkTBRCP.TabIndex = 4;
             this.chkTBRCP.UseVisualStyleBackColor = true;
-            // 
-            // chkTBRCR
-            // 
-            this.chkTBRCR.AutoSize = true;
-            this.chkTBRCR.Location = new System.Drawing.Point(363, 19);
-            this.chkTBRCR.Name = "chkTBRCR";
-            this.chkTBRCR.Size = new System.Drawing.Size(15, 14);
-            this.chkTBRCR.TabIndex = 3;
-            this.chkTBRCR.UseVisualStyleBackColor = true;
             // 
             // label51
             // 
@@ -4786,7 +4711,7 @@
             // 
             this.pnlCanReadWrite.Controls.Add(this.rdoCanYouReadWriteYes);
             this.pnlCanReadWrite.Controls.Add(this.rdoCanYouReadWriteNo);
-            this.pnlCanReadWrite.Location = new System.Drawing.Point(237, 377);
+            this.pnlCanReadWrite.Location = new System.Drawing.Point(237, 361);
             this.pnlCanReadWrite.Name = "pnlCanReadWrite";
             this.pnlCanReadWrite.Size = new System.Drawing.Size(200, 30);
             this.pnlCanReadWrite.TabIndex = 126;
@@ -4817,7 +4742,7 @@
             // 
             this.pnlThirdNeed.Controls.Add(this.lblThirdNeed);
             this.pnlThirdNeed.Controls.Add(this.txtReintegrationNeeds3Other);
-            this.pnlThirdNeed.Location = new System.Drawing.Point(344, 88);
+            this.pnlThirdNeed.Location = new System.Drawing.Point(344, 96);
             this.pnlThirdNeed.Name = "pnlThirdNeed";
             this.pnlThirdNeed.Size = new System.Drawing.Size(542, 25);
             this.pnlThirdNeed.TabIndex = 66;
@@ -4843,7 +4768,7 @@
             // 
             this.pnlSecondNeed.Controls.Add(this.txtReintegrationNeeds2Other);
             this.pnlSecondNeed.Controls.Add(this.lblSecondNeed);
-            this.pnlSecondNeed.Location = new System.Drawing.Point(344, 59);
+            this.pnlSecondNeed.Location = new System.Drawing.Point(344, 67);
             this.pnlSecondNeed.Name = "pnlSecondNeed";
             this.pnlSecondNeed.Size = new System.Drawing.Size(542, 25);
             this.pnlSecondNeed.TabIndex = 65;
@@ -4869,7 +4794,7 @@
             // 
             this.pnlFirstNeed.Controls.Add(this.lblFirstNeedOther);
             this.pnlFirstNeed.Controls.Add(this.txtReintegrationNeeds1Other);
-            this.pnlFirstNeed.Location = new System.Drawing.Point(344, 30);
+            this.pnlFirstNeed.Location = new System.Drawing.Point(344, 38);
             this.pnlFirstNeed.Name = "pnlFirstNeed";
             this.pnlFirstNeed.Size = new System.Drawing.Size(542, 25);
             this.pnlFirstNeed.TabIndex = 64;
@@ -4894,7 +4819,7 @@
             // lblHoHEducationOther
             // 
             this.lblHoHEducationOther.AutoSize = true;
-            this.lblHoHEducationOther.Location = new System.Drawing.Point(620, 433);
+            this.lblHoHEducationOther.Location = new System.Drawing.Point(620, 423);
             this.lblHoHEducationOther.Name = "lblHoHEducationOther";
             this.lblHoHEducationOther.Size = new System.Drawing.Size(33, 13);
             this.lblHoHEducationOther.TabIndex = 62;
@@ -4902,7 +4827,7 @@
             // 
             // txtHoHEducationOther
             // 
-            this.txtHoHEducationOther.Location = new System.Drawing.Point(662, 430);
+            this.txtHoHEducationOther.Location = new System.Drawing.Point(662, 420);
             this.txtHoHEducationOther.Name = "txtHoHEducationOther";
             this.txtHoHEducationOther.Size = new System.Drawing.Size(324, 20);
             this.txtHoHEducationOther.TabIndex = 122;
@@ -4910,7 +4835,7 @@
             // cmbHoHEducationLevel
             // 
             this.cmbHoHEducationLevel.FormattingEnabled = true;
-            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 429);
+            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 419);
             this.cmbHoHEducationLevel.Name = "cmbHoHEducationLevel";
             this.cmbHoHEducationLevel.Size = new System.Drawing.Size(170, 21);
             this.cmbHoHEducationLevel.TabIndex = 121;
@@ -4919,7 +4844,7 @@
             // lblProOther
             // 
             this.lblProOther.AutoSize = true;
-            this.lblProOther.Location = new System.Drawing.Point(601, 179);
+            this.lblProOther.Location = new System.Drawing.Point(601, 201);
             this.lblProOther.Name = "lblProOther";
             this.lblProOther.Size = new System.Drawing.Size(33, 13);
             this.lblProOther.TabIndex = 60;
@@ -4929,7 +4854,7 @@
             // cmbProfession
             // 
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(326, 176);
+            this.cmbProfession.Location = new System.Drawing.Point(326, 198);
             this.cmbProfession.Name = "cmbProfession";
             this.cmbProfession.Size = new System.Drawing.Size(240, 21);
             this.cmbProfession.TabIndex = 114;
@@ -4937,7 +4862,7 @@
             // 
             // txtProfessionOther
             // 
-            this.txtProfessionOther.Location = new System.Drawing.Point(640, 176);
+            this.txtProfessionOther.Location = new System.Drawing.Point(640, 198);
             this.txtProfessionOther.Name = "txtProfessionOther";
             this.txtProfessionOther.Size = new System.Drawing.Size(346, 20);
             this.txtProfessionOther.TabIndex = 115;
@@ -4946,7 +4871,7 @@
             // lblReturnToHostReason
             // 
             this.lblReturnToHostReason.AutoSize = true;
-            this.lblReturnToHostReason.Location = new System.Drawing.Point(567, 128);
+            this.lblReturnToHostReason.Location = new System.Drawing.Point(567, 147);
             this.lblReturnToHostReason.Name = "lblReturnToHostReason";
             this.lblReturnToHostReason.Size = new System.Drawing.Size(67, 13);
             this.lblReturnToHostReason.TabIndex = 58;
@@ -4955,7 +4880,7 @@
             // cmbIntendToDo
             // 
             this.cmbIntendToDo.FormattingEnabled = true;
-            this.cmbIntendToDo.Location = new System.Drawing.Point(225, 127);
+            this.cmbIntendToDo.Location = new System.Drawing.Point(225, 146);
             this.cmbIntendToDo.Name = "cmbIntendToDo";
             this.cmbIntendToDo.Size = new System.Drawing.Size(323, 21);
             this.cmbIntendToDo.TabIndex = 112;
@@ -4963,14 +4888,14 @@
             // 
             // txtReturnToHostReason
             // 
-            this.txtReturnToHostReason.Location = new System.Drawing.Point(640, 127);
+            this.txtReturnToHostReason.Location = new System.Drawing.Point(640, 146);
             this.txtReturnToHostReason.Name = "txtReturnToHostReason";
             this.txtReturnToHostReason.Size = new System.Drawing.Size(346, 20);
             this.txtReturnToHostReason.TabIndex = 113;
             // 
             // btnReintegNeed1Previous
             // 
-            this.btnReintegNeed1Previous.Location = new System.Drawing.Point(811, 572);
+            this.btnReintegNeed1Previous.Location = new System.Drawing.Point(811, 570);
             this.btnReintegNeed1Previous.Name = "btnReintegNeed1Previous";
             this.btnReintegNeed1Previous.Size = new System.Drawing.Size(75, 23);
             this.btnReintegNeed1Previous.TabIndex = 124;
@@ -4980,7 +4905,7 @@
             // 
             // btnReintegNeed1NeedNext
             // 
-            this.btnReintegNeed1NeedNext.Location = new System.Drawing.Point(906, 573);
+            this.btnReintegNeed1NeedNext.Location = new System.Drawing.Point(906, 571);
             this.btnReintegNeed1NeedNext.Name = "btnReintegNeed1NeedNext";
             this.btnReintegNeed1NeedNext.Size = new System.Drawing.Size(75, 23);
             this.btnReintegNeed1NeedNext.TabIndex = 125;
@@ -4990,21 +4915,42 @@
             // 
             // gbMainConcerns
             // 
+            this.gbMainConcerns.Controls.Add(this.txtWAY3MCOther);
+            this.gbMainConcerns.Controls.Add(this.WAY3MCOther);
             this.gbMainConcerns.Controls.Add(this.LackOfEdu);
             this.gbMainConcerns.Controls.Add(this.LackOfLand);
             this.gbMainConcerns.Controls.Add(this.LackOfLiv);
             this.gbMainConcerns.Controls.Add(this.LackOfHousing);
             this.gbMainConcerns.Controls.Add(this.Security);
-            this.gbMainConcerns.Location = new System.Drawing.Point(16, 524);
+            this.gbMainConcerns.Location = new System.Drawing.Point(16, 493);
             this.gbMainConcerns.Name = "gbMainConcerns";
             this.gbMainConcerns.Size = new System.Drawing.Size(977, 36);
             this.gbMainConcerns.TabIndex = 42;
             this.gbMainConcerns.TabStop = false;
             // 
+            // txtWAY3MCOther
+            // 
+            this.txtWAY3MCOther.Location = new System.Drawing.Point(688, 10);
+            this.txtWAY3MCOther.Name = "txtWAY3MCOther";
+            this.txtWAY3MCOther.Size = new System.Drawing.Size(282, 20);
+            this.txtWAY3MCOther.TabIndex = 125;
+            this.txtWAY3MCOther.Visible = false;
+            // 
+            // WAY3MCOther
+            // 
+            this.WAY3MCOther.AutoSize = true;
+            this.WAY3MCOther.Location = new System.Drawing.Point(634, 13);
+            this.WAY3MCOther.Name = "WAY3MCOther";
+            this.WAY3MCOther.Size = new System.Drawing.Size(52, 17);
+            this.WAY3MCOther.TabIndex = 124;
+            this.WAY3MCOther.Text = "Other";
+            this.WAY3MCOther.UseVisualStyleBackColor = true;
+            this.WAY3MCOther.CheckedChanged += new System.EventHandler(this.WAY3MCOther_CheckedChanged);
+            // 
             // LackOfEdu
             // 
             this.LackOfEdu.AutoSize = true;
-            this.LackOfEdu.Location = new System.Drawing.Point(579, 13);
+            this.LackOfEdu.Location = new System.Drawing.Point(453, 13);
             this.LackOfEdu.Name = "LackOfEdu";
             this.LackOfEdu.Size = new System.Drawing.Size(175, 17);
             this.LackOfEdu.TabIndex = 39;
@@ -5014,7 +4960,7 @@
             // LackOfLand
             // 
             this.LackOfLand.AutoSize = true;
-            this.LackOfLand.Location = new System.Drawing.Point(245, 13);
+            this.LackOfLand.Location = new System.Drawing.Point(184, 13);
             this.LackOfLand.Name = "LackOfLand";
             this.LackOfLand.Size = new System.Drawing.Size(85, 17);
             this.LackOfLand.TabIndex = 38;
@@ -5024,7 +4970,7 @@
             // LackOfLiv
             // 
             this.LackOfLiv.AutoSize = true;
-            this.LackOfLiv.Location = new System.Drawing.Point(373, 13);
+            this.LackOfLiv.Location = new System.Drawing.Point(275, 13);
             this.LackOfLiv.Name = "LackOfLiv";
             this.LackOfLiv.Size = new System.Drawing.Size(172, 17);
             this.LackOfLiv.TabIndex = 37;
@@ -5034,7 +4980,7 @@
             // LackOfHousing
             // 
             this.LackOfHousing.AutoSize = true;
-            this.LackOfHousing.Location = new System.Drawing.Point(104, 12);
+            this.LackOfHousing.Location = new System.Drawing.Point(76, 13);
             this.LackOfHousing.Name = "LackOfHousing";
             this.LackOfHousing.Size = new System.Drawing.Size(102, 17);
             this.LackOfHousing.TabIndex = 36;
@@ -5055,7 +5001,7 @@
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(3, 504);
+            this.label93.Location = new System.Drawing.Point(3, 473);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(407, 18);
             this.label93.TabIndex = 38;
@@ -5065,7 +5011,7 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(3, 430);
+            this.label92.Location = new System.Drawing.Point(3, 420);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(406, 18);
             this.label92.TabIndex = 36;
@@ -5075,7 +5021,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(3, 382);
+            this.label91.Location = new System.Drawing.Point(3, 366);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(219, 18);
             this.label91.TabIndex = 33;
@@ -5181,7 +5127,7 @@
             // 
             this.label88.AutoSize = true;
             this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(3, 176);
+            this.label88.Location = new System.Drawing.Point(3, 198);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(317, 18);
             this.label88.TabIndex = 14;
@@ -5191,7 +5137,7 @@
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(3, 126);
+            this.label87.Location = new System.Drawing.Point(3, 145);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(205, 18);
             this.label87.TabIndex = 9;
@@ -5200,7 +5146,7 @@
             // cmbReintegrationNeeds3
             // 
             this.cmbReintegrationNeeds3.FormattingEnabled = true;
-            this.cmbReintegrationNeeds3.Location = new System.Drawing.Point(60, 89);
+            this.cmbReintegrationNeeds3.Location = new System.Drawing.Point(60, 97);
             this.cmbReintegrationNeeds3.Name = "cmbReintegrationNeeds3";
             this.cmbReintegrationNeeds3.Size = new System.Drawing.Size(222, 21);
             this.cmbReintegrationNeeds3.TabIndex = 110;
@@ -5209,7 +5155,7 @@
             // cmbReintegrationNeeds2
             // 
             this.cmbReintegrationNeeds2.FormattingEnabled = true;
-            this.cmbReintegrationNeeds2.Location = new System.Drawing.Point(60, 60);
+            this.cmbReintegrationNeeds2.Location = new System.Drawing.Point(60, 68);
             this.cmbReintegrationNeeds2.Name = "cmbReintegrationNeeds2";
             this.cmbReintegrationNeeds2.Size = new System.Drawing.Size(222, 21);
             this.cmbReintegrationNeeds2.TabIndex = 108;
@@ -5218,7 +5164,7 @@
             // cmbReintegrationNeeds1
             // 
             this.cmbReintegrationNeeds1.FormattingEnabled = true;
-            this.cmbReintegrationNeeds1.Location = new System.Drawing.Point(60, 33);
+            this.cmbReintegrationNeeds1.Location = new System.Drawing.Point(60, 41);
             this.cmbReintegrationNeeds1.Name = "cmbReintegrationNeeds1";
             this.cmbReintegrationNeeds1.Size = new System.Drawing.Size(222, 21);
             this.cmbReintegrationNeeds1.TabIndex = 105;
@@ -5227,7 +5173,7 @@
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(26, 94);
+            this.label86.Location = new System.Drawing.Point(26, 102);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(31, 13);
             this.label86.TabIndex = 5;
@@ -5236,7 +5182,7 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(12, 64);
+            this.label85.Location = new System.Drawing.Point(12, 72);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(44, 13);
             this.label85.TabIndex = 4;
@@ -5245,7 +5191,7 @@
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(30, 37);
+            this.label84.Location = new System.Drawing.Point(30, 45);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(26, 13);
             this.label84.TabIndex = 3;
@@ -5255,7 +5201,7 @@
             // 
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(3, 9);
+            this.label83.Location = new System.Drawing.Point(3, 13);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(371, 18);
             this.label83.TabIndex = 2;
@@ -5602,16 +5548,6 @@
             this.btnSaveBeneficiary.UseVisualStyleBackColor = true;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
             // 
-            // pnlFamilyMemStayYesHowMany
-            // 
-            this.pnlFamilyMemStayYesHowMany.Controls.Add(this.txtFMemberStyedBehind);
-            this.pnlFamilyMemStayYesHowMany.Controls.Add(this.lblIfFMemStyedHowMany);
-            this.pnlFamilyMemStayYesHowMany.Location = new System.Drawing.Point(465, 53);
-            this.pnlFamilyMemStayYesHowMany.Name = "pnlFamilyMemStayYesHowMany";
-            this.pnlFamilyMemStayYesHowMany.Size = new System.Drawing.Size(468, 32);
-            this.pnlFamilyMemStayYesHowMany.TabIndex = 71;
-            this.pnlFamilyMemStayYesHowMany.Visible = false;
-            // 
             // BeneficiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5630,6 +5566,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.ctxFamailyMemeberMenu.ResumeLayout(false);
             this.tabBeneficiary.ResumeLayout(false);
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
@@ -5639,7 +5576,7 @@
             this.pnlBeneficiaryInfo.PerformLayout();
             this.pnlFamilyMember.ResumeLayout(false);
             this.pnlFamilyMember.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
+            this.gbOriginAndReturnPlace.ResumeLayout(false);
             this.tabProtection1.ResumeLayout(false);
             this.tabProtection1.PerformLayout();
             this.gbReturnReason.ResumeLayout(false);
@@ -5648,12 +5585,14 @@
             this.gbPSN.PerformLayout();
             this.tabProtection2.ResumeLayout(false);
             this.tabProtection2.PerformLayout();
-            this.pnlAllowFamilyToWork.ResumeLayout(false);
-            this.pnlAllowFamilyToWork.PerformLayout();
-            this.gbFindMonyForRentHouse.ResumeLayout(false);
-            this.gbFindMonyForRentHouse.PerformLayout();
+            this.pnlRentHouseInfo.ResumeLayout(false);
+            this.pnlRentHouseInfo.PerformLayout();
             this.pnlQes11RentPay.ResumeLayout(false);
             this.pnlQes11RentPay.PerformLayout();
+            this.gbFindMonyForRentHouse.ResumeLayout(false);
+            this.gbFindMonyForRentHouse.PerformLayout();
+            this.pnlAllowFamilyToWork.ResumeLayout(false);
+            this.pnlAllowFamilyToWork.PerformLayout();
             this.pnlOwnHouse.ResumeLayout(false);
             this.pnlOwnHouse.PerformLayout();
             this.gbRankImportant.ResumeLayout(false);
@@ -5677,14 +5616,16 @@
             this.EFC.PerformLayout();
             this.tabHostCountrySection.ResumeLayout(false);
             this.tabHostCountrySection.PerformLayout();
+            this.pnlFamilyMemStayYesHowMany.ResumeLayout(false);
+            this.pnlFamilyMemStayYesHowMany.PerformLayout();
             this.pnlWouldReturnToHost.ResumeLayout(false);
             this.pnlWouldReturnToHost.PerformLayout();
             this.pnlItemBrought.ResumeLayout(false);
             this.pnlItemBrought.PerformLayout();
             this.pnlLengthOfStayInHostC.ResumeLayout(false);
             this.pnlLengthOfStayInHostC.PerformLayout();
-            this.pnlHoustCountryPlace.ResumeLayout(false);
-            this.pnlHoustCountryPlace.PerformLayout();
+            this.pnlHousetCountryPlace.ResumeLayout(false);
+            this.pnlHousetCountryPlace.PerformLayout();
             this.gbIranPakAddress.ResumeLayout(false);
             this.gbIranPakAddress.PerformLayout();
             this.pnlHostCountry.ResumeLayout(false);
@@ -5770,8 +5711,6 @@
             this.groupBox27.ResumeLayout(false);
             this.groupBox27.PerformLayout();
             this.tabImageAndCard.ResumeLayout(false);
-            this.pnlFamilyMemStayYesHowMany.ResumeLayout(false);
-            this.pnlFamilyMemStayYesHowMany.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5827,7 +5766,6 @@
         private System.Windows.Forms.Label lblMFatherName;
         private System.Windows.Forms.Label lblMName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.LinkLabel lnkAddFamilyMember;
         private System.Windows.Forms.ListView lvFamilyMember;
         private System.Windows.Forms.ColumnHeader BName;
         private System.Windows.Forms.ColumnHeader BFatherName;
@@ -5840,7 +5778,7 @@
         private System.Windows.Forms.ColumnHeader ContactNumber;
         private System.Windows.Forms.TabControl tabBeneficiary;
         private System.Windows.Forms.TabPage tabProfile;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbOriginAndReturnPlace;
         private System.Windows.Forms.TabPage tabProtection1;
         private System.Windows.Forms.GroupBox gbPSN;
         private System.Windows.Forms.CheckBox SF;
@@ -5965,7 +5903,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtBeforReturnRemarks;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Panel pnlHoustCountryPlace;
+        private System.Windows.Forms.Panel pnlHousetCountryPlace;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label lblIfFMemStyedHowMany;
         private System.Windows.Forms.TextBox txtFMemberStyedBehind;
@@ -5994,17 +5932,14 @@
         private System.Windows.Forms.GroupBox gbPostArrivalNeeds;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.GroupBox TBRC;
-        private System.Windows.Forms.CheckBox chkTBRCR;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.GroupBox FLT;
         private System.Windows.Forms.TextBox txtFLTC;
         private System.Windows.Forms.DateTimePicker dateFLTD;
         private System.Windows.Forms.CheckBox chkFLTP;
-        private System.Windows.Forms.CheckBox chkFLTR;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
@@ -6015,73 +5950,61 @@
         private System.Windows.Forms.TextBox txtCFTC;
         private System.Windows.Forms.DateTimePicker dateCFTD;
         private System.Windows.Forms.CheckBox chkCFTP;
-        private System.Windows.Forms.CheckBox chkCFTR;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.GroupBox FT;
         private System.Windows.Forms.TextBox txtFTC;
         private System.Windows.Forms.DateTimePicker dateFTD;
         private System.Windows.Forms.CheckBox chkFTP;
-        private System.Windows.Forms.CheckBox chkFTR;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.GroupBox SC;
         private System.Windows.Forms.TextBox txtSCC;
         private System.Windows.Forms.DateTimePicker dateSCD;
         private System.Windows.Forms.CheckBox chkSCP;
-        private System.Windows.Forms.CheckBox chkSCR;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.GroupBox PC;
         private System.Windows.Forms.TextBox txtPCC;
         private System.Windows.Forms.DateTimePicker datePCD;
         private System.Windows.Forms.CheckBox chkPCP;
-        private System.Windows.Forms.CheckBox chkPCR;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.GroupBox PR;
         private System.Windows.Forms.TextBox txtPRC;
         private System.Windows.Forms.DateTimePicker datePRD;
         private System.Windows.Forms.CheckBox chkPRP;
-        private System.Windows.Forms.CheckBox chkPRR;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.GroupBox NFI;
         private System.Windows.Forms.TextBox txtNFIC;
         private System.Windows.Forms.DateTimePicker dateNFID;
         private System.Windows.Forms.CheckBox chkNFIP;
-        private System.Windows.Forms.CheckBox chkNFIR;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.GroupBox WFP;
         private System.Windows.Forms.TextBox txtWFPC;
         private System.Windows.Forms.DateTimePicker dateWFPD;
         private System.Windows.Forms.CheckBox chkWFPP;
-        private System.Windows.Forms.CheckBox chkWFPR;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.GroupBox DDR;
         private System.Windows.Forms.TextBox txtDDRC;
         private System.Windows.Forms.DateTimePicker dateDDRD;
         private System.Windows.Forms.CheckBox chkDDRP;
-        private System.Windows.Forms.CheckBox chkDDRR;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.GroupBox Escort;
         private System.Windows.Forms.TextBox txtEC;
         private System.Windows.Forms.DateTimePicker dateED;
         private System.Windows.Forms.CheckBox chkEP;
-        private System.Windows.Forms.CheckBox chkER;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.GroupBox EMC;
         private System.Windows.Forms.TextBox txtEMCC;
         private System.Windows.Forms.DateTimePicker dateEMCD;
         private System.Windows.Forms.CheckBox chkEMCP;
-        private System.Windows.Forms.CheckBox chkEMCR;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.GroupBox AITC;
         private System.Windows.Forms.TextBox txtAITCC;
         private System.Windows.Forms.DateTimePicker dateAITCD;
         private System.Windows.Forms.CheckBox chkAITCP;
-        private System.Windows.Forms.CheckBox chkAITCR;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.GroupBox STA;
         private System.Windows.Forms.TextBox txtSTAC;
         private System.Windows.Forms.DateTimePicker dateSTAD;
         private System.Windows.Forms.CheckBox chkSTAP;
-        private System.Windows.Forms.CheckBox chkSTAR;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Button btnAssistanceNeedsPrevious1;
         private System.Windows.Forms.Button btnAssistanceNeedsNext1;
@@ -6261,5 +6184,16 @@
         private System.Windows.Forms.Panel pnlWhatCanHelpYou;
         private System.Windows.Forms.Panel pnlCanReadWrite;
         private System.Windows.Forms.Panel pnlFamilyMemStayYesHowMany;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.TextBox txtDrFName;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtDrName;
+        private System.Windows.Forms.ColumnHeader DrName;
+        private System.Windows.Forms.ColumnHeader DrFName;
+        private System.Windows.Forms.Panel pnlRentHouseInfo;
+        private System.Windows.Forms.TextBox txtWAY3MCOther;
+        private System.Windows.Forms.CheckBox WAY3MCOther;
+        private System.Windows.Forms.ContextMenuStrip ctxFamailyMemeberMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmDeleteMemeber;
     }
 }

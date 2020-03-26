@@ -32,7 +32,7 @@ namespace BSAF.Entity
         public virtual DbSet<PostArrivalNeed> PostArrivalNeeds { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<PSN> PSNs { get; set; }
-        public virtual DbSet<Transport> Transports { get; set; }
+        public virtual DbSet<Transportation> Transportations { get; set; }
         public virtual DbSet<ReturnReason> ReturnReasons { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

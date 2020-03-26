@@ -14,10 +14,8 @@ namespace BSAF.Models.Tables
 
         public int BeneficiaryID { get; set; }
 
-        [StringLength(50)]
         public string ReasonCode { get; set; }
 
-        [StringLength(500)]
         public string Other { get; set; }
     }
 }

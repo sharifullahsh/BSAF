@@ -158,9 +158,14 @@
     </Compile>
     <Compile Include="Helper\BeneficiaryController.cs" />
     <Compile Include="Helper\DbHelper.cs" />
+    <Compile Include="Helper\UserController.cs" />
+    <Compile Include="Helper\UserInfo.cs" />
     <Compile Include="Helper\Validation.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Identity\AccountViewModels.cs" />
+    <Compile Include="Models\Identity\IdentityModels.cs" />
+    <Compile Include="Models\Identity\ManageViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Tables\Beneficiary.cs" />
     <Compile Include="Models\Tables\BenefitedFromOrg.cs" />
@@ -183,12 +188,6 @@
     <Compile Include="Models\Tables\PostArrivalNeed.cs" />
     <Compile Include="Models\Tables\Province.cs" />
     <Compile Include="Models\Tables\PSN.cs" />
-    <Compile Include="FamilyMemberForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FamilyMemberForm.Designer.cs">
-      <DependentUpon>FamilyMemberForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,7 +202,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Tables\ReturnReason.cs" />
-    <Compile Include="Models\Tables\Transport.cs" />
+    <Compile Include="Models\Tables\Transportation.cs" />
     <Compile Include="Models\ViewModels\BeneficiaryVM.cs" />
     <Compile Include="Models\ViewModels\IndividualVM.cs" />
     <Compile Include="Program.cs" />
@@ -216,9 +215,6 @@
     </Compile>
     <EmbeddedResource Include="BeneficiaryForm.resx">
       <DependentUpon>BeneficiaryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FamilyMemberForm.resx">
-      <DependentUpon>FamilyMemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -236,6 +232,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchBeneficiary.resx">
+      <DependentUpon>SearchBeneficiary.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

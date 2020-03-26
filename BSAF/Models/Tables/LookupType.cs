@@ -11,16 +11,12 @@ namespace BSAF.Models.Tables
         [Key]
         public int LookupId { get; set; }
 
-        [StringLength(100)]
         public string LookupCode { get; set; }
 
-        [StringLength(300)]
         public string EnName { get; set; }
 
-        [StringLength(300)]
         public string DrName { get; set; }
 
-        [StringLength(300)]
         public string PaName { get; set; }
 
         public bool IsActive { get; set; }

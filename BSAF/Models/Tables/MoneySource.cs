@@ -12,10 +12,8 @@ namespace BSAF.Models.Tables
 
         public int? BeneficiaryID { get; set; }
 
-        [StringLength(50)]
         public string MoneySourceCode { get; set; }
 
-        [StringLength(500)]
         public string MoneySourceOther { get; set; }
     }
 }

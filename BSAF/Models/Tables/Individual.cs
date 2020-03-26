@@ -13,30 +13,26 @@ namespace BSAF.Models.Tables
 
         public int? BeneficiaryID { get; set; }
 
-        [StringLength(20)]
         public string Name { get; set; }
 
-        [StringLength(200)]
+        public string DrName { get; set; }
+
         public string FName { get; set; }
 
-        [StringLength(50)]
+        public string DrFName { get; set; }
+
         public string GenderCode { get; set; }
 
-        [StringLength(50)]
         public string MaritalStatusCode { get; set; }
 
         public int? Age { get; set; }
 
-        [StringLength(50)]
         public string IDTypeCode { get; set; }
 
-        [StringLength(100)]
         public string IDNo { get; set; }
 
-        [StringLength(50)]
         public string RelationshipCode { get; set; }
 
-        [StringLength(50)]
         public string ContactNumber { get; set; }
 
         public bool? IsActive { get; set; }

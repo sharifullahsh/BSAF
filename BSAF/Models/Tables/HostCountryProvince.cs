@@ -11,16 +11,12 @@ namespace BSAF.Models.Tables
         [Key]
         public int ProvinceId { get; set; }
 
-        [StringLength(300)]
         public string CountryCode { get; set; }
 
-        [StringLength(300)]
         public string EnName { get; set; }
 
-        [StringLength(300)]
         public string DrName { get; set; }
 
-        [StringLength(300)]
         public string PaName { get; set; }
 
         public bool IsActive { get; set; }
