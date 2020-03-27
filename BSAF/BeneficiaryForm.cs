@@ -25,6 +25,9 @@ namespace BSAF
             beneficiary = new BeneficiaryVM();
 
             //selected tab
+            if (string.IsNullOrEmpty(UserInfo.ID)){
+                MessageBox.Show("Your are not loged in please first login in and then add beneficiary","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
             this.tabBeneficiary.SelectedTab = this.tabProfile;
         }
 

@@ -10,5 +10,6 @@ namespace BSAF.Helper
     {
         public static string ID { get; set; }
         public static string UserName { get; set; }
+        public static string CenterCode { get; set; }
     }
 }

@@ -161,12 +161,10 @@
     <Compile Include="Helper\UserController.cs" />
     <Compile Include="Helper\UserInfo.cs" />
     <Compile Include="Helper\Validation.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Identity\AccountViewModels.cs" />
-    <Compile Include="Models\Identity\IdentityModels.cs" />
-    <Compile Include="Models\Identity\ManageViewModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Tables\AspNetRole.cs" />
+    <Compile Include="Models\Tables\AspNetUser.cs" />
+    <Compile Include="Models\Tables\AspNetUserClaim.cs" />
+    <Compile Include="Models\Tables\AspNetUserLogin.cs" />
     <Compile Include="Models\Tables\Beneficiary.cs" />
     <Compile Include="Models\Tables\BenefitedFromOrg.cs" />
     <Compile Include="Models\Tables\BorderCrossingPoint.cs" />

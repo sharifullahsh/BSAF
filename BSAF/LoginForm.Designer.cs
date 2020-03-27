@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.Label();
+            this.lblLoginMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -102,11 +103,22 @@
             this.Login.Text = "BSAF Login";
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
+            // lblLoginMessage
+            // 
+            this.lblLoginMessage.AutoSize = true;
+            this.lblLoginMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblLoginMessage.Location = new System.Drawing.Point(162, 176);
+            this.lblLoginMessage.Name = "lblLoginMessage";
+            this.lblLoginMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginMessage.TabIndex = 7;
+            this.lblLoginMessage.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 361);
+            this.Controls.Add(this.lblLoginMessage);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Login;
+        private System.Windows.Forms.Label lblLoginMessage;
     }
 }

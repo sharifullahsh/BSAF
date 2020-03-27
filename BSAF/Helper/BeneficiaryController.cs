@@ -2,11 +2,6 @@
 using BSAF.Models.Tables;
 using BSAF.Models.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BSAF.Helper
 {
     public class BeneficiaryController
@@ -16,7 +11,10 @@ namespace BSAF.Helper
             dbContext db = new dbContext();
        
             var bene = model;
-            
+            if(string.IsNullOrEmpty(UserInfo.ID) && string.IsNullOrEmpty(UserInfo.CenterCode))
+            {
+                return false;
+            }
             using (var trans = db.Database.BeginTransaction())
             {
                 try
@@ -82,9 +80,9 @@ namespace BSAF.Helper
                         DidChildrenGoToSchoole = model.DidChildrenGoToSchoole,
                         NumChildrenAttendedSchoole = model.NumChildrenAttendedSchoole,
                         //TODO: add user information from db
-                        InsertedBy = 1,
+                        InsertedBy = UserInfo.ID,
                         InsertedDate = DateTime.Now,
-                        InsertedLocationCode = "KBL",
+                        InsertedLocationCode = UserInfo.CenterCode,
                         //END TODO
                         IsActive = true
                     };

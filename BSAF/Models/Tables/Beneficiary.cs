@@ -125,7 +125,7 @@ namespace BSAF.Models.Tables
 
         public int? NumChildrenAttendedSchoole { get; set; }
 
-        public int InsertedBy { get; set; }
+        public string InsertedBy { get; set; }
 
         public DateTime InsertedDate { get; set; }
 

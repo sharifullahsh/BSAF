@@ -1,4 +1,5 @@
 ﻿using BSAF.Entity;
+using BSAF.Helper;
 using BSAF.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace BSAF
         public SearchBeneficiaryForm()
         {
             InitializeComponent();
+            var id = UserInfo.ID;
+            var uname = UserInfo.UserName;
+            var cname = UserInfo.CenterCode;
         }
 
        
