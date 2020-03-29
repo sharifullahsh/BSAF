@@ -26,7 +26,6 @@ namespace BSAF.Entity
         public virtual DbSet<HostCountryProvince> HostCountryProvinces { get; set; }
         public virtual DbSet<HostCountrySchool> HostCountrySchools { get; set; }
         public virtual DbSet<Individual> Individuals { get; set; }
-        public virtual DbSet<LeavingReason> LeavingReasons { get; set; }
         public virtual DbSet<LivelihoodEmpNeed> LivelihoodEmpNeeds { get; set; }
         public virtual DbSet<LookupType> LookupTypes { get; set; }
         public virtual DbSet<LookupValue> LookupValues { get; set; }

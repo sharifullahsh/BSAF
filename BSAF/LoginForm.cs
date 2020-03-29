@@ -32,47 +32,57 @@ namespace BSAF
         //}
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            dbContext db = new dbContext();
+            BSAFMDIParent mdi = new BSAFMDIParent();
+            mdi.Show();
+            mdi.Owner = this;
+            this.Hide();
 
-            if (!string.IsNullOrWhiteSpace(this.txtUserName.Text) && !string.IsNullOrWhiteSpace(this.txtPassword.Text))
-            {
-               var isAuth =  UserController.Login(this.txtUserName.Text,this.txtPassword.Text);
-                var username = this.txtUserName.Text; var password = this.txtPassword.Text;
-                try
-                {
-                    var user = await userManager.FindByNameAsync(username);
-                    if(user == null)
-                    {
-                        lblLoginMessage.Text = "Invalid username.";
-                        lblLoginMessage.Visible = true;
-                        return;
-                    }
-                    var result = await userManager.CheckPasswordAsync(user, password);
-                    if (result)
-                    {
-                        var loginUser = userManager.Users.FirstOrDefault(u => u.UserName == username);
-                        UserInfo.ID = loginUser.Id;
-                        UserInfo.UserName = loginUser.UserName;
-                        UserInfo.CenterCode = db.AspNetUsers.Where(u => u.Id == loginUser.Id).Select(u => u.UserName).FirstOrDefault();
-                        MDIParent mdi = new MDIParent();
-                        mdi.Show();
-                        mdi.Owner = this;
-                        this.Hide();
-                    }
-                    else {
-                        lblLoginMessage.Text = "Invalid password";
-                        lblLoginMessage.Visible = true;
-                        return;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    lblLoginMessage.Text = "Can not process user login please try again.";
-                    lblLoginMessage.Visible = true;
-                    return;
-                }
-            }
+            //dbContext db = new dbContext();
+
+            //if (!string.IsNullOrWhiteSpace(this.txtUserName.Text) && !string.IsNullOrWhiteSpace(this.txtPassword.Text))
+            //{
+            //   var isAuth =  UserController.Login(this.txtUserName.Text,this.txtPassword.Text);
+            //    var username = this.txtUserName.Text; var password = this.txtPassword.Text;
+            //    try
+            //    {
+            //        var user = await userManager.FindByNameAsync(username);
+            //        if(user == null)
+            //        {
+            //            lblLoginMessage.Text = "Invalid username.";
+            //            lblLoginMessage.Visible = true;
+            //            return;
+            //        }
+            //        var result = await userManager.CheckPasswordAsync(user, password);
+            //        if (result)
+            //        {
+            //            var loginUser = userManager.Users.FirstOrDefault(u => u.UserName == username);
+            //            UserInfo.ID = loginUser.Id;
+            //            UserInfo.UserName = loginUser.UserName;
+            //            UserInfo.StationCode = db.AspNetUsers.Where(u => u.Id == loginUser.Id).Select(u => u.UserName).FirstOrDefault();
+            //            MDIParent mdi = new MDIParent();
+            //            mdi.Show();
+            //            mdi.Owner = this;
+            //            this.Hide();
+            //        }
+            //        else {
+            //            lblLoginMessage.Text = "Invalid password";
+            //            lblLoginMessage.Visible = true;
+            //            return;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //        lblLoginMessage.Text = "Can not process user login please try again.";
+            //        lblLoginMessage.Visible = true;
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    lblLoginMessage.Visible = true;
+            //    this.lblLoginMessage.Text = "Please enter username and password.";
+            //}
         }
 
         private void Login_Click(object sender, EventArgs e)
@@ -83,6 +93,12 @@ namespace BSAF
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.lblLoginMessage.Visible = false;
+            this.lblLoginMessage.Text = string.Empty;
         }
 
 

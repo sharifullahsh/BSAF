@@ -2,6 +2,9 @@
 using BSAF.Models.Tables;
 using BSAF.Models.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace BSAF.Helper
 {
     public class BeneficiaryController
@@ -11,7 +14,7 @@ namespace BSAF.Helper
             dbContext db = new dbContext();
        
             var bene = model;
-            if(string.IsNullOrEmpty(UserInfo.ID) && string.IsNullOrEmpty(UserInfo.CenterCode))
+            if(string.IsNullOrEmpty(UserInfo.ID) && string.IsNullOrEmpty(UserInfo.StationCode))
             {
                 return false;
             }
@@ -82,7 +85,7 @@ namespace BSAF.Helper
                         //TODO: add user information from db
                         InsertedBy = UserInfo.ID,
                         InsertedDate = DateTime.Now,
-                        InsertedLocationCode = UserInfo.CenterCode,
+                        StationCode = UserInfo.StationCode,
                         //END TODO
                         IsActive = true
                     };
@@ -105,8 +108,9 @@ namespace BSAF.Helper
                             RelationshipCode = ind.RelationshipCode,
                             ContactNumber = ind.ContactNumber,
                             IsActive = true,
-                            InsertedBy = 1,
-                            InsertedDate = DateTime.Now
+                            InsertedBy = UserInfo.ID,
+                            InsertedDate = DateTime.Now,
+                            
                         };
                         db.Individuals.Add(member);
                     }
@@ -129,16 +133,6 @@ namespace BSAF.Helper
                             Other = rReason.Other
                         };
                         db.ReturnReasons.Add(rrObj);
-                    }
-
-                    foreach (var lReason in model.LeavingReasons)
-                    {
-                        var lrObj = new LeavingReason {
-                            BeneficiaryID = beneficiary.BeneficiaryID,
-                            LeavingReasonCode = lReason.LeavingReasonCode,
-                            LeavingReasonOther = lReason.LeavingReasonOther
-                        };
-                        db.LeavingReasons.Add(lrObj);
                     }
 
                     foreach(var d in model.Determinations)
@@ -182,7 +176,26 @@ namespace BSAF.Helper
                         };
                         db.PostArrivalNeeds.Add(panObj);
                     }
-                    foreach(var tran  in model.Transports)
+
+                    if(model.HaveFamilyBenefited == true)
+                    {
+                        foreach(var a in model.BenefitedFromOrgs)
+                        {
+                            var assisOrgInfo = new BenefitedFromOrg
+                            {
+                                BeneficiaryID = beneficiary.BeneficiaryID,
+                                Date = a.Date,
+                                ProvinceCode = a.ProvinceCode,
+                                DistrictID = a.DistrictID,
+                                Village = a.Village,
+                                OrgCode = a.OrgCode,
+                                AssistanceProvided = a.AssistanceProvided
+                            };
+                            db.BenefitedFromOrgs.Add(assisOrgInfo);
+                        }
+                    }
+
+                    foreach (var tran  in model.Transportations)
                     {
                         var tranObj = new Transportation {
                             BeneficiaryID = beneficiary.BeneficiaryID,
@@ -191,7 +204,8 @@ namespace BSAF.Helper
                         };
                         db.Transportations.Add(tranObj);
                     }
-                    foreach(var li in model.LivelihoodEmpNeeds)
+
+                    foreach (var li in model.LivelihoodEmpNeeds)
                     {
                         var liObj = new LivelihoodEmpNeed{
                             BeneficiaryID = beneficiary.BeneficiaryID,
@@ -199,7 +213,8 @@ namespace BSAF.Helper
                         };
                         db.LivelihoodEmpNeeds.Add(liObj);
                     }
-                    foreach(var needTool in model.NeedTools)
+
+                    foreach (var needTool in model.NeedTools)
                     {
                         var needToolObj = new NeedTool {
                             BeneficiaryID = beneficiary.BeneficiaryID,
@@ -208,7 +223,8 @@ namespace BSAF.Helper
                         };
                         db.NeedTools.Add(needToolObj);
                     }
-                    foreach(var mConcern in model.MainConcerns)
+
+                    foreach (var mConcern in model.MainConcerns)
                     {
                         var mcObj = new MainConcern {
                             BeneficiaryID = beneficiary.BeneficiaryID,
@@ -216,7 +232,8 @@ namespace BSAF.Helper
                         };
                         db.MainConcerns.Add(mcObj);
                     }
-                    foreach(var hc in model.HostCountrySchools)
+
+                    foreach (var hc in model.HostCountrySchools)
                     {
                         var hcObj = new HostCountrySchool {
                             BeneficiaryID = beneficiary.BeneficiaryID,
@@ -224,6 +241,7 @@ namespace BSAF.Helper
                         };
                         db.HostCountrySchools.Add(hcObj);
                     }
+
                     db.SaveChanges();
                     
                     trans.Commit();
@@ -236,6 +254,134 @@ namespace BSAF.Helper
                 }
             }
 
+        }
+
+        public static BeneficiaryVM GetBeneficiary(int? beneficiaryID)
+        {
+            dbContext db = new dbContext();
+            BeneficiaryVM benefVM = new BeneficiaryVM();
+            if(beneficiaryID != null && beneficiaryID != 0)
+            {
+                var benefInDB = db.Beneficiaries.Where(b => b.BeneficiaryID == beneficiaryID && b.IsActive == true).FirstOrDefault();
+                if (benefInDB != null)
+                {
+                    benefVM.BeneficiaryID = benefInDB.BeneficiaryID;
+                    benefVM.ScreeningDate = benefInDB.ScreeningDate;
+                    benefVM.ProvinceBCP = benefInDB.ProvinceBCP;
+                    benefVM.BorderPoint = benefInDB.BorderPoint;
+                    benefVM.BeneficiaryType = benefInDB.BeneficiaryType;
+                    benefVM.ReturnStatus = benefInDB.ReturnStatus;
+                    benefVM.OriginProvince = benefInDB.OriginProvince;
+                    benefVM.OriginDistrict = benefInDB.OriginDistrict;
+                    benefVM.OriginVillage = benefInDB.OriginVillage;
+                    benefVM.ReturnProvince = benefInDB.ReturnProvince;
+                    benefVM.ReturnDistrict = benefInDB.ReturnDistrict;
+                    benefVM.ReturnVillage = benefInDB.ReturnVillage;
+                    benefVM.LeavingReason1 = benefInDB.LeavingReason1;
+                    benefVM.LeavingReason1Other = benefInDB.LeavingReason1Other;
+                    benefVM.LeavingReason2 = benefInDB.LeavingReason2;
+                    benefVM.LeavingReason2Other = benefInDB.LeavingReason2Other;
+                    benefVM.LeavingReason3 = benefInDB.LeavingReason3;
+                    benefVM.LeavingReason3Other = benefInDB.LeavingReason3Other;
+                    benefVM.OwnHouse = benefInDB.OwnHouse;
+                    benefVM.WhereWillLive = benefInDB.WhereWillLive;
+                    benefVM.RentPayForAccom = benefInDB.RentPayForAccom;
+                    benefVM.RentPayCurrency = benefInDB.RentPayCurrency;
+                    benefVM.AllowForJob = benefInDB.AllowForJob;
+                    benefVM.CountryOfExile = benefInDB.CountryOfExile;
+                    benefVM.CountryOfExilOther = benefInDB.CountryOfExilOther;
+                    benefVM.BeforReturnProvince = benefInDB.BeforReturnProvince;
+                    benefVM.BeforReturnDistrictID = benefInDB.BeforReturnDistrictID;
+                    benefVM.BeforReturnRemarks = benefInDB.BeforReturnRemarks;
+                    benefVM.FamilyMemStayedBehind = benefInDB.FamilyMemStayedBehind;
+                    benefVM.FamilyMemStayedBehindNo = benefInDB.FamilyMemStayedBehindNo;
+                    benefVM.LengthOfStayYears = benefInDB.LengthOfStayYears;
+                    benefVM.LengthOfStayMonths = benefInDB.LengthOfStayMonths;
+                    benefVM.LengthOfStayDays = benefInDB.LengthOfStayDays;
+                    benefVM.WouldYouReturn = benefInDB.WouldYouReturn;
+                    benefVM.HaveFamilyBenefited = benefInDB.HaveFamilyBenefited;
+                    benefVM.TransportationDate = benefInDB.TransportationDate;
+                    benefVM.TransportationInfo = benefInDB.TransportationInfo;
+                    benefVM.TransportAccompaniedBy = benefInDB.TransportAccompaniedBy;
+                    benefVM.TransportAccomByNo = benefInDB.TransportAccomByNo;
+                    benefVM.TopNeed1 = benefInDB.TopNeed1;
+                    benefVM.TopNeed1Other = benefInDB.TopNeed1Other;
+                    benefVM.TopNeed2 = benefInDB.TopNeed2;
+                    benefVM.TopNeed2Other = benefInDB.TopNeed2Other;
+                    benefVM.TopNeed3 = benefInDB.TopNeed3;
+                    benefVM.TopNeed3Other = benefInDB.TopNeed3Other;
+                    benefVM.IntendToDo = benefInDB.IntendToDo;
+                    benefVM.IntendToDoOther = benefInDB.IntendToDoOther;
+                    benefVM.ProfessionInHostCountry = benefInDB.ProfessionInHostCountry;
+                    benefVM.ProfessionInHostCountryOther = benefInDB.ProfessionInHostCountryOther;
+                    benefVM.HoHCanReadWrite = benefInDB.HoHCanReadWrite;
+                    benefVM.HoHEducationLevel = benefInDB.HoHEducationLevel;
+                    benefVM.HoHEducationLevelOther = benefInDB.HoHEducationLevelOther;
+                    benefVM.NumHHHaveTaskira = benefInDB.NumHHHaveTaskira;
+                    benefVM.NumHHHavePassport = benefInDB.NumHHHavePassport;
+                    benefVM.NumHHHaveDocOther = benefInDB.NumHHHaveDocOther;
+                    benefVM.DoHaveSecureLivelihood = benefInDB.DoHaveSecureLivelihood;
+                    benefVM.DidChildrenGoToSchoole = benefInDB.DidChildrenGoToSchoole;
+                    benefVM.NumChildrenAttendedSchoole = benefInDB.NumChildrenAttendedSchoole;
+                }
+
+                List<IndividualVM> individualsInDB = db.Individuals.
+                    Where(i => i.BeneficiaryID == beneficiaryID && i.IsActive == true).Select(i =>
+                    new IndividualVM {
+                        IndividualID = i.IndividualID,
+                        BeneficiaryID = i.BeneficiaryID,
+                        Name = i.Name,
+                        DrName = i.DrName,
+                        FName = i.FName,
+                        DrFName = i.DrFName,
+                        GenderCode = i.GenderCode,
+                        Gender = db.LookupValues.Where(l => l.ValueCode == i.GenderCode).Select(l =>l.EnName).FirstOrDefault(),
+                        MaritalStatusCode = i.MaritalStatusCode,
+                        MaritalStatus = db.LookupValues.Where(l => l.ValueCode == i.MaritalStatusCode).Select(l => l.EnName).FirstOrDefault(),
+                        Age = i.Age,
+                        IDTypeCode = i.IDTypeCode,
+                        IDType = db.LookupValues.Where(l => l.ValueCode == i.IDTypeCode).Select(l => l.EnName).FirstOrDefault(),
+                        IDNo = i.IDNo,
+                        RelationshipCode = i.RelationshipCode,
+                        Relationship = db.LookupValues.Where(l => l.ValueCode == i.RelationshipCode).Select(l => l.EnName).FirstOrDefault(),
+                        ContactNumber = i.ContactNumber
+                    }).ToList();
+                benefVM.Individuals = individualsInDB;
+
+                var psnInDB = db.PSNs.Where(p => p.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.PSNs = psnInDB;
+
+                var returnReasonsInDB = db.ReturnReasons.Where(r => r.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.ReturnReasons = returnReasonsInDB;
+
+                var determinationsInDB = db.Determinations.Where(d=> d.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.Determinations = determinationsInDB;
+
+                var moneySourcesInDB = db.MoneySources.Where(m => m.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.MoneySources = moneySourcesInDB;
+
+                var broughtItemsInDB = db.BroughtItems.Where(b => b.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.BroughtItems = broughtItemsInDB;
+
+                var postArivalNeedsInDB = db.PostArrivalNeeds.Where(p => p.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.PostArrivalNeeds = postArivalNeedsInDB;
+
+                var transportsInDB = db.Transportations.Where(t => t.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.Transportations = transportsInDB;
+
+                var livelihoodNeedsInDB = db.LivelihoodEmpNeeds.Where(l => l.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.LivelihoodEmpNeeds = livelihoodNeedsInDB;
+
+                var needToolsInDB = db.NeedTools.Where(b => b.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.NeedTools = needToolsInDB;
+
+                var mainConcernsInDB = db.MainConcerns.Where(m => m.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.MainConcerns = mainConcernsInDB;
+
+                var hostCountryShoolsInDB = db.HostCountrySchools.Where(s => s.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.HostCountrySchools = hostCountryShoolsInDB;
+            }
+            return benefVM;
         }
     }
 }

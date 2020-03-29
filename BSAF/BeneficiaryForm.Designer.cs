@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BeneficiaryForm));
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cmbOriginProvince = new System.Windows.Forms.ComboBox();
@@ -507,6 +508,7 @@
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
+            this.txtBeneficiaryID = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1249,6 +1251,7 @@
             // 
             // tabProfile
             // 
+            this.tabProfile.Controls.Add(this.txtBeneficiaryID);
             this.tabProfile.Controls.Add(this.pnlReturnStatus);
             this.tabProfile.Controls.Add(this.pnlBeneficiaryInfo);
             this.tabProfile.Controls.Add(this.pnlFamilyMember);
@@ -5548,6 +5551,15 @@
             this.btnSaveBeneficiary.UseVisualStyleBackColor = true;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
             // 
+            // txtBeneficiaryID
+            // 
+            this.txtBeneficiaryID.Location = new System.Drawing.Point(897, 3);
+            this.txtBeneficiaryID.Name = "txtBeneficiaryID";
+            this.txtBeneficiaryID.Size = new System.Drawing.Size(100, 20);
+            this.txtBeneficiaryID.TabIndex = 54;
+            this.txtBeneficiaryID.Visible = false;
+            this.txtBeneficiaryID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
+            // 
             // BeneficiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5556,6 +5568,9 @@
             this.ClientSize = new System.Drawing.Size(1009, 749);
             this.Controls.Add(this.tabBeneficiary);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BeneficiaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Beneficiary Screening and Assistance Form";
@@ -6195,5 +6210,6 @@
         private System.Windows.Forms.CheckBox WAY3MCOther;
         private System.Windows.Forms.ContextMenuStrip ctxFamailyMemeberMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmDeleteMemeber;
+        private System.Windows.Forms.TextBox txtBeneficiaryID;
     }
 }

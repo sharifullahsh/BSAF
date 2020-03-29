@@ -10,7 +10,7 @@ namespace BSAF.Models.ViewModels
     public class IndividualVM
     {
         [Key]
-        public int FamilyMemeberID { get; set; }
+        public int IndividualID { get; set; }
 
         public int? BeneficiaryID { get; set; }
 
@@ -24,15 +24,23 @@ namespace BSAF.Models.ViewModels
 
         public string GenderCode { get; set; }
 
+        public string Gender { get; set; }
+
         public string MaritalStatusCode { get; set; }
+
+        public string MaritalStatus { get; set; }
 
         public int? Age { get; set; }
 
         public string IDTypeCode { get; set; }
 
+        public string IDType { get; set; }
+
         public string IDNo { get; set; }
 
         public string RelationshipCode { get; set; }
+
+        public string Relationship { get; set; }
 
         public string ContactNumber { get; set; }
     }

@@ -21,7 +21,7 @@ namespace BSAF
             InitializeComponent();
             var id = UserInfo.ID;
             var uname = UserInfo.UserName;
-            var cname = UserInfo.CenterCode;
+            var cname = UserInfo.StationCode;
         }
 
        
@@ -126,6 +126,11 @@ namespace BSAF
             {
                 var itemIndex = lvBeneficiaries.SelectedIndices[0];
                 var beneficiaryId = int.Parse(lvBeneficiaries.SelectedItems[0].Text);
+                BeneficiaryForm bf = new BeneficiaryForm(beneficiaryId)
+                {
+                    MdiParent = this.MdiParent
+                };
+                bf.Show();
                 
             }
         }

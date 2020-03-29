@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace BSAF
 {
-    public partial class MDIParent : Form
+    public partial class BSAFMDIParent : Form
     {
         private int childFormNumber = 0;
 
-        public MDIParent()
+        public BSAFMDIParent()
         {
             InitializeComponent();
         }
@@ -51,7 +51,7 @@ namespace BSAF
 
         private void newBeneficaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BeneficiaryForm bForm = new BeneficiaryForm
+            BeneficiaryForm bForm = new BeneficiaryForm(null)
             {
                 MdiParent = this
             };

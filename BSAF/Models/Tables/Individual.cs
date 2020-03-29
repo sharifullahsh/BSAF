@@ -9,7 +9,7 @@ namespace BSAF.Models.Tables
     public partial class Individual
     {
         [Key]
-        public int FamilyMemeberID { get; set; }
+        public int IndividualID { get; set; }
 
         public int? BeneficiaryID { get; set; }
 
@@ -37,11 +37,11 @@ namespace BSAF.Models.Tables
 
         public bool? IsActive { get; set; }
 
-        public int InsertedBy { get; set; }
+        public string InsertedBy { get; set; }
 
         public DateTime InsertedDate { get; set; }
 
-        public int? LastUpdatedBy { get; set; }
+        public string LastUpdatedBy { get; set; }
 
         public DateTime? LastUpdatedDate { get; set; }
 

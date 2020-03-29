@@ -18,23 +18,136 @@ namespace BSAF
     {
         dbContext db = new dbContext();
         public BeneficiaryVM beneficiary;
+        public int? _BeneficiaryID { get; set; }
         //public BeneficiaryVM beneficiary { get; set; }
-        public BeneficiaryForm()
+        public BeneficiaryForm(int? beneficiaryID)
         {
             InitializeComponent();
-            beneficiary = new BeneficiaryVM();
 
             //selected tab
             if (string.IsNullOrEmpty(UserInfo.ID)){
                 MessageBox.Show("Your are not loged in please first login in and then add beneficiary","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                //return;
             }
+            _BeneficiaryID = beneficiaryID;
             this.tabBeneficiary.SelectedTab = this.tabProfile;
+        }
+
+        private void InitializeFields()
+        {
+            this.txtBeneficiaryID.Text = beneficiary.BeneficiaryID.ToString();
+            this.screeningDate.Value = beneficiary.ScreeningDate;
+            this.cmbProvinceBCP.SelectedValue = beneficiary.ProvinceBCP;
+            this.cmbBorderPoint.SelectedValue = beneficiary.BorderPoint;
+            if(beneficiary.BeneficiaryType == "Family")
+            {
+                this.rdoBeneficiaryTypeFamily.Checked = true;
+            }
+            else {
+                this.rdoBeneficiaryTypeIndividual.Checked = true;
+            }
+
+            if (beneficiary.ReturnStatus == "DEP")
+            {
+                this.rdoReturnStatusDeported.Checked = true;
+            }
+            else if(beneficiary.ReturnStatus == "DC")
+            {
+                this.rdoReturnStatusDocClaimant.Checked = true;
+            }
+            else
+            {
+                this.rdoReturnStatusSpontaneous.Checked = true;
+            }
+            this.txtTotalIndividual.Text = beneficiary.Individuals.Count().ToString();
+            foreach(var i in beneficiary.Individuals)
+            {
+                ListViewItem item = new ListViewItem(i.Name.ToString());
+                item.SubItems.Add(i.DrName);
+                item.SubItems.Add(i.FName);
+                item.SubItems.Add(i.DrFName);
+                item.SubItems.Add(i.Gender);
+                item.SubItems.Add(i.MaritalStatus);
+                item.SubItems.Add(i.Age.ToString());
+                item.SubItems.Add(i.IDType);
+                item.SubItems.Add(i.IDNo);
+                item.SubItems.Add(i.Relationship);
+                item.SubItems.Add(i.ContactNumber);
+                lvFamilyMember.Items.Add(item);
+            }
+
+            this.cmbOriginProvince.SelectedValue = beneficiary.OriginProvince;
+            this.cmbOriginProvince_SelectionChangeCommitted(null,null);
+            this.cmbOriginDistrict.SelectedValue = beneficiary.OriginDistrict;
+            this.txtOriginVillage.Text = beneficiary.OriginVillage;
+
+            this.cmbReturnProvince.SelectedValue = beneficiary.ReturnProvince;
+            this.cmbReturnProvince_SelectionChangeCommitted(null,null);
+            this.cmbReturnDistrict.SelectedValue = beneficiary.ReturnDistrict;
+            this.txtReturnVillage.Text = beneficiary.ReturnVillage;
+            //Protection 1
+
+            var chkPSNs = this.gbPSN.Controls.OfType<CheckBox>();
+            foreach(var psn in chkPSNs)
+            {
+                var bPSNs = beneficiary.PSNs.Select(p => p.PSNCode);
+                psn.Checked = bPSNs.Contains(psn.Name);
+                if (bPSNs.Contains("PSNOther"))
+                {
+                    this.txtPSNOther.Text = beneficiary.PSNs.Select(p => p.PSNOther).FirstOrDefault();
+                }
+            }
+
+            this.cmb1ReasonForLeaving.SelectedValue = beneficiary.LeavingReason1;
+            this.cmb1ReasonForLeaving_SelectionChangeCommitted(null,null);
+            this.txt1LeavingReasonOther.Text = beneficiary.LeavingReason1Other;
+            if(beneficiary.LeavingReason2 != null) {
+                this.cmb2ReasonForLeaving.SelectedValue = beneficiary.LeavingReason2;
+                this.cmb2ReasonForLeaving_SelectionChangeCommitted(null, null);
+                this.txt2LeavingReasonOther.Text = beneficiary.LeavingReason2Other;
+            }
+            if(beneficiary.LeavingReason3 != null)
+            {
+                this.cmb3ReasonForLeaving.SelectedValue = beneficiary.LeavingReason3;
+                this.cmb3ReasonForLeaving_SelectionChangeCommitted(null, null);
+                this.txt3LeavingReasonOther.Text = beneficiary.LeavingReason3Other;
+            }
+
+            var chkReturnReasons = this.gbReturnReason.Controls.OfType<CheckBox>();
+            var bReasons = beneficiary.ReturnReasons.Select(r => r.ReasonCode);
+            foreach (var reason in chkReturnReasons)
+            {
+                reason.Checked = bReasons.Contains(reason.Name);
+                if (bReasons.Contains("RROther"))
+                {
+                    this.txtReturnReasonOther.Text = beneficiary.ReturnReasons.Select(r => r.Other).FirstOrDefault();
+                }
+            }
+            var gbDeterminations = this.gbRankImportant.Controls.OfType<GroupBox>();
+            var bDeterminations = beneficiary.Determinations.Select(d=>d.DeterminationCode);
+            foreach (var gbDeter in gbDeterminations)
+            {
+                if (bDeterminations.Contains(gbDeter.Name))
+                {
+                    var answerCode = beneficiary.Determinations.Where(d => d.DeterminationCode == gbDeter.Name).Select(d => d.AnswerCode).FirstOrDefault();
+                    if(answerCode != null)
+                    {
+                        var chkAnswer = gbDeter.Name +"_"+ answerCode;
+                        ((RadioButton)gbDeter.Controls[chkAnswer]).Checked = true;
+                    }
+                    if(gbDeter.Name == "RankImpOther")
+                    {
+                        this.txtRankImpOther.Text = beneficiary.Determinations.Where(d => d.DeterminationCode == gbDeter.Name).Select(d => d.Other).FirstOrDefault();
+                    }
+                }
+            }
+
         }
 
         private void btnProfileNext_Click(object sender, EventArgs e)
         {
             var provinceBCP = this.cmbProvinceBCP.SelectedValue != null ? this.cmbProvinceBCP.SelectedValue.ToString():"0";
-            var borderPoint = this.cmbProvinceBCP.SelectedValue != null ? this.cmbProvinceBCP.SelectedValue.ToString() : "0";
+            var borderPoint = this.cmbBorderPoint.SelectedValue != null ? this.cmbBorderPoint.SelectedValue.ToString() : "0";
             var beneficiaryType = "";
             if (this.rdoBeneficiaryTypeFamily.Checked)
             {
@@ -65,7 +178,7 @@ namespace BSAF
             var returnDistrict = this.cmbReturnDistrict.SelectedValue != null ? (int)this.cmbReturnDistrict.SelectedValue : 0;
             var returnVillage = this.txtReturnVillage.Text;
 
-            if (provinceBCP != "0" && !string.IsNullOrEmpty(beneficiaryType) && !string.IsNullOrEmpty(returnStatus)
+            if (provinceBCP != "0" && borderPoint != "0" && !string.IsNullOrEmpty(beneficiaryType) && !string.IsNullOrEmpty(returnStatus)
                  && !string.IsNullOrEmpty(this.txtTotalIndividual.Text) 
                  && originProvince != "0" && originProvince != "0" && originDistrict != 0 && !string.IsNullOrWhiteSpace(originVillage) 
                  && returnProvince != "0" && returnDistrict != 0 && !string.IsNullOrWhiteSpace(returnVillage))
@@ -682,7 +795,6 @@ namespace BSAF
                 }
                 this.beneficiary.PostArrivalNeeds.Add(need);
             }
-            var bneed = this.beneficiary.PostArrivalNeeds;
             this.tabBeneficiary.SelectedIndex = 5;
         }
 
@@ -694,10 +806,11 @@ namespace BSAF
         private void btnAssistanceNeedsNext2_Click(object sender, EventArgs e)
         {
             //Clear list
-            this.beneficiary.Transports.Clear();
+            this.beneficiary.Transportations.Clear();
 
             if (this.rdoBenefitedYes.Checked)
             {
+                beneficiary.HaveFamilyBenefited = true;
                 var assis1Province = this.cmbAssistedInProvince1.SelectedValue != null ? this.cmbAssistedInProvince1.SelectedValue.ToString() : "0";
                 var assis1District = this.cmbAssistedInDistrict1.SelectedValue != null ? int.Parse(this.cmbAssistedInDistrict1.SelectedValue.ToString()) : 0;
                 var assis1Org = this.cmbAssistedOrg1.SelectedValue != null ? this.cmbAssistedOrg1.SelectedValue.ToString() : "0";
@@ -711,7 +824,12 @@ namespace BSAF
                         AssistanceProvided = this.txtAssistance1.Text,
                         OrgCode = assis1Org,
                     };
-                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage1.Text)) { assistanceInfo.Village = this.txtAssistedVillage1.Text; }
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage1.Text))
+                    {
+                        assistanceInfo.Village = this.txtAssistedVillage1.Text;
+                    }
+                    beneficiary.BenefitedFromOrgs.Add(assistanceInfo);
+
                 }
                 else {
                     MessageBox.Show("Please provide organization and assistance informaiton.");
@@ -730,14 +848,22 @@ namespace BSAF
                         AssistanceProvided = this.txtAssistance2.Text,
                         OrgCode = assis2Org,
                     };
-                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage2.Text)) { assistanceInfo.Village = this.txtAssistedVillage2.Text; }
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage2.Text))
+                    {
+                        assistanceInfo.Village = this.txtAssistedVillage2.Text;
+                    }
+                    beneficiary.BenefitedFromOrgs.Add(assistanceInfo);
                 }
+            }else if (this.rdoBenefitedNo.Checked)
+            {
+                this.beneficiary.HaveFamilyBenefited = false;
             }
-            if(!this.rdoBenefitedYes.Checked && !this.rdoBenefitedNo.Checked)
+            else
             {
                 MessageBox.Show("Please answer: How you benefited from UNHCR or IOM.");
                 return;
             }
+
             this.beneficiary.TransportationDate = this.dateTransportationDate.Value;
             var transportOptions = gbTransportation.Controls.OfType<CheckBox>().Where(c => c.Checked);
             foreach(var chb in transportOptions)
@@ -753,7 +879,7 @@ namespace BSAF
                     MessageBox.Show("Please specify transportation other case");
                     return;
                 }
-                this.beneficiary.Transports.Add(transOption);
+                this.beneficiary.Transportations.Add(transOption);
             }
             if (!string.IsNullOrWhiteSpace(this.txtTransAdditionalInfo.Text))
             {
@@ -1145,6 +1271,17 @@ namespace BSAF
             this.cmbAssistedOrg1.DisplayMember = "LookupName";
             this.cmbAssistedOrg1.ValueMember = "ValueCode";
             this.cmbAssistedOrg1.SelectedIndex = 0;
+
+
+            if (_BeneficiaryID != null && _BeneficiaryID != 0)
+            {
+                beneficiary = BeneficiaryController.GetBeneficiary(_BeneficiaryID);
+                InitializeFields();
+            }
+            else
+            {
+                beneficiary = new BeneficiaryVM();
+            }
         }
 
         private void cmbOriginProvince_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1660,11 +1797,6 @@ namespace BSAF
             }
         }
 
-        private void chkTBRCR_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void WAY3MCOther_CheckedChanged(object sender, EventArgs e)
         {
             if (this.WAY3MCOther.Checked)
@@ -1705,6 +1837,6 @@ namespace BSAF
             }
         }
 
-       
+        
     }
 }

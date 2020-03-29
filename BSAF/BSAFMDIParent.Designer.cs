@@ -1,6 +1,6 @@
 ﻿namespace BSAF
 {
-    partial class MDIParent
+    partial class BSAFMDIParent
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BSAFMDIParent));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.newBeneficaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

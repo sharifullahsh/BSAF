@@ -11,7 +11,7 @@ namespace BSAF.Models.Tables
 
         public Guid GUID { get; set; }
 
-        public DateTime? ScreeningDate { get; set; }
+        public DateTime ScreeningDate { get; set; }
 
         public string ProvinceBCP { get; set; }
 
@@ -129,11 +129,11 @@ namespace BSAF.Models.Tables
 
         public DateTime InsertedDate { get; set; }
 
-        public int? LastUpdatedBy { get; set; }
+        public string LastUpdatedBy { get; set; }
 
         public DateTime? LastUpdatedDate { get; set; }
 
-        public string InsertedLocationCode { get; set; }
+        public string StationCode { get; set; }
 
         public bool IsActive { get; set; }
     }
