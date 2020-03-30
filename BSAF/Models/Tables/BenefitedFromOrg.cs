@@ -12,7 +12,7 @@ namespace BSAF.Models.Tables
 
         public int BeneficiaryID { get; set; }
 
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
 
         public string ProvinceCode { get; set; }
 

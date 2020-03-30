@@ -16,7 +16,7 @@ namespace BSAF.Models.Tables
 
         public bool? Provided { get; set; }
 
-        public DateTime? ProvidedDate { get; set; }
+        public DateTime ProvidedDate { get; set; }
 
         public string Comment { get; set; }
     }

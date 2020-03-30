@@ -123,6 +123,7 @@ namespace BSAF
                     this.txtReturnReasonOther.Text = beneficiary.ReturnReasons.Select(r => r.Other).FirstOrDefault();
                 }
             }
+            //Protection 2
             var gbDeterminations = this.gbRankImportant.Controls.OfType<GroupBox>();
             var bDeterminations = beneficiary.Determinations.Select(d=>d.DeterminationCode);
             foreach (var gbDeter in gbDeterminations)
@@ -141,6 +142,267 @@ namespace BSAF
                     }
                 }
             }
+            if (beneficiary.OwnHouse == true) {
+                this.rdoOwnHouseYes.Checked = true;
+            }
+            else if(beneficiary.OwnHouse == false)
+            {
+                this.rdoOwnHouseNo.Checked = true;
+            }
+
+            this.cmbWhereWillYouLive.SelectedValue = beneficiary.WhereWillLive;
+            this.cmbWhereWillYouLive_SelectionChangeCommitted(null,null);
+            if(beneficiary.RentPayForAccom != null)
+            {
+                this.txtRentPayForAccom.Text = beneficiary.RentPayForAccom.ToString();
+            }
+            if (beneficiary.RentPayCurrency == "AFN")
+            {
+                this.rdoAFG.Checked = true;
+            }
+            else if(beneficiary.RentPayCurrency == "USD")
+            {
+                this.rdoUSD.Checked = true;
+            }
+
+            var chkMoneySources = this.gbFindMonyForRentHouse.Controls.OfType<CheckBox>();
+            var bMSources = beneficiary.MoneySources.Select(s=>s.MoneySourceCode);
+            foreach (var chksource in chkMoneySources){
+                chksource.Checked = bMSources.Contains(chksource.Name);
+                if (bMSources.Contains("MFRPOther"))
+                {
+                    this.txtMFRPOther.Text = beneficiary.MoneySources.Select(s=>s.MoneySourceOther).FirstOrDefault();
+                }
+            }
+            if(beneficiary.AllowForJob == true)
+            {
+                this.rdoAllowFamilyForJobYes.Checked = true;
+            }
+            else
+            {
+                this.rdoAllowFamilyForJobNo.Checked = true;
+            }
+
+            //Host Country
+            if (beneficiary.CountryOfExile == "Iran")
+            {
+                this.Iran.Checked = true;
+
+            }else if(beneficiary.CountryOfExile == "Pakistan"){
+                this.Pakistan.Checked = true;
+            }
+            else
+            {
+                this.COther.Checked = true;
+                this.txtCOther.Text = this.beneficiary.CountryOfExilOther;
+            }
+            if(beneficiary.CountryOfExile == "Iran" || beneficiary.CountryOfExile == "Pakistan")
+            {
+                this.HostCountry_CheckedChanged(null, null);
+                this.cmbBeforReturnProvince.SelectedValue = beneficiary.BeforReturnProvince;
+                this.cmbBeforReturnProvince_SelectionChangeCommitted(null,null);
+                if (beneficiary.BeforReturnDistrictID != null)
+                {
+                    this.cmbBeforReturnDistrict.SelectedValue = beneficiary.BeforReturnDistrictID;
+                }
+                if(beneficiary.BeforReturnRemarks != null)
+                {
+                    this.txtBeforReturnRemarks.Text = beneficiary.BeforReturnRemarks;
+                }
+
+            }
+            if(beneficiary.FamilyMemStayedBehind == true)
+            {
+                this.rdoFMemberStayedBehindYes.Checked = true;
+                this.txtFMemberStyedBehind.Text = beneficiary.FamilyMemStayedBehindNo.ToString();
+            }
+            else
+            {
+                this.rdoFMemberStayedBehindNo.Checked = true;
+            }
+
+            this.txtYearsStay.Text = beneficiary.LengthOfStayYears.ToString();
+            this.txtMonthsStay.Text = beneficiary.LengthOfStayMonths.ToString();
+            this.txtDaysStay.Text = beneficiary.LengthOfStayDays.ToString();
+
+            var chkItemsBrought = this.pnlItemBrought.Controls.OfType<CheckBox>();
+            var bItemsBrought = beneficiary.BroughtItems.Select(i=>i.ItemCode);
+
+            foreach(var chkItem in chkItemsBrought)
+            {
+                chkItem.Checked = bItemsBrought.Contains(chkItem.Name);
+                if(chkItem.Name == "ITEMSOther")
+                {
+                    this.txtITEMSOther.Text = beneficiary.BroughtItems.Where(i => i.ItemCode == chkItem.Name).Select(i=>i.ItemOther).FirstOrDefault();
+                }
+            }
+
+            if(beneficiary.WouldYouReturn == true)
+            {
+                this.rdoWantReturnYes.Checked = true;
+            }
+            else
+            {
+                this.rdoWantReturnNo.Checked = true;
+            }
+            //Post arrival needs
+            var gbPostArrivalNeeds = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>();
+            var bPostArrivalNeeds = beneficiary.PostArrivalNeeds.Select(n=>n.NeedCode);
+            foreach(var gb in gbPostArrivalNeeds)
+            {
+                if (bPostArrivalNeeds.Contains(gb.Name))
+                {
+                    (gb.Controls.OfType<CheckBox>().First()).Checked = true;
+                    (gb.Controls.OfType<DateTimePicker>().First()).Value = beneficiary.PostArrivalNeeds.Where(n=>n.NeedCode == gb.Name).Select(n=>n.ProvidedDate).FirstOrDefault();
+                    (gb.Controls.OfType<TextBox>().First()).Text = beneficiary.PostArrivalNeeds.Where(n => n.NeedCode == gb.Name).Select(n => n.Comment).FirstOrDefault();
+                }
+            }
+            //Assistance Needs 2
+
+            if(beneficiary.HaveFamilyBenefited == true)
+            {
+                this.rdoBenefitedYes.Checked = true;
+                var assistInfo = beneficiary.BenefitedFromOrgs;
+                if(assistInfo.Count >= 1)
+                {
+                    this.AssistedDate1.Value = assistInfo[0].Date;
+                    this.cmbAssistedInProvince1.SelectedValue = assistInfo[0].ProvinceCode;
+                    this.cmbAssistedInProvince1_SelectedIndexChanged(null, null);
+                    this.cmbAssistedInDistrict1.SelectedValue = assistInfo[0].DistrictID;
+                    this.txtAssistedVillage1.Text = assistInfo[0].Village;
+                    this.cmbAssistedOrg1.SelectedValue = assistInfo[0].OrgCode;
+                    this.txtAssistance1.Text = assistInfo[0].AssistanceProvided;
+                }
+                if (assistInfo.Count >= 2)
+                {
+                    this.AssistedDate1.Value = assistInfo[1].Date;
+                    this.cmbAssistedInProvince1.SelectedValue = assistInfo[1].ProvinceCode;
+                    this.cmbAssistedInProvince2_SelectedIndexChanged(null, null);
+                    this.cmbAssistedInDistrict1.SelectedValue = assistInfo[1].DistrictID;
+                    this.txtAssistedVillage1.Text = assistInfo[1].Village;
+                    this.cmbAssistedOrg1.SelectedValue = assistInfo[1].OrgCode;
+                    this.txtAssistance1.Text = assistInfo[1].AssistanceProvided;
+                }
+
+            }
+            else {
+                this.rdoBenefitedNo.Checked = true;
+            }
+            this.dateTransportationDate.Value = beneficiary.TransportationDate;
+            var chkTransportOptions = this.gbTransportation.Controls.OfType<CheckBox>();
+            var bTransport = beneficiary.Transportations.Select(t=>t.TypedCode);
+            foreach(var chkTransOp in chkTransportOptions)
+            {
+                chkTransOp.Checked = bTransport.Contains(chkTransOp.Name);
+                if(chkTransOp.Name == "TransportOther" && bTransport.Contains(chkTransOp.Name))
+                {
+                    this.txtTransportOther.Text = beneficiary.Transportations.Where(t => t.TypedCode == chkTransOp.Name).Select(t => t.Other).FirstOrDefault();
+                }
+            }
+            this.txtTransAdditionalInfo.Text = beneficiary.TransportationInfo;
+            this.txtTransAccompaniedBy.Text = beneficiary.TransportAccompaniedBy;
+            this.txtTransMobile.Text = beneficiary.TransportAccomByNo;
+            //Reintegration Needs1
+            if(beneficiary.TopNeed1 != null)
+            {
+                this.cmbReintegrationNeeds1.SelectedValue = beneficiary.TopNeed1;
+                this.cmbReintegrationNeeds1_SelectionChangeCommitted(null,null);
+                this.txtReintegrationNeeds1Other.Text = beneficiary.TopNeed1Other;
+            }
+            if(beneficiary.TopNeed2 != null)
+            {
+                this.cmbReintegrationNeeds2.SelectedValue = beneficiary.TopNeed2;
+                this.cmbReintegrationNeeds2_SelectionChangeCommitted(null, null);
+                this.txtReintegrationNeeds2Other.Text = beneficiary.TopNeed2Other;
+            }
+            if (beneficiary.TopNeed3 != null)
+            {
+                this.cmbReintegrationNeeds3.SelectedValue = beneficiary.TopNeed3;
+                this.cmbReintegrationNeeds3_SelectionChangeCommitted(null, null);
+                this.txtReintegrationNeeds3Other.Text = beneficiary.TopNeed3Other;
+            }
+            this.cmbIntendToDo.SelectedValue = beneficiary.IntendToDo;
+            this.cmbIntendToDo_SelectionChangeCommitted(null,null);
+            this.txtIntendToReturnToHostReason.Text = beneficiary.IntendToReturnToHostReason;
+
+            this.chkVocationalTraining.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("VTFH");
+            this.chkProvisionOfTools.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("POT");
+
+            if (this.chkProvisionOfTools.Checked)
+            {
+                var chkTools = this.gbToolsNeeded.Controls.OfType<CheckBox>();
+                var bNeedTools = beneficiary.NeedTools.Select(t=>t.ToolCode);
+                foreach(var chkTool in chkTools)
+                {
+                    chkTool.Checked = bNeedTools.Contains(chkTool.Name);
+                    if(bNeedTools.Contains("ToolsOther"))
+                    {
+                        this.txtToolsOther.Text = beneficiary.NeedTools.Select(t=>t.Other).FirstOrDefault();
+                    }
+                }
+            }
+
+            if(beneficiary.HoHCanReadWrite == true)
+            {
+                this.rdoCanYouReadWriteYes.Checked = true;
+            }
+            else
+            {
+                this.rdoCanYouReadWriteNo.Checked = true;
+            }
+
+            if (this.rdoCanYouReadWriteYes.Checked)
+            {
+                this.cmbHoHEducationLevel.SelectedValue = beneficiary.HoHEducationLevel;
+                this.cmbHoHEducationLevel_SelectionChangeCommitted(null,null);
+                this.txtHoHEducationOther.Text = beneficiary.HoHEducationLevelOther;
+            }
+
+            var chk3MainConerns = this.gbMainConcerns.Controls.OfType<CheckBox>();
+            var bConcerns = beneficiary.MainConcerns.Select(c => c.ConcernCode);
+            foreach(var chkConcern in chk3MainConerns)
+            {
+                chkConcern.Checked = bConcerns.Contains(chkConcern.Name);
+                if (bConcerns.Contains("WAY3MCOther"))
+                {
+                    this.txtWAY3MCOther.Text = beneficiary.MainConcerns.Where(m => m.ConcernCode == "WAY3MCOther").Select(m => m.Other).FirstOrDefault();
+                }
+            }
+            //Reintegration Need 2
+            if(beneficiary.NumHHHaveTaskira != null)
+            {
+                this.txtNumHaveTaskira.Text = beneficiary.NumHHHaveTaskira.ToString();
+            }
+            if (beneficiary.NumHHHavePassport != null)
+            {
+                this.txtNumHavePassport.Text = beneficiary.NumHHHavePassport.ToString();
+            }
+            if (beneficiary.NumHHHaveDocOther != null)
+            {
+                this.txtNumHaveOtherDoc.Text = beneficiary.NumHHHaveDocOther.ToString();
+            }
+            if(beneficiary.DoHaveSecureLivelihood == true)
+            {
+                this.rdoHaveLivelihoodOrSavingYes.Checked = true;
+            }
+            else
+            {
+                this.rdoHaveLivelihoodOrSavingNo.Checked = true;
+            }
+            if(beneficiary.DidChildrenGoToSchoole == true)
+            {
+                this.rdoDidChildrenGoToSchoolYes.Checked = true;
+                this.rdoDidChildrenGoToSchoolYes_CheckedChanged(null,null);
+                this.Primary.Checked = beneficiary.HostCountrySchools.Select(s=>s.SchoolTypeCode).Contains(this.Primary.Name);
+                this.Secondary.Checked = beneficiary.HostCountrySchools.Select(s=>s.SchoolTypeCode).Contains(this.Secondary.Name);
+                this.txtNumChildrenAttendSchool.Text = beneficiary.NumChildrenAttendedSchoole.ToString();
+            }
+            else
+            {
+                this.rdoDidChildrenGoToSchoolNo.Checked = true;
+            }
+
+
 
         }
 
@@ -959,11 +1221,11 @@ namespace BSAF
             if(intendToDo != "0")
             {
                 this.beneficiary.IntendToDo = intendToDo;
-                if(intendToDo == "RTH" && !string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
+                if(intendToDo == "RTH" && !string.IsNullOrWhiteSpace(this.txtIntendToReturnToHostReason.Text))
                 {
-                    this.beneficiary.IntendToDoOther = this.txtReturnToHostReason.Text;
+                    this.beneficiary.IntendToReturnToHostReason = this.txtIntendToReturnToHostReason.Text;
                 }
-                else if (intendToDo == "RTH" && string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
+                else if (intendToDo == "RTH" && string.IsNullOrWhiteSpace(this.txtIntendToReturnToHostReason.Text))
                 {
                     MessageBox.Show("Please state the reason for returning back to host country.");
                     return;
@@ -1096,9 +1358,9 @@ namespace BSAF
             {
                 this.beneficiary.NumHHHavePassport = int.Parse(this.txtNumHavePassport.Text);
             }
-            if (!string.IsNullOrWhiteSpace(this.txtchkNumHaveOtherDoc.Text))
+            if (!string.IsNullOrWhiteSpace(this.txtNumHaveOtherDoc.Text))
             {
-                this.beneficiary.NumHHHaveDocOther = int.Parse(this.txtchkNumHaveOtherDoc.Text);
+                this.beneficiary.NumHHHaveDocOther = int.Parse(this.txtNumHaveOtherDoc.Text);
             }
             if (this.rdoHaveLivelihoodOrSavingYes.Checked)
             {
@@ -1151,7 +1413,7 @@ namespace BSAF
         private void BeneficiaryForm_Load(object sender, EventArgs e)
         {
             this.lblReturnToHostReason.Visible = false;
-            this.txtReturnToHostReason.Visible = false;
+            this.txtIntendToReturnToHostReason.Visible = false;
             
             this.lblHoHEducationOther.Visible = false;
             this.txtHoHEducationOther.Visible = false;
@@ -1271,7 +1533,6 @@ namespace BSAF
             this.cmbAssistedOrg1.DisplayMember = "LookupName";
             this.cmbAssistedOrg1.ValueMember = "ValueCode";
             this.cmbAssistedOrg1.SelectedIndex = 0;
-
 
             if (_BeneficiaryID != null && _BeneficiaryID != 0)
             {
@@ -1525,12 +1786,12 @@ namespace BSAF
             if(intendTodo != "0" && intendTodo == "RTH")
             {
                 this.lblReturnToHostReason.Visible = true;
-                this.txtReturnToHostReason.Visible = true;
+                this.txtIntendToReturnToHostReason.Visible = true;
             }
             else
             {
                 this.lblReturnToHostReason.Visible = false;
-                this.txtReturnToHostReason.Visible = false;
+                this.txtIntendToReturnToHostReason.Visible = false;
             }
         }
 

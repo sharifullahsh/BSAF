@@ -79,7 +79,7 @@ namespace BSAF.Models.Tables
 
         public bool? HaveFamilyBenefited { get; set; }
 
-        public DateTime? TransportationDate { get; set; }
+        public DateTime TransportationDate { get; set; }
 
         public string TransportationInfo { get; set; }
 
@@ -101,11 +101,11 @@ namespace BSAF.Models.Tables
 
         public string IntendToDo { get; set; }
 
+        public string IntendToReturnToHostReason { get; set; }
+
         public string ProfessionInHostCountry { get; set; }
 
         public string ProfessionInHostCountryOther { get; set; }
-
-        public string IntendToDoOther { get; set; }
 
         public bool? HoHCanReadWrite { get; set; }
 

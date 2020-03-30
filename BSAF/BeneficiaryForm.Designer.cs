@@ -99,6 +99,7 @@
             this.tsmDeleteMemeber = new System.Windows.Forms.ToolStripMenuItem();
             this.tabBeneficiary = new System.Windows.Forms.TabControl();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.txtBeneficiaryID = new System.Windows.Forms.TextBox();
             this.pnlReturnStatus = new System.Windows.Forms.Panel();
             this.rdoReturnStatusDeported = new System.Windows.Forms.RadioButton();
             this.rdoReturnStatusDocClaimant = new System.Windows.Forms.RadioButton();
@@ -443,7 +444,7 @@
             this.txtProfessionOther = new System.Windows.Forms.TextBox();
             this.lblReturnToHostReason = new System.Windows.Forms.Label();
             this.cmbIntendToDo = new System.Windows.Forms.ComboBox();
-            this.txtReturnToHostReason = new System.Windows.Forms.TextBox();
+            this.txtIntendToReturnToHostReason = new System.Windows.Forms.TextBox();
             this.btnReintegNeed1Previous = new System.Windows.Forms.Button();
             this.btnReintegNeed1NeedNext = new System.Windows.Forms.Button();
             this.gbMainConcerns = new System.Windows.Forms.GroupBox();
@@ -496,7 +497,7 @@
             this.label102 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
-            this.txtchkNumHaveOtherDoc = new System.Windows.Forms.TextBox();
+            this.txtNumHaveOtherDoc = new System.Windows.Forms.TextBox();
             this.label100 = new System.Windows.Forms.Label();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.txtNumHavePassport = new System.Windows.Forms.TextBox();
@@ -508,7 +509,6 @@
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
-            this.txtBeneficiaryID = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1277,6 +1277,15 @@
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "Beneficiary";
             this.tabProfile.UseVisualStyleBackColor = true;
+            // 
+            // txtBeneficiaryID
+            // 
+            this.txtBeneficiaryID.Location = new System.Drawing.Point(897, 3);
+            this.txtBeneficiaryID.Name = "txtBeneficiaryID";
+            this.txtBeneficiaryID.Size = new System.Drawing.Size(100, 20);
+            this.txtBeneficiaryID.TabIndex = 54;
+            this.txtBeneficiaryID.Visible = false;
+            this.txtBeneficiaryID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // pnlReturnStatus
             // 
@@ -4654,7 +4663,7 @@
             this.tabReintegrationNeeds1.Controls.Add(this.txtProfessionOther);
             this.tabReintegrationNeeds1.Controls.Add(this.lblReturnToHostReason);
             this.tabReintegrationNeeds1.Controls.Add(this.cmbIntendToDo);
-            this.tabReintegrationNeeds1.Controls.Add(this.txtReturnToHostReason);
+            this.tabReintegrationNeeds1.Controls.Add(this.txtIntendToReturnToHostReason);
             this.tabReintegrationNeeds1.Controls.Add(this.btnReintegNeed1Previous);
             this.tabReintegrationNeeds1.Controls.Add(this.btnReintegNeed1NeedNext);
             this.tabReintegrationNeeds1.Controls.Add(this.gbMainConcerns);
@@ -4889,12 +4898,12 @@
             this.cmbIntendToDo.TabIndex = 112;
             this.cmbIntendToDo.SelectionChangeCommitted += new System.EventHandler(this.cmbIntendToDo_SelectionChangeCommitted);
             // 
-            // txtReturnToHostReason
+            // txtIntendToReturnToHostReason
             // 
-            this.txtReturnToHostReason.Location = new System.Drawing.Point(640, 146);
-            this.txtReturnToHostReason.Name = "txtReturnToHostReason";
-            this.txtReturnToHostReason.Size = new System.Drawing.Size(346, 20);
-            this.txtReturnToHostReason.TabIndex = 113;
+            this.txtIntendToReturnToHostReason.Location = new System.Drawing.Point(640, 146);
+            this.txtIntendToReturnToHostReason.Name = "txtIntendToReturnToHostReason";
+            this.txtIntendToReturnToHostReason.Size = new System.Drawing.Size(346, 20);
+            this.txtIntendToReturnToHostReason.TabIndex = 113;
             // 
             // btnReintegNeed1Previous
             // 
@@ -5359,7 +5368,7 @@
             // Primary
             // 
             this.Primary.AutoSize = true;
-            this.Primary.Location = new System.Drawing.Point(262, 7);
+            this.Primary.Location = new System.Drawing.Point(126, 9);
             this.Primary.Name = "Primary";
             this.Primary.Size = new System.Drawing.Size(96, 17);
             this.Primary.TabIndex = 135;
@@ -5369,7 +5378,7 @@
             // Secondary
             // 
             this.Secondary.AutoSize = true;
-            this.Secondary.Location = new System.Drawing.Point(121, 7);
+            this.Secondary.Location = new System.Drawing.Point(247, 9);
             this.Secondary.Name = "Secondary";
             this.Secondary.Size = new System.Drawing.Size(113, 17);
             this.Secondary.TabIndex = 134;
@@ -5426,7 +5435,7 @@
             // 
             // groupBox31
             // 
-            this.groupBox31.Controls.Add(this.txtchkNumHaveOtherDoc);
+            this.groupBox31.Controls.Add(this.txtNumHaveOtherDoc);
             this.groupBox31.Controls.Add(this.label100);
             this.groupBox31.Location = new System.Drawing.Point(22, 134);
             this.groupBox31.Name = "groupBox31";
@@ -5434,13 +5443,13 @@
             this.groupBox31.TabIndex = 54;
             this.groupBox31.TabStop = false;
             // 
-            // txtchkNumHaveOtherDoc
+            // txtNumHaveOtherDoc
             // 
-            this.txtchkNumHaveOtherDoc.Location = new System.Drawing.Point(495, 12);
-            this.txtchkNumHaveOtherDoc.Name = "txtchkNumHaveOtherDoc";
-            this.txtchkNumHaveOtherDoc.Size = new System.Drawing.Size(324, 20);
-            this.txtchkNumHaveOtherDoc.TabIndex = 129;
-            this.txtchkNumHaveOtherDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
+            this.txtNumHaveOtherDoc.Location = new System.Drawing.Point(495, 12);
+            this.txtNumHaveOtherDoc.Name = "txtNumHaveOtherDoc";
+            this.txtNumHaveOtherDoc.Size = new System.Drawing.Size(324, 20);
+            this.txtNumHaveOtherDoc.TabIndex = 129;
+            this.txtNumHaveOtherDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // label100
             // 
@@ -5550,15 +5559,6 @@
             this.btnSaveBeneficiary.Text = "Save";
             this.btnSaveBeneficiary.UseVisualStyleBackColor = true;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
-            // 
-            // txtBeneficiaryID
-            // 
-            this.txtBeneficiaryID.Location = new System.Drawing.Point(897, 3);
-            this.txtBeneficiaryID.Name = "txtBeneficiaryID";
-            this.txtBeneficiaryID.Size = new System.Drawing.Size(100, 20);
-            this.txtBeneficiaryID.TabIndex = 54;
-            this.txtBeneficiaryID.Visible = false;
-            this.txtBeneficiaryID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // BeneficiaryForm
             // 
@@ -6105,7 +6105,7 @@
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.TabPage tabReintegrationNeeds2;
         private System.Windows.Forms.GroupBox groupBox31;
-        private System.Windows.Forms.TextBox txtchkNumHaveOtherDoc;
+        private System.Windows.Forms.TextBox txtNumHaveOtherDoc;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.GroupBox groupBox29;
         private System.Windows.Forms.TextBox txtNumHavePassport;
@@ -6172,7 +6172,7 @@
         private System.Windows.Forms.Label lblFirstNeedOther;
         private System.Windows.Forms.TextBox txtReintegrationNeeds1Other;
         private System.Windows.Forms.ComboBox cmbWhereWillYouLive;
-        private System.Windows.Forms.TextBox txtReturnToHostReason;
+        private System.Windows.Forms.TextBox txtIntendToReturnToHostReason;
         private System.Windows.Forms.CheckBox txtSIAR;
         private System.Windows.Forms.ComboBox cmbIntendToDo;
         private System.Windows.Forms.Label lblReturnToHostReason;

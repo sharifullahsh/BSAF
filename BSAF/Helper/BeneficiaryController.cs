@@ -70,7 +70,7 @@ namespace BSAF.Helper
                         TopNeed3 = model.TopNeed3,
                         TopNeed3Other = model.TopNeed3Other,
                         IntendToDo = model.IntendToDo,
-                        IntendToDoOther = model.IntendToDoOther,
+                        IntendToReturnToHostReason = model.IntendToReturnToHostReason,
                         ProfessionInHostCountry = model.ProfessionInHostCountry,
                         ProfessionInHostCountryOther = model.ProfessionInHostCountryOther,
                         HoHCanReadWrite = model.HoHCanReadWrite,
@@ -228,7 +228,8 @@ namespace BSAF.Helper
                     {
                         var mcObj = new MainConcern {
                             BeneficiaryID = beneficiary.BeneficiaryID,
-                            ConcernCode = mConcern.ConcernCode
+                            ConcernCode = mConcern.ConcernCode,
+                            Other = mConcern.Other
                         };
                         db.MainConcerns.Add(mcObj);
                     }
@@ -311,7 +312,7 @@ namespace BSAF.Helper
                     benefVM.TopNeed3 = benefInDB.TopNeed3;
                     benefVM.TopNeed3Other = benefInDB.TopNeed3Other;
                     benefVM.IntendToDo = benefInDB.IntendToDo;
-                    benefVM.IntendToDoOther = benefInDB.IntendToDoOther;
+                    benefVM.IntendToReturnToHostReason = benefInDB.IntendToReturnToHostReason;
                     benefVM.ProfessionInHostCountry = benefInDB.ProfessionInHostCountry;
                     benefVM.ProfessionInHostCountryOther = benefInDB.ProfessionInHostCountryOther;
                     benefVM.HoHCanReadWrite = benefInDB.HoHCanReadWrite;
@@ -365,6 +366,9 @@ namespace BSAF.Helper
 
                 var postArivalNeedsInDB = db.PostArrivalNeeds.Where(p => p.BeneficiaryID == beneficiaryID).ToList();
                 benefVM.PostArrivalNeeds = postArivalNeedsInDB;
+
+                var benefitedFromOrgs = db.BenefitedFromOrgs.Where(b => b.BeneficiaryID == beneficiaryID).ToList();
+                benefVM.BenefitedFromOrgs = benefitedFromOrgs;
 
                 var transportsInDB = db.Transportations.Where(t => t.BeneficiaryID == beneficiaryID).ToList();
                 benefVM.Transportations = transportsInDB;

@@ -84,7 +84,7 @@ namespace BSAF.Models.ViewModels
 
         public bool? HaveFamilyBenefited { get; set; }
 
-        public DateTime? TransportationDate { get; set; }
+        public DateTime TransportationDate { get; set; }
 
         public string TransportationInfo { get; set; }
 
@@ -106,7 +106,7 @@ namespace BSAF.Models.ViewModels
 
         public string IntendToDo { get; set; }
 
-        public string IntendToDoOther { get; set; }
+        public string IntendToReturnToHostReason { get; set; }
 
         public string ProfessionInHostCountry { get; set; }
 
