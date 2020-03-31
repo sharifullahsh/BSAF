@@ -29,13 +29,20 @@ namespace BSAF
                 MessageBox.Show("Your are not loged in please first login in and then add beneficiary","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 //return;
             }
+            if(beneficiaryID == null || beneficiaryID == 0)
+            {
+                this.Text = "New Beneficiary";
+            }
+            else
+            {
+                this.Text = "Update Beneficiary";
+            }
             _BeneficiaryID = beneficiaryID;
             this.tabBeneficiary.SelectedTab = this.tabProfile;
         }
 
         private void InitializeFields()
         {
-            this.txtBeneficiaryID.Text = beneficiary.BeneficiaryID.ToString();
             this.screeningDate.Value = beneficiary.ScreeningDate;
             this.cmbProvinceBCP.SelectedValue = beneficiary.ProvinceBCP;
             this.cmbBorderPoint.SelectedValue = beneficiary.BorderPoint;
@@ -325,6 +332,10 @@ namespace BSAF
             this.cmbIntendToDo_SelectionChangeCommitted(null,null);
             this.txtIntendToReturnToHostReason.Text = beneficiary.IntendToReturnToHostReason;
 
+            this.cmbProfession.SelectedValue = beneficiary.ProfessionInHostCountry;
+            this.cmbProfession_SelectedIndexChanged(null,null);
+            this.txtProfessionOther.Text = beneficiary.ProfessionInHostCountryOther;
+
             this.chkVocationalTraining.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("VTFH");
             this.chkProvisionOfTools.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("POT");
 
@@ -473,7 +484,20 @@ namespace BSAF
                 return;
             }
 
+            if(this.beneficiary.BeneficiaryType == "Family" && !this.beneficiary.Individuals.Any(i=>i.RelationshipCode == "HH"))
+            {
+                MessageBox.Show("Please add Head of Household");
+                return;
+            }
+            if (this.beneficiary.BeneficiaryType == "Individual" && !this.beneficiary.Individuals.Any(i=>i.RelationshipCode == "HSelf"))
+            {
+                MessageBox.Show("Please select Him/Her self in the relationship section of the individual information");
+                return;
+            }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 1;
+            this.IsAllowTabChange = false;
         }
 
         private void chkReturnReasonOther_CheckedChanged(object sender, EventArgs e)
@@ -617,12 +641,17 @@ namespace BSAF
                 MessageBox.Show("Please select returning reason.");
                 return;
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 2;
+            this.IsAllowTabChange = false;
         }
 
         private void btnProtection1Previous_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 0;
+            this.IsAllowTabChange = false;
         }
 
         private void btnProtection2Next_Click(object sender, EventArgs e)
@@ -713,12 +742,17 @@ namespace BSAF
                 this.beneficiary.AllowForJob = false;
             }
             else { MessageBox.Show("Please answer do you allow family member for job."); return; }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 3;
+            this.IsAllowTabChange = false;
         }
 
         private void btnProtection2Previous_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 1;
+            this.IsAllowTabChange = false;
         }
 
         private void btnHostCountryNext_Click(object sender, EventArgs e)
@@ -837,12 +871,17 @@ namespace BSAF
                 MessageBox.Show("Please specify would you return to Pakistan/Iran.");
                 return;
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 4;
+            this.IsAllowTabChange = false;
         }
 
         private void btnHostCountryPrevious_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 2;
+            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsNext1_Click(object sender, EventArgs e)
@@ -1057,12 +1096,17 @@ namespace BSAF
                 }
                 this.beneficiary.PostArrivalNeeds.Add(need);
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 5;
+            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsPrevious1_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 3;
+            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsNext2_Click(object sender, EventArgs e)
@@ -1155,12 +1199,17 @@ namespace BSAF
             {
                 this.beneficiary.TransportAccomByNo = this.txtTransMobile.Text;
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 6;
+            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsPrevious2_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 4;
+            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeed1NeedNext_Click(object sender, EventArgs e)
@@ -1252,6 +1301,7 @@ namespace BSAF
             else
             {
                 MessageBox.Show("Please specify your profession in host country.");
+                return;
             }
             if (this.chkVocationalTraining.Checked)
             {
@@ -1338,12 +1388,17 @@ namespace BSAF
                 MessageBox.Show("Please specify your 3 main concern in Afghanistan.");
                 return;
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 7;
+            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeed1Previous_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 5;
+            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeeds2Next_Click(object sender, EventArgs e)
@@ -1402,12 +1457,17 @@ namespace BSAF
             {
                 this.beneficiary.NumChildrenAttendedSchoole = int.Parse(this.txtNumChildrenAttendSchool.Text);
             }
+
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 8;
+            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeeds2Previous_Click(object sender, EventArgs e)
         {
+            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 6;
+            this.IsAllowTabChange = false;
         }
 
         private void BeneficiaryForm_Load(object sender, EventArgs e)
@@ -1897,7 +1957,16 @@ namespace BSAF
 
         private void btnSaveBeneficiary_Click(object sender, EventArgs e)
         {
-           var respons =  BeneficiaryController.Add(this.beneficiary);
+            bool respons = false;
+            if(this.beneficiary.BeneficiaryID == 0)
+            {
+                respons = BeneficiaryController.Add(this.beneficiary);
+            }
+            else
+            {
+                respons = BeneficiaryController.Update(this.beneficiary);
+            }
+          
             if (respons)
             {
                 if(MessageBox.Show("Beneficiary successfully saved.","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk) == DialogResult.OK)
@@ -2098,6 +2167,34 @@ namespace BSAF
             }
         }
 
-        
+        public bool IsAllowTabChange { get; set; } = false;
+        private void AllowTabChange()
+        {
+            IsAllowTabChange = true;
+        }
+        private void PreventTabChange()
+        {
+            IsAllowTabChange = false;
+        }
+
+        private void tabBeneficiary_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (IsAllowTabChange)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+            
+        }
+
+        private void btnCardPrevious_Click(object sender, EventArgs e)
+        {
+            this.IsAllowTabChange = true;
+            this.tabBeneficiary.SelectedIndex = 7;
+            this.IsAllowTabChange = false;
+        }
     }
 }

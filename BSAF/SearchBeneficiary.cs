@@ -131,6 +131,8 @@ namespace BSAF
                     MdiParent = this.MdiParent
                 };
                 bf.Show();
+
+                this.Dispose();
                 
             }
         }

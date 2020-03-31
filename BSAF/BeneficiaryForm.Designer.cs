@@ -99,7 +99,6 @@
             this.tsmDeleteMemeber = new System.Windows.Forms.ToolStripMenuItem();
             this.tabBeneficiary = new System.Windows.Forms.TabControl();
             this.tabProfile = new System.Windows.Forms.TabPage();
-            this.txtBeneficiaryID = new System.Windows.Forms.TextBox();
             this.pnlReturnStatus = new System.Windows.Forms.Panel();
             this.rdoReturnStatusDeported = new System.Windows.Forms.RadioButton();
             this.rdoReturnStatusDocClaimant = new System.Windows.Forms.RadioButton();
@@ -245,7 +244,7 @@
             this.EFC_NAAIMP = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.tabHostCountrySection = new System.Windows.Forms.TabPage();
+            this.tabHostCountry = new System.Windows.Forms.TabPage();
             this.pnlFamilyMemStayYesHowMany = new System.Windows.Forms.Panel();
             this.txtFMemberStyedBehind = new System.Windows.Forms.TextBox();
             this.lblIfFMemStyedHowMany = new System.Windows.Forms.Label();
@@ -509,6 +508,7 @@
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
+            this.btnCardPrevious = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -538,7 +538,7 @@
             this.S.SuspendLayout();
             this.SEG.SuspendLayout();
             this.EFC.SuspendLayout();
-            this.tabHostCountrySection.SuspendLayout();
+            this.tabHostCountry.SuspendLayout();
             this.pnlFamilyMemStayYesHowMany.SuspendLayout();
             this.pnlWouldReturnToHost.SuspendLayout();
             this.pnlItemBrought.SuspendLayout();
@@ -886,7 +886,7 @@
             this.screeningDate.CustomFormat = "MMM dd yyyy";
             this.screeningDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.screeningDate.Location = new System.Drawing.Point(145, 43);
-            this.screeningDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
+            this.screeningDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.screeningDate.Name = "screeningDate";
             this.screeningDate.Size = new System.Drawing.Size(162, 20);
             this.screeningDate.TabIndex = 1;
@@ -1236,7 +1236,7 @@
             this.tabBeneficiary.Controls.Add(this.tabProfile);
             this.tabBeneficiary.Controls.Add(this.tabProtection1);
             this.tabBeneficiary.Controls.Add(this.tabProtection2);
-            this.tabBeneficiary.Controls.Add(this.tabHostCountrySection);
+            this.tabBeneficiary.Controls.Add(this.tabHostCountry);
             this.tabBeneficiary.Controls.Add(this.tabAssistanceNeeds1);
             this.tabBeneficiary.Controls.Add(this.tabAssistanceNeeds2);
             this.tabBeneficiary.Controls.Add(this.tabReintegrationNeeds1);
@@ -1248,10 +1248,10 @@
             this.tabBeneficiary.SelectedIndex = 0;
             this.tabBeneficiary.Size = new System.Drawing.Size(1009, 749);
             this.tabBeneficiary.TabIndex = 139;
+            this.tabBeneficiary.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabBeneficiary_Selecting);
             // 
             // tabProfile
             // 
-            this.tabProfile.Controls.Add(this.txtBeneficiaryID);
             this.tabProfile.Controls.Add(this.pnlReturnStatus);
             this.tabProfile.Controls.Add(this.pnlBeneficiaryInfo);
             this.tabProfile.Controls.Add(this.pnlFamilyMember);
@@ -1275,17 +1275,8 @@
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
             this.tabProfile.Size = new System.Drawing.Size(1001, 723);
             this.tabProfile.TabIndex = 0;
-            this.tabProfile.Text = "Beneficiary";
+            this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
-            // 
-            // txtBeneficiaryID
-            // 
-            this.txtBeneficiaryID.Location = new System.Drawing.Point(897, 3);
-            this.txtBeneficiaryID.Name = "txtBeneficiaryID";
-            this.txtBeneficiaryID.Size = new System.Drawing.Size(100, 20);
-            this.txtBeneficiaryID.TabIndex = 54;
-            this.txtBeneficiaryID.Visible = false;
-            this.txtBeneficiaryID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_Field_KeyPress);
             // 
             // pnlReturnStatus
             // 
@@ -2898,30 +2889,30 @@
             this.label23.Text = "8. Rank which of these options is the most important for you to determine your de" +
     "stination in Afghanistan";
             // 
-            // tabHostCountrySection
+            // tabHostCountry
             // 
-            this.tabHostCountrySection.Controls.Add(this.pnlFamilyMemStayYesHowMany);
-            this.tabHostCountrySection.Controls.Add(this.pnlWouldReturnToHost);
-            this.tabHostCountrySection.Controls.Add(this.btnHostCountryPrevious);
-            this.tabHostCountrySection.Controls.Add(this.rdoFMemberStayedBehindNo);
-            this.tabHostCountrySection.Controls.Add(this.btnHostCountryNext);
-            this.tabHostCountrySection.Controls.Add(this.rdoFMemberStayedBehindYes);
-            this.tabHostCountrySection.Controls.Add(this.label49);
-            this.tabHostCountrySection.Controls.Add(this.label43);
-            this.tabHostCountrySection.Controls.Add(this.pnlItemBrought);
-            this.tabHostCountrySection.Controls.Add(this.pnlLengthOfStayInHostC);
-            this.tabHostCountrySection.Controls.Add(this.label48);
-            this.tabHostCountrySection.Controls.Add(this.label44);
-            this.tabHostCountrySection.Controls.Add(this.pnlHousetCountryPlace);
-            this.tabHostCountrySection.Controls.Add(this.pnlHostCountry);
-            this.tabHostCountrySection.Controls.Add(this.label38);
-            this.tabHostCountrySection.Location = new System.Drawing.Point(4, 22);
-            this.tabHostCountrySection.Name = "tabHostCountrySection";
-            this.tabHostCountrySection.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHostCountrySection.Size = new System.Drawing.Size(1001, 723);
-            this.tabHostCountrySection.TabIndex = 3;
-            this.tabHostCountrySection.Text = "Host Country";
-            this.tabHostCountrySection.UseVisualStyleBackColor = true;
+            this.tabHostCountry.Controls.Add(this.pnlFamilyMemStayYesHowMany);
+            this.tabHostCountry.Controls.Add(this.pnlWouldReturnToHost);
+            this.tabHostCountry.Controls.Add(this.btnHostCountryPrevious);
+            this.tabHostCountry.Controls.Add(this.rdoFMemberStayedBehindNo);
+            this.tabHostCountry.Controls.Add(this.btnHostCountryNext);
+            this.tabHostCountry.Controls.Add(this.rdoFMemberStayedBehindYes);
+            this.tabHostCountry.Controls.Add(this.label49);
+            this.tabHostCountry.Controls.Add(this.label43);
+            this.tabHostCountry.Controls.Add(this.pnlItemBrought);
+            this.tabHostCountry.Controls.Add(this.pnlLengthOfStayInHostC);
+            this.tabHostCountry.Controls.Add(this.label48);
+            this.tabHostCountry.Controls.Add(this.label44);
+            this.tabHostCountry.Controls.Add(this.pnlHousetCountryPlace);
+            this.tabHostCountry.Controls.Add(this.pnlHostCountry);
+            this.tabHostCountry.Controls.Add(this.label38);
+            this.tabHostCountry.Location = new System.Drawing.Point(4, 22);
+            this.tabHostCountry.Name = "tabHostCountry";
+            this.tabHostCountry.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHostCountry.Size = new System.Drawing.Size(1001, 723);
+            this.tabHostCountry.TabIndex = 3;
+            this.tabHostCountry.Text = "Host Country";
+            this.tabHostCountry.UseVisualStyleBackColor = true;
             // 
             // pnlFamilyMemStayYesHowMany
             // 
@@ -3393,7 +3384,7 @@
             this.tabAssistanceNeeds1.Padding = new System.Windows.Forms.Padding(3);
             this.tabAssistanceNeeds1.Size = new System.Drawing.Size(1001, 723);
             this.tabAssistanceNeeds1.TabIndex = 4;
-            this.tabAssistanceNeeds1.Text = "Assistance Needs";
+            this.tabAssistanceNeeds1.Text = "Assistance Needs 1";
             this.tabAssistanceNeeds1.UseVisualStyleBackColor = true;
             // 
             // btnAssistanceNeedsPrevious1
@@ -5541,6 +5532,7 @@
             // 
             // tabImageAndCard
             // 
+            this.tabImageAndCard.Controls.Add(this.btnCardPrevious);
             this.tabImageAndCard.Controls.Add(this.btnSaveBeneficiary);
             this.tabImageAndCard.Location = new System.Drawing.Point(4, 22);
             this.tabImageAndCard.Name = "tabImageAndCard";
@@ -5552,13 +5544,23 @@
             // 
             // btnSaveBeneficiary
             // 
-            this.btnSaveBeneficiary.Location = new System.Drawing.Point(753, 338);
+            this.btnSaveBeneficiary.Location = new System.Drawing.Point(829, 345);
             this.btnSaveBeneficiary.Name = "btnSaveBeneficiary";
             this.btnSaveBeneficiary.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBeneficiary.TabIndex = 0;
             this.btnSaveBeneficiary.Text = "Save";
             this.btnSaveBeneficiary.UseVisualStyleBackColor = true;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
+            // 
+            // btnCardPrevious
+            // 
+            this.btnCardPrevious.Location = new System.Drawing.Point(732, 345);
+            this.btnCardPrevious.Name = "btnCardPrevious";
+            this.btnCardPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnCardPrevious.TabIndex = 1;
+            this.btnCardPrevious.Text = "Previous";
+            this.btnCardPrevious.UseVisualStyleBackColor = true;
+            this.btnCardPrevious.Click += new System.EventHandler(this.btnCardPrevious_Click);
             // 
             // BeneficiaryForm
             // 
@@ -5573,7 +5575,6 @@
             this.MinimizeBox = false;
             this.Name = "BeneficiaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Beneficiary Screening and Assistance Form";
             this.Load += new System.EventHandler(this.BeneficiaryForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -5629,8 +5630,8 @@
             this.SEG.PerformLayout();
             this.EFC.ResumeLayout(false);
             this.EFC.PerformLayout();
-            this.tabHostCountrySection.ResumeLayout(false);
-            this.tabHostCountrySection.PerformLayout();
+            this.tabHostCountry.ResumeLayout(false);
+            this.tabHostCountry.PerformLayout();
             this.pnlFamilyMemStayYesHowMany.ResumeLayout(false);
             this.pnlFamilyMemStayYesHowMany.PerformLayout();
             this.pnlWouldReturnToHost.ResumeLayout(false);
@@ -5907,7 +5908,7 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Panel pnlAllowFamilyToWork;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TabPage tabHostCountrySection;
+        private System.Windows.Forms.TabPage tabHostCountry;
         private System.Windows.Forms.Panel pnlHostCountry;
         private System.Windows.Forms.TextBox txtCOther;
         private System.Windows.Forms.Label label38;
@@ -6210,6 +6211,6 @@
         private System.Windows.Forms.CheckBox WAY3MCOther;
         private System.Windows.Forms.ContextMenuStrip ctxFamailyMemeberMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmDeleteMemeber;
-        private System.Windows.Forms.TextBox txtBeneficiaryID;
+        private System.Windows.Forms.Button btnCardPrevious;
     }
 }

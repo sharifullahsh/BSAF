@@ -74,5 +74,15 @@ namespace BSAF
                 this.Owner.Dispose();
             }
         }
+
+        private void BSAFMDIParent_Load(object sender, EventArgs e)
+        {
+            this.menuStrip.Enabled = false;
+            var flogin = new LoginForm()
+            {
+                MdiParent = this
+            };
+            flogin.Show();
+        }
     }
 }

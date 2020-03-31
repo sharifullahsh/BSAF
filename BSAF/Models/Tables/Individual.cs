@@ -35,15 +35,5 @@ namespace BSAF.Models.Tables
 
         public string ContactNumber { get; set; }
 
-        public bool? IsActive { get; set; }
-
-        public string InsertedBy { get; set; }
-
-        public DateTime InsertedDate { get; set; }
-
-        public string LastUpdatedBy { get; set; }
-
-        public DateTime? LastUpdatedDate { get; set; }
-
     }
 }

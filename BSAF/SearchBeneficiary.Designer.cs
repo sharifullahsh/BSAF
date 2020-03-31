@@ -39,7 +39,6 @@
             this.BeneficiaryType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ctmstSearchBeneficiary = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMName = new System.Windows.Forms.Label();
             this.txtMName = new System.Windows.Forms.TextBox();
             this.lblMFatherName = new System.Windows.Forms.Label();
@@ -82,9 +81,9 @@
             this.lvBeneficiaries.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
-            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 27);
+            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 14);
             this.lvBeneficiaries.Name = "lvBeneficiaries";
-            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 480);
+            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 511);
             this.lvBeneficiaries.TabIndex = 0;
             this.lvBeneficiaries.UseCompatibleStateImageBehavior = false;
             this.lvBeneficiaries.View = System.Windows.Forms.View.Details;
@@ -122,24 +121,16 @@
             // ctmstSearchBeneficiary
             // 
             this.ctmstSearchBeneficiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.ctmstSearchBeneficiary.Name = "ctmstSearchBeneficiary";
-            this.ctmstSearchBeneficiary.Size = new System.Drawing.Size(100, 48);
+            this.ctmstSearchBeneficiary.Size = new System.Drawing.Size(95, 26);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // lblMName
             // 
@@ -278,7 +269,7 @@
             this.dateFromDate.CustomFormat = "MMM dd yyyy";
             this.dateFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFromDate.Location = new System.Drawing.Point(595, 19);
-            this.dateFromDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
+            this.dateFromDate.MinDate = new System.DateTime(2002, 1, 1, 0, 0, 0, 0);
             this.dateFromDate.Name = "dateFromDate";
             this.dateFromDate.Size = new System.Drawing.Size(178, 20);
             this.dateFromDate.TabIndex = 57;
@@ -300,7 +291,7 @@
             this.dateToDate.CustomFormat = "MMM dd yyyy";
             this.dateToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateToDate.Location = new System.Drawing.Point(819, 19);
-            this.dateToDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
+            this.dateToDate.MinDate = new System.DateTime(2002, 1, 1, 0, 0, 0, 0);
             this.dateToDate.Name = "dateToDate";
             this.dateToDate.Size = new System.Drawing.Size(176, 20);
             this.dateToDate.TabIndex = 59;
@@ -366,9 +357,9 @@
             this.pnlSearchResult.AutoScroll = true;
             this.pnlSearchResult.Controls.Add(this.lvBeneficiaries);
             this.pnlSearchResult.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSearchResult.Location = new System.Drawing.Point(0, 154);
+            this.pnlSearchResult.Location = new System.Drawing.Point(0, 136);
             this.pnlSearchResult.Name = "pnlSearchResult";
-            this.pnlSearchResult.Size = new System.Drawing.Size(1009, 507);
+            this.pnlSearchResult.Size = new System.Drawing.Size(1009, 525);
             this.pnlSearchResult.TabIndex = 65;
             // 
             // SearchBeneficiaryForm
@@ -426,7 +417,6 @@
         private System.Windows.Forms.ColumnHeader BeneficiaryType;
         private System.Windows.Forms.ContextMenuStrip ctmstSearchBeneficiary;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbSearchCriteria;
         private System.Windows.Forms.Panel pnlSearchResult;
     }

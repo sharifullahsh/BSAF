@@ -133,8 +133,6 @@ namespace BSAF.Models.Tables
 
         public DateTime? LastUpdatedDate { get; set; }
 
-        public string StationCode { get; set; }
-
         public bool IsActive { get; set; }
     }
 }
