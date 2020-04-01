@@ -16,7 +16,7 @@ namespace BSAF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BSAFMDIParent());
+            Application.Run(new MDIParent());
         }
     }
 }

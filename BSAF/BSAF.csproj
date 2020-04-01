@@ -16,7 +16,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\BSAF\</PublishUrl>
+    <PublishUrl>D:\bsaf publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -52,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7820222CCD05BE689BC0C1A5467A5ABFB42D13DC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C14E5FE2C4C5CDCD5F0F41169A51F62598CAACFD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>BSAF_TemporaryKey.pfx</ManifestKeyFile>
@@ -69,6 +69,10 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="KeepAutomation.Barcode.Windows, Version=6.3.9.429, Culture=neutral, PublicKeyToken=328a3e27e1d51b95, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KeepAutomation.Barcode.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -130,6 +134,24 @@
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -184,15 +206,27 @@
     <Compile Include="BeneficiaryForm.Designer.cs">
       <DependentUpon>BeneficiaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardDataSet.cs">
+      <DependentUpon>CardDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CardDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CardInfo.cs" />
     <Compile Include="Helper\BeneficiaryController.cs" />
     <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Helper\UserController.cs" />
     <Compile Include="Helper\UserInfo.cs" />
     <Compile Include="Helper\Validation.cs" />
-    <Compile Include="Models\Tables\AspNetRole.cs" />
-    <Compile Include="Models\Tables\AspNetUser.cs" />
-    <Compile Include="Models\Tables\AspNetUserClaim.cs" />
-    <Compile Include="Models\Tables\AspNetUserLogin.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Identity\AccountViewModels.cs" />
+    <Compile Include="Models\Identity\IdentityModels.cs" />
+    <Compile Include="Models\Identity\ManageViewModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\Tables\Beneficiary.cs" />
     <Compile Include="Models\Tables\BenefitedFromOrg.cs" />
     <Compile Include="Models\Tables\BorderCrossingPoint.cs" />
@@ -204,6 +238,7 @@
     <Compile Include="Models\Tables\HostCountryProvince.cs" />
     <Compile Include="Models\Tables\HostCountrySchool.cs" />
     <Compile Include="Models\Tables\Individual.cs" />
+    <Compile Include="Models\Tables\LeavingReason.cs" />
     <Compile Include="Models\Tables\LivelihoodEmpNeed.cs" />
     <Compile Include="Models\Tables\LookupType.cs" />
     <Compile Include="Models\Tables\LookupValue.cs" />
@@ -219,11 +254,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BSAFMDIParent.cs">
+    <Compile Include="MDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BSAFMDIParent.Designer.cs">
-      <DependentUpon>BSAFMDIParent.cs</DependentUpon>
+    <Compile Include="MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Tables\ReturnReason.cs" />
@@ -232,20 +267,26 @@
     <Compile Include="Models\ViewModels\IndividualVM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleCodeDrawConfiguration.cs" />
+    <Compile Include="SampleCodeGraphics.cs" />
     <Compile Include="SearchBeneficiary.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchBeneficiary.Designer.cs">
       <DependentUpon>SearchBeneficiary.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ZBRGraphics.cs" />
+    <Compile Include="ZBRPrinter.cs" />
     <EmbeddedResource Include="BeneficiaryForm.resx">
       <DependentUpon>BeneficiaryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Card.rdlc" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BSAFMDIParent.resx">
-      <DependentUpon>BSAFMDIParent.cs</DependentUpon>
+    <EmbeddedResource Include="MDIParent.resx">
+      <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,7 +301,17 @@
     <EmbeddedResource Include="SearchBeneficiary.resx">
       <DependentUpon>SearchBeneficiary.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BSAF_TemporaryKey.pfx" />
+    <None Include="CardDataSet.xsc">
+      <DependentUpon>CardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CardDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CardDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CardDataSet.xss">
+      <DependentUpon>CardDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -273,7 +324,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
@@ -285,6 +338,34 @@
     <None Include="Resources\login-back.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Camera_Net\Camera_NET.csproj">
+      <Project>{e6052609-a070-41d5-85b9-acaba91170c5}</Project>
+      <Name>Camera_NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DirectShowLib\DirectShowLib-2010.csproj">
+      <Project>{ce009bfa-5ef6-4153-b2a1-2fa79698a9ae}</Project>
+      <Name>DirectShowLib-2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Card header.PNG" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Card header1.PNG" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
@@ -295,21 +376,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\circle-prociess.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\password.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IOM_Logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

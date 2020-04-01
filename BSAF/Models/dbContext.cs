@@ -12,10 +12,6 @@ namespace BSAF.Entity
             : base("name=BSAFconn")
         {
         }
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Beneficiary> Beneficiaries { get; set; }
         public virtual DbSet<BenefitedFromOrg> BenefitedFromOrgs { get; set; }
         public virtual DbSet<BorderCrossingPoint> BorderCrossingPoints { get; set; }
@@ -26,6 +22,7 @@ namespace BSAF.Entity
         public virtual DbSet<HostCountryProvince> HostCountryProvinces { get; set; }
         public virtual DbSet<HostCountrySchool> HostCountrySchools { get; set; }
         public virtual DbSet<Individual> Individuals { get; set; }
+        public virtual DbSet<LeavingReason> LeavingReasons { get; set; }
         public virtual DbSet<LivelihoodEmpNeed> LivelihoodEmpNeeds { get; set; }
         public virtual DbSet<LookupType> LookupTypes { get; set; }
         public virtual DbSet<LookupValue> LookupValues { get; set; }

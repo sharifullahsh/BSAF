@@ -9,7 +9,7 @@ namespace BSAF.Models.Tables
     public partial class Individual
     {
         [Key]
-        public int IndividualID { get; set; }
+        public int FamilyMemeberID { get; set; }
 
         public int? BeneficiaryID { get; set; }
 
@@ -34,6 +34,16 @@ namespace BSAF.Models.Tables
         public string RelationshipCode { get; set; }
 
         public string ContactNumber { get; set; }
+
+        public bool? IsActive { get; set; }
+
+        public int InsertedBy { get; set; }
+
+        public DateTime InsertedDate { get; set; }
+
+        public int? LastUpdatedBy { get; set; }
+
+        public DateTime? LastUpdatedDate { get; set; }
 
     }
 }

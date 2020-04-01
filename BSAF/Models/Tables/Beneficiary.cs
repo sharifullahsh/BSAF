@@ -11,7 +11,7 @@ namespace BSAF.Models.Tables
 
         public Guid GUID { get; set; }
 
-        public DateTime ScreeningDate { get; set; }
+        public DateTime? ScreeningDate { get; set; }
 
         public string ProvinceBCP { get; set; }
 
@@ -79,7 +79,7 @@ namespace BSAF.Models.Tables
 
         public bool? HaveFamilyBenefited { get; set; }
 
-        public DateTime TransportationDate { get; set; }
+        public DateTime? TransportationDate { get; set; }
 
         public string TransportationInfo { get; set; }
 
@@ -101,11 +101,11 @@ namespace BSAF.Models.Tables
 
         public string IntendToDo { get; set; }
 
-        public string IntendToReturnToHostReason { get; set; }
-
         public string ProfessionInHostCountry { get; set; }
 
         public string ProfessionInHostCountryOther { get; set; }
+
+        public string IntendToDoOther { get; set; }
 
         public bool? HoHCanReadWrite { get; set; }
 
@@ -125,13 +125,15 @@ namespace BSAF.Models.Tables
 
         public int? NumChildrenAttendedSchoole { get; set; }
 
-        public string InsertedBy { get; set; }
+        public int InsertedBy { get; set; }
 
         public DateTime InsertedDate { get; set; }
 
-        public string LastUpdatedBy { get; set; }
+        public int? LastUpdatedBy { get; set; }
 
         public DateTime? LastUpdatedDate { get; set; }
+
+        public string InsertedLocationCode { get; set; }
 
         public bool IsActive { get; set; }
     }

@@ -39,6 +39,7 @@
             this.BeneficiaryType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ctmstSearchBeneficiary = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMName = new System.Windows.Forms.Label();
             this.txtMName = new System.Windows.Forms.TextBox();
             this.lblMFatherName = new System.Windows.Forms.Label();
@@ -58,13 +59,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.gbSearchCriteria = new System.Windows.Forms.GroupBox();
-            this.pnlSearchResult = new System.Windows.Forms.Panel();
             this.ctmstSearchBeneficiary.SuspendLayout();
             this.pnlBeneficiaryInfo.SuspendLayout();
             this.pnlReturnStatus.SuspendLayout();
-            this.gbSearchCriteria.SuspendLayout();
-            this.pnlSearchResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvBeneficiaries
@@ -81,9 +78,9 @@
             this.lvBeneficiaries.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
-            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 14);
+            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 131);
             this.lvBeneficiaries.Name = "lvBeneficiaries";
-            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 511);
+            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 618);
             this.lvBeneficiaries.TabIndex = 0;
             this.lvBeneficiaries.UseCompatibleStateImageBehavior = false;
             this.lvBeneficiaries.View = System.Windows.Forms.View.Details;
@@ -91,51 +88,59 @@
             // BeneficiaryID
             // 
             this.BeneficiaryID.Text = "ID";
-            this.BeneficiaryID.Width = 128;
+            this.BeneficiaryID.Width = 104;
             // 
             // MName
             // 
             this.MName.Text = "Name";
-            this.MName.Width = 128;
+            this.MName.Width = 150;
             // 
             // MFName
             // 
             this.MFName.Text = "FatherName";
-            this.MFName.Width = 156;
+            this.MFName.Width = 163;
             // 
             // SDate
             // 
             this.SDate.Text = "Screening Date";
-            this.SDate.Width = 167;
+            this.SDate.Width = 157;
             // 
             // ReturnStatus
             // 
             this.ReturnStatus.Text = "Return Status";
-            this.ReturnStatus.Width = 162;
+            this.ReturnStatus.Width = 182;
             // 
             // BeneficiaryType
             // 
             this.BeneficiaryType.Text = "Beneficiary Type";
-            this.BeneficiaryType.Width = 257;
+            this.BeneficiaryType.Width = 380;
             // 
             // ctmstSearchBeneficiary
             // 
             this.ctmstSearchBeneficiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.ctmstSearchBeneficiary.Name = "ctmstSearchBeneficiary";
-            this.ctmstSearchBeneficiary.Size = new System.Drawing.Size(95, 26);
+            this.ctmstSearchBeneficiary.Size = new System.Drawing.Size(100, 48);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // lblMName
             // 
             this.lblMName.AutoSize = true;
-            this.lblMName.Location = new System.Drawing.Point(10, 22);
+            this.lblMName.Location = new System.Drawing.Point(12, 24);
             this.lblMName.Name = "lblMName";
             this.lblMName.Size = new System.Drawing.Size(35, 13);
             this.lblMName.TabIndex = 22;
@@ -144,7 +149,7 @@
             // 
             // txtMName
             // 
-            this.txtMName.Location = new System.Drawing.Point(51, 19);
+            this.txtMName.Location = new System.Drawing.Point(53, 21);
             this.txtMName.Name = "txtMName";
             this.txtMName.Size = new System.Drawing.Size(181, 20);
             this.txtMName.TabIndex = 20;
@@ -152,7 +157,7 @@
             // lblMFatherName
             // 
             this.lblMFatherName.AutoSize = true;
-            this.lblMFatherName.Location = new System.Drawing.Point(237, 22);
+            this.lblMFatherName.Location = new System.Drawing.Point(239, 24);
             this.lblMFatherName.Name = "lblMFatherName";
             this.lblMFatherName.Size = new System.Drawing.Size(75, 13);
             this.lblMFatherName.TabIndex = 23;
@@ -161,7 +166,7 @@
             // 
             // txtMFName
             // 
-            this.txtMFName.Location = new System.Drawing.Point(318, 19);
+            this.txtMFName.Location = new System.Drawing.Point(320, 21);
             this.txtMFName.Name = "txtMFName";
             this.txtMFName.Size = new System.Drawing.Size(181, 20);
             this.txtMFName.TabIndex = 21;
@@ -170,7 +175,7 @@
             // 
             this.pnlBeneficiaryInfo.Controls.Add(this.rdoBeneficiaryTypeFamily);
             this.pnlBeneficiaryInfo.Controls.Add(this.rdoBeneficiaryTypeIndividual);
-            this.pnlBeneficiaryInfo.Location = new System.Drawing.Point(632, 48);
+            this.pnlBeneficiaryInfo.Location = new System.Drawing.Point(634, 50);
             this.pnlBeneficiaryInfo.Name = "pnlBeneficiaryInfo";
             this.pnlBeneficiaryInfo.Size = new System.Drawing.Size(363, 35);
             this.pnlBeneficiaryInfo.TabIndex = 54;
@@ -203,7 +208,7 @@
             this.lblBeneficiaryType.BackColor = System.Drawing.SystemColors.Menu;
             this.lblBeneficiaryType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeneficiaryType.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblBeneficiaryType.Location = new System.Drawing.Point(506, 56);
+            this.lblBeneficiaryType.Location = new System.Drawing.Point(508, 58);
             this.lblBeneficiaryType.Name = "lblBeneficiaryType";
             this.lblBeneficiaryType.Size = new System.Drawing.Size(120, 18);
             this.lblBeneficiaryType.TabIndex = 53;
@@ -214,7 +219,7 @@
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDeported);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDocClaimant);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusSpontaneous);
-            this.pnlReturnStatus.Location = new System.Drawing.Point(107, 50);
+            this.pnlReturnStatus.Location = new System.Drawing.Point(109, 52);
             this.pnlReturnStatus.Name = "pnlReturnStatus";
             this.pnlReturnStatus.Size = new System.Drawing.Size(375, 34);
             this.pnlReturnStatus.TabIndex = 56;
@@ -258,7 +263,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Menu;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(-1, 57);
+            this.label8.Location = new System.Drawing.Point(1, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 18);
             this.label8.TabIndex = 55;
@@ -268,8 +273,8 @@
             // 
             this.dateFromDate.CustomFormat = "MMM dd yyyy";
             this.dateFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFromDate.Location = new System.Drawing.Point(595, 19);
-            this.dateFromDate.MinDate = new System.DateTime(2002, 1, 1, 0, 0, 0, 0);
+            this.dateFromDate.Location = new System.Drawing.Point(597, 21);
+            this.dateFromDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
             this.dateFromDate.Name = "dateFromDate";
             this.dateFromDate.Size = new System.Drawing.Size(178, 20);
             this.dateFromDate.TabIndex = 57;
@@ -280,7 +285,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Menu;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(545, 19);
+            this.label2.Location = new System.Drawing.Point(547, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 18);
             this.label2.TabIndex = 58;
@@ -290,8 +295,8 @@
             // 
             this.dateToDate.CustomFormat = "MMM dd yyyy";
             this.dateToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateToDate.Location = new System.Drawing.Point(819, 19);
-            this.dateToDate.MinDate = new System.DateTime(2002, 1, 1, 0, 0, 0, 0);
+            this.dateToDate.Location = new System.Drawing.Point(821, 21);
+            this.dateToDate.MinDate = new System.DateTime(2020, 3, 10, 0, 0, 0, 0);
             this.dateToDate.Name = "dateToDate";
             this.dateToDate.Size = new System.Drawing.Size(176, 20);
             this.dateToDate.TabIndex = 59;
@@ -302,7 +307,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Menu;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(790, 18);
+            this.label1.Location = new System.Drawing.Point(792, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 18);
             this.label1.TabIndex = 60;
@@ -310,7 +315,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(920, 97);
+            this.btnSearch.Location = new System.Drawing.Point(922, 99);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 61;
@@ -320,58 +325,35 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(826, 97);
+            this.btnCancel.Location = new System.Drawing.Point(828, 99);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 62;
-            this.btnCancel.Text = "Reset";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // gbSearchCriteria
-            // 
-            this.gbSearchCriteria.Controls.Add(this.txtMFName);
-            this.gbSearchCriteria.Controls.Add(this.lblMFatherName);
-            this.gbSearchCriteria.Controls.Add(this.txtMName);
-            this.gbSearchCriteria.Controls.Add(this.btnCancel);
-            this.gbSearchCriteria.Controls.Add(this.lblMName);
-            this.gbSearchCriteria.Controls.Add(this.btnSearch);
-            this.gbSearchCriteria.Controls.Add(this.lblBeneficiaryType);
-            this.gbSearchCriteria.Controls.Add(this.dateToDate);
-            this.gbSearchCriteria.Controls.Add(this.pnlBeneficiaryInfo);
-            this.gbSearchCriteria.Controls.Add(this.label1);
-            this.gbSearchCriteria.Controls.Add(this.label8);
-            this.gbSearchCriteria.Controls.Add(this.dateFromDate);
-            this.gbSearchCriteria.Controls.Add(this.pnlReturnStatus);
-            this.gbSearchCriteria.Controls.Add(this.label2);
-            this.gbSearchCriteria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbSearchCriteria.Location = new System.Drawing.Point(0, 0);
-            this.gbSearchCriteria.Name = "gbSearchCriteria";
-            this.gbSearchCriteria.Size = new System.Drawing.Size(1009, 130);
-            this.gbSearchCriteria.TabIndex = 64;
-            this.gbSearchCriteria.TabStop = false;
-            this.gbSearchCriteria.Text = "Search Criteria";
-            // 
-            // pnlSearchResult
-            // 
-            this.pnlSearchResult.AutoScroll = true;
-            this.pnlSearchResult.Controls.Add(this.lvBeneficiaries);
-            this.pnlSearchResult.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSearchResult.Location = new System.Drawing.Point(0, 136);
-            this.pnlSearchResult.Name = "pnlSearchResult";
-            this.pnlSearchResult.Size = new System.Drawing.Size(1009, 525);
-            this.pnlSearchResult.TabIndex = 65;
             // 
             // SearchBeneficiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 661);
-            this.Controls.Add(this.pnlSearchResult);
-            this.Controls.Add(this.gbSearchCriteria);
+            this.ClientSize = new System.Drawing.Size(1009, 749);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.dateToDate);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateFromDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pnlReturnStatus);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pnlBeneficiaryInfo);
+            this.Controls.Add(this.lblBeneficiaryType);
+            this.Controls.Add(this.lblMName);
+            this.Controls.Add(this.txtMName);
+            this.Controls.Add(this.lblMFatherName);
+            this.Controls.Add(this.txtMFName);
+            this.Controls.Add(this.lvBeneficiaries);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SearchBeneficiaryForm";
             this.Text = "Search Beneficiary";
             this.Load += new System.EventHandler(this.SearchBeneficiary_Load);
@@ -380,10 +362,8 @@
             this.pnlBeneficiaryInfo.PerformLayout();
             this.pnlReturnStatus.ResumeLayout(false);
             this.pnlReturnStatus.PerformLayout();
-            this.gbSearchCriteria.ResumeLayout(false);
-            this.gbSearchCriteria.PerformLayout();
-            this.pnlSearchResult.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -417,7 +397,6 @@
         private System.Windows.Forms.ColumnHeader BeneficiaryType;
         private System.Windows.Forms.ContextMenuStrip ctmstSearchBeneficiary;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gbSearchCriteria;
-        private System.Windows.Forms.Panel pnlSearchResult;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
     }
 }

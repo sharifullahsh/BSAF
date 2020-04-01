@@ -1,14 +1,23 @@
 ﻿using BSAF.Entity;
 using BSAF.Helper;
+using BSAF.Models;
 using BSAF.Models.Tables;
 using BSAF.Models.ViewModels;
+using Camera_NET;
+using KeepAutomation.Barcode.Bean;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,409 +27,164 @@ namespace BSAF
     {
         dbContext db = new dbContext();
         public BeneficiaryVM beneficiary;
-        public int? _BeneficiaryID { get; set; }
-        //public BeneficiaryVM beneficiary { get; set; }
-        public BeneficiaryForm(int? beneficiaryID)
+        private CameraChoice _CameraChoice;
+        private bool Drawing = false;
+        private Point StartPoint, EndPoint;
+        private Bitmap OriginalImage;
+        private Bitmap CroppedImage;
+        private Bitmap ScaledImage;
+        private Bitmap DisplayImage;
+        private Graphics DisplayGraphics;
+        private float ImageScale = 1f;
+        ZBRPrinter _thePrinterSDK = null;
+        private string _graphicsSDKVersion;
+        Image image;
+
+        public BeneficiaryForm()
         {
             InitializeComponent();
+            beneficiary = new BeneficiaryVM();
 
             //selected tab
-            if (string.IsNullOrEmpty(UserInfo.ID)){
-                MessageBox.Show("Your are not loged in please first login in and then add beneficiary","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                //return;
-            }
-            if(beneficiaryID == null || beneficiaryID == 0)
-            {
-                this.Text = "New Beneficiary";
-            }
-            else
-            {
-                this.Text = "Update Beneficiary";
-            }
-            _BeneficiaryID = beneficiaryID;
             this.tabBeneficiary.SelectedTab = this.tabProfile;
+            this.tabImageAndCard.Enter += new System.EventHandler(this.cameraLoad);
+            this.tabPhotoCropping.Enter += new System.EventHandler(this.cropLoad);
+            this.tabCard.Enter += new System.EventHandler(this.cardLoad);
         }
-
-        private void InitializeFields()
+        #region load event
+        private void BeneficiaryForm_Load(object sender, EventArgs e)
         {
-            this.screeningDate.Value = beneficiary.ScreeningDate;
-            this.cmbProvinceBCP.SelectedValue = beneficiary.ProvinceBCP;
-            this.cmbBorderPoint.SelectedValue = beneficiary.BorderPoint;
-            if(beneficiary.BeneficiaryType == "Family")
-            {
-                this.rdoBeneficiaryTypeFamily.Checked = true;
-            }
-            else {
-                this.rdoBeneficiaryTypeIndividual.Checked = true;
-            }
+            this.lblReturnToHostReason.Visible = false;
+            this.txtReturnToHostReason.Visible = false;
 
-            if (beneficiary.ReturnStatus == "DEP")
-            {
-                this.rdoReturnStatusDeported.Checked = true;
-            }
-            else if(beneficiary.ReturnStatus == "DC")
-            {
-                this.rdoReturnStatusDocClaimant.Checked = true;
-            }
-            else
-            {
-                this.rdoReturnStatusSpontaneous.Checked = true;
-            }
-            this.txtTotalIndividual.Text = beneficiary.Individuals.Count().ToString();
-            foreach(var i in beneficiary.Individuals)
-            {
-                ListViewItem item = new ListViewItem(i.Name.ToString());
-                item.SubItems.Add(i.DrName);
-                item.SubItems.Add(i.FName);
-                item.SubItems.Add(i.DrFName);
-                item.SubItems.Add(i.Gender);
-                item.SubItems.Add(i.MaritalStatus);
-                item.SubItems.Add(i.Age.ToString());
-                item.SubItems.Add(i.IDType);
-                item.SubItems.Add(i.IDNo);
-                item.SubItems.Add(i.Relationship);
-                item.SubItems.Add(i.ContactNumber);
-                lvFamilyMember.Items.Add(item);
-            }
+            this.lblHoHEducationOther.Visible = false;
+            this.txtHoHEducationOther.Visible = false;
 
-            this.cmbOriginProvince.SelectedValue = beneficiary.OriginProvince;
-            this.cmbOriginProvince_SelectionChangeCommitted(null,null);
-            this.cmbOriginDistrict.SelectedValue = beneficiary.OriginDistrict;
-            this.txtOriginVillage.Text = beneficiary.OriginVillage;
+            this.lbl1LeavingResonOther.Visible = false;
+            this.txt1LeavingReasonOther.Visible = false;
 
-            this.cmbReturnProvince.SelectedValue = beneficiary.ReturnProvince;
-            this.cmbReturnProvince_SelectionChangeCommitted(null,null);
-            this.cmbReturnDistrict.SelectedValue = beneficiary.ReturnDistrict;
-            this.txtReturnVillage.Text = beneficiary.ReturnVillage;
-            //Protection 1
+            this.lbl2LeavingResonOther.Visible = false;
+            this.txt2LeavingReasonOther.Visible = false;
 
-            var chkPSNs = this.gbPSN.Controls.OfType<CheckBox>();
-            foreach(var psn in chkPSNs)
-            {
-                var bPSNs = beneficiary.PSNs.Select(p => p.PSNCode);
-                psn.Checked = bPSNs.Contains(psn.Name);
-                if (bPSNs.Contains("PSNOther"))
-                {
-                    this.txtPSNOther.Text = beneficiary.PSNs.Select(p => p.PSNOther).FirstOrDefault();
-                }
-            }
+            this.lbl3LeavingResonOther.Visible = false;
+            this.txt3LeavingReasonOther.Visible = false;
 
-            this.cmb1ReasonForLeaving.SelectedValue = beneficiary.LeavingReason1;
-            this.cmb1ReasonForLeaving_SelectionChangeCommitted(null,null);
-            this.txt1LeavingReasonOther.Text = beneficiary.LeavingReason1Other;
-            if(beneficiary.LeavingReason2 != null) {
-                this.cmb2ReasonForLeaving.SelectedValue = beneficiary.LeavingReason2;
-                this.cmb2ReasonForLeaving_SelectionChangeCommitted(null, null);
-                this.txt2LeavingReasonOther.Text = beneficiary.LeavingReason2Other;
-            }
-            if(beneficiary.LeavingReason3 != null)
-            {
-                this.cmb3ReasonForLeaving.SelectedValue = beneficiary.LeavingReason3;
-                this.cmb3ReasonForLeaving_SelectionChangeCommitted(null, null);
-                this.txt3LeavingReasonOther.Text = beneficiary.LeavingReason3Other;
-            }
+            var provinceList = db.Provinces.Where(p => p.IsActive == true).Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            provinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbProvinceBCP.DataSource = provinceList;
+            this.cmbProvinceBCP.DisplayMember = "ProvinceName";
+            this.cmbProvinceBCP.ValueMember = "ProvinceCode";
+            this.cmbProvinceBCP.SelectedIndex = 0;
 
-            var chkReturnReasons = this.gbReturnReason.Controls.OfType<CheckBox>();
-            var bReasons = beneficiary.ReturnReasons.Select(r => r.ReasonCode);
-            foreach (var reason in chkReturnReasons)
-            {
-                reason.Checked = bReasons.Contains(reason.Name);
-                if (bReasons.Contains("RROther"))
-                {
-                    this.txtReturnReasonOther.Text = beneficiary.ReturnReasons.Select(r => r.Other).FirstOrDefault();
-                }
-            }
-            //Protection 2
-            var gbDeterminations = this.gbRankImportant.Controls.OfType<GroupBox>();
-            var bDeterminations = beneficiary.Determinations.Select(d=>d.DeterminationCode);
-            foreach (var gbDeter in gbDeterminations)
-            {
-                if (bDeterminations.Contains(gbDeter.Name))
-                {
-                    var answerCode = beneficiary.Determinations.Where(d => d.DeterminationCode == gbDeter.Name).Select(d => d.AnswerCode).FirstOrDefault();
-                    if(answerCode != null)
-                    {
-                        var chkAnswer = gbDeter.Name +"_"+ answerCode;
-                        ((RadioButton)gbDeter.Controls[chkAnswer]).Checked = true;
-                    }
-                    if(gbDeter.Name == "RankImpOther")
-                    {
-                        this.txtRankImpOther.Text = beneficiary.Determinations.Where(d => d.DeterminationCode == gbDeter.Name).Select(d => d.Other).FirstOrDefault();
-                    }
-                }
-            }
-            if (beneficiary.OwnHouse == true) {
-                this.rdoOwnHouseYes.Checked = true;
-            }
-            else if(beneficiary.OwnHouse == false)
-            {
-                this.rdoOwnHouseNo.Checked = true;
-            }
+            var genderTypeList = DbHelper.GetcmbLookups("GENDER");
+            this.cmbGender.DataSource = genderTypeList;
+            this.cmbGender.DisplayMember = "LookupName";
+            this.cmbGender.ValueMember = "ValueCode";
+            this.cmbGender.SelectedIndex = 0;
 
-            this.cmbWhereWillYouLive.SelectedValue = beneficiary.WhereWillLive;
-            this.cmbWhereWillYouLive_SelectionChangeCommitted(null,null);
-            if(beneficiary.RentPayForAccom != null)
-            {
-                this.txtRentPayForAccom.Text = beneficiary.RentPayForAccom.ToString();
-            }
-            if (beneficiary.RentPayCurrency == "AFN")
-            {
-                this.rdoAFG.Checked = true;
-            }
-            else if(beneficiary.RentPayCurrency == "USD")
-            {
-                this.rdoUSD.Checked = true;
-            }
+            var maritalStatusList = DbHelper.GetcmbLookups("MARSTAT");
+            this.cmbMaritalStatus.DataSource = maritalStatusList;
+            this.cmbMaritalStatus.DisplayMember = "LookupName";
+            this.cmbMaritalStatus.ValueMember = "ValueCode";
+            this.cmbMaritalStatus.SelectedIndex = 0;
 
-            var chkMoneySources = this.gbFindMonyForRentHouse.Controls.OfType<CheckBox>();
-            var bMSources = beneficiary.MoneySources.Select(s=>s.MoneySourceCode);
-            foreach (var chksource in chkMoneySources){
-                chksource.Checked = bMSources.Contains(chksource.Name);
-                if (bMSources.Contains("MFRPOther"))
-                {
-                    this.txtMFRPOther.Text = beneficiary.MoneySources.Select(s=>s.MoneySourceOther).FirstOrDefault();
-                }
-            }
-            if(beneficiary.AllowForJob == true)
-            {
-                this.rdoAllowFamilyForJobYes.Checked = true;
-            }
-            else
-            {
-                this.rdoAllowFamilyForJobNo.Checked = true;
-            }
+            var IDTypeList = DbHelper.GetcmbLookups("IDTYPE");
+            this.cmbIDType.DataSource = IDTypeList;
+            this.cmbIDType.DisplayMember = "LookupName";
+            this.cmbIDType.ValueMember = "ValueCode";
+            this.cmbIDType.SelectedIndex = 0;
 
-            //Host Country
-            if (beneficiary.CountryOfExile == "Iran")
-            {
-                this.Iran.Checked = true;
+            var relationshipList = DbHelper.GetcmbLookups("RELATION");
+            this.cmbRelationship.DataSource = relationshipList;
+            this.cmbRelationship.DisplayMember = "LookupName";
+            this.cmbRelationship.ValueMember = "ValueCode";
 
-            }else if(beneficiary.CountryOfExile == "Pakistan"){
-                this.Pakistan.Checked = true;
-            }
-            else
-            {
-                this.COther.Checked = true;
-                this.txtCOther.Text = this.beneficiary.CountryOfExilOther;
-            }
-            if(beneficiary.CountryOfExile == "Iran" || beneficiary.CountryOfExile == "Pakistan")
-            {
-                this.HostCountry_CheckedChanged(null, null);
-                this.cmbBeforReturnProvince.SelectedValue = beneficiary.BeforReturnProvince;
-                this.cmbBeforReturnProvince_SelectionChangeCommitted(null,null);
-                if (beneficiary.BeforReturnDistrictID != null)
-                {
-                    this.cmbBeforReturnDistrict.SelectedValue = beneficiary.BeforReturnDistrictID;
-                }
-                if(beneficiary.BeforReturnRemarks != null)
-                {
-                    this.txtBeforReturnRemarks.Text = beneficiary.BeforReturnRemarks;
-                }
+            var borderPointList = db.BorderCrossingPoints.Where(b => b.IsActive == true).Select(b => new { b.BCPCode, BorderPointName = b.EnName }).ToList();
+            borderPointList.Insert(0, new { BCPCode = "0", BorderPointName = "-Please Select-" });
+            this.cmbBorderPoint.DataSource = borderPointList;
+            this.cmbBorderPoint.DisplayMember = "BorderPointName";
+            this.cmbBorderPoint.ValueMember = "BCPCode";
+            this.cmbBorderPoint.SelectedIndex = 0;
 
-            }
-            if(beneficiary.FamilyMemStayedBehind == true)
-            {
-                this.rdoFMemberStayedBehindYes.Checked = true;
-                this.txtFMemberStyedBehind.Text = beneficiary.FamilyMemStayedBehindNo.ToString();
-            }
-            else
-            {
-                this.rdoFMemberStayedBehindNo.Checked = true;
-            }
+            var orgProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            orgProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbOriginProvince.DataSource = orgProvinceList;
+            this.cmbOriginProvince.DisplayMember = "ProvinceName";
+            this.cmbOriginProvince.ValueMember = "ProvinceCode";
+            this.cmbOriginProvince.SelectedIndex = 0;
 
-            this.txtYearsStay.Text = beneficiary.LengthOfStayYears.ToString();
-            this.txtMonthsStay.Text = beneficiary.LengthOfStayMonths.ToString();
-            this.txtDaysStay.Text = beneficiary.LengthOfStayDays.ToString();
+            var returnProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            returnProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbReturnProvince.DataSource = returnProvinceList;
+            this.cmbReturnProvince.DisplayMember = "ProvinceName";
+            this.cmbReturnProvince.ValueMember = "ProvinceCode";
+            this.cmbReturnProvince.SelectedIndex = 0;
 
-            var chkItemsBrought = this.pnlItemBrought.Controls.OfType<CheckBox>();
-            var bItemsBrought = beneficiary.BroughtItems.Select(i=>i.ItemCode);
+            var firstReasonForLeavingList = DbHelper.GetcmbLookups("LREASON");
+            this.cmb1ReasonForLeaving.DataSource = firstReasonForLeavingList;
+            this.cmb1ReasonForLeaving.DisplayMember = "LookupName";
+            this.cmb1ReasonForLeaving.ValueMember = "ValueCode";
+            this.cmb1ReasonForLeaving.SelectedIndex = 0;
 
-            foreach(var chkItem in chkItemsBrought)
-            {
-                chkItem.Checked = bItemsBrought.Contains(chkItem.Name);
-                if(chkItem.Name == "ITEMSOther")
-                {
-                    this.txtITEMSOther.Text = beneficiary.BroughtItems.Where(i => i.ItemCode == chkItem.Name).Select(i=>i.ItemOther).FirstOrDefault();
-                }
-            }
+            var leavingPlaceList = DbHelper.GetcmbLookups("WWYL").ToList();
+            this.cmbWhereWillYouLive.DataSource = leavingPlaceList;
+            this.cmbWhereWillYouLive.DisplayMember = "LookupName";
+            this.cmbWhereWillYouLive.ValueMember = "ValueCode";
+            this.cmbWhereWillYouLive.SelectedIndex = 0;
 
-            if(beneficiary.WouldYouReturn == true)
-            {
-                this.rdoWantReturnYes.Checked = true;
-            }
-            else
-            {
-                this.rdoWantReturnNo.Checked = true;
-            }
-            //Post arrival needs
-            var gbPostArrivalNeeds = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>();
-            var bPostArrivalNeeds = beneficiary.PostArrivalNeeds.Select(n=>n.NeedCode);
-            foreach(var gb in gbPostArrivalNeeds)
-            {
-                if (bPostArrivalNeeds.Contains(gb.Name))
-                {
-                    (gb.Controls.OfType<CheckBox>().First()).Checked = true;
-                    (gb.Controls.OfType<DateTimePicker>().First()).Value = beneficiary.PostArrivalNeeds.Where(n=>n.NeedCode == gb.Name).Select(n=>n.ProvidedDate).FirstOrDefault();
-                    (gb.Controls.OfType<TextBox>().First()).Text = beneficiary.PostArrivalNeeds.Where(n => n.NeedCode == gb.Name).Select(n => n.Comment).FirstOrDefault();
-                }
-            }
-            //Assistance Needs 2
+            var assisInProvince1List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            assisInProvince1List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbAssistedInProvince1.DataSource = assisInProvince1List;
+            this.cmbAssistedInProvince1.DisplayMember = "ProvinceName";
+            this.cmbAssistedInProvince1.ValueMember = "ProvinceCode";
+            this.cmbAssistedInProvince1.SelectedIndex = 0;
 
-            if(beneficiary.HaveFamilyBenefited == true)
-            {
-                this.rdoBenefitedYes.Checked = true;
-                var assistInfo = beneficiary.BenefitedFromOrgs;
-                if(assistInfo.Count >= 1)
-                {
-                    this.AssistedDate1.Value = assistInfo[0].Date;
-                    this.cmbAssistedInProvince1.SelectedValue = assistInfo[0].ProvinceCode;
-                    this.cmbAssistedInProvince1_SelectedIndexChanged(null, null);
-                    this.cmbAssistedInDistrict1.SelectedValue = assistInfo[0].DistrictID;
-                    this.txtAssistedVillage1.Text = assistInfo[0].Village;
-                    this.cmbAssistedOrg1.SelectedValue = assistInfo[0].OrgCode;
-                    this.txtAssistance1.Text = assistInfo[0].AssistanceProvided;
-                }
-                if (assistInfo.Count >= 2)
-                {
-                    this.AssistedDate1.Value = assistInfo[1].Date;
-                    this.cmbAssistedInProvince1.SelectedValue = assistInfo[1].ProvinceCode;
-                    this.cmbAssistedInProvince2_SelectedIndexChanged(null, null);
-                    this.cmbAssistedInDistrict1.SelectedValue = assistInfo[1].DistrictID;
-                    this.txtAssistedVillage1.Text = assistInfo[1].Village;
-                    this.cmbAssistedOrg1.SelectedValue = assistInfo[1].OrgCode;
-                    this.txtAssistance1.Text = assistInfo[1].AssistanceProvided;
-                }
+            var assisInProvince2List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            assisInProvince2List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbAssistedInProvince2.DataSource = assisInProvince2List;
+            this.cmbAssistedInProvince2.DisplayMember = "ProvinceName";
+            this.cmbAssistedInProvince2.ValueMember = "ProvinceCode";
+            this.cmbAssistedInProvince2.SelectedIndex = 0;
 
-            }
-            else {
-                this.rdoBenefitedNo.Checked = true;
-            }
-            this.dateTransportationDate.Value = beneficiary.TransportationDate;
-            var chkTransportOptions = this.gbTransportation.Controls.OfType<CheckBox>();
-            var bTransport = beneficiary.Transportations.Select(t=>t.TypedCode);
-            foreach(var chkTransOp in chkTransportOptions)
-            {
-                chkTransOp.Checked = bTransport.Contains(chkTransOp.Name);
-                if(chkTransOp.Name == "TransportOther" && bTransport.Contains(chkTransOp.Name))
-                {
-                    this.txtTransportOther.Text = beneficiary.Transportations.Where(t => t.TypedCode == chkTransOp.Name).Select(t => t.Other).FirstOrDefault();
-                }
-            }
-            this.txtTransAdditionalInfo.Text = beneficiary.TransportationInfo;
-            this.txtTransAccompaniedBy.Text = beneficiary.TransportAccompaniedBy;
-            this.txtTransMobile.Text = beneficiary.TransportAccomByNo;
-            //Reintegration Needs1
-            if(beneficiary.TopNeed1 != null)
-            {
-                this.cmbReintegrationNeeds1.SelectedValue = beneficiary.TopNeed1;
-                this.cmbReintegrationNeeds1_SelectionChangeCommitted(null,null);
-                this.txtReintegrationNeeds1Other.Text = beneficiary.TopNeed1Other;
-            }
-            if(beneficiary.TopNeed2 != null)
-            {
-                this.cmbReintegrationNeeds2.SelectedValue = beneficiary.TopNeed2;
-                this.cmbReintegrationNeeds2_SelectionChangeCommitted(null, null);
-                this.txtReintegrationNeeds2Other.Text = beneficiary.TopNeed2Other;
-            }
-            if (beneficiary.TopNeed3 != null)
-            {
-                this.cmbReintegrationNeeds3.SelectedValue = beneficiary.TopNeed3;
-                this.cmbReintegrationNeeds3_SelectionChangeCommitted(null, null);
-                this.txtReintegrationNeeds3Other.Text = beneficiary.TopNeed3Other;
-            }
-            this.cmbIntendToDo.SelectedValue = beneficiary.IntendToDo;
-            this.cmbIntendToDo_SelectionChangeCommitted(null,null);
-            this.txtIntendToReturnToHostReason.Text = beneficiary.IntendToReturnToHostReason;
+            var needsList = DbHelper.GetcmbLookups("TOPNEED");
+            this.cmbReintegrationNeeds1.DataSource = needsList;
+            this.cmbReintegrationNeeds1.DisplayMember = "LookupName";
+            this.cmbReintegrationNeeds1.ValueMember = "ValueCode";
+            this.cmbReintegrationNeeds1.SelectedIndex = 0;
 
-            this.cmbProfession.SelectedValue = beneficiary.ProfessionInHostCountry;
-            this.cmbProfession_SelectedIndexChanged(null,null);
-            this.txtProfessionOther.Text = beneficiary.ProfessionInHostCountryOther;
+            var toDoList = DbHelper.GetcmbLookups("WDYITD");
+            this.cmbIntendToDo.DataSource = toDoList;
+            this.cmbIntendToDo.DisplayMember = "LookupName";
+            this.cmbIntendToDo.ValueMember = "ValueCode";
+            this.cmbIntendToDo.SelectedIndex = 0;
 
-            this.chkVocationalTraining.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("VTFH");
-            this.chkProvisionOfTools.Checked = beneficiary.LivelihoodEmpNeeds.Select(n => n.NeedCode).Contains("POT");
+            var professionList = DbHelper.GetcmbLookups("PROFESSION");
+            this.cmbProfession.DataSource = professionList;
+            this.cmbProfession.DisplayMember = "LookupName";
+            this.cmbProfession.ValueMember = "ValueCode";
+            this.cmbProfession.SelectedIndex = 0;
 
-            if (this.chkProvisionOfTools.Checked)
-            {
-                var chkTools = this.gbToolsNeeded.Controls.OfType<CheckBox>();
-                var bNeedTools = beneficiary.NeedTools.Select(t=>t.ToolCode);
-                foreach(var chkTool in chkTools)
-                {
-                    chkTool.Checked = bNeedTools.Contains(chkTool.Name);
-                    if(bNeedTools.Contains("ToolsOther"))
-                    {
-                        this.txtToolsOther.Text = beneficiary.NeedTools.Select(t=>t.Other).FirstOrDefault();
-                    }
-                }
-            }
+            var educationList = DbHelper.GetcmbLookups("EDUCATION");
+            this.cmbHoHEducationLevel.DataSource = educationList;
+            this.cmbHoHEducationLevel.DisplayMember = "LookupName";
+            this.cmbHoHEducationLevel.ValueMember = "ValueCode";
+            this.cmbHoHEducationLevel.SelectedIndex = 0;
 
-            if(beneficiary.HoHCanReadWrite == true)
-            {
-                this.rdoCanYouReadWriteYes.Checked = true;
-            }
-            else
-            {
-                this.rdoCanYouReadWriteNo.Checked = true;
-            }
-
-            if (this.rdoCanYouReadWriteYes.Checked)
-            {
-                this.cmbHoHEducationLevel.SelectedValue = beneficiary.HoHEducationLevel;
-                this.cmbHoHEducationLevel_SelectionChangeCommitted(null,null);
-                this.txtHoHEducationOther.Text = beneficiary.HoHEducationLevelOther;
-            }
-
-            var chk3MainConerns = this.gbMainConcerns.Controls.OfType<CheckBox>();
-            var bConcerns = beneficiary.MainConcerns.Select(c => c.ConcernCode);
-            foreach(var chkConcern in chk3MainConerns)
-            {
-                chkConcern.Checked = bConcerns.Contains(chkConcern.Name);
-                if (bConcerns.Contains("WAY3MCOther"))
-                {
-                    this.txtWAY3MCOther.Text = beneficiary.MainConcerns.Where(m => m.ConcernCode == "WAY3MCOther").Select(m => m.Other).FirstOrDefault();
-                }
-            }
-            //Reintegration Need 2
-            if(beneficiary.NumHHHaveTaskira != null)
-            {
-                this.txtNumHaveTaskira.Text = beneficiary.NumHHHaveTaskira.ToString();
-            }
-            if (beneficiary.NumHHHavePassport != null)
-            {
-                this.txtNumHavePassport.Text = beneficiary.NumHHHavePassport.ToString();
-            }
-            if (beneficiary.NumHHHaveDocOther != null)
-            {
-                this.txtNumHaveOtherDoc.Text = beneficiary.NumHHHaveDocOther.ToString();
-            }
-            if(beneficiary.DoHaveSecureLivelihood == true)
-            {
-                this.rdoHaveLivelihoodOrSavingYes.Checked = true;
-            }
-            else
-            {
-                this.rdoHaveLivelihoodOrSavingNo.Checked = true;
-            }
-            if(beneficiary.DidChildrenGoToSchoole == true)
-            {
-                this.rdoDidChildrenGoToSchoolYes.Checked = true;
-                this.rdoDidChildrenGoToSchoolYes_CheckedChanged(null,null);
-                this.Primary.Checked = beneficiary.HostCountrySchools.Select(s=>s.SchoolTypeCode).Contains(this.Primary.Name);
-                this.Secondary.Checked = beneficiary.HostCountrySchools.Select(s=>s.SchoolTypeCode).Contains(this.Secondary.Name);
-                this.txtNumChildrenAttendSchool.Text = beneficiary.NumChildrenAttendedSchoole.ToString();
-            }
-            else
-            {
-                this.rdoDidChildrenGoToSchoolNo.Checked = true;
-            }
-
-
-
+            var orgList = DbHelper.GetcmbLookups("ORGTYP");
+            this.cmbAssistedOrg1.DataSource = orgList;
+            this.cmbAssistedOrg1.DisplayMember = "LookupName";
+            this.cmbAssistedOrg1.ValueMember = "ValueCode";
+            this.cmbAssistedOrg1.SelectedIndex = 0;
+        
+            this.reportViewer2.RefreshReport();
         }
+        #endregion
 
+        #region all events
         private void btnProfileNext_Click(object sender, EventArgs e)
         {
             var provinceBCP = this.cmbProvinceBCP.SelectedValue != null ? this.cmbProvinceBCP.SelectedValue.ToString():"0";
-            var borderPoint = this.cmbBorderPoint.SelectedValue != null ? this.cmbBorderPoint.SelectedValue.ToString() : "0";
+            var borderPoint = this.cmbProvinceBCP.SelectedValue != null ? this.cmbProvinceBCP.SelectedValue.ToString() : "0";
             var beneficiaryType = "";
             if (this.rdoBeneficiaryTypeFamily.Checked)
             {
@@ -451,7 +215,7 @@ namespace BSAF
             var returnDistrict = this.cmbReturnDistrict.SelectedValue != null ? (int)this.cmbReturnDistrict.SelectedValue : 0;
             var returnVillage = this.txtReturnVillage.Text;
 
-            if (provinceBCP != "0" && borderPoint != "0" && !string.IsNullOrEmpty(beneficiaryType) && !string.IsNullOrEmpty(returnStatus)
+            if (provinceBCP != "0" && !string.IsNullOrEmpty(beneficiaryType) && !string.IsNullOrEmpty(returnStatus)
                  && !string.IsNullOrEmpty(this.txtTotalIndividual.Text) 
                  && originProvince != "0" && originProvince != "0" && originDistrict != 0 && !string.IsNullOrWhiteSpace(originVillage) 
                  && returnProvince != "0" && returnDistrict != 0 && !string.IsNullOrWhiteSpace(returnVillage))
@@ -484,20 +248,7 @@ namespace BSAF
                 return;
             }
 
-            if(this.beneficiary.BeneficiaryType == "Family" && !this.beneficiary.Individuals.Any(i=>i.RelationshipCode == "HH"))
-            {
-                MessageBox.Show("Please add Head of Household");
-                return;
-            }
-            if (this.beneficiary.BeneficiaryType == "Individual" && !this.beneficiary.Individuals.Any(i=>i.RelationshipCode == "HSelf"))
-            {
-                MessageBox.Show("Please select Him/Her self in the relationship section of the individual information");
-                return;
-            }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 1;
-            this.IsAllowTabChange = false;
         }
 
         private void chkReturnReasonOther_CheckedChanged(object sender, EventArgs e)
@@ -641,17 +392,12 @@ namespace BSAF
                 MessageBox.Show("Please select returning reason.");
                 return;
             }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 2;
-            this.IsAllowTabChange = false;
         }
 
         private void btnProtection1Previous_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 0;
-            this.IsAllowTabChange = false;
         }
 
         private void btnProtection2Next_Click(object sender, EventArgs e)
@@ -742,17 +488,12 @@ namespace BSAF
                 this.beneficiary.AllowForJob = false;
             }
             else { MessageBox.Show("Please answer do you allow family member for job."); return; }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 3;
-            this.IsAllowTabChange = false;
         }
 
         private void btnProtection2Previous_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 1;
-            this.IsAllowTabChange = false;
         }
 
         private void btnHostCountryNext_Click(object sender, EventArgs e)
@@ -871,17 +612,12 @@ namespace BSAF
                 MessageBox.Show("Please specify would you return to Pakistan/Iran.");
                 return;
             }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 4;
-            this.IsAllowTabChange = false;
         }
 
         private void btnHostCountryPrevious_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 2;
-            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsNext1_Click(object sender, EventArgs e)
@@ -1096,27 +832,22 @@ namespace BSAF
                 }
                 this.beneficiary.PostArrivalNeeds.Add(need);
             }
-
-            this.IsAllowTabChange = true;
+            var bneed = this.beneficiary.PostArrivalNeeds;
             this.tabBeneficiary.SelectedIndex = 5;
-            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsPrevious1_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 3;
-            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsNext2_Click(object sender, EventArgs e)
         {
             //Clear list
-            this.beneficiary.Transportations.Clear();
+            this.beneficiary.Transports.Clear();
 
             if (this.rdoBenefitedYes.Checked)
             {
-                beneficiary.HaveFamilyBenefited = true;
                 var assis1Province = this.cmbAssistedInProvince1.SelectedValue != null ? this.cmbAssistedInProvince1.SelectedValue.ToString() : "0";
                 var assis1District = this.cmbAssistedInDistrict1.SelectedValue != null ? int.Parse(this.cmbAssistedInDistrict1.SelectedValue.ToString()) : 0;
                 var assis1Org = this.cmbAssistedOrg1.SelectedValue != null ? this.cmbAssistedOrg1.SelectedValue.ToString() : "0";
@@ -1130,12 +861,7 @@ namespace BSAF
                         AssistanceProvided = this.txtAssistance1.Text,
                         OrgCode = assis1Org,
                     };
-                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage1.Text))
-                    {
-                        assistanceInfo.Village = this.txtAssistedVillage1.Text;
-                    }
-                    beneficiary.BenefitedFromOrgs.Add(assistanceInfo);
-
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage1.Text)) { assistanceInfo.Village = this.txtAssistedVillage1.Text; }
                 }
                 else {
                     MessageBox.Show("Please provide organization and assistance informaiton.");
@@ -1154,22 +880,14 @@ namespace BSAF
                         AssistanceProvided = this.txtAssistance2.Text,
                         OrgCode = assis2Org,
                     };
-                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage2.Text))
-                    {
-                        assistanceInfo.Village = this.txtAssistedVillage2.Text;
-                    }
-                    beneficiary.BenefitedFromOrgs.Add(assistanceInfo);
+                    if (!string.IsNullOrWhiteSpace(this.txtAssistedVillage2.Text)) { assistanceInfo.Village = this.txtAssistedVillage2.Text; }
                 }
-            }else if (this.rdoBenefitedNo.Checked)
-            {
-                this.beneficiary.HaveFamilyBenefited = false;
             }
-            else
+            if(!this.rdoBenefitedYes.Checked && !this.rdoBenefitedNo.Checked)
             {
                 MessageBox.Show("Please answer: How you benefited from UNHCR or IOM.");
                 return;
             }
-
             this.beneficiary.TransportationDate = this.dateTransportationDate.Value;
             var transportOptions = gbTransportation.Controls.OfType<CheckBox>().Where(c => c.Checked);
             foreach(var chb in transportOptions)
@@ -1185,7 +903,7 @@ namespace BSAF
                     MessageBox.Show("Please specify transportation other case");
                     return;
                 }
-                this.beneficiary.Transportations.Add(transOption);
+                this.beneficiary.Transports.Add(transOption);
             }
             if (!string.IsNullOrWhiteSpace(this.txtTransAdditionalInfo.Text))
             {
@@ -1199,17 +917,12 @@ namespace BSAF
             {
                 this.beneficiary.TransportAccomByNo = this.txtTransMobile.Text;
             }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 6;
-            this.IsAllowTabChange = false;
         }
 
         private void btnAssistanceNeedsPrevious2_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 4;
-            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeed1NeedNext_Click(object sender, EventArgs e)
@@ -1270,11 +983,11 @@ namespace BSAF
             if(intendToDo != "0")
             {
                 this.beneficiary.IntendToDo = intendToDo;
-                if(intendToDo == "RTH" && !string.IsNullOrWhiteSpace(this.txtIntendToReturnToHostReason.Text))
+                if(intendToDo == "RTH" && !string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
                 {
-                    this.beneficiary.IntendToReturnToHostReason = this.txtIntendToReturnToHostReason.Text;
+                    this.beneficiary.IntendToDoOther = this.txtReturnToHostReason.Text;
                 }
-                else if (intendToDo == "RTH" && string.IsNullOrWhiteSpace(this.txtIntendToReturnToHostReason.Text))
+                else if (intendToDo == "RTH" && string.IsNullOrWhiteSpace(this.txtReturnToHostReason.Text))
                 {
                     MessageBox.Show("Please state the reason for returning back to host country.");
                     return;
@@ -1301,7 +1014,6 @@ namespace BSAF
             else
             {
                 MessageBox.Show("Please specify your profession in host country.");
-                return;
             }
             if (this.chkVocationalTraining.Checked)
             {
@@ -1388,17 +1100,12 @@ namespace BSAF
                 MessageBox.Show("Please specify your 3 main concern in Afghanistan.");
                 return;
             }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 7;
-            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeed1Previous_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 5;
-            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeeds2Next_Click(object sender, EventArgs e)
@@ -1413,9 +1120,9 @@ namespace BSAF
             {
                 this.beneficiary.NumHHHavePassport = int.Parse(this.txtNumHavePassport.Text);
             }
-            if (!string.IsNullOrWhiteSpace(this.txtNumHaveOtherDoc.Text))
+            if (!string.IsNullOrWhiteSpace(this.txtchkNumHaveOtherDoc.Text))
             {
-                this.beneficiary.NumHHHaveDocOther = int.Parse(this.txtNumHaveOtherDoc.Text);
+                this.beneficiary.NumHHHaveDocOther = int.Parse(this.txtchkNumHaveOtherDoc.Text);
             }
             if (this.rdoHaveLivelihoodOrSavingYes.Checked)
             {
@@ -1457,154 +1164,15 @@ namespace BSAF
             {
                 this.beneficiary.NumChildrenAttendedSchoole = int.Parse(this.txtNumChildrenAttendSchool.Text);
             }
-
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 8;
-            this.IsAllowTabChange = false;
         }
 
         private void btnReintegNeeds2Previous_Click(object sender, EventArgs e)
         {
-            this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 6;
-            this.IsAllowTabChange = false;
         }
 
-        private void BeneficiaryForm_Load(object sender, EventArgs e)
-        {
-            this.lblReturnToHostReason.Visible = false;
-            this.txtIntendToReturnToHostReason.Visible = false;
-            
-            this.lblHoHEducationOther.Visible = false;
-            this.txtHoHEducationOther.Visible = false;
-
-            this.lbl1LeavingResonOther.Visible = false;
-            this.txt1LeavingReasonOther.Visible = false;
-
-            this.lbl2LeavingResonOther.Visible = false;
-            this.txt2LeavingReasonOther.Visible = false;
-
-            this.lbl3LeavingResonOther.Visible = false;
-            this.txt3LeavingReasonOther.Visible = false;
-
-            var provinceList = db.Provinces.Where(p=>p.IsActive == true).Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            provinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbProvinceBCP.DataSource = provinceList;
-            this.cmbProvinceBCP.DisplayMember = "ProvinceName";
-            this.cmbProvinceBCP.ValueMember = "ProvinceCode";
-            this.cmbProvinceBCP.SelectedIndex = 0;
-
-            var genderTypeList = DbHelper.GetcmbLookups("GENDER");
-            this.cmbGender.DataSource = genderTypeList;
-            this.cmbGender.DisplayMember = "LookupName";
-            this.cmbGender.ValueMember = "ValueCode";
-            this.cmbGender.SelectedIndex = 0;
-
-            var maritalStatusList = DbHelper.GetcmbLookups("MARSTAT");
-            this.cmbMaritalStatus.DataSource = maritalStatusList;
-            this.cmbMaritalStatus.DisplayMember = "LookupName";
-            this.cmbMaritalStatus.ValueMember = "ValueCode";
-            this.cmbMaritalStatus.SelectedIndex = 0;
-
-            var IDTypeList = DbHelper.GetcmbLookups("IDTYPE");
-            this.cmbIDType.DataSource = IDTypeList;
-            this.cmbIDType.DisplayMember = "LookupName";
-            this.cmbIDType.ValueMember = "ValueCode";
-            this.cmbIDType.SelectedIndex = 0;
-
-            var relationshipList = DbHelper.GetcmbLookups("RELATION");
-            this.cmbRelationship.DataSource = relationshipList;
-            this.cmbRelationship.DisplayMember = "LookupName";
-            this.cmbRelationship.ValueMember = "ValueCode";
-
-            var borderPointList = db.BorderCrossingPoints.Where(b=>b.IsActive == true).Select(b=>new { b.BCPCode, BorderPointName = b.EnName}).ToList();
-            borderPointList.Insert(0, new { BCPCode = "0", BorderPointName = "-Please Select-" });
-            this.cmbBorderPoint.DataSource = borderPointList;
-            this.cmbBorderPoint.DisplayMember = "BorderPointName";
-            this.cmbBorderPoint.ValueMember = "BCPCode";
-            this.cmbBorderPoint.SelectedIndex = 0;
-
-            var orgProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            orgProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName ="-- Please Select --"});
-            this.cmbOriginProvince.DataSource = orgProvinceList;
-            this.cmbOriginProvince.DisplayMember = "ProvinceName";
-            this.cmbOriginProvince.ValueMember = "ProvinceCode";
-            this.cmbOriginProvince.SelectedIndex = 0;
-
-            var returnProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            returnProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbReturnProvince.DataSource = returnProvinceList;
-            this.cmbReturnProvince.DisplayMember = "ProvinceName";
-            this.cmbReturnProvince.ValueMember = "ProvinceCode";
-            this.cmbReturnProvince.SelectedIndex = 0;
-
-            var firstReasonForLeavingList = DbHelper.GetcmbLookups("LREASON");
-            this.cmb1ReasonForLeaving.DataSource = firstReasonForLeavingList;
-            this.cmb1ReasonForLeaving.DisplayMember = "LookupName";
-            this.cmb1ReasonForLeaving.ValueMember = "ValueCode";
-            this.cmb1ReasonForLeaving.SelectedIndex = 0;
-
-            var leavingPlaceList = DbHelper.GetcmbLookups("WWYL").ToList();
-            this.cmbWhereWillYouLive.DataSource = leavingPlaceList;
-            this.cmbWhereWillYouLive.DisplayMember = "LookupName";
-            this.cmbWhereWillYouLive.ValueMember = "ValueCode";
-            this.cmbWhereWillYouLive.SelectedIndex = 0;
-
-            var assisInProvince1List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            assisInProvince1List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbAssistedInProvince1.DataSource = assisInProvince1List;
-            this.cmbAssistedInProvince1.DisplayMember = "ProvinceName";
-            this.cmbAssistedInProvince1.ValueMember = "ProvinceCode";
-            this.cmbAssistedInProvince1.SelectedIndex = 0;
-
-            var assisInProvince2List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            assisInProvince2List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbAssistedInProvince2.DataSource = assisInProvince2List;
-            this.cmbAssistedInProvince2.DisplayMember = "ProvinceName";
-            this.cmbAssistedInProvince2.ValueMember = "ProvinceCode";
-            this.cmbAssistedInProvince2.SelectedIndex = 0;
-
-            var needsList = DbHelper.GetcmbLookups("TOPNEED");
-            this.cmbReintegrationNeeds1.DataSource = needsList;
-            this.cmbReintegrationNeeds1.DisplayMember = "LookupName";
-            this.cmbReintegrationNeeds1.ValueMember = "ValueCode";
-            this.cmbReintegrationNeeds1.SelectedIndex = 0;
-
-            var toDoList = DbHelper.GetcmbLookups("WDYITD");
-            this.cmbIntendToDo.DataSource = toDoList;
-            this.cmbIntendToDo.DisplayMember = "LookupName";
-            this.cmbIntendToDo.ValueMember = "ValueCode";
-            this.cmbIntendToDo.SelectedIndex = 0;
-
-            var professionList = DbHelper.GetcmbLookups("PROFESSION");
-            this.cmbProfession.DataSource = professionList;
-            this.cmbProfession.DisplayMember = "LookupName";
-            this.cmbProfession.ValueMember = "ValueCode";
-            this.cmbProfession.SelectedIndex = 0;
-
-            var educationList = DbHelper.GetcmbLookups("EDUCATION");
-            this.cmbHoHEducationLevel.DataSource = educationList;
-            this.cmbHoHEducationLevel.DisplayMember = "LookupName";
-            this.cmbHoHEducationLevel.ValueMember = "ValueCode";
-            this.cmbHoHEducationLevel.SelectedIndex = 0;
-
-            var orgList = DbHelper.GetcmbLookups("ORGTYP");
-            this.cmbAssistedOrg1.DataSource = orgList;
-            this.cmbAssistedOrg1.DisplayMember = "LookupName";
-            this.cmbAssistedOrg1.ValueMember = "ValueCode";
-            this.cmbAssistedOrg1.SelectedIndex = 0;
-
-            if (_BeneficiaryID != null && _BeneficiaryID != 0)
-            {
-                beneficiary = BeneficiaryController.GetBeneficiary(_BeneficiaryID);
-                InitializeFields();
-            }
-            else
-            {
-                beneficiary = new BeneficiaryVM();
-            }
-        }
-
+      
         private void cmbOriginProvince_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var selectedPro = this.cmbOriginProvince.SelectedValue.ToString();
@@ -1846,12 +1414,12 @@ namespace BSAF
             if(intendTodo != "0" && intendTodo == "RTH")
             {
                 this.lblReturnToHostReason.Visible = true;
-                this.txtIntendToReturnToHostReason.Visible = true;
+                this.txtReturnToHostReason.Visible = true;
             }
             else
             {
                 this.lblReturnToHostReason.Visible = false;
-                this.txtIntendToReturnToHostReason.Visible = false;
+                this.txtReturnToHostReason.Visible = false;
             }
         }
 
@@ -1957,16 +1525,7 @@ namespace BSAF
 
         private void btnSaveBeneficiary_Click(object sender, EventArgs e)
         {
-            bool respons = false;
-            if(this.beneficiary.BeneficiaryID == 0)
-            {
-                respons = BeneficiaryController.Add(this.beneficiary);
-            }
-            else
-            {
-                respons = BeneficiaryController.Update(this.beneficiary);
-            }
-          
+           var respons =  BeneficiaryController.Add(this.beneficiary);
             if (respons)
             {
                 if(MessageBox.Show("Beneficiary successfully saved.","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk) == DialogResult.OK)
@@ -2127,6 +1686,11 @@ namespace BSAF
             }
         }
 
+        private void chkTBRCR_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void WAY3MCOther_CheckedChanged(object sender, EventArgs e)
         {
             if (this.WAY3MCOther.Checked)
@@ -2166,35 +1730,695 @@ namespace BSAF
                 this.cmbRelationship.SelectedValue = "0";
             }
         }
+        #endregion
 
-        public bool IsAllowTabChange { get; set; } = false;
-        private void AllowTabChange()
+        #region camera
+        public void cameraLoad(object sender,EventArgs e)
         {
-            IsAllowTabChange = true;
-        }
-        private void PreventTabChange()
-        {
-            IsAllowTabChange = false;
-        }
-
-        private void tabBeneficiary_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if (IsAllowTabChange)
+            _CameraChoice = new CameraChoice();
+            FillCameraList();            
+            if (comboBoxCameraList.Items.Count > 0)
             {
-                e.Cancel = false;
+                comboBoxCameraList.SelectedIndex = 0;
+            }
+            FillResolutionList();
+        }
+        private void FillCameraList()
+        {
+            comboBoxCameraList.Items.Clear();
+
+            _CameraChoice.UpdateDeviceList();
+
+            foreach (var camera_device in _CameraChoice.Devices)
+            {
+                comboBoxCameraList.Items.Add(camera_device.Name);
+            }
+        }
+        private void FillResolutionList()
+        {
+            comboBoxResolutionList.Items.Clear();
+
+            if (!cameraControl.CameraCreated)
+                return;
+
+            ResolutionList resolutions = Camera.GetResolutionList(cameraControl.Moniker);
+
+            if (resolutions == null)
+                return;
+
+            int index_to_select = 0;
+            comboBoxResolutionList.Items.Add(resolutions[0].ToString());
+            // select current resolution
+            if (index_to_select >= 0)
+            {
+                comboBoxResolutionList.SelectedIndex = index_to_select;
+            }
+        }
+        private void comboBoxCameraList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCameraList.SelectedIndex < 0)
+            {
+                cameraControl.CloseCamera();
             }
             else
             {
-                e.Cancel = true;
+                cameraControl.SetCamera(_CameraChoice.Devices[comboBoxCameraList.SelectedIndex].Mon, null);
+                //SetCamera(_CameraChoice.Devices[ comboBoxCameraList.SelectedIndex ].Mon, null);
             }
-            
+
+            FillResolutionList();
+        }
+        private void comboBoxResolutionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!cameraControl.CameraCreated)
+                return;
+
+            int comboBoxResolutionIndex = comboBoxResolutionList.SelectedIndex;
+            if (comboBoxResolutionIndex < 0)
+            {
+                return;
+            }
+            ResolutionList resolutions = Camera.GetResolutionList(cameraControl.Moniker);
+
+            if (resolutions == null)
+                return;
+
+            if (comboBoxResolutionIndex >= resolutions.Count)
+                return; // throw
+
+            if (0 == resolutions[comboBoxResolutionIndex].CompareTo(cameraControl.Resolution))
+            {
+                // this resolution is already selected
+                return;
+            }
+
+            // Recreate camera
+            //SetCamera(_Camera.Moniker, resolutions[comboBoxResolutionIndex]);
+            cameraControl.SetCamera(cameraControl.Moniker, resolutions[comboBoxResolutionIndex]);
+
+        }
+        private void capture_Click(object sender, EventArgs e)
+        {
+            if (!cameraControl.CameraCreated)
+                return;
+
+            Bitmap bitmap = null;
+            try
+            {
+                bitmap = cameraControl.SnapshotSourceImage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Error while getting a snapshot");
+            }
+
+            if (bitmap == null)
+                return;
+            Photo.photo = bitmap;
+            cameraControl.CloseCamera();
+            this.tabBeneficiary.SelectedTab = this.tabPhotoCropping;
+        }
+        #endregion
+
+        #region photo crop
+        public void cropLoad(object sender, EventArgs e)
+        {
+            picCropped.Image = Photo.photo;
+            picCropped.Update();
+            OriginalImage = Photo.photo;
+            CroppedImage = OriginalImage.Clone() as Bitmap;
+            picCropped.Visible = true;
+            ImageScale = 50 / 100f;
+            MakeScaledImage();
+
+        }
+        private void picCropped_MouseDown(object sender, MouseEventArgs e)
+        {
+            Drawing = true;
+
+            StartPoint = RoundPoint(e.Location);
+
+            // Draw the area selected.
+            DrawSelectionBox(StartPoint);
+        }
+        private void picCropped_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!Drawing) return;
+
+            // Draw the area selected.
+            DrawSelectionBox(RoundPoint(e.Location));
+        }
+        private void picCropped_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!Drawing) return;
+            Drawing = false;
+
+            // Crop.
+            // Get the selected area's dimensions.
+            int x = (int)(Math.Min(StartPoint.X, EndPoint.X) / ImageScale);
+            int y = (int)(Math.Min(StartPoint.Y, EndPoint.Y) / ImageScale);
+            int width = (int)(Math.Abs(StartPoint.X - EndPoint.X) / ImageScale);
+            int height = (int)(Math.Abs(StartPoint.Y - EndPoint.Y) / ImageScale);
+
+            if ((width == 0) || (height == 0))
+            {
+                MessageBox.Show("Width and height must be greater than 0.");
+                return;
+            }
+
+            Rectangle source_rect = new Rectangle(x, y, width, height);
+            Rectangle dest_rect = new Rectangle(0, 0, width, height);
+
+            // Copy that part of the image to a new bitmap.
+            Bitmap new_image = new Bitmap(width, height);
+            using (Graphics gr = Graphics.FromImage(new_image))
+            {
+                gr.DrawImage(CroppedImage, dest_rect, source_rect,
+                    GraphicsUnit.Pixel);
+            }
+            CroppedImage = new_image;
+
+            // Display the new scaled image.
+            MakeScaledImage();
+        }
+        private Point RoundPoint(Point point)
+        {
+            int x = (int)(ImageScale * (int)(point.X / ImageScale));
+            int y = (int)(ImageScale * (int)(point.Y / ImageScale));
+            return new Point(x, y);
+        }
+        private void DrawSelectionBox(Point end_point)
+        {
+            // Save the end point.
+            EndPoint = end_point;
+            if (EndPoint.X < 0) EndPoint.X = 0;
+            if (EndPoint.X >= ScaledImage.Width) EndPoint.X = ScaledImage.Width - 1;
+            if (EndPoint.Y < 0) EndPoint.Y = 0;
+            if (EndPoint.Y >= ScaledImage.Height) EndPoint.Y = ScaledImage.Height - 1;
+
+            // Reset the image.
+            DisplayGraphics.DrawImageUnscaled(ScaledImage, 0, 0);
+
+            // Draw the selection area.
+            int x = Math.Min(StartPoint.X, EndPoint.X);
+            int y = Math.Min(StartPoint.Y, EndPoint.Y);
+            int width = Math.Abs(StartPoint.X - EndPoint.X);
+            int height = Math.Abs(StartPoint.Y - EndPoint.Y);
+            DisplayGraphics.DrawRectangle(Pens.Red, x, y, width, height);
+            picCropped.Refresh();
         }
 
-        private void btnCardPrevious_Click(object sender, EventArgs e)
+
+        private void MakeScaledImage()
         {
-            this.IsAllowTabChange = true;
-            this.tabBeneficiary.SelectedIndex = 7;
-            this.IsAllowTabChange = false;
+            int wid = (int)(ImageScale * (CroppedImage.Width));
+            int hgt = (int)(ImageScale * (CroppedImage.Height));
+            ScaledImage = new Bitmap(wid, hgt);
+            using (Graphics gr = Graphics.FromImage(ScaledImage))
+            {
+                Rectangle src_rect = new Rectangle(0, 0,
+                    CroppedImage.Width, CroppedImage.Height);
+                Rectangle dest_rect = new Rectangle(0, 0, wid, hgt);
+                gr.PixelOffsetMode = PixelOffsetMode.Half;
+                gr.InterpolationMode = InterpolationMode.NearestNeighbor;
+                gr.DrawImage(CroppedImage, dest_rect, src_rect,
+                    GraphicsUnit.Pixel);
+            }
+
+            DisplayImage = ScaledImage.Clone() as Bitmap;
+            if (DisplayGraphics != null) DisplayGraphics.Dispose();
+            DisplayGraphics = Graphics.FromImage(DisplayImage);
+
+            picCropped.Image = DisplayImage;
+            picCropped.Visible = true;
+            Photo.photo = DisplayImage;
         }
+
+ 
+
+        #endregion
+
+        #region card
+        public void cardLoad(object sender, EventArgs e)
+        {
+            _thePrinterSDK = new ZBRPrinter();
+            LocatePrinters();
+            cboPrn.Focus();
+            GetSDKVersions();
+            FormConfig();
+
+            BarCode barcode = new BarCode();
+            barcode.Symbology = KeepAutomation.Barcode.Symbology.Code128Auto;
+            barcode.CodeToEncode = "TRK-00000011";
+            barcode.BarCodeWidth = 6;
+            barcode.BarCodeHeight = 2;
+            barcode.DisplayText = false;
+            barcode.ImageFormat = ImageFormat.Bmp;
+           // Bitmap barcodeImage = barcode.generateBarcodeToBitmap();
+            byte[] barcodeArrayImage = barcode.generateBarcodeToByteArray();
+            ImageConverter ic = new ImageConverter();
+       
+            CardDataSet ds = new CardDataSet();
+            DataRow row = ds.Tables[0].NewRow();
+            row["Name"]= "Ahmad Zia Basirat";
+            row["LocalName"] = "احمد ضیاء بصیرت";
+            row["FatherName"] = "Abdul Basir Basirat";
+            row["BCP"] = "Herat - Islam Qala";
+            row["LocalFatherName"] = "عبد البصیر بصیرت";
+            row["LocalBCP"] = "هرات - اسلام قلعه";
+            row["ReturnStatus"] = "Documented";
+            row["LocalReturnStatus"] = "دارای اسناد / اسناد لرونکی";
+            row["FamilySize"] = 5;
+            row["ReturnDate"] = new DateTime(2020,3,23);
+            row["ReturnAddress"] = "Kunar - Chapa Dara";
+            row["LocalReturnAddress"] = "کونړ - چپه دره";
+            row["Barcode"] = barcodeArrayImage;
+            row["Photo"] = (byte[])ic.ConvertTo(Photo.photo, typeof(byte[]));
+            ds.Tables[0].Rows.Add(row);
+            ReportDataSource sr = new ReportDataSource("DataSet1",ds.Tables[0]);
+            this.reportViewer2.LocalReport.DataSources.Clear();
+            this.reportViewer2.LocalReport.DataSources.Add(sr);
+            this.reportViewer2.RefreshReport();
+            byte[] renderedBytes = reportViewer2.LocalReport.Render("Image");
+            using (var ms = new MemoryStream(renderedBytes))  {
+                image= Image.FromStream(ms);
+                //Graphics g = Graphics.FromImage(image);
+                image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                Bitmap finalImage=ResizeImage(image, 1024, 648);
+                finalImage.Save(Application.StartupPath + "card.bmp", ImageFormat.Bmp);
+                //image.Save(Application.StartupPath + "card.bmp", ImageFormat.Bmp);
+            }
+        }
+        private  Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
+        #endregion
+
+        #region card printing
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            string msg = "";
+
+            SampleCodeGraphics prn = null;
+            try
+            {
+                if (cboPrn.SelectedIndex < 0)
+                {
+                    msg = "Error: A Printer has not been selected";
+                    return;
+                }
+
+                prn = new SampleCodeGraphics();
+
+                SampleCodeDrawConfiguration config = new SampleCodeDrawConfiguration();
+                if (File.Exists(Application.StartupPath + "card.bmp"))
+                {
+                    config.cardImage = new ZBRGraphics().AsciiEncoder.GetBytes(Application.StartupPath + "card.bmp");
+                    config.cardImageLocation = new Rectangle(0, 0, 1024, 648);
+                }
+                prn.PrintFrontSideOnly(this.cboPrn.Text,
+                     config,
+                     out msg);
+                if (msg == "") this.lblStatus.Text = "No Errors";
+
+            }
+            catch (Exception ex)
+            {
+                msg += ex.Message;
+                MessageBox.Show(ex.ToString(), "btnSubmit_Click threw exception");
+            }
+            finally
+            {
+                if (msg != "")
+                    this.lblStatus.Text = msg;
+
+                prn = null;
+            }
+
+        }
+        #endregion
+
+        #region Printer Setup
+        // Configures the Form based on present dlls --------------------------------------------------------
+        private void FormConfig()
+        {
+            string msg = "";
+            try
+            {
+                this.lblStatus.Text = "";
+
+                // Printing (Graphics)
+                if (_graphicsSDKVersion != "")
+                {
+                    msg = "Graphics: " + _graphicsSDKVersion + "; ";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "FormConfig threw exception");
+            }
+            finally
+            {
+                this.lblVersions.Text = msg;
+            }
+        }
+
+        // Gets the versions of the SDK's DLLs
+        //     if the version == "" then the supporting dll is not present ----------------------------------
+        private void GetSDKVersions()
+        {
+            SampleCodeGraphics g;
+            try
+            {
+                g = new SampleCodeGraphics();
+                _graphicsSDKVersion = g.GetSDKVersion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "GetSDKVersions threw exception");
+            }
+            finally
+            {
+                g = null;
+            }
+        }
+        private void ConfigurePrinter()
+        {
+            try
+            {
+                string deviceName = string.Empty;
+                if (!GetPrinterDesignation(ref deviceName))
+                    return;
+
+                if (!RefreshConnectionToPrinter())
+                    return;
+
+
+                cboPrn.Visible = true;
+
+                ConfigureApp(deviceName);
+
+                Refresh();
+                Application.DoEvents();
+                Thread.Sleep(100);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ConfigureForEthernetPrinter threw exception: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnectionToPrinter();
+            }
+        }
+
+        private void DecipherConfigurationCode(ref byte[] options)
+        {
+            string errMsg = string.Empty;
+            string config = string.Empty;
+            try
+            {
+
+                char sides = Convert.ToChar(options[4]);
+                char SCOption = Convert.ToChar(options[5]);
+                char MagOption = Convert.ToChar(options[6]);
+                char Interface = Convert.ToChar(options[8]);
+
+                config = Convert.ToString(sides);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("DecipherConfigurationCode threw exception: " + ex.Message);
+            }
+        }
+        
+        private void ConfigureApp(string deviceName)
+        {
+            byte[] options = null;
+            try
+            {
+                string errMsg = string.Empty;
+
+                options = new byte[50];
+
+                _thePrinterSDK.GetPrinterConfiguration(options, out errMsg);
+                if (errMsg == "")
+                {
+                    DecipherConfigurationCode(ref options);
+
+                }
+                else MessageBox.Show("ConfigureApp failed: " + errMsg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ConfigureApp threw exception: " + ex.Message);
+            }
+            finally
+            {
+                options = null;
+            }
+        }
+
+        #region Locate Printers
+
+    
+        private String GetPrinterDesignation()
+        {
+            string temp = cboPrn.Text;
+            if (temp.Contains(","))
+            {
+                int index = temp.IndexOf(",");
+                temp = temp.Substring(index + 1);
+            }
+            temp = temp.Trim();
+            return temp;
+        }
+
+        private bool GetPrinterDesignation(ref string deviceName)
+        {
+            deviceName = GetPrinterDesignation();
+            if (deviceName.Length == 0)
+            {
+                MessageBox.Show("Printer ID cannot be blank");
+                return false;
+            }
+            return true;
+        }
+        
+        private bool LocatePrinters()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            List<string> printers = null;
+            try
+            {
+                printers = new List<string>();
+
+
+                LocateUSBPrinters(ref printers);
+
+                LocateEthernetPrinters(ref printers);
+
+
+                cboPrnInit(ref printers);
+                if (cboPrn.Items.Count > 0)
+                {
+                    cboPrn.Enabled = true;
+                    return true;
+                }
+                else
+                    cboPrn.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LocatePrinters threw exception:" + ex.Message);
+            }
+            finally
+            {
+                if (printers != null)
+                    printers.Clear();
+                printers = null;
+                Cursor.Current = Cursors.Default;
+            }
+            return false;
+        }
+
+        private bool LocateUSBPrinters(ref List<string> printers)
+        {
+            try
+            {
+                foreach (String strPrn in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+                {
+                    string name = strPrn.ToUpper();
+
+                    if (name.Contains("ZEBRA"))
+                        if ((name.Contains("ZXP SERIES 3") && !name.Contains("NETWORK"))
+                            || (name.Contains("ZXP S3") && !name.Contains("ZXP S3 NETWORK")))
+                            printers.Add(strPrn);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LocateUSBPrinters threw exception:" + ex.Message);
+            }
+            return false;
+        }
+        
+        private bool LocateEthernetPrinters(ref List<string> printers)
+        {
+            try
+            {
+                foreach (String strPrn in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+                {
+                    string name = strPrn.ToUpper();
+
+                    if (name.Contains("ZEBRA"))
+                        if (name.Contains("ZXP SERIES 3 NETWORK")
+                            || name.Contains("ZXP S3 NETWORK"))
+                            printers.Add(strPrn);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LocateEthernetPrinters threw exception:" + ex.Message);
+            }
+            return false;
+        }
+
+        private bool RefreshConnectionToPrinter()
+        {
+            try
+            {
+                CloseConnectionToPrinter();
+
+                return OpenConnectionToPrinter();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("RefreshConnectionToPrinter threw exception: " + ex.Message);
+            }
+            return false;
+        }
+
+
+        private void cboPrnInit(ref List<string> printers)
+        {
+            try
+            {
+                cboPrn.Text = "";
+                cboPrn.Items.Clear();
+                cboPrn.Refresh();
+
+                foreach (string printer in printers)
+                {
+                    cboPrn.Items.Add(printer);
+                }
+
+                cboPrn.Focus();
+                cboPrn.SelectedIndex = -1;
+
+                Refresh();
+            }
+            catch (System.Exception ex)
+            {
+                cboPrn.Items.Clear();
+                MessageBox.Show("cboPrnInit threw exception: Could not locate printers on USB port: " + ex.Message);
+            }
+        }
+        
+        private bool OpenConnectionToPrinter()
+        {
+            try
+            {
+                string errMsg = string.Empty;
+
+                if (cboPrn.Text.Length <= 0)
+                {
+                    MessageBox.Show("No printer selected");
+                    return false;
+                }
+
+                _thePrinterSDK.Open(cboPrn.Text, out errMsg);
+
+                if (errMsg == string.Empty)
+                {
+                    return true;
+                }
+                MessageBox.Show("Unable to open device [" + cboPrn.Text + "]. " + errMsg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("OPenConnectionToPrinter threw exception; Unable to open device: " + ex.Message);
+            }
+            return false;
+        }
+
+        private bool CloseConnectionToPrinter()
+        {
+            try
+            {
+                string errMsg = string.Empty;
+
+                _thePrinterSDK.Close(out errMsg);
+
+                if (errMsg == string.Empty)
+                    return true;
+                else
+                    MessageBox.Show("Unable to close device [" + cboPrn.Text + "]. " + errMsg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("CloseConnectionToPrinter threw exception: " + ex.Message);
+            }
+            return false;
+        }
+
+
+
+        #endregion Locate Printers 
+
+      
+
+        private void cboPrn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                ConfigurePrinter();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "cboPrn_SelectedIndexChanged threw exception");
+            }
+            finally
+            {
+                Cursor = Cursors.Arrow;
+            }
+        }
+        #endregion
     }
 }

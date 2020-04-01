@@ -14,7 +14,7 @@ namespace BSAF.Models.ViewModels
 
         public Guid GUID { get; set; }
 
-        public DateTime ScreeningDate { get; set; }
+        public DateTime? ScreeningDate { get; set; }
 
         public string ProvinceBCP { get; set; }
 
@@ -64,7 +64,7 @@ namespace BSAF.Models.ViewModels
 
         public string CountryOfExilOther { get; set; }
 
-        public int? BeforReturnProvince { get; set; }
+        public int BeforReturnProvince { get; set; }
 
         public int? BeforReturnDistrictID { get; set; }
 
@@ -84,7 +84,7 @@ namespace BSAF.Models.ViewModels
 
         public bool? HaveFamilyBenefited { get; set; }
 
-        public DateTime TransportationDate { get; set; }
+        public DateTime? TransportationDate { get; set; }
 
         public string TransportationInfo { get; set; }
 
@@ -106,7 +106,7 @@ namespace BSAF.Models.ViewModels
 
         public string IntendToDo { get; set; }
 
-        public string IntendToReturnToHostReason { get; set; }
+        public string IntendToDoOther { get; set; }
 
         public string ProfessionInHostCountry { get; set; }
 
@@ -135,6 +135,8 @@ namespace BSAF.Models.ViewModels
 
         public List<PSN> PSNs { get; set; }
 
+        public List<LeavingReason> LeavingReasons { get; set; }
+
         public List<ReturnReason> ReturnReasons { get; set; }
 
         public List<Determination> Determinations { get; set; }
@@ -145,9 +147,7 @@ namespace BSAF.Models.ViewModels
 
         public List<PostArrivalNeed> PostArrivalNeeds { get; set; }
 
-        public List<BenefitedFromOrg> BenefitedFromOrgs { get; set; }
-
-        public List<Transportation> Transportations { get; set; }
+        public List<Transportation> Transports { get; set; }
 
         public List<LivelihoodEmpNeed> LivelihoodEmpNeeds { get; set; }
 
@@ -162,12 +162,12 @@ namespace BSAF.Models.ViewModels
             Individuals = new List<IndividualVM>();
             PSNs = new List<PSN>();
             ReturnReasons = new List<ReturnReason>();
+            LeavingReasons = new List<LeavingReason>();
             Determinations = new List<Determination>();
             MoneySources = new List<MoneySource>();
             BroughtItems = new List<BroughtItem>();
             PostArrivalNeeds = new List<PostArrivalNeed>();
-            BenefitedFromOrgs = new List<BenefitedFromOrg>();
-            Transportations = new List<Transportation>();
+            Transports = new List<Transportation>();
             LivelihoodEmpNeeds = new List<LivelihoodEmpNeed>();
             NeedTools = new List<NeedTool>();
             MainConcerns = new List<MainConcern>();
