@@ -359,7 +359,6 @@
             this.dateFLTD = new System.Windows.Forms.DateTimePicker();
             this.chkFLTP = new System.Windows.Forms.CheckBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label58 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
@@ -502,13 +501,14 @@
             this.txtNumHavePassport = new System.Windows.Forms.TextBox();
             this.label97 = new System.Windows.Forms.Label();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.groupBox27 = new System.Windows.Forms.GroupBox();
             this.label96 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
-            this.btnSaveBeneficiary = new System.Windows.Forms.Button();
             this.btnCardPrevious = new System.Windows.Forms.Button();
+            this.btnSaveBeneficiary = new System.Windows.Forms.Button();
+            this.pnlAssistanceNeedTitle = new System.Windows.Forms.Panel();
+            this.pnlHHdocumentTitle = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -561,7 +561,6 @@
             this.FT.SuspendLayout();
             this.CFT.SuspendLayout();
             this.FLT.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.TBRC.SuspendLayout();
             this.tabAssistanceNeeds2.SuspendLayout();
             this.pnlBenefited.SuspendLayout();
@@ -585,9 +584,9 @@
             this.pnlSchoolTypeInHostCountry.SuspendLayout();
             this.groupBox31.SuspendLayout();
             this.groupBox29.SuspendLayout();
-            this.groupBox26.SuspendLayout();
-            this.groupBox27.SuspendLayout();
             this.tabImageAndCard.SuspendLayout();
+            this.pnlAssistanceNeedTitle.SuspendLayout();
+            this.pnlHHdocumentTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -977,12 +976,15 @@
             // 
             // btnAddMemeber
             // 
-            this.btnAddMemeber.Location = new System.Drawing.Point(900, 54);
+            this.btnAddMemeber.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddMemeber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMemeber.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAddMemeber.Location = new System.Drawing.Point(887, 50);
             this.btnAddMemeber.Name = "btnAddMemeber";
-            this.btnAddMemeber.Size = new System.Drawing.Size(77, 23);
+            this.btnAddMemeber.Size = new System.Drawing.Size(91, 25);
             this.btnAddMemeber.TabIndex = 19;
             this.btnAddMemeber.Text = "Add Member";
-            this.btnAddMemeber.UseVisualStyleBackColor = true;
+            this.btnAddMemeber.UseVisualStyleBackColor = false;
             this.btnAddMemeber.Click += new System.EventHandler(this.btnAddMemeber_Click);
             // 
             // lblContactNumber
@@ -1441,10 +1443,12 @@
             // 
             // btnProfileNext
             // 
-            this.btnProfileNext.BackColor = System.Drawing.Color.Silver;
-            this.btnProfileNext.Location = new System.Drawing.Point(904, 575);
+            this.btnProfileNext.BackColor = System.Drawing.Color.Blue;
+            this.btnProfileNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfileNext.ForeColor = System.Drawing.Color.White;
+            this.btnProfileNext.Location = new System.Drawing.Point(904, 574);
             this.btnProfileNext.Name = "btnProfileNext";
-            this.btnProfileNext.Size = new System.Drawing.Size(75, 23);
+            this.btnProfileNext.Size = new System.Drawing.Size(80, 30);
             this.btnProfileNext.TabIndex = 32;
             this.btnProfileNext.Text = "Next";
             this.btnProfileNext.UseVisualStyleBackColor = false;
@@ -1541,9 +1545,10 @@
             // btnProtection1Previous
             // 
             this.btnProtection1Previous.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection1Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProtection1Previous.Location = new System.Drawing.Point(813, 541);
             this.btnProtection1Previous.Name = "btnProtection1Previous";
-            this.btnProtection1Previous.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection1Previous.Size = new System.Drawing.Size(80, 30);
             this.btnProtection1Previous.TabIndex = 42;
             this.btnProtection1Previous.Text = "Previous";
             this.btnProtection1Previous.UseVisualStyleBackColor = false;
@@ -1551,10 +1556,12 @@
             // 
             // btnProtection1Next
             // 
-            this.btnProtection1Next.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection1Next.BackColor = System.Drawing.Color.Blue;
+            this.btnProtection1Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProtection1Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProtection1Next.Location = new System.Drawing.Point(899, 541);
             this.btnProtection1Next.Name = "btnProtection1Next";
-            this.btnProtection1Next.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection1Next.Size = new System.Drawing.Size(80, 30);
             this.btnProtection1Next.TabIndex = 43;
             this.btnProtection1Next.Text = "Next";
             this.btnProtection1Next.UseVisualStyleBackColor = false;
@@ -2138,9 +2145,11 @@
             // btnProtection2Previous
             // 
             this.btnProtection2Previous.BackColor = System.Drawing.Color.Silver;
-            this.btnProtection2Previous.Location = new System.Drawing.Point(816, 578);
+            this.btnProtection2Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProtection2Previous.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnProtection2Previous.Location = new System.Drawing.Point(814, 578);
             this.btnProtection2Previous.Name = "btnProtection2Previous";
-            this.btnProtection2Previous.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection2Previous.Size = new System.Drawing.Size(80, 30);
             this.btnProtection2Previous.TabIndex = 60;
             this.btnProtection2Previous.Text = "Previous";
             this.btnProtection2Previous.UseVisualStyleBackColor = false;
@@ -2148,10 +2157,12 @@
             // 
             // btnProtection2Next
             // 
-            this.btnProtection2Next.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection2Next.BackColor = System.Drawing.Color.Blue;
+            this.btnProtection2Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProtection2Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProtection2Next.Location = new System.Drawing.Point(902, 578);
             this.btnProtection2Next.Name = "btnProtection2Next";
-            this.btnProtection2Next.Size = new System.Drawing.Size(75, 23);
+            this.btnProtection2Next.Size = new System.Drawing.Size(80, 30);
             this.btnProtection2Next.TabIndex = 61;
             this.btnProtection2Next.Text = "Next";
             this.btnProtection2Next.UseVisualStyleBackColor = false;
@@ -2975,12 +2986,15 @@
             // 
             // btnHostCountryPrevious
             // 
+            this.btnHostCountryPrevious.BackColor = System.Drawing.Color.Silver;
+            this.btnHostCountryPrevious.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnHostCountryPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHostCountryPrevious.Location = new System.Drawing.Point(798, 445);
             this.btnHostCountryPrevious.Name = "btnHostCountryPrevious";
-            this.btnHostCountryPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnHostCountryPrevious.Size = new System.Drawing.Size(80, 30);
             this.btnHostCountryPrevious.TabIndex = 76;
             this.btnHostCountryPrevious.Text = "Previous";
-            this.btnHostCountryPrevious.UseVisualStyleBackColor = true;
+            this.btnHostCountryPrevious.UseVisualStyleBackColor = false;
             this.btnHostCountryPrevious.Click += new System.EventHandler(this.btnHostCountryPrevious_Click);
             // 
             // rdoFMemberStayedBehindNo
@@ -2996,12 +3010,15 @@
             // 
             // btnHostCountryNext
             // 
+            this.btnHostCountryNext.BackColor = System.Drawing.Color.Blue;
+            this.btnHostCountryNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHostCountryNext.ForeColor = System.Drawing.SystemColors.Window;
             this.btnHostCountryNext.Location = new System.Drawing.Point(894, 445);
             this.btnHostCountryNext.Name = "btnHostCountryNext";
-            this.btnHostCountryNext.Size = new System.Drawing.Size(75, 23);
+            this.btnHostCountryNext.Size = new System.Drawing.Size(80, 30);
             this.btnHostCountryNext.TabIndex = 77;
             this.btnHostCountryNext.Text = "Next";
-            this.btnHostCountryNext.UseVisualStyleBackColor = true;
+            this.btnHostCountryNext.UseVisualStyleBackColor = false;
             this.btnHostCountryNext.Click += new System.EventHandler(this.btnHostCountryNext_Click);
             // 
             // rdoFMemberStayedBehindYes
@@ -3389,9 +3406,10 @@
             // 
             // btnAssistanceNeedsPrevious1
             // 
+            this.btnAssistanceNeedsPrevious1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssistanceNeedsPrevious1.Location = new System.Drawing.Point(806, 593);
             this.btnAssistanceNeedsPrevious1.Name = "btnAssistanceNeedsPrevious1";
-            this.btnAssistanceNeedsPrevious1.Size = new System.Drawing.Size(75, 23);
+            this.btnAssistanceNeedsPrevious1.Size = new System.Drawing.Size(80, 30);
             this.btnAssistanceNeedsPrevious1.TabIndex = 82;
             this.btnAssistanceNeedsPrevious1.Text = "Previous";
             this.btnAssistanceNeedsPrevious1.UseVisualStyleBackColor = true;
@@ -3399,12 +3417,15 @@
             // 
             // btnAssistanceNeedsNext1
             // 
+            this.btnAssistanceNeedsNext1.BackColor = System.Drawing.Color.Blue;
+            this.btnAssistanceNeedsNext1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssistanceNeedsNext1.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAssistanceNeedsNext1.Location = new System.Drawing.Point(901, 594);
             this.btnAssistanceNeedsNext1.Name = "btnAssistanceNeedsNext1";
-            this.btnAssistanceNeedsNext1.Size = new System.Drawing.Size(75, 23);
+            this.btnAssistanceNeedsNext1.Size = new System.Drawing.Size(80, 30);
             this.btnAssistanceNeedsNext1.TabIndex = 83;
             this.btnAssistanceNeedsNext1.Text = "Next";
-            this.btnAssistanceNeedsNext1.UseVisualStyleBackColor = true;
+            this.btnAssistanceNeedsNext1.UseVisualStyleBackColor = false;
             this.btnAssistanceNeedsNext1.Click += new System.EventHandler(this.btnAssistanceNeedsNext1_Click);
             // 
             // SC
@@ -3503,6 +3524,7 @@
             // 
             // gbPostArrivalNeeds
             // 
+            this.gbPostArrivalNeeds.Controls.Add(this.pnlAssistanceNeedTitle);
             this.gbPostArrivalNeeds.Controls.Add(this.PR);
             this.gbPostArrivalNeeds.Controls.Add(this.NFI);
             this.gbPostArrivalNeeds.Controls.Add(this.WFP);
@@ -3514,7 +3536,6 @@
             this.gbPostArrivalNeeds.Controls.Add(this.FT);
             this.gbPostArrivalNeeds.Controls.Add(this.CFT);
             this.gbPostArrivalNeeds.Controls.Add(this.FLT);
-            this.gbPostArrivalNeeds.Controls.Add(this.groupBox7);
             this.gbPostArrivalNeeds.Controls.Add(this.TBRC);
             this.gbPostArrivalNeeds.Location = new System.Drawing.Point(24, 25);
             this.gbPostArrivalNeeds.Name = "gbPostArrivalNeeds";
@@ -4039,25 +4060,11 @@
             this.label52.TabIndex = 2;
             this.label52.Text = "1st Leg transportation (Herat and Nimroz)";
             // 
-            // groupBox7
-            // 
-            this.groupBox7.BackColor = System.Drawing.Color.LightBlue;
-            this.groupBox7.Controls.Add(this.label58);
-            this.groupBox7.Controls.Add(this.label54);
-            this.groupBox7.Controls.Add(this.label55);
-            this.groupBox7.Controls.Add(this.label56);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(0, 2);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(956, 42);
-            this.groupBox7.TabIndex = 8;
-            this.groupBox7.TabStop = false;
-            // 
             // label58
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(307, 15);
+            this.label58.Location = new System.Drawing.Point(303, 9);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 17);
             this.label58.TabIndex = 9;
@@ -4067,7 +4074,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(506, 15);
+            this.label54.Location = new System.Drawing.Point(510, 10);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(74, 17);
             this.label54.TabIndex = 7;
@@ -4077,7 +4084,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(383, 15);
+            this.label55.Location = new System.Drawing.Point(380, 10);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(98, 17);
             this.label55.TabIndex = 5;
@@ -4087,7 +4094,7 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(5, 14);
+            this.label56.Location = new System.Drawing.Point(7, 10);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(114, 17);
             this.label56.TabIndex = 2;
@@ -4203,9 +4210,10 @@
             // 
             // btnAssistanceNeedsPrevious2
             // 
-            this.btnAssistanceNeedsPrevious2.Location = new System.Drawing.Point(814, 471);
+            this.btnAssistanceNeedsPrevious2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssistanceNeedsPrevious2.Location = new System.Drawing.Point(813, 472);
             this.btnAssistanceNeedsPrevious2.Name = "btnAssistanceNeedsPrevious2";
-            this.btnAssistanceNeedsPrevious2.Size = new System.Drawing.Size(75, 23);
+            this.btnAssistanceNeedsPrevious2.Size = new System.Drawing.Size(80, 30);
             this.btnAssistanceNeedsPrevious2.TabIndex = 103;
             this.btnAssistanceNeedsPrevious2.Text = "Previous";
             this.btnAssistanceNeedsPrevious2.UseVisualStyleBackColor = true;
@@ -4213,12 +4221,15 @@
             // 
             // btnAssistanceNeedsNext2
             // 
+            this.btnAssistanceNeedsNext2.BackColor = System.Drawing.Color.Blue;
+            this.btnAssistanceNeedsNext2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssistanceNeedsNext2.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAssistanceNeedsNext2.Location = new System.Drawing.Point(909, 472);
             this.btnAssistanceNeedsNext2.Name = "btnAssistanceNeedsNext2";
-            this.btnAssistanceNeedsNext2.Size = new System.Drawing.Size(75, 23);
+            this.btnAssistanceNeedsNext2.Size = new System.Drawing.Size(80, 30);
             this.btnAssistanceNeedsNext2.TabIndex = 104;
             this.btnAssistanceNeedsNext2.Text = "Next";
-            this.btnAssistanceNeedsNext2.UseVisualStyleBackColor = true;
+            this.btnAssistanceNeedsNext2.UseVisualStyleBackColor = false;
             this.btnAssistanceNeedsNext2.Click += new System.EventHandler(this.btnAssistanceNeedsNext2_Click);
             // 
             // gbTransportation
@@ -4898,9 +4909,10 @@
             // 
             // btnReintegNeed1Previous
             // 
-            this.btnReintegNeed1Previous.Location = new System.Drawing.Point(811, 570);
+            this.btnReintegNeed1Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintegNeed1Previous.Location = new System.Drawing.Point(806, 573);
             this.btnReintegNeed1Previous.Name = "btnReintegNeed1Previous";
-            this.btnReintegNeed1Previous.Size = new System.Drawing.Size(75, 23);
+            this.btnReintegNeed1Previous.Size = new System.Drawing.Size(80, 28);
             this.btnReintegNeed1Previous.TabIndex = 124;
             this.btnReintegNeed1Previous.Text = "Previous";
             this.btnReintegNeed1Previous.UseVisualStyleBackColor = true;
@@ -4908,12 +4920,15 @@
             // 
             // btnReintegNeed1NeedNext
             // 
+            this.btnReintegNeed1NeedNext.BackColor = System.Drawing.Color.Blue;
+            this.btnReintegNeed1NeedNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintegNeed1NeedNext.ForeColor = System.Drawing.SystemColors.Window;
             this.btnReintegNeed1NeedNext.Location = new System.Drawing.Point(906, 571);
             this.btnReintegNeed1NeedNext.Name = "btnReintegNeed1NeedNext";
-            this.btnReintegNeed1NeedNext.Size = new System.Drawing.Size(75, 23);
+            this.btnReintegNeed1NeedNext.Size = new System.Drawing.Size(80, 30);
             this.btnReintegNeed1NeedNext.TabIndex = 125;
             this.btnReintegNeed1NeedNext.Text = "Next";
-            this.btnReintegNeed1NeedNext.UseVisualStyleBackColor = true;
+            this.btnReintegNeed1NeedNext.UseVisualStyleBackColor = false;
             this.btnReintegNeed1NeedNext.Click += new System.EventHandler(this.btnReintegNeed1NeedNext_Click);
             // 
             // gbMainConcerns
@@ -5212,6 +5227,7 @@
             // 
             // tabReintegrationNeeds2
             // 
+            this.tabReintegrationNeeds2.Controls.Add(this.pnlHHdocumentTitle);
             this.tabReintegrationNeeds2.Controls.Add(this.pnlChildrenGoToSchoolInHost);
             this.tabReintegrationNeeds2.Controls.Add(this.pnlHaveSecureMeans);
             this.tabReintegrationNeeds2.Controls.Add(this.groupBox28);
@@ -5299,9 +5315,9 @@
             // 
             this.groupBox28.Controls.Add(this.txtNumHaveTaskira);
             this.groupBox28.Controls.Add(this.label98);
-            this.groupBox28.Location = new System.Drawing.Point(21, 61);
+            this.groupBox28.Location = new System.Drawing.Point(22, 61);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(962, 37);
+            this.groupBox28.Size = new System.Drawing.Size(961, 37);
             this.groupBox28.TabIndex = 46;
             this.groupBox28.TabStop = false;
             // 
@@ -5325,9 +5341,10 @@
             // 
             // btnReintegNeeds2Previous
             // 
-            this.btnReintegNeeds2Previous.Location = new System.Drawing.Point(811, 534);
+            this.btnReintegNeeds2Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintegNeeds2Previous.Location = new System.Drawing.Point(804, 536);
             this.btnReintegNeeds2Previous.Name = "btnReintegNeeds2Previous";
-            this.btnReintegNeeds2Previous.Size = new System.Drawing.Size(75, 23);
+            this.btnReintegNeeds2Previous.Size = new System.Drawing.Size(80, 28);
             this.btnReintegNeeds2Previous.TabIndex = 137;
             this.btnReintegNeeds2Previous.Text = "Previous";
             this.btnReintegNeeds2Previous.UseVisualStyleBackColor = true;
@@ -5335,12 +5352,15 @@
             // 
             // btnReintegNeeds2Next
             // 
+            this.btnReintegNeeds2Next.BackColor = System.Drawing.Color.Blue;
+            this.btnReintegNeeds2Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintegNeeds2Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnReintegNeeds2Next.Location = new System.Drawing.Point(906, 535);
             this.btnReintegNeeds2Next.Name = "btnReintegNeeds2Next";
-            this.btnReintegNeeds2Next.Size = new System.Drawing.Size(75, 23);
+            this.btnReintegNeeds2Next.Size = new System.Drawing.Size(80, 30);
             this.btnReintegNeeds2Next.TabIndex = 138;
             this.btnReintegNeeds2Next.Text = "Next";
-            this.btnReintegNeeds2Next.UseVisualStyleBackColor = true;
+            this.btnReintegNeeds2Next.UseVisualStyleBackColor = false;
             this.btnReintegNeeds2Next.Click += new System.EventHandler(this.btnReintegNeeds2Next_Click);
             // 
             // pnlSchoolTypeInHostCountry
@@ -5482,29 +5502,17 @@
             // 
             // groupBox26
             // 
-            this.groupBox26.Controls.Add(this.groupBox27);
             this.groupBox26.Location = new System.Drawing.Point(22, 27);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Size = new System.Drawing.Size(962, 156);
             this.groupBox26.TabIndex = 51;
             this.groupBox26.TabStop = false;
             // 
-            // groupBox27
-            // 
-            this.groupBox27.BackColor = System.Drawing.Color.LightBlue;
-            this.groupBox27.Controls.Add(this.label96);
-            this.groupBox27.Controls.Add(this.label95);
-            this.groupBox27.Location = new System.Drawing.Point(0, 3);
-            this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Size = new System.Drawing.Size(962, 39);
-            this.groupBox27.TabIndex = 45;
-            this.groupBox27.TabStop = false;
-            // 
             // label96
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(496, 8);
+            this.label96.Location = new System.Drawing.Point(496, 5);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(61, 18);
             this.label96.TabIndex = 45;
@@ -5514,7 +5522,7 @@
             // 
             this.label95.AutoSize = true;
             this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(2, 9);
+            this.label95.Location = new System.Drawing.Point(3, 6);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(113, 18);
             this.label95.TabIndex = 44;
@@ -5542,25 +5550,51 @@
             this.tabImageAndCard.Text = "Card and Image";
             this.tabImageAndCard.UseVisualStyleBackColor = true;
             // 
-            // btnSaveBeneficiary
-            // 
-            this.btnSaveBeneficiary.Location = new System.Drawing.Point(829, 345);
-            this.btnSaveBeneficiary.Name = "btnSaveBeneficiary";
-            this.btnSaveBeneficiary.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveBeneficiary.TabIndex = 0;
-            this.btnSaveBeneficiary.Text = "Save";
-            this.btnSaveBeneficiary.UseVisualStyleBackColor = true;
-            this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
-            // 
             // btnCardPrevious
             // 
+            this.btnCardPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCardPrevious.Location = new System.Drawing.Point(732, 345);
             this.btnCardPrevious.Name = "btnCardPrevious";
-            this.btnCardPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnCardPrevious.Size = new System.Drawing.Size(80, 28);
             this.btnCardPrevious.TabIndex = 1;
             this.btnCardPrevious.Text = "Previous";
             this.btnCardPrevious.UseVisualStyleBackColor = true;
             this.btnCardPrevious.Click += new System.EventHandler(this.btnCardPrevious_Click);
+            // 
+            // btnSaveBeneficiary
+            // 
+            this.btnSaveBeneficiary.BackColor = System.Drawing.Color.Blue;
+            this.btnSaveBeneficiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveBeneficiary.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSaveBeneficiary.Location = new System.Drawing.Point(829, 345);
+            this.btnSaveBeneficiary.Name = "btnSaveBeneficiary";
+            this.btnSaveBeneficiary.Size = new System.Drawing.Size(80, 30);
+            this.btnSaveBeneficiary.TabIndex = 0;
+            this.btnSaveBeneficiary.Text = "Save";
+            this.btnSaveBeneficiary.UseVisualStyleBackColor = false;
+            this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
+            // 
+            // pnlAssistanceNeedTitle
+            // 
+            this.pnlAssistanceNeedTitle.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label54);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label58);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label55);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label56);
+            this.pnlAssistanceNeedTitle.Location = new System.Drawing.Point(1, 7);
+            this.pnlAssistanceNeedTitle.Name = "pnlAssistanceNeedTitle";
+            this.pnlAssistanceNeedTitle.Size = new System.Drawing.Size(954, 39);
+            this.pnlAssistanceNeedTitle.TabIndex = 82;
+            // 
+            // pnlHHdocumentTitle
+            // 
+            this.pnlHHdocumentTitle.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlHHdocumentTitle.Controls.Add(this.label96);
+            this.pnlHHdocumentTitle.Controls.Add(this.label95);
+            this.pnlHHdocumentTitle.Location = new System.Drawing.Point(22, 32);
+            this.pnlHHdocumentTitle.Name = "pnlHHdocumentTitle";
+            this.pnlHHdocumentTitle.Size = new System.Drawing.Size(962, 30);
+            this.pnlHHdocumentTitle.TabIndex = 128;
             // 
             // BeneficiaryForm
             // 
@@ -5570,11 +5604,11 @@
             this.ClientSize = new System.Drawing.Size(1009, 749);
             this.Controls.Add(this.tabBeneficiary);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BeneficiaryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.BeneficiaryForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -5675,8 +5709,6 @@
             this.CFT.PerformLayout();
             this.FLT.ResumeLayout(false);
             this.FLT.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.TBRC.ResumeLayout(false);
             this.TBRC.PerformLayout();
             this.tabAssistanceNeeds2.ResumeLayout(false);
@@ -5723,10 +5755,11 @@
             this.groupBox31.PerformLayout();
             this.groupBox29.ResumeLayout(false);
             this.groupBox29.PerformLayout();
-            this.groupBox26.ResumeLayout(false);
-            this.groupBox27.ResumeLayout(false);
-            this.groupBox27.PerformLayout();
             this.tabImageAndCard.ResumeLayout(false);
+            this.pnlAssistanceNeedTitle.ResumeLayout(false);
+            this.pnlAssistanceNeedTitle.PerformLayout();
+            this.pnlHHdocumentTitle.ResumeLayout(false);
+            this.pnlHHdocumentTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5954,7 +5987,6 @@
         private System.Windows.Forms.DateTimePicker dateFLTD;
         private System.Windows.Forms.CheckBox chkFLTP;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
@@ -6115,7 +6147,6 @@
         private System.Windows.Forms.GroupBox groupBox28;
         private System.Windows.Forms.TextBox txtNumHaveTaskira;
         private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.GroupBox groupBox27;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Label label94;
@@ -6212,5 +6243,7 @@
         private System.Windows.Forms.ContextMenuStrip ctxFamailyMemeberMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmDeleteMemeber;
         private System.Windows.Forms.Button btnCardPrevious;
+        private System.Windows.Forms.Panel pnlAssistanceNeedTitle;
+        private System.Windows.Forms.Panel pnlHHdocumentTitle;
     }
 }

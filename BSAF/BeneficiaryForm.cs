@@ -1969,7 +1969,7 @@ namespace BSAF
           
             if (respons)
             {
-                if(MessageBox.Show("Beneficiary successfully saved.","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk) == DialogResult.OK)
+                if (MessageBox.Show("Beneficiary successfully saved.","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk) == DialogResult.OK)
                 {
                     this.Dispose();
                 }

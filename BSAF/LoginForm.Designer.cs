@@ -51,7 +51,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.Blue;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnLogin.Location = new System.Drawing.Point(228, 202);
+            this.btnLogin.Location = new System.Drawing.Point(228, 221);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(103, 31);
             this.btnLogin.TabIndex = 1;
@@ -62,7 +62,8 @@
             // txtUserName
             // 
             this.txtUserName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUserName.Location = new System.Drawing.Point(122, 115);
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(122, 134);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(209, 29);
@@ -71,7 +72,8 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(122, 153);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(122, 172);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -82,11 +84,11 @@
             // Login
             // 
             this.Login.AutoSize = true;
-            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.Blue;
-            this.Login.Location = new System.Drawing.Point(192, 91);
+            this.Login.Location = new System.Drawing.Point(192, 111);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(43, 17);
+            this.Login.Size = new System.Drawing.Size(47, 17);
             this.Login.TabIndex = 6;
             this.Login.Text = "BSAF";
             this.Login.Click += new System.EventHandler(this.Login_Click);
@@ -95,7 +97,7 @@
             // 
             this.lblLoginMessage.AutoSize = true;
             this.lblLoginMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblLoginMessage.Location = new System.Drawing.Point(122, 188);
+            this.lblLoginMessage.Location = new System.Drawing.Point(122, 206);
             this.lblLoginMessage.Name = "lblLoginMessage";
             this.lblLoginMessage.Size = new System.Drawing.Size(0, 13);
             this.lblLoginMessage.TabIndex = 7;
@@ -122,7 +124,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::BSAF.Properties.Resources.IOM_Logo1;
-            this.pictureBox3.Location = new System.Drawing.Point(144, 38);
+            this.pictureBox3.Location = new System.Drawing.Point(144, 57);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(138, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +134,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::BSAF.Properties.Resources.password;
-            this.pictureBox2.Location = new System.Drawing.Point(87, 153);
+            this.pictureBox2.Location = new System.Drawing.Point(87, 172);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +144,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BSAF.Properties.Resources.user1;
-            this.pictureBox1.Location = new System.Drawing.Point(87, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 134);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +154,7 @@
             // pbLoginProcess
             // 
             this.pbLoginProcess.Image = global::BSAF.Properties.Resources.circle_prociess;
-            this.pbLoginProcess.Location = new System.Drawing.Point(157, 202);
+            this.pbLoginProcess.Location = new System.Drawing.Point(157, 221);
             this.pbLoginProcess.Name = "pbLoginProcess";
             this.pbLoginProcess.Size = new System.Drawing.Size(53, 31);
             this.pbLoginProcess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,6 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::BSAF.Properties.Resources.login_back1;
             this.ClientSize = new System.Drawing.Size(459, 361);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
@@ -173,7 +176,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Login Form";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -49,6 +49,8 @@
             this.mdiProgressbar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.submitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.submitRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu,
+            this.submitToolStripMenuItem,
             this.toolsMenu,
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -198,6 +201,21 @@
             this.mainStatusStrip.TabIndex = 2;
             this.mainStatusStrip.Text = "StatusStrip";
             // 
+            // submitToolStripMenuItem
+            // 
+            this.submitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.submitRecordToolStripMenuItem});
+            this.submitToolStripMenuItem.Name = "submitToolStripMenuItem";
+            this.submitToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.submitToolStripMenuItem.Text = "Submit";
+            // 
+            // submitRecordToolStripMenuItem
+            // 
+            this.submitRecordToolStripMenuItem.Name = "submitRecordToolStripMenuItem";
+            this.submitRecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.submitRecordToolStripMenuItem.Text = "Submit Record";
+            this.submitRecordToolStripMenuItem.Click += new System.EventHandler(this.submitRecordToolStripMenuItem_Click);
+            // 
             // BSAFMDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +263,8 @@
         private System.Windows.Forms.ToolStripProgressBar mdiProgressbar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.StatusStrip mainStatusStrip;
+        private System.Windows.Forms.ToolStripMenuItem submitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem submitRecordToolStripMenuItem;
     }
 }
 

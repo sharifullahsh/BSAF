@@ -112,7 +112,6 @@ namespace BSAF.Models.ViewModels
 
         public string ProfessionInHostCountryOther { get; set; }
 
-
         public bool? HoHCanReadWrite { get; set; }
 
         public string HoHEducationLevel { get; set; }
@@ -130,6 +129,18 @@ namespace BSAF.Models.ViewModels
         public bool? DidChildrenGoToSchoole { get; set; }
 
         public int? NumChildrenAttendedSchoole { get; set; }
+
+        public DateTime InsertedDate { get; set; }
+
+        public string LastUpdatedBy { get; set; }
+
+        public DateTime? LastUpdatedDate { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public bool IsSubmitted { get; set; }
+
+        public bool IsCardIssued { get; set; }
 
         public List<IndividualVM> Individuals { get; set; }
 

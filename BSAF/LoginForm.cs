@@ -16,6 +16,7 @@ namespace BSAF
         public LoginForm()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
             userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new IdentityDbContext("BSAFconn")));
         }
         //public bool VerifyUserNamePassword(string userName, string password)
@@ -48,6 +49,7 @@ namespace BSAF
                         var loginUser = userManager.Users.FirstOrDefault(u => u.UserName == username);
                         UserInfo.ID = loginUser.Id;
                         UserInfo.UserName = loginUser.UserName;
+                        UserInfo.UserPassword = this.txtPassword.Text;
                         UserInfo.StationCode = db.AspNetUsers.Where(u => u.Id == loginUser.Id).Select(u => u.UserName).FirstOrDefault();
 
                         BSAFMDIParent mdi = new BSAFMDIParent();

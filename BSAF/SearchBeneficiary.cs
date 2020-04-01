@@ -54,6 +54,7 @@ namespace BSAF
             var beneficiares = (from b in db.Beneficiaries
                                 join i in db.Individuals
                                 on b.BeneficiaryID equals i.BeneficiaryID into individuals
+                                where b.IsActive == true && b.IsSubmitted == false
                                 select new { b.BeneficiaryID,b.ScreeningDate,b.BeneficiaryType,b.ReturnStatus,FamilyMembers = individuals.ToList()}).ToList();
 
 
@@ -131,7 +132,6 @@ namespace BSAF
                     MdiParent = this.MdiParent
                 };
                 bf.Show();
-
                 this.Dispose();
                 
             }

@@ -79,6 +79,7 @@
             this.BeneficiaryType});
             this.lvBeneficiaries.ContextMenuStrip = this.ctmstSearchBeneficiary;
             this.lvBeneficiaries.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvBeneficiaries.ForeColor = System.Drawing.SystemColors.Window;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
             this.lvBeneficiaries.Location = new System.Drawing.Point(0, 14);
@@ -135,6 +136,7 @@
             // lblMName
             // 
             this.lblMName.AutoSize = true;
+            this.lblMName.ForeColor = System.Drawing.SystemColors.Window;
             this.lblMName.Location = new System.Drawing.Point(10, 22);
             this.lblMName.Name = "lblMName";
             this.lblMName.Size = new System.Drawing.Size(35, 13);
@@ -152,6 +154,7 @@
             // lblMFatherName
             // 
             this.lblMFatherName.AutoSize = true;
+            this.lblMFatherName.ForeColor = System.Drawing.SystemColors.Window;
             this.lblMFatherName.Location = new System.Drawing.Point(237, 22);
             this.lblMFatherName.Name = "lblMFatherName";
             this.lblMFatherName.Size = new System.Drawing.Size(75, 13);
@@ -178,6 +181,7 @@
             // rdoBeneficiaryTypeFamily
             // 
             this.rdoBeneficiaryTypeFamily.AutoSize = true;
+            this.rdoBeneficiaryTypeFamily.ForeColor = System.Drawing.SystemColors.Window;
             this.rdoBeneficiaryTypeFamily.Location = new System.Drawing.Point(6, 8);
             this.rdoBeneficiaryTypeFamily.Name = "rdoBeneficiaryTypeFamily";
             this.rdoBeneficiaryTypeFamily.Size = new System.Drawing.Size(54, 17);
@@ -189,6 +193,7 @@
             // rdoBeneficiaryTypeIndividual
             // 
             this.rdoBeneficiaryTypeIndividual.AutoSize = true;
+            this.rdoBeneficiaryTypeIndividual.ForeColor = System.Drawing.SystemColors.Window;
             this.rdoBeneficiaryTypeIndividual.Location = new System.Drawing.Point(82, 8);
             this.rdoBeneficiaryTypeIndividual.Name = "rdoBeneficiaryTypeIndividual";
             this.rdoBeneficiaryTypeIndividual.Size = new System.Drawing.Size(70, 17);
@@ -200,9 +205,9 @@
             // lblBeneficiaryType
             // 
             this.lblBeneficiaryType.AutoSize = true;
-            this.lblBeneficiaryType.BackColor = System.Drawing.SystemColors.Menu;
+            this.lblBeneficiaryType.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblBeneficiaryType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBeneficiaryType.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblBeneficiaryType.ForeColor = System.Drawing.SystemColors.Window;
             this.lblBeneficiaryType.Location = new System.Drawing.Point(506, 56);
             this.lblBeneficiaryType.Name = "lblBeneficiaryType";
             this.lblBeneficiaryType.Size = new System.Drawing.Size(120, 18);
@@ -214,7 +219,7 @@
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDeported);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusDocClaimant);
             this.pnlReturnStatus.Controls.Add(this.rdoReturnStatusSpontaneous);
-            this.pnlReturnStatus.Location = new System.Drawing.Point(107, 50);
+            this.pnlReturnStatus.Location = new System.Drawing.Point(119, 50);
             this.pnlReturnStatus.Name = "pnlReturnStatus";
             this.pnlReturnStatus.Size = new System.Drawing.Size(375, 34);
             this.pnlReturnStatus.TabIndex = 56;
@@ -222,6 +227,7 @@
             // rdoReturnStatusDeported
             // 
             this.rdoReturnStatusDeported.AutoSize = true;
+            this.rdoReturnStatusDeported.ForeColor = System.Drawing.SystemColors.Window;
             this.rdoReturnStatusDeported.Location = new System.Drawing.Point(3, 7);
             this.rdoReturnStatusDeported.Name = "rdoReturnStatusDeported";
             this.rdoReturnStatusDeported.Size = new System.Drawing.Size(69, 17);
@@ -233,6 +239,7 @@
             // rdoReturnStatusDocClaimant
             // 
             this.rdoReturnStatusDocClaimant.AutoSize = true;
+            this.rdoReturnStatusDocClaimant.ForeColor = System.Drawing.SystemColors.Window;
             this.rdoReturnStatusDocClaimant.Location = new System.Drawing.Point(100, 7);
             this.rdoReturnStatusDocClaimant.Name = "rdoReturnStatusDocClaimant";
             this.rdoReturnStatusDocClaimant.Size = new System.Drawing.Size(116, 17);
@@ -244,6 +251,7 @@
             // rdoReturnStatusSpontaneous
             // 
             this.rdoReturnStatusSpontaneous.AutoSize = true;
+            this.rdoReturnStatusSpontaneous.ForeColor = System.Drawing.SystemColors.Window;
             this.rdoReturnStatusSpontaneous.Location = new System.Drawing.Point(240, 7);
             this.rdoReturnStatusSpontaneous.Name = "rdoReturnStatusSpontaneous";
             this.rdoReturnStatusSpontaneous.Size = new System.Drawing.Size(130, 17);
@@ -255,10 +263,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Menu;
+            this.label8.BackColor = System.Drawing.Color.RoyalBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(-1, 57);
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(13, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 18);
             this.label8.TabIndex = 55;
@@ -277,9 +285,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Menu;
+            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(545, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 18);
@@ -299,9 +307,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Menu;
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(790, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 18);
@@ -310,26 +318,32 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(920, 97);
+            this.btnSearch.BackColor = System.Drawing.Color.Blue;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(920, 89);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(75, 31);
             this.btnSearch.TabIndex = 61;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(826, 97);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnCancel.Location = new System.Drawing.Point(826, 89);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 31);
             this.btnCancel.TabIndex = 62;
             this.btnCancel.Text = "Reset";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // gbSearchCriteria
             // 
+            this.gbSearchCriteria.BackColor = System.Drawing.Color.RoyalBlue;
             this.gbSearchCriteria.Controls.Add(this.txtMFName);
             this.gbSearchCriteria.Controls.Add(this.lblMFatherName);
             this.gbSearchCriteria.Controls.Add(this.txtMName);
@@ -345,6 +359,7 @@
             this.gbSearchCriteria.Controls.Add(this.pnlReturnStatus);
             this.gbSearchCriteria.Controls.Add(this.label2);
             this.gbSearchCriteria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbSearchCriteria.ForeColor = System.Drawing.SystemColors.Window;
             this.gbSearchCriteria.Location = new System.Drawing.Point(0, 0);
             this.gbSearchCriteria.Name = "gbSearchCriteria";
             this.gbSearchCriteria.Size = new System.Drawing.Size(1009, 130);
@@ -366,6 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1009, 661);
             this.Controls.Add(this.pnlSearchResult);
             this.Controls.Add(this.gbSearchCriteria);

@@ -19,17 +19,6 @@ namespace BSAF
             InitializeComponent();
         }
 
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,5 +73,14 @@ namespace BSAF
             };
             flogin.Show();
         }
+
+        private void submitRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ssform = new SubmitToServerForm()
+            {
+                MdiParent = this
+            };
+            ssform.Show();
+    }
     }
 }
