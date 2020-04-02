@@ -13,7 +13,6 @@ namespace BSAF.Helper
         {
             dbContext db = new dbContext();
        
-            var bene = model;
    
             using (var trans = db.Database.BeginTransaction())
             {

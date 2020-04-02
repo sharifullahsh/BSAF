@@ -37,6 +37,13 @@ namespace BSAF
                         ms.Enabled = true;
                         this.Dispose();
                     }
+                    else
+                    {
+                        this.pbLoginProcess.Visible = false;
+                        lblLoginMessage.Text = "Can not process user login please try again or continue offline.";
+                        lblLoginMessage.Visible = true;
+                        return;
+                    }
                 }
                 catch (Exception ex)
                 {

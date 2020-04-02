@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 using System.Configuration;
+using BSAF.Helper;
 
 namespace BSAF.Controller
 {
@@ -13,7 +14,7 @@ namespace BSAF.Controller
 
     public static bool IsConnectedToInternet()
         {
-            string host = ConfigurationManager.AppSettings["baseUrl"].ToString();
+            string host = Variables.baseUrl;
             bool result = false;
             Ping p = new Ping();
             try
@@ -23,7 +24,7 @@ namespace BSAF.Controller
                     return true;
             }catch(Exception e)
              {
-
+                
             }
             return result;
         }

@@ -1,4 +1,5 @@
-﻿using BSAF.Models.ViewModels;
+﻿using BSAF.Controller;
+using BSAF.Models.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace BSAF.Helper
         }
         public static bool AuthenticateUser(string username, string password)
         {
+            if (!ConnectionController.IsConnectedToInternet())
+            {
+                return false;
+            }
             var baseUrl = ConfigurationManager.AppSettings["apiBaseUrl"].ToString();
             string endpoint = baseUrl + "/Login/login";
             string method = "POST";
@@ -26,30 +31,26 @@ namespace BSAF.Helper
                 Username = username,
                 Password = password
             });
-
-            WebClient wc = new WebClient();
-            wc.Headers["Content-Type"] = "application/json";
             try
             {
-                var response = wc.UploadString(endpoint, method, json);
-                if(response != null)
+                using (WebClient client = new WebClient())
                 {
-                    var p = JsonConvert.DeserializeObject(response);
-
-
-                    
-                    //var p  = new JwtSecurityTokenHandler()
-                    //var content = new 
-                    var jsonResponse = JsonConvert.DeserializeObject<JwtVM>(response);
-                    var tokenHandler = new JwtSecurityTokenHandler();
-                    var token = tokenHandler.ReadJwtToken(jsonResponse.token);
-                    var cliams = token.Claims;
-                    UserInfo.ID = cliams.Where(c => c.Type == "nameid").Select(c=>c.Value).FirstOrDefault();
-                    UserInfo.UserName = cliams.Where(c => c.Type == "unique_name").Select(c=>c.Value).FirstOrDefault();
-                    return true; ;
+                    client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.BypassCache);
+                    client.Headers["Content-Type"] = "application/json";
+                    var response = client.UploadString(endpoint, method, json);
+                    if (response != null)
+                    {
+                        var jsonResponse = JsonConvert.DeserializeObject<JwtVM>(response);
+                        var tokenHandler = new JwtSecurityTokenHandler();
+                        var token = tokenHandler.ReadJwtToken(jsonResponse.token);
+                        var cliams = token.Claims;
+                        UserInfo.ID = cliams.Where(c => c.Type == "nameid").Select(c => c.Value).FirstOrDefault();
+                        UserInfo.UserName = cliams.Where(c => c.Type == "unique_name").Select(c => c.Value).FirstOrDefault();
+                        return true; ;
+                    }
+                    return false;
                 }
-                return true;
-                //return JsonConvert.DeserializeObject<UserInfo>(response);
+
             }
             catch (Exception ex)
             {

@@ -20,13 +20,12 @@ namespace BSAF.Controller
 
         public static bool SubmitBeneficiary(BeneficiaryVM model)
         {
-            string baseUrl = ConfigurationManager.AppSettings["apiBaseUrl"].ToString();
-
-            string endpoint = baseUrl + "/Beneficiary/";
+            string endpoint = Variables.baseUrl + "/Beneficiary/";
             string method = "POST";
             string json = JsonConvert.SerializeObject(model);
             WebClient wc = new WebClient();
             wc.Headers["Content-Type"] = "application/json";
+            wc.Headers["Authorization"] = UserInfo.token;
             try
             {
                 string response = wc.UploadString(endpoint, method, json);

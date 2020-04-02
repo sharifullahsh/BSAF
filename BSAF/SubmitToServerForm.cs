@@ -55,24 +55,33 @@ namespace BSAF
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             this.lblSubmitting.Text = "";
-            var beneficiary = db.Beneficiaries.Where(b => b.IsActive == true && b.IsSubmitted == false).Select(b=>b.BeneficiaryID);
+            var beneficiariesList = db.Beneficiaries.Where(b => b.IsActive == true && b.IsSubmitted == false).Select(b=>b.BeneficiaryID).ToList();
             if (!ConnectionController.IsConnectedToInternet()) {
                 MessageBox.Show("You are not connected to internet please check your connection and try again.");
                 return;
             }
-            foreach (var b in beneficiary)
+            if (string.IsNullOrWhiteSpace(UserInfo.token))
+            {
+                MessageBox.Show("Your are not loged in, please close the application and login.");
+            }
+            foreach (var benefID in beneficiariesList)
             {
                 
-               var benefRecord =  BeneficiaryController.GetBeneficiary(b);
+               var benefRecord =  BeneficiaryController.GetBeneficiary(benefID);
+                benefRecord.InsertedBy = UserInfo.ID;
                 this.lblSubmitting.Text = "Sending beneficiary with Guid ID : " + benefRecord.GUID;
                 var response = APIController.SubmitBeneficiary(benefRecord);
                 if(response == false)
                 {
-                    if (MessageBox.Show("Error sending record with ID"+ b +"/br Do you want to continue ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                    if (MessageBox.Show("Error sending record with ID" + benefID + "/br Do you want to continue ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                     {
-                        return;
+                        continue;
                     }
+                    else { return; }
                 }
+                var beneficiaryInDB = db.Beneficiaries.Where(i => i.BeneficiaryID == benefID).First();
+                beneficiaryInDB.IsSubmitted = true;
+                db.SaveChanges();
                 this.lblSubmitting.Text = "";
             }
         }

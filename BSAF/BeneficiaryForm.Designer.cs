@@ -1224,12 +1224,12 @@
             this.ctxFamailyMemeberMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmDeleteMemeber});
             this.ctxFamailyMemeberMenu.Name = "ctxFamailyMemeberMenu";
-            this.ctxFamailyMemeberMenu.Size = new System.Drawing.Size(181, 48);
+            this.ctxFamailyMemeberMenu.Size = new System.Drawing.Size(108, 26);
             // 
             // tsmDeleteMemeber
             // 
             this.tsmDeleteMemeber.Name = "tsmDeleteMemeber";
-            this.tsmDeleteMemeber.Size = new System.Drawing.Size(180, 22);
+            this.tsmDeleteMemeber.Size = new System.Drawing.Size(107, 22);
             this.tsmDeleteMemeber.Text = "Delete";
             this.tsmDeleteMemeber.Click += new System.EventHandler(this.tsmDeleteMemeber_Click);
             // 
