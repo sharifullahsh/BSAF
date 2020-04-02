@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using BSAF.Models.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -11,14 +13,13 @@ namespace BSAF.Helper
 {
     public class UserController
     {
-        private string baseUrl;
         public UserController()
         {
-            this.baseUrl = ConfigurationManager.AppSettings["apiBaseUrl"].ToString();
         }
-        public UserInfo AuthenticateUser(string username, string password)
+        public static bool AuthenticateUser(string username, string password)
         {
-            string endpoint = this.baseUrl + "/Login/login";
+            var baseUrl = ConfigurationManager.AppSettings["apiBaseUrl"].ToString();
+            string endpoint = baseUrl + "/Login/login";
             string method = "POST";
             string json = JsonConvert.SerializeObject(new
             {
@@ -30,12 +31,29 @@ namespace BSAF.Helper
             wc.Headers["Content-Type"] = "application/json";
             try
             {
-                string response = wc.UploadString(endpoint, method, json);
-                return JsonConvert.DeserializeObject<UserInfo>(response);
+                var response = wc.UploadString(endpoint, method, json);
+                if(response != null)
+                {
+                    var p = JsonConvert.DeserializeObject(response);
+
+
+                    
+                    //var p  = new JwtSecurityTokenHandler()
+                    //var content = new 
+                    var jsonResponse = JsonConvert.DeserializeObject<JwtVM>(response);
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var token = tokenHandler.ReadJwtToken(jsonResponse.token);
+                    var cliams = token.Claims;
+                    UserInfo.ID = cliams.Where(c => c.Type == "nameid").Select(c=>c.Value).FirstOrDefault();
+                    UserInfo.UserName = cliams.Where(c => c.Type == "unique_name").Select(c=>c.Value).FirstOrDefault();
+                    return true; ;
+                }
+                return true;
+                //return JsonConvert.DeserializeObject<UserInfo>(response);
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

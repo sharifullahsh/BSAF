@@ -21,7 +21,6 @@ namespace BSAF
             InitializeComponent();
             var id = UserInfo.ID;
             var uname = UserInfo.UserName;
-            var cname = UserInfo.StationCode;
         }
 
        

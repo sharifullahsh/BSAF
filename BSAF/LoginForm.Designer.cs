@@ -39,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbLoginProcess = new System.Windows.Forms.PictureBox();
+            this.lblContinueOffline = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -107,6 +108,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblContinueOffline);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -162,6 +164,17 @@
             this.pbLoginProcess.TabStop = false;
             this.pbLoginProcess.Visible = false;
             // 
+            // lblContinueOffline
+            // 
+            this.lblContinueOffline.AutoSize = true;
+            this.lblContinueOffline.Location = new System.Drawing.Point(3, 317);
+            this.lblContinueOffline.Name = "lblContinueOffline";
+            this.lblContinueOffline.Size = new System.Drawing.Size(82, 13);
+            this.lblContinueOffline.TabIndex = 12;
+            this.lblContinueOffline.TabStop = true;
+            this.lblContinueOffline.Text = "Continue Offline";
+            this.lblContinueOffline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblContinueOffline_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,5 +211,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.LinkLabel lblContinueOffline;
     }
 }

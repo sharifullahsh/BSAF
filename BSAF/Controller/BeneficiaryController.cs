@@ -14,10 +14,7 @@ namespace BSAF.Helper
             dbContext db = new dbContext();
        
             var bene = model;
-            if(string.IsNullOrEmpty(UserInfo.ID) && string.IsNullOrEmpty(UserInfo.StationCode))
-            {
-                return false;
-            }
+   
             using (var trans = db.Database.BeginTransaction())
             {
                 try

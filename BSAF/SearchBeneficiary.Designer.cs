@@ -79,7 +79,7 @@
             this.BeneficiaryType});
             this.lvBeneficiaries.ContextMenuStrip = this.ctmstSearchBeneficiary;
             this.lvBeneficiaries.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lvBeneficiaries.ForeColor = System.Drawing.SystemColors.Window;
+            this.lvBeneficiaries.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
             this.lvBeneficiaries.Location = new System.Drawing.Point(0, 14);

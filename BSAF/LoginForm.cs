@@ -19,63 +19,29 @@ namespace BSAF
             FormBorderStyle = FormBorderStyle.None;
             userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new IdentityDbContext("BSAFconn")));
         }
-        //public bool VerifyUserNamePassword(string userName, string password)
-        //{
-           
-        //    var testid = usermanager.Users.Where(u=>u.UserName=="khan1@gmail.com").Select(u=>u.Id).FirstOrDefault();
-        //    return 
-        //}
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             dbContext db = new dbContext();
-            //BSAFMDIParent mdi = new BSAFMDIParent();
-            //Form frm = (Form)this.MdiParent;
-            //MenuStrip ms = (MenuStrip)frm.Controls["menuStrip"];
-            //ms.Enabled = true;
-            //this.Dispose();
-
             this.pbLoginProcess.Visible = true;
             if (!string.IsNullOrWhiteSpace(this.txtUserName.Text) && !string.IsNullOrWhiteSpace(this.txtPassword.Text))
             {
-                //var isAuth = UserController.Login(this.txtUserName.Text, this.txtPassword.Text);
                 var username = this.txtUserName.Text; var password = this.txtPassword.Text;
                 try
                 {
-                    var user = await userManager.FindByNameAsync(username);
-                    if (user == null)
+                    var reponse = UserController.AuthenticateUser(username,password);
+                    if (reponse)
                     {
-                        lblLoginMessage.Text = "Invalid username.";
-                        lblLoginMessage.Visible = true;
-                        this.pbLoginProcess.Visible = false;
-                        return;
-                    }
-                    var result = await userManager.CheckPasswordAsync(user, password);
-                    if (result)
-                    {
-                        var loginUser = userManager.Users.FirstOrDefault(u => u.UserName == username);
-                        UserInfo.ID = loginUser.Id;
-                        UserInfo.UserName = loginUser.UserName;
-                        UserInfo.UserPassword = this.txtPassword.Text;
-                        UserInfo.StationCode = db.AspNetUsers.Where(u => u.Id == loginUser.Id).Select(u => u.UserName).FirstOrDefault();
-
                         BSAFMDIParent mdi = new BSAFMDIParent();
                         Form frm = (Form)this.MdiParent;
                         MenuStrip ms = (MenuStrip)frm.Controls["menuStrip"];
                         ms.Enabled = true;
                         this.Dispose();
                     }
-                    else
-                    {
-                        lblLoginMessage.Text = "Invalid password";
-                        lblLoginMessage.Visible = true;
-                        this.pbLoginProcess.Visible = false;
-                        return;
-                    }
                 }
                 catch (Exception ex)
                 {
                     this.pbLoginProcess.Visible = false;
-                    lblLoginMessage.Text = "Can not process user login please try again.";
+                    lblLoginMessage.Text = "Can not process user login please try again or continue offline.";
                     lblLoginMessage.Visible = true;
                     return;
                 }
@@ -97,6 +63,15 @@ namespace BSAF
         {
             this.lblLoginMessage.Visible = false;
             this.lblLoginMessage.Text = string.Empty;
+        }
+
+        private void lblContinueOffline_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            BSAFMDIParent mdi = new BSAFMDIParent();
+            Form frm = (Form)this.MdiParent;
+            MenuStrip ms = (MenuStrip)frm.Controls["menuStrip"];
+            ms.Enabled = true;
+            this.Dispose();
         }
 
 
