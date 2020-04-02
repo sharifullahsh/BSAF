@@ -1,4 +1,6 @@
-﻿using BSAF.Entity;
+﻿using BSAF.Controller;
+using BSAF.Entity;
+using BSAF.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +54,27 @@ namespace BSAF
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var beneficiary = db.Beneficiaries.Where(b => b.IsSubmitted == false);
+            this.lblSubmitting.Text = "";
+            var beneficiary = db.Beneficiaries.Where(b => b.IsActive == true && b.IsSubmitted == false).Select(b=>b.BeneficiaryID);
+            if (!ConnectionController.IsConnectedToInternet()) {
+                MessageBox.Show("You are not connected to internet please check your connection and try again.");
+                return;
+            }
+            foreach (var b in beneficiary)
+            {
+                
+               var benefRecord =  BeneficiaryController.GetBeneficiary(b);
+                this.lblSubmitting.Text = "Sending beneficiary with Guid ID : " + benefRecord.GUID;
+                var response = APIController.SubmitBeneficiary(benefRecord);
+                if(response == false)
+                {
+                    if (MessageBox.Show("Error sending record with ID"+ b +"/br Do you want to continue ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+                this.lblSubmitting.Text = "";
+            }
         }
     }
 }

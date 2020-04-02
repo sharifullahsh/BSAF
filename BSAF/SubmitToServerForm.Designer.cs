@@ -39,6 +39,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblSubmitting = new System.Windows.Forms.Label();
             this.pnlSearchResult.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,11 +138,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Submit Records";
             // 
+            // lblSubmitting
+            // 
+            this.lblSubmitting.AutoSize = true;
+            this.lblSubmitting.Location = new System.Drawing.Point(5, 66);
+            this.lblSubmitting.Name = "lblSubmitting";
+            this.lblSubmitting.Size = new System.Drawing.Size(0, 13);
+            this.lblSubmitting.TabIndex = 69;
+            // 
             // SubmitToServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 661);
+            this.Controls.Add(this.lblSubmitting);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.pnlSearchResult);
@@ -154,6 +164,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -170,5 +181,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSubmitting;
     }
 }

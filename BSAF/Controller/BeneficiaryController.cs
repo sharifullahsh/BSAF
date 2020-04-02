@@ -262,6 +262,7 @@ namespace BSAF.Helper
                 if (benefInDB != null)
                 {
                     benefVM.BeneficiaryID = benefInDB.BeneficiaryID;
+                    benefVM.GUID = benefInDB.GUID;
                     benefVM.ScreeningDate = benefInDB.ScreeningDate;
                     benefVM.ProvinceBCP = benefInDB.ProvinceBCP;
                     benefVM.BorderPoint = benefInDB.BorderPoint;
@@ -319,6 +320,12 @@ namespace BSAF.Helper
                     benefVM.DoHaveSecureLivelihood = benefInDB.DoHaveSecureLivelihood;
                     benefVM.DidChildrenGoToSchoole = benefInDB.DidChildrenGoToSchoole;
                     benefVM.NumChildrenAttendedSchoole = benefInDB.NumChildrenAttendedSchoole;
+                    benefVM.InsertedDate = benefInDB.InsertedDate;
+                    benefVM.LastUpdatedBy = benefInDB.LastUpdatedBy;
+                    benefVM.LastUpdatedDate = benefInDB.LastUpdatedDate;
+                    benefVM.IsActive = benefInDB.IsActive;
+                    benefVM.IsSubmitted = benefInDB.IsSubmitted;
+                    benefVM.IsCardIssued = benefInDB.IsCardIssued;
                 }
 
                 List<IndividualVM> individualsInDB = db.Individuals.

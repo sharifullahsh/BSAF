@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="Controller\APIController.cs" />
     <Compile Include="Controller\BeneficiaryController.cs" />
+    <Compile Include="Controller\ConnectionController.cs" />
     <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Models\ViewModels\UserInfo.cs" />

@@ -28,10 +28,16 @@ namespace BSAF
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             dbContext db = new dbContext();
+            //BSAFMDIParent mdi = new BSAFMDIParent();
+            //Form frm = (Form)this.MdiParent;
+            //MenuStrip ms = (MenuStrip)frm.Controls["menuStrip"];
+            //ms.Enabled = true;
+            //this.Dispose();
+
             this.pbLoginProcess.Visible = true;
             if (!string.IsNullOrWhiteSpace(this.txtUserName.Text) && !string.IsNullOrWhiteSpace(this.txtPassword.Text))
             {
-                var isAuth = UserController.Login(this.txtUserName.Text, this.txtPassword.Text);
+                //var isAuth = UserController.Login(this.txtUserName.Text, this.txtPassword.Text);
                 var username = this.txtUserName.Text; var password = this.txtPassword.Text;
                 try
                 {

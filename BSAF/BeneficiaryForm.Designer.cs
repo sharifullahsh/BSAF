@@ -304,6 +304,11 @@
             this.chkPCP = new System.Windows.Forms.CheckBox();
             this.label66 = new System.Windows.Forms.Label();
             this.gbPostArrivalNeeds = new System.Windows.Forms.GroupBox();
+            this.pnlAssistanceNeedTitle = new System.Windows.Forms.Panel();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.PR = new System.Windows.Forms.GroupBox();
             this.txtPRC = new System.Windows.Forms.TextBox();
             this.datePRD = new System.Windows.Forms.DateTimePicker();
@@ -359,10 +364,6 @@
             this.dateFLTD = new System.Windows.Forms.DateTimePicker();
             this.chkFLTP = new System.Windows.Forms.CheckBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
             this.TBRC = new System.Windows.Forms.GroupBox();
             this.txtTBRCC = new System.Windows.Forms.TextBox();
             this.dateTBRCD = new System.Windows.Forms.DateTimePicker();
@@ -475,6 +476,9 @@
             this.label84 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.tabReintegrationNeeds2 = new System.Windows.Forms.TabPage();
+            this.pnlHHdocumentTitle = new System.Windows.Forms.Panel();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
             this.pnlChildrenGoToSchoolInHost = new System.Windows.Forms.Panel();
             this.rdoDidChildrenGoToSchoolYes = new System.Windows.Forms.RadioButton();
             this.rdoDidChildrenGoToSchoolNo = new System.Windows.Forms.RadioButton();
@@ -501,14 +505,10 @@
             this.txtNumHavePassport = new System.Windows.Forms.TextBox();
             this.label97 = new System.Windows.Forms.Label();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnCardPrevious = new System.Windows.Forms.Button();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
-            this.pnlAssistanceNeedTitle = new System.Windows.Forms.Panel();
-            this.pnlHHdocumentTitle = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -550,6 +550,7 @@
             this.SC.SuspendLayout();
             this.PC.SuspendLayout();
             this.gbPostArrivalNeeds.SuspendLayout();
+            this.pnlAssistanceNeedTitle.SuspendLayout();
             this.PR.SuspendLayout();
             this.NFI.SuspendLayout();
             this.WFP.SuspendLayout();
@@ -578,6 +579,7 @@
             this.gbMainConcerns.SuspendLayout();
             this.gbToolsNeeded.SuspendLayout();
             this.tabReintegrationNeeds2.SuspendLayout();
+            this.pnlHHdocumentTitle.SuspendLayout();
             this.pnlChildrenGoToSchoolInHost.SuspendLayout();
             this.pnlHaveSecureMeans.SuspendLayout();
             this.groupBox28.SuspendLayout();
@@ -585,8 +587,6 @@
             this.groupBox31.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.tabImageAndCard.SuspendLayout();
-            this.pnlAssistanceNeedTitle.SuspendLayout();
-            this.pnlHHdocumentTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -1224,12 +1224,12 @@
             this.ctxFamailyMemeberMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmDeleteMemeber});
             this.ctxFamailyMemeberMenu.Name = "ctxFamailyMemeberMenu";
-            this.ctxFamailyMemeberMenu.Size = new System.Drawing.Size(108, 26);
+            this.ctxFamailyMemeberMenu.Size = new System.Drawing.Size(181, 48);
             // 
             // tsmDeleteMemeber
             // 
             this.tsmDeleteMemeber.Name = "tsmDeleteMemeber";
-            this.tsmDeleteMemeber.Size = new System.Drawing.Size(107, 22);
+            this.tsmDeleteMemeber.Size = new System.Drawing.Size(180, 22);
             this.tsmDeleteMemeber.Text = "Delete";
             this.tsmDeleteMemeber.Click += new System.EventHandler(this.tsmDeleteMemeber_Click);
             // 
@@ -3543,6 +3543,58 @@
             this.gbPostArrivalNeeds.TabIndex = 1;
             this.gbPostArrivalNeeds.TabStop = false;
             // 
+            // pnlAssistanceNeedTitle
+            // 
+            this.pnlAssistanceNeedTitle.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label54);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label58);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label55);
+            this.pnlAssistanceNeedTitle.Controls.Add(this.label56);
+            this.pnlAssistanceNeedTitle.Location = new System.Drawing.Point(1, 7);
+            this.pnlAssistanceNeedTitle.Name = "pnlAssistanceNeedTitle";
+            this.pnlAssistanceNeedTitle.Size = new System.Drawing.Size(954, 39);
+            this.pnlAssistanceNeedTitle.TabIndex = 82;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(510, 10);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(74, 17);
+            this.label54.TabIndex = 7;
+            this.label54.Text = "Comments";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(303, 9);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(64, 17);
+            this.label58.TabIndex = 9;
+            this.label58.Text = "Provided";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(380, 10);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(98, 17);
+            this.label55.TabIndex = 5;
+            this.label55.Text = "Provided Date";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(7, 10);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(114, 17);
+            this.label56.TabIndex = 2;
+            this.label56.Text = "Need/Assistance";
+            // 
             // PR
             // 
             this.PR.Controls.Add(this.txtPRC);
@@ -4059,46 +4111,6 @@
             this.label52.Size = new System.Drawing.Size(272, 17);
             this.label52.TabIndex = 2;
             this.label52.Text = "1st Leg transportation (Herat and Nimroz)";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(303, 9);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(64, 17);
-            this.label58.TabIndex = 9;
-            this.label58.Text = "Provided";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(510, 10);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(74, 17);
-            this.label54.TabIndex = 7;
-            this.label54.Text = "Comments";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(380, 10);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(98, 17);
-            this.label55.TabIndex = 5;
-            this.label55.Text = "Provided Date";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(7, 10);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(114, 17);
-            this.label56.TabIndex = 2;
-            this.label56.Text = "Need/Assistance";
             // 
             // TBRC
             // 
@@ -5248,6 +5260,36 @@
             this.tabReintegrationNeeds2.Text = "Reintegration Needs 2";
             this.tabReintegrationNeeds2.UseVisualStyleBackColor = true;
             // 
+            // pnlHHdocumentTitle
+            // 
+            this.pnlHHdocumentTitle.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlHHdocumentTitle.Controls.Add(this.label96);
+            this.pnlHHdocumentTitle.Controls.Add(this.label95);
+            this.pnlHHdocumentTitle.Location = new System.Drawing.Point(22, 32);
+            this.pnlHHdocumentTitle.Name = "pnlHHdocumentTitle";
+            this.pnlHHdocumentTitle.Size = new System.Drawing.Size(962, 30);
+            this.pnlHHdocumentTitle.TabIndex = 128;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(496, 5);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(61, 18);
+            this.label96.TabIndex = 45;
+            this.label96.Text = "Number";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(3, 6);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(113, 18);
+            this.label95.TabIndex = 44;
+            this.label95.Text = "Document Type";
+            // 
             // pnlChildrenGoToSchoolInHost
             // 
             this.pnlChildrenGoToSchoolInHost.Controls.Add(this.rdoDidChildrenGoToSchoolYes);
@@ -5508,26 +5550,6 @@
             this.groupBox26.TabIndex = 51;
             this.groupBox26.TabStop = false;
             // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(496, 5);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(61, 18);
-            this.label96.TabIndex = 45;
-            this.label96.Text = "Number";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(3, 6);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(113, 18);
-            this.label95.TabIndex = 44;
-            this.label95.Text = "Document Type";
-            // 
             // label94
             // 
             this.label94.AutoSize = true;
@@ -5573,28 +5595,6 @@
             this.btnSaveBeneficiary.Text = "Save";
             this.btnSaveBeneficiary.UseVisualStyleBackColor = false;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
-            // 
-            // pnlAssistanceNeedTitle
-            // 
-            this.pnlAssistanceNeedTitle.BackColor = System.Drawing.Color.LightBlue;
-            this.pnlAssistanceNeedTitle.Controls.Add(this.label54);
-            this.pnlAssistanceNeedTitle.Controls.Add(this.label58);
-            this.pnlAssistanceNeedTitle.Controls.Add(this.label55);
-            this.pnlAssistanceNeedTitle.Controls.Add(this.label56);
-            this.pnlAssistanceNeedTitle.Location = new System.Drawing.Point(1, 7);
-            this.pnlAssistanceNeedTitle.Name = "pnlAssistanceNeedTitle";
-            this.pnlAssistanceNeedTitle.Size = new System.Drawing.Size(954, 39);
-            this.pnlAssistanceNeedTitle.TabIndex = 82;
-            // 
-            // pnlHHdocumentTitle
-            // 
-            this.pnlHHdocumentTitle.BackColor = System.Drawing.Color.LightBlue;
-            this.pnlHHdocumentTitle.Controls.Add(this.label96);
-            this.pnlHHdocumentTitle.Controls.Add(this.label95);
-            this.pnlHHdocumentTitle.Location = new System.Drawing.Point(22, 32);
-            this.pnlHHdocumentTitle.Name = "pnlHHdocumentTitle";
-            this.pnlHHdocumentTitle.Size = new System.Drawing.Size(962, 30);
-            this.pnlHHdocumentTitle.TabIndex = 128;
             // 
             // BeneficiaryForm
             // 
@@ -5687,6 +5687,8 @@
             this.PC.ResumeLayout(false);
             this.PC.PerformLayout();
             this.gbPostArrivalNeeds.ResumeLayout(false);
+            this.pnlAssistanceNeedTitle.ResumeLayout(false);
+            this.pnlAssistanceNeedTitle.PerformLayout();
             this.PR.ResumeLayout(false);
             this.PR.PerformLayout();
             this.NFI.ResumeLayout(false);
@@ -5743,6 +5745,8 @@
             this.gbToolsNeeded.PerformLayout();
             this.tabReintegrationNeeds2.ResumeLayout(false);
             this.tabReintegrationNeeds2.PerformLayout();
+            this.pnlHHdocumentTitle.ResumeLayout(false);
+            this.pnlHHdocumentTitle.PerformLayout();
             this.pnlChildrenGoToSchoolInHost.ResumeLayout(false);
             this.pnlChildrenGoToSchoolInHost.PerformLayout();
             this.pnlHaveSecureMeans.ResumeLayout(false);
@@ -5756,10 +5760,6 @@
             this.groupBox29.ResumeLayout(false);
             this.groupBox29.PerformLayout();
             this.tabImageAndCard.ResumeLayout(false);
-            this.pnlAssistanceNeedTitle.ResumeLayout(false);
-            this.pnlAssistanceNeedTitle.PerformLayout();
-            this.pnlHHdocumentTitle.ResumeLayout(false);
-            this.pnlHHdocumentTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
