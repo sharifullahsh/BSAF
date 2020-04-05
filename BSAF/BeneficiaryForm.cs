@@ -40,6 +40,140 @@ namespace BSAF
             _BeneficiaryID = beneficiaryID;
             this.tabBeneficiary.SelectedTab = this.tabProfile;
         }
+        private void BeneficiaryForm_Load(object sender, EventArgs e)
+        {
+            this.lblReturnToHostReason.Visible = false;
+            this.txtIntendToReturnToHostReason.Visible = false;
+
+            this.lblHoHEducationOther.Visible = false;
+            this.txtHoHEducationOther.Visible = false;
+
+            this.lbl1LeavingResonOther.Visible = false;
+            this.txt1LeavingReasonOther.Visible = false;
+
+            this.lbl2LeavingResonOther.Visible = false;
+            this.txt2LeavingReasonOther.Visible = false;
+
+            this.lbl3LeavingResonOther.Visible = false;
+            this.txt3LeavingReasonOther.Visible = false;
+
+            var provinceList = db.Provinces.Where(p => p.IsActive == true).Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            provinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbProvinceBCP.DataSource = provinceList;
+            this.cmbProvinceBCP.DisplayMember = "ProvinceName";
+            this.cmbProvinceBCP.ValueMember = "ProvinceCode";
+            this.cmbProvinceBCP.SelectedIndex = 0;
+
+            var genderTypeList = DbHelper.GetcmbLookups("GENDER");
+            this.cmbGender.DataSource = genderTypeList;
+            this.cmbGender.DisplayMember = "LookupName";
+            this.cmbGender.ValueMember = "ValueCode";
+            this.cmbGender.SelectedIndex = 0;
+
+            var maritalStatusList = DbHelper.GetcmbLookups("MARSTAT");
+            this.cmbMaritalStatus.DataSource = maritalStatusList;
+            this.cmbMaritalStatus.DisplayMember = "LookupName";
+            this.cmbMaritalStatus.ValueMember = "ValueCode";
+            this.cmbMaritalStatus.SelectedIndex = 0;
+
+            var IDTypeList = DbHelper.GetcmbLookups("IDTYPE");
+            this.cmbIDType.DataSource = IDTypeList;
+            this.cmbIDType.DisplayMember = "LookupName";
+            this.cmbIDType.ValueMember = "ValueCode";
+            this.cmbIDType.SelectedIndex = 0;
+
+            var relationshipList = DbHelper.GetcmbLookups("RELATION");
+            this.cmbRelationship.DataSource = relationshipList;
+            this.cmbRelationship.DisplayMember = "LookupName";
+            this.cmbRelationship.ValueMember = "ValueCode";
+
+            var borderPointList = db.BorderCrossingPoints.Where(b => b.IsActive == true).Select(b => new { b.BCPCode, BorderPointName = b.EnName }).ToList();
+            borderPointList.Insert(0, new { BCPCode = "0", BorderPointName = "-Please Select-" });
+            this.cmbBorderPoint.DataSource = borderPointList;
+            this.cmbBorderPoint.DisplayMember = "BorderPointName";
+            this.cmbBorderPoint.ValueMember = "BCPCode";
+            this.cmbBorderPoint.SelectedIndex = 0;
+
+            var orgProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            orgProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbOriginProvince.DataSource = orgProvinceList;
+            this.cmbOriginProvince.DisplayMember = "ProvinceName";
+            this.cmbOriginProvince.ValueMember = "ProvinceCode";
+            this.cmbOriginProvince.SelectedIndex = 0;
+
+            var returnProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            returnProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbReturnProvince.DataSource = returnProvinceList;
+            this.cmbReturnProvince.DisplayMember = "ProvinceName";
+            this.cmbReturnProvince.ValueMember = "ProvinceCode";
+            this.cmbReturnProvince.SelectedIndex = 0;
+
+            var firstReasonForLeavingList = DbHelper.GetcmbLookups("LREASON");
+            this.cmb1ReasonForLeaving.DataSource = firstReasonForLeavingList;
+            this.cmb1ReasonForLeaving.DisplayMember = "LookupName";
+            this.cmb1ReasonForLeaving.ValueMember = "ValueCode";
+            this.cmb1ReasonForLeaving.SelectedIndex = 0;
+
+            var leavingPlaceList = DbHelper.GetcmbLookups("WWYL").ToList();
+            this.cmbWhereWillYouLive.DataSource = leavingPlaceList;
+            this.cmbWhereWillYouLive.DisplayMember = "LookupName";
+            this.cmbWhereWillYouLive.ValueMember = "ValueCode";
+            this.cmbWhereWillYouLive.SelectedIndex = 0;
+
+            var assisInProvince1List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            assisInProvince1List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbAssistedInProvince1.DataSource = assisInProvince1List;
+            this.cmbAssistedInProvince1.DisplayMember = "ProvinceName";
+            this.cmbAssistedInProvince1.ValueMember = "ProvinceCode";
+            this.cmbAssistedInProvince1.SelectedIndex = 0;
+
+            var assisInProvince2List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
+            assisInProvince2List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
+            this.cmbAssistedInProvince2.DataSource = assisInProvince2List;
+            this.cmbAssistedInProvince2.DisplayMember = "ProvinceName";
+            this.cmbAssistedInProvince2.ValueMember = "ProvinceCode";
+            this.cmbAssistedInProvince2.SelectedIndex = 0;
+
+            var needsList = DbHelper.GetcmbLookups("TOPNEED");
+            this.cmbReintegrationNeeds1.DataSource = needsList;
+            this.cmbReintegrationNeeds1.DisplayMember = "LookupName";
+            this.cmbReintegrationNeeds1.ValueMember = "ValueCode";
+            this.cmbReintegrationNeeds1.SelectedIndex = 0;
+
+            var toDoList = DbHelper.GetcmbLookups("WDYITD");
+            this.cmbIntendToDo.DataSource = toDoList;
+            this.cmbIntendToDo.DisplayMember = "LookupName";
+            this.cmbIntendToDo.ValueMember = "ValueCode";
+            this.cmbIntendToDo.SelectedIndex = 0;
+
+            var professionList = DbHelper.GetcmbLookups("PROFESSION");
+            this.cmbProfession.DataSource = professionList;
+            this.cmbProfession.DisplayMember = "LookupName";
+            this.cmbProfession.ValueMember = "ValueCode";
+            this.cmbProfession.SelectedIndex = 0;
+
+            var educationList = DbHelper.GetcmbLookups("EDUCATION");
+            this.cmbHoHEducationLevel.DataSource = educationList;
+            this.cmbHoHEducationLevel.DisplayMember = "LookupName";
+            this.cmbHoHEducationLevel.ValueMember = "ValueCode";
+            this.cmbHoHEducationLevel.SelectedIndex = 0;
+
+            var orgList = DbHelper.GetcmbLookups("ORGTYP");
+            this.cmbAssistedOrg1.DataSource = orgList;
+            this.cmbAssistedOrg1.DisplayMember = "LookupName";
+            this.cmbAssistedOrg1.ValueMember = "ValueCode";
+            this.cmbAssistedOrg1.SelectedIndex = 0;
+
+            if (_BeneficiaryID != null && _BeneficiaryID != 0)
+            {
+                beneficiary = BeneficiaryController.GetBeneficiary(_BeneficiaryID);
+                InitializeFields();
+            }
+            else
+            {
+                beneficiary = new BeneficiaryVM();
+            }
+        }
 
         private void InitializeFields()
         {
@@ -254,6 +388,8 @@ namespace BSAF
             }
             //Post arrival needs
             var gbPostArrivalNeeds = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>();
+            var ts = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>().Count();
+            var names = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>().Select(g=>g.Name);
             var bPostArrivalNeeds = beneficiary.PostArrivalNeeds.Select(n=>n.NeedCode);
             foreach(var gb in gbPostArrivalNeeds)
             {
@@ -282,13 +418,14 @@ namespace BSAF
                 }
                 if (assistInfo.Count >= 2)
                 {
-                    this.AssistedDate1.Value = assistInfo[1].Date;
-                    this.cmbAssistedInProvince1.SelectedValue = assistInfo[1].ProvinceCode;
+                    this.AssistedDate2.Value = assistInfo[1].Date;
+                    this.cmbAssistedInProvince2.SelectedValue = assistInfo[1].ProvinceCode;
                     this.cmbAssistedInProvince2_SelectedIndexChanged(null, null);
-                    this.cmbAssistedInDistrict1.SelectedValue = assistInfo[1].DistrictID;
-                    this.txtAssistedVillage1.Text = assistInfo[1].Village;
-                    this.cmbAssistedOrg1.SelectedValue = assistInfo[1].OrgCode;
-                    this.txtAssistance1.Text = assistInfo[1].AssistanceProvided;
+                    this.cmbAssistedInDistrict2.SelectedValue = assistInfo[1].DistrictID;
+                    this.txtAssistedVillage2.Text = assistInfo[1].Village;
+                    this.cmbAssistedOrg1_SelectionChangeCommitted(null, null);
+                    this.cmbAssistedOrg2.SelectedValue = assistInfo[1].OrgCode;
+                    this.txtAssistance2.Text = assistInfo[1].AssistanceProvided;
                 }
 
             }
@@ -729,7 +866,9 @@ namespace BSAF
                         source.MoneySourceOther = this.txtMFRPOther.Text;
                     }
                     else if(cbx.Name == "MFRPOther" && string.IsNullOrWhiteSpace(this.txtMFRPOther.Text)) {
-                        MessageBox.Show("Please specify other source."); return; }
+                        MessageBox.Show("Please specify other source.");
+                        return;
+                    }
                     this.beneficiary.MoneySources.Add(source);
                 }
             }
@@ -926,7 +1065,7 @@ namespace BSAF
                 {
                     NeedCode = this.chkCFTP.Parent.Name,
                     Provided = true,
-                ProvidedDate = this.dateCFTD.Value
+                    ProvidedDate = this.dateCFTD.Value
                 };
                 if (!string.IsNullOrWhiteSpace(this.txtCFTC.Text)){
                     need.Comment = this.txtCFTC.Text;
@@ -1091,7 +1230,7 @@ namespace BSAF
                     ProvidedDate = this.datePRD.Value
 
                 };
-                if (!string.IsNullOrWhiteSpace(this.txtPCC.Text)){
+                if (!string.IsNullOrWhiteSpace(this.txtPRC.Text)){
                     need.Comment = this.txtPRC.Text;
                 }
                 this.beneficiary.PostArrivalNeeds.Add(need);
@@ -1113,6 +1252,7 @@ namespace BSAF
         {
             //Clear list
             this.beneficiary.Transportations.Clear();
+            this.beneficiary.BenefitedFromOrgs.Clear();
 
             if (this.rdoBenefitedYes.Checked)
             {
@@ -1468,141 +1608,6 @@ namespace BSAF
             this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 6;
             this.IsAllowTabChange = false;
-        }
-
-        private void BeneficiaryForm_Load(object sender, EventArgs e)
-        {
-            this.lblReturnToHostReason.Visible = false;
-            this.txtIntendToReturnToHostReason.Visible = false;
-            
-            this.lblHoHEducationOther.Visible = false;
-            this.txtHoHEducationOther.Visible = false;
-
-            this.lbl1LeavingResonOther.Visible = false;
-            this.txt1LeavingReasonOther.Visible = false;
-
-            this.lbl2LeavingResonOther.Visible = false;
-            this.txt2LeavingReasonOther.Visible = false;
-
-            this.lbl3LeavingResonOther.Visible = false;
-            this.txt3LeavingReasonOther.Visible = false;
-
-            var provinceList = db.Provinces.Where(p=>p.IsActive == true).Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            provinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbProvinceBCP.DataSource = provinceList;
-            this.cmbProvinceBCP.DisplayMember = "ProvinceName";
-            this.cmbProvinceBCP.ValueMember = "ProvinceCode";
-            this.cmbProvinceBCP.SelectedIndex = 0;
-
-            var genderTypeList = DbHelper.GetcmbLookups("GENDER");
-            this.cmbGender.DataSource = genderTypeList;
-            this.cmbGender.DisplayMember = "LookupName";
-            this.cmbGender.ValueMember = "ValueCode";
-            this.cmbGender.SelectedIndex = 0;
-
-            var maritalStatusList = DbHelper.GetcmbLookups("MARSTAT");
-            this.cmbMaritalStatus.DataSource = maritalStatusList;
-            this.cmbMaritalStatus.DisplayMember = "LookupName";
-            this.cmbMaritalStatus.ValueMember = "ValueCode";
-            this.cmbMaritalStatus.SelectedIndex = 0;
-
-            var IDTypeList = DbHelper.GetcmbLookups("IDTYPE");
-            this.cmbIDType.DataSource = IDTypeList;
-            this.cmbIDType.DisplayMember = "LookupName";
-            this.cmbIDType.ValueMember = "ValueCode";
-            this.cmbIDType.SelectedIndex = 0;
-
-            var relationshipList = DbHelper.GetcmbLookups("RELATION");
-            this.cmbRelationship.DataSource = relationshipList;
-            this.cmbRelationship.DisplayMember = "LookupName";
-            this.cmbRelationship.ValueMember = "ValueCode";
-
-            var borderPointList = db.BorderCrossingPoints.Where(b=>b.IsActive == true).Select(b=>new { b.BCPCode, BorderPointName = b.EnName}).ToList();
-            borderPointList.Insert(0, new { BCPCode = "0", BorderPointName = "-Please Select-" });
-            this.cmbBorderPoint.DataSource = borderPointList;
-            this.cmbBorderPoint.DisplayMember = "BorderPointName";
-            this.cmbBorderPoint.ValueMember = "BCPCode";
-            this.cmbBorderPoint.SelectedIndex = 0;
-
-            var orgProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            orgProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName ="-- Please Select --"});
-            this.cmbOriginProvince.DataSource = orgProvinceList;
-            this.cmbOriginProvince.DisplayMember = "ProvinceName";
-            this.cmbOriginProvince.ValueMember = "ProvinceCode";
-            this.cmbOriginProvince.SelectedIndex = 0;
-
-            var returnProvinceList = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            returnProvinceList.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbReturnProvince.DataSource = returnProvinceList;
-            this.cmbReturnProvince.DisplayMember = "ProvinceName";
-            this.cmbReturnProvince.ValueMember = "ProvinceCode";
-            this.cmbReturnProvince.SelectedIndex = 0;
-
-            var firstReasonForLeavingList = DbHelper.GetcmbLookups("LREASON");
-            this.cmb1ReasonForLeaving.DataSource = firstReasonForLeavingList;
-            this.cmb1ReasonForLeaving.DisplayMember = "LookupName";
-            this.cmb1ReasonForLeaving.ValueMember = "ValueCode";
-            this.cmb1ReasonForLeaving.SelectedIndex = 0;
-
-            var leavingPlaceList = DbHelper.GetcmbLookups("WWYL").ToList();
-            this.cmbWhereWillYouLive.DataSource = leavingPlaceList;
-            this.cmbWhereWillYouLive.DisplayMember = "LookupName";
-            this.cmbWhereWillYouLive.ValueMember = "ValueCode";
-            this.cmbWhereWillYouLive.SelectedIndex = 0;
-
-            var assisInProvince1List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            assisInProvince1List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbAssistedInProvince1.DataSource = assisInProvince1List;
-            this.cmbAssistedInProvince1.DisplayMember = "ProvinceName";
-            this.cmbAssistedInProvince1.ValueMember = "ProvinceCode";
-            this.cmbAssistedInProvince1.SelectedIndex = 0;
-
-            var assisInProvince2List = db.Provinces.Select(p => new { p.ProvinceCode, ProvinceName = p.EnName }).ToList();
-            assisInProvince2List.Insert(0, new { ProvinceCode = "0", ProvinceName = "-- Please Select --" });
-            this.cmbAssistedInProvince2.DataSource = assisInProvince2List;
-            this.cmbAssistedInProvince2.DisplayMember = "ProvinceName";
-            this.cmbAssistedInProvince2.ValueMember = "ProvinceCode";
-            this.cmbAssistedInProvince2.SelectedIndex = 0;
-
-            var needsList = DbHelper.GetcmbLookups("TOPNEED");
-            this.cmbReintegrationNeeds1.DataSource = needsList;
-            this.cmbReintegrationNeeds1.DisplayMember = "LookupName";
-            this.cmbReintegrationNeeds1.ValueMember = "ValueCode";
-            this.cmbReintegrationNeeds1.SelectedIndex = 0;
-
-            var toDoList = DbHelper.GetcmbLookups("WDYITD");
-            this.cmbIntendToDo.DataSource = toDoList;
-            this.cmbIntendToDo.DisplayMember = "LookupName";
-            this.cmbIntendToDo.ValueMember = "ValueCode";
-            this.cmbIntendToDo.SelectedIndex = 0;
-
-            var professionList = DbHelper.GetcmbLookups("PROFESSION");
-            this.cmbProfession.DataSource = professionList;
-            this.cmbProfession.DisplayMember = "LookupName";
-            this.cmbProfession.ValueMember = "ValueCode";
-            this.cmbProfession.SelectedIndex = 0;
-
-            var educationList = DbHelper.GetcmbLookups("EDUCATION");
-            this.cmbHoHEducationLevel.DataSource = educationList;
-            this.cmbHoHEducationLevel.DisplayMember = "LookupName";
-            this.cmbHoHEducationLevel.ValueMember = "ValueCode";
-            this.cmbHoHEducationLevel.SelectedIndex = 0;
-
-            var orgList = DbHelper.GetcmbLookups("ORGTYP");
-            this.cmbAssistedOrg1.DataSource = orgList;
-            this.cmbAssistedOrg1.DisplayMember = "LookupName";
-            this.cmbAssistedOrg1.ValueMember = "ValueCode";
-            this.cmbAssistedOrg1.SelectedIndex = 0;
-
-            if (_BeneficiaryID != null && _BeneficiaryID != 0)
-            {
-                beneficiary = BeneficiaryController.GetBeneficiary(_BeneficiaryID);
-                InitializeFields();
-            }
-            else
-            {
-                beneficiary = new BeneficiaryVM();
-            }
         }
 
         private void cmbOriginProvince_SelectionChangeCommitted(object sender, EventArgs e)

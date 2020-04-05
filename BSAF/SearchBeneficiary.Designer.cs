@@ -82,9 +82,9 @@
             this.lvBeneficiaries.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
-            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 14);
+            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 3);
             this.lvBeneficiaries.Name = "lvBeneficiaries";
-            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 511);
+            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 522);
             this.lvBeneficiaries.TabIndex = 0;
             this.lvBeneficiaries.UseCompatibleStateImageBehavior = false;
             this.lvBeneficiaries.View = System.Windows.Forms.View.Details;

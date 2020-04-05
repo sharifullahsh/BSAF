@@ -35,11 +35,11 @@
             this.Login = new System.Windows.Forms.Label();
             this.lblLoginMessage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblContinueOffline = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbLoginProcess = new System.Windows.Forms.PictureBox();
-            this.lblContinueOffline = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,6 +123,17 @@
             this.panel1.Size = new System.Drawing.Size(443, 346);
             this.panel1.TabIndex = 9;
             // 
+            // lblContinueOffline
+            // 
+            this.lblContinueOffline.AutoSize = true;
+            this.lblContinueOffline.Location = new System.Drawing.Point(3, 317);
+            this.lblContinueOffline.Name = "lblContinueOffline";
+            this.lblContinueOffline.Size = new System.Drawing.Size(82, 13);
+            this.lblContinueOffline.TabIndex = 12;
+            this.lblContinueOffline.TabStop = true;
+            this.lblContinueOffline.Text = "Continue Offline";
+            this.lblContinueOffline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblContinueOffline_LinkClicked);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::BSAF.Properties.Resources.IOM_Logo1;
@@ -164,23 +175,12 @@
             this.pbLoginProcess.TabStop = false;
             this.pbLoginProcess.Visible = false;
             // 
-            // lblContinueOffline
-            // 
-            this.lblContinueOffline.AutoSize = true;
-            this.lblContinueOffline.Location = new System.Drawing.Point(3, 317);
-            this.lblContinueOffline.Name = "lblContinueOffline";
-            this.lblContinueOffline.Size = new System.Drawing.Size(82, 13);
-            this.lblContinueOffline.TabIndex = 12;
-            this.lblContinueOffline.TabStop = true;
-            this.lblContinueOffline.Text = "Continue Offline";
-            this.lblContinueOffline.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblContinueOffline_LinkClicked);
-            // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImage = global::BSAF.Properties.Resources.login_back1;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(459, 361);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);

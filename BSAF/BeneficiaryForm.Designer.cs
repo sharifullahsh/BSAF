@@ -2092,6 +2092,7 @@
             this.txtMFRPOther.Name = "txtMFRPOther";
             this.txtMFRPOther.Size = new System.Drawing.Size(259, 20);
             this.txtMFRPOther.TabIndex = 5;
+            this.txtMFRPOther.Visible = false;
             // 
             // BFB
             // 
@@ -3434,9 +3435,9 @@
             this.SC.Controls.Add(this.dateSCD);
             this.SC.Controls.Add(this.chkSCP);
             this.SC.Controls.Add(this.label68);
-            this.SC.Location = new System.Drawing.Point(23, 512);
+            this.SC.Location = new System.Drawing.Point(32, 512);
             this.SC.Name = "SC";
-            this.SC.Size = new System.Drawing.Size(956, 38);
+            this.SC.Size = new System.Drawing.Size(942, 38);
             this.SC.TabIndex = 19;
             this.SC.TabStop = false;
             // 
@@ -3444,7 +3445,7 @@
             // 
             this.txtSCC.Location = new System.Drawing.Point(510, 11);
             this.txtSCC.Name = "txtSCC";
-            this.txtSCC.Size = new System.Drawing.Size(436, 20);
+            this.txtSCC.Size = new System.Drawing.Size(429, 20);
             this.txtSCC.TabIndex = 7;
             // 
             // dateSCD
@@ -3483,7 +3484,7 @@
             this.PC.Controls.Add(this.label66);
             this.PC.Location = new System.Drawing.Point(23, 436);
             this.PC.Name = "PC";
-            this.PC.Size = new System.Drawing.Size(956, 38);
+            this.PC.Size = new System.Drawing.Size(948, 38);
             this.PC.TabIndex = 17;
             this.PC.TabStop = false;
             // 
@@ -3539,7 +3540,7 @@
             this.gbPostArrivalNeeds.Controls.Add(this.TBRC);
             this.gbPostArrivalNeeds.Location = new System.Drawing.Point(24, 25);
             this.gbPostArrivalNeeds.Name = "gbPostArrivalNeeds";
-            this.gbPostArrivalNeeds.Size = new System.Drawing.Size(956, 559);
+            this.gbPostArrivalNeeds.Size = new System.Drawing.Size(956, 570);
             this.gbPostArrivalNeeds.TabIndex = 1;
             this.gbPostArrivalNeeds.TabStop = false;
             // 
@@ -3601,9 +3602,9 @@
             this.PR.Controls.Add(this.datePRD);
             this.PR.Controls.Add(this.chkPRP);
             this.PR.Controls.Add(this.label69);
-            this.PR.Location = new System.Drawing.Point(2, 523);
+            this.PR.Location = new System.Drawing.Point(9, 523);
             this.PR.Name = "PR";
-            this.PR.Size = new System.Drawing.Size(956, 38);
+            this.PR.Size = new System.Drawing.Size(941, 38);
             this.PR.TabIndex = 20;
             this.PR.TabStop = false;
             // 
@@ -3611,7 +3612,7 @@
             // 
             this.txtPRC.Location = new System.Drawing.Point(507, 10);
             this.txtPRC.Name = "txtPRC";
-            this.txtPRC.Size = new System.Drawing.Size(436, 20);
+            this.txtPRC.Size = new System.Drawing.Size(431, 20);
             this.txtPRC.TabIndex = 7;
             // 
             // datePRD
@@ -3648,9 +3649,9 @@
             this.NFI.Controls.Add(this.dateNFID);
             this.NFI.Controls.Add(this.chkNFIP);
             this.NFI.Controls.Add(this.label67);
-            this.NFI.Location = new System.Drawing.Point(1, 449);
+            this.NFI.Location = new System.Drawing.Point(3, 449);
             this.NFI.Name = "NFI";
-            this.NFI.Size = new System.Drawing.Size(956, 38);
+            this.NFI.Size = new System.Drawing.Size(944, 38);
             this.NFI.TabIndex = 18;
             this.NFI.TabStop = false;
             // 
@@ -3658,7 +3659,7 @@
             // 
             this.txtNFIC.Location = new System.Drawing.Point(508, 12);
             this.txtNFIC.Name = "txtNFIC";
-            this.txtNFIC.Size = new System.Drawing.Size(438, 20);
+            this.txtNFIC.Size = new System.Drawing.Size(434, 20);
             this.txtNFIC.TabIndex = 7;
             // 
             // dateNFID
@@ -3695,9 +3696,9 @@
             this.WFP.Controls.Add(this.dateWFPD);
             this.WFP.Controls.Add(this.chkWFPP);
             this.WFP.Controls.Add(this.label65);
-            this.WFP.Location = new System.Drawing.Point(1, 373);
+            this.WFP.Location = new System.Drawing.Point(3, 373);
             this.WFP.Name = "WFP";
-            this.WFP.Size = new System.Drawing.Size(956, 38);
+            this.WFP.Size = new System.Drawing.Size(944, 38);
             this.WFP.TabIndex = 16;
             this.WFP.TabStop = false;
             // 
@@ -3742,9 +3743,9 @@
             this.DDR.Controls.Add(this.dateDDRD);
             this.DDR.Controls.Add(this.chkDDRP);
             this.DDR.Controls.Add(this.label64);
-            this.DDR.Location = new System.Drawing.Point(1, 336);
+            this.DDR.Location = new System.Drawing.Point(5, 336);
             this.DDR.Name = "DDR";
-            this.DDR.Size = new System.Drawing.Size(956, 38);
+            this.DDR.Size = new System.Drawing.Size(943, 38);
             this.DDR.TabIndex = 15;
             this.DDR.TabStop = false;
             // 
@@ -3752,7 +3753,7 @@
             // 
             this.txtDDRC.Location = new System.Drawing.Point(508, 12);
             this.txtDDRC.Name = "txtDDRC";
-            this.txtDDRC.Size = new System.Drawing.Size(436, 20);
+            this.txtDDRC.Size = new System.Drawing.Size(432, 20);
             this.txtDDRC.TabIndex = 7;
             // 
             // dateDDRD
@@ -3791,7 +3792,7 @@
             this.Escort.Controls.Add(this.label63);
             this.Escort.Location = new System.Drawing.Point(0, 299);
             this.Escort.Name = "Escort";
-            this.Escort.Size = new System.Drawing.Size(956, 38);
+            this.Escort.Size = new System.Drawing.Size(951, 38);
             this.Escort.TabIndex = 14;
             this.Escort.TabStop = false;
             // 
@@ -3836,9 +3837,9 @@
             this.EMC.Controls.Add(this.dateEMCD);
             this.EMC.Controls.Add(this.chkEMCP);
             this.EMC.Controls.Add(this.label62);
-            this.EMC.Location = new System.Drawing.Point(1, 261);
+            this.EMC.Location = new System.Drawing.Point(2, 261);
             this.EMC.Name = "EMC";
-            this.EMC.Size = new System.Drawing.Size(956, 38);
+            this.EMC.Size = new System.Drawing.Size(947, 38);
             this.EMC.TabIndex = 13;
             this.EMC.TabStop = false;
             // 
@@ -3846,7 +3847,7 @@
             // 
             this.txtEMCC.Location = new System.Drawing.Point(508, 14);
             this.txtEMCC.Name = "txtEMCC";
-            this.txtEMCC.Size = new System.Drawing.Size(438, 20);
+            this.txtEMCC.Size = new System.Drawing.Size(433, 20);
             this.txtEMCC.TabIndex = 7;
             // 
             // dateEMCD
@@ -3883,9 +3884,9 @@
             this.AITC.Controls.Add(this.dateAITCD);
             this.AITC.Controls.Add(this.chkAITCP);
             this.AITC.Controls.Add(this.label61);
-            this.AITC.Location = new System.Drawing.Point(1, 223);
+            this.AITC.Location = new System.Drawing.Point(3, 223);
             this.AITC.Name = "AITC";
-            this.AITC.Size = new System.Drawing.Size(956, 38);
+            this.AITC.Size = new System.Drawing.Size(948, 38);
             this.AITC.TabIndex = 12;
             this.AITC.TabStop = false;
             // 
@@ -3932,7 +3933,7 @@
             this.STA.Controls.Add(this.label60);
             this.STA.Location = new System.Drawing.Point(0, 186);
             this.STA.Name = "STA";
-            this.STA.Size = new System.Drawing.Size(956, 38);
+            this.STA.Size = new System.Drawing.Size(950, 38);
             this.STA.TabIndex = 11;
             this.STA.TabStop = false;
             // 
@@ -3977,9 +3978,9 @@
             this.FT.Controls.Add(this.dateFTD);
             this.FT.Controls.Add(this.chkFTP);
             this.FT.Controls.Add(this.label59);
-            this.FT.Location = new System.Drawing.Point(1, 150);
+            this.FT.Location = new System.Drawing.Point(3, 150);
             this.FT.Name = "FT";
-            this.FT.Size = new System.Drawing.Size(956, 38);
+            this.FT.Size = new System.Drawing.Size(947, 38);
             this.FT.TabIndex = 10;
             this.FT.TabStop = false;
             // 
@@ -3987,7 +3988,7 @@
             // 
             this.txtFTC.Location = new System.Drawing.Point(508, 15);
             this.txtFTC.Name = "txtFTC";
-            this.txtFTC.Size = new System.Drawing.Size(441, 20);
+            this.txtFTC.Size = new System.Drawing.Size(438, 20);
             this.txtFTC.TabIndex = 7;
             // 
             // dateFTD
@@ -4024,9 +4025,9 @@
             this.CFT.Controls.Add(this.dateCFTD);
             this.CFT.Controls.Add(this.chkCFTP);
             this.CFT.Controls.Add(this.label53);
-            this.CFT.Location = new System.Drawing.Point(0, 113);
+            this.CFT.Location = new System.Drawing.Point(2, 113);
             this.CFT.Name = "CFT";
-            this.CFT.Size = new System.Drawing.Size(956, 38);
+            this.CFT.Size = new System.Drawing.Size(949, 38);
             this.CFT.TabIndex = 9;
             this.CFT.TabStop = false;
             // 
@@ -4073,7 +4074,7 @@
             this.FLT.Controls.Add(this.label52);
             this.FLT.Location = new System.Drawing.Point(0, 82);
             this.FLT.Name = "FLT";
-            this.FLT.Size = new System.Drawing.Size(956, 38);
+            this.FLT.Size = new System.Drawing.Size(951, 38);
             this.FLT.TabIndex = 8;
             this.FLT.TabStop = false;
             // 
@@ -4118,9 +4119,9 @@
             this.TBRC.Controls.Add(this.dateTBRCD);
             this.TBRC.Controls.Add(this.chkTBRCP);
             this.TBRC.Controls.Add(this.label51);
-            this.TBRC.Location = new System.Drawing.Point(0, 42);
+            this.TBRC.Location = new System.Drawing.Point(5, 42);
             this.TBRC.Name = "TBRC";
-            this.TBRC.Size = new System.Drawing.Size(956, 41);
+            this.TBRC.Size = new System.Drawing.Size(947, 41);
             this.TBRC.TabIndex = 81;
             this.TBRC.TabStop = false;
             // 

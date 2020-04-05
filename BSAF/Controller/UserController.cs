@@ -19,12 +19,12 @@ namespace BSAF.Helper
         }
         public static bool AuthenticateUser(string username, string password)
         {
-            if (!ConnectionController.IsConnectedToInternet())
-            {
-                return false;
-            }
-            var baseUrl = ConfigurationManager.AppSettings["apiBaseUrl"].ToString();
-            string endpoint = baseUrl + "/Login/login";
+            //if (!ConnectionController.IsConnectedToInternet())
+            //{
+            //    return false;
+            //}
+            var baseUrl = ConfigurationManager.AppSettings["BaseUrl"].ToString();
+            string endpoint = baseUrl + "api/Login/login";
             string method = "POST";
             string json = JsonConvert.SerializeObject(new
             {
@@ -41,6 +41,7 @@ namespace BSAF.Helper
                     if (response != null)
                     {
                         var jsonResponse = JsonConvert.DeserializeObject<JwtVM>(response);
+                        UserInfo.token = jsonResponse.token;
                         var tokenHandler = new JwtSecurityTokenHandler();
                         var token = tokenHandler.ReadJwtToken(jsonResponse.token);
                         var cliams = token.Claims;

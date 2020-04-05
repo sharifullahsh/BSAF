@@ -20,8 +20,11 @@ namespace BSAF
         {
             InitializeComponent();
         }
-
         private void SubmitToServerForm_Load(object sender, EventArgs e)
+        {
+            this.FillBeneficiaryListView();
+        }
+        private void FillBeneficiaryListView()
         {
             var beneficiares = (from b in db.Beneficiaries
                                 join i in db.Individuals
@@ -52,22 +55,23 @@ namespace BSAF
             }
         }
 
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             this.lblSubmitting.Text = "";
             var beneficiariesList = db.Beneficiaries.Where(b => b.IsActive == true && b.IsSubmitted == false).Select(b=>b.BeneficiaryID).ToList();
-            if (!ConnectionController.IsConnectedToInternet()) {
-                MessageBox.Show("You are not connected to internet please check your connection and try again.");
-                return;
-            }
+            //if (!ConnectionController.IsConnectedToInternet()) {
+            //    MessageBox.Show("You are not connected to internet please check your connection and try again.");
+            //    return;
+            //}
             if (string.IsNullOrWhiteSpace(UserInfo.token))
             {
-                MessageBox.Show("Your are not loged in, please close the application and login.");
+                MessageBox.Show("Your are not loged in, please close the application and login to submit.");
             }
             foreach (var benefID in beneficiariesList)
             {
                 
-               var benefRecord =  BeneficiaryController.GetBeneficiary(benefID);
+               var benefRecord =  BeneficiaryController.GetBeneficiary(benefID);                
                 benefRecord.InsertedBy = UserInfo.ID;
                 this.lblSubmitting.Text = "Sending beneficiary with Guid ID : " + benefRecord.GUID;
                 var response = APIController.SubmitBeneficiary(benefRecord);
@@ -83,7 +87,14 @@ namespace BSAF
                 beneficiaryInDB.IsSubmitted = true;
                 db.SaveChanges();
                 this.lblSubmitting.Text = "";
+                this.FillBeneficiaryListView();
             }
+        }
+
+        private void lvBeneficiaries_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.Graphics.DrawString(e.Header.Text, new Font("tahoma", 12), new SolidBrush(Color.Red), e.Bounds);
+            e.DrawText();
         }
     }
 }

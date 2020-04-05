@@ -49,9 +49,9 @@
             this.pnlSearchResult.AutoScroll = true;
             this.pnlSearchResult.Controls.Add(this.lvBeneficiaries);
             this.pnlSearchResult.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSearchResult.Location = new System.Drawing.Point(0, 96);
+            this.pnlSearchResult.Location = new System.Drawing.Point(0, 88);
             this.pnlSearchResult.Name = "pnlSearchResult";
-            this.pnlSearchResult.Size = new System.Drawing.Size(1009, 565);
+            this.pnlSearchResult.Size = new System.Drawing.Size(1009, 573);
             this.pnlSearchResult.TabIndex = 66;
             // 
             // lvBeneficiaries
@@ -65,15 +65,17 @@
             this.ReturnStatus,
             this.BeneficiaryType});
             this.lvBeneficiaries.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvBeneficiaries.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvBeneficiaries.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lvBeneficiaries.FullRowSelect = true;
             this.lvBeneficiaries.GridLines = true;
-            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 15);
+            this.lvBeneficiaries.Location = new System.Drawing.Point(0, 3);
             this.lvBeneficiaries.Name = "lvBeneficiaries";
-            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 550);
+            this.lvBeneficiaries.Size = new System.Drawing.Size(1009, 570);
             this.lvBeneficiaries.TabIndex = 0;
             this.lvBeneficiaries.UseCompatibleStateImageBehavior = false;
             this.lvBeneficiaries.View = System.Windows.Forms.View.Details;
+            this.lvBeneficiaries.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvBeneficiaries_DrawColumnHeader);
             // 
             // BeneficiaryID
             // 
@@ -110,7 +112,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.Blue;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSubmit.Location = new System.Drawing.Point(809, 57);
+            this.btnSubmit.Location = new System.Drawing.Point(809, 51);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(188, 31);
             this.btnSubmit.TabIndex = 67;
