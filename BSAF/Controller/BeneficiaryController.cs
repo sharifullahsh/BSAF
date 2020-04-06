@@ -78,10 +78,7 @@ namespace BSAF.Helper
                         DoHaveSecureLivelihood = model.DoHaveSecureLivelihood,
                         DidChildrenGoToSchoole = model.DidChildrenGoToSchoole,
                         NumChildrenAttendedSchoole = model.NumChildrenAttendedSchoole,
-                        //TODO: add user information from db
-                        InsertedBy = UserInfo.ID,
                         InsertedDate = DateTime.Now,
-                        //END TODO
                         IsActive = true
                     };
                     db.Beneficiaries.Add(beneficiary);

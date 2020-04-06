@@ -293,16 +293,6 @@
             this.tabAssistanceNeeds1 = new System.Windows.Forms.TabPage();
             this.btnAssistanceNeedsPrevious1 = new System.Windows.Forms.Button();
             this.btnAssistanceNeedsNext1 = new System.Windows.Forms.Button();
-            this.SC = new System.Windows.Forms.GroupBox();
-            this.txtSCC = new System.Windows.Forms.TextBox();
-            this.dateSCD = new System.Windows.Forms.DateTimePicker();
-            this.chkSCP = new System.Windows.Forms.CheckBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.PC = new System.Windows.Forms.GroupBox();
-            this.txtPCC = new System.Windows.Forms.TextBox();
-            this.datePCD = new System.Windows.Forms.DateTimePicker();
-            this.chkPCP = new System.Windows.Forms.CheckBox();
-            this.label66 = new System.Windows.Forms.Label();
             this.gbPostArrivalNeeds = new System.Windows.Forms.GroupBox();
             this.pnlAssistanceNeedTitle = new System.Windows.Forms.Panel();
             this.label54 = new System.Windows.Forms.Label();
@@ -314,11 +304,21 @@
             this.datePRD = new System.Windows.Forms.DateTimePicker();
             this.chkPRP = new System.Windows.Forms.CheckBox();
             this.label69 = new System.Windows.Forms.Label();
+            this.SC = new System.Windows.Forms.GroupBox();
+            this.txtSCC = new System.Windows.Forms.TextBox();
+            this.dateSCD = new System.Windows.Forms.DateTimePicker();
+            this.chkSCP = new System.Windows.Forms.CheckBox();
+            this.label68 = new System.Windows.Forms.Label();
             this.NFI = new System.Windows.Forms.GroupBox();
             this.txtNFIC = new System.Windows.Forms.TextBox();
             this.dateNFID = new System.Windows.Forms.DateTimePicker();
             this.chkNFIP = new System.Windows.Forms.CheckBox();
             this.label67 = new System.Windows.Forms.Label();
+            this.PC = new System.Windows.Forms.GroupBox();
+            this.txtPCC = new System.Windows.Forms.TextBox();
+            this.datePCD = new System.Windows.Forms.DateTimePicker();
+            this.chkPCP = new System.Windows.Forms.CheckBox();
+            this.label66 = new System.Windows.Forms.Label();
             this.WFP = new System.Windows.Forms.GroupBox();
             this.txtWFPC = new System.Windows.Forms.TextBox();
             this.dateWFPD = new System.Windows.Forms.DateTimePicker();
@@ -420,6 +420,11 @@
             this.dateTransportationDate = new System.Windows.Forms.DateTimePicker();
             this.label70 = new System.Windows.Forms.Label();
             this.tabReintegrationNeeds1 = new System.Windows.Forms.TabPage();
+            this.pnlHoHEducationLevel = new System.Windows.Forms.Panel();
+            this.label92 = new System.Windows.Forms.Label();
+            this.cmbHoHEducationLevel = new System.Windows.Forms.ComboBox();
+            this.lblHoHEducationOther = new System.Windows.Forms.Label();
+            this.txtHoHEducationOther = new System.Windows.Forms.TextBox();
             this.pnlWhatCanHelpYou = new System.Windows.Forms.Panel();
             this.chkVocationalTraining = new System.Windows.Forms.CheckBox();
             this.chkProvisionOfTools = new System.Windows.Forms.CheckBox();
@@ -435,9 +440,6 @@
             this.pnlFirstNeed = new System.Windows.Forms.Panel();
             this.lblFirstNeedOther = new System.Windows.Forms.Label();
             this.txtReintegrationNeeds1Other = new System.Windows.Forms.TextBox();
-            this.lblHoHEducationOther = new System.Windows.Forms.Label();
-            this.txtHoHEducationOther = new System.Windows.Forms.TextBox();
-            this.cmbHoHEducationLevel = new System.Windows.Forms.ComboBox();
             this.lblProOther = new System.Windows.Forms.Label();
             this.cmbProfession = new System.Windows.Forms.ComboBox();
             this.txtProfessionOther = new System.Windows.Forms.TextBox();
@@ -455,7 +457,6 @@
             this.LackOfHousing = new System.Windows.Forms.CheckBox();
             this.Security = new System.Windows.Forms.CheckBox();
             this.label93 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.gbToolsNeeded = new System.Windows.Forms.GroupBox();
             this.txtToolsOther = new System.Windows.Forms.TextBox();
@@ -547,12 +548,12 @@
             this.gbIranPakAddress.SuspendLayout();
             this.pnlHostCountry.SuspendLayout();
             this.tabAssistanceNeeds1.SuspendLayout();
-            this.SC.SuspendLayout();
-            this.PC.SuspendLayout();
             this.gbPostArrivalNeeds.SuspendLayout();
             this.pnlAssistanceNeedTitle.SuspendLayout();
             this.PR.SuspendLayout();
+            this.SC.SuspendLayout();
             this.NFI.SuspendLayout();
+            this.PC.SuspendLayout();
             this.WFP.SuspendLayout();
             this.DDR.SuspendLayout();
             this.Escort.SuspendLayout();
@@ -571,6 +572,7 @@
             this.groupBox22.SuspendLayout();
             this.groupBox21.SuspendLayout();
             this.tabReintegrationNeeds1.SuspendLayout();
+            this.pnlHoHEducationLevel.SuspendLayout();
             this.pnlWhatCanHelpYou.SuspendLayout();
             this.pnlCanReadWrite.SuspendLayout();
             this.pnlThirdNeed.SuspendLayout();
@@ -1249,7 +1251,7 @@
             this.tabBeneficiary.Location = new System.Drawing.Point(0, 0);
             this.tabBeneficiary.Name = "tabBeneficiary";
             this.tabBeneficiary.SelectedIndex = 0;
-            this.tabBeneficiary.Size = new System.Drawing.Size(1009, 749);
+            this.tabBeneficiary.Size = new System.Drawing.Size(1009, 745);
             this.tabBeneficiary.TabIndex = 139;
             this.tabBeneficiary.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabBeneficiary_Selecting);
             // 
@@ -1276,7 +1278,7 @@
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(1001, 723);
+            this.tabProfile.Size = new System.Drawing.Size(1001, 719);
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -1491,7 +1493,7 @@
             this.tabProtection1.Location = new System.Drawing.Point(4, 22);
             this.tabProtection1.Name = "tabProtection1";
             this.tabProtection1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProtection1.Size = new System.Drawing.Size(1001, 723);
+            this.tabProtection1.Size = new System.Drawing.Size(1001, 719);
             this.tabProtection1.TabIndex = 1;
             this.tabProtection1.Text = "Protection 1";
             this.tabProtection1.UseVisualStyleBackColor = true;
@@ -1811,7 +1813,7 @@
             // PSNOther
             // 
             this.PSNOther.AutoSize = true;
-            this.PSNOther.Location = new System.Drawing.Point(5, 114);
+            this.PSNOther.Location = new System.Drawing.Point(9, 114);
             this.PSNOther.Name = "PSNOther";
             this.PSNOther.Size = new System.Drawing.Size(52, 17);
             this.PSNOther.TabIndex = 59;
@@ -1822,7 +1824,7 @@
             // 
             // txtPSNOther
             // 
-            this.txtPSNOther.Location = new System.Drawing.Point(62, 111);
+            this.txtPSNOther.Location = new System.Drawing.Point(66, 111);
             this.txtPSNOther.Name = "txtPSNOther";
             this.txtPSNOther.Size = new System.Drawing.Size(363, 20);
             this.txtPSNOther.TabIndex = 63;
@@ -1919,7 +1921,7 @@
             // SF
             // 
             this.SF.AutoSize = true;
-            this.SF.Location = new System.Drawing.Point(5, 90);
+            this.SF.Location = new System.Drawing.Point(9, 90);
             this.SF.Name = "SF";
             this.SF.Size = new System.Drawing.Size(89, 17);
             this.SF.TabIndex = 50;
@@ -1930,7 +1932,7 @@
             // SPF
             // 
             this.SPF.AutoSize = true;
-            this.SPF.Location = new System.Drawing.Point(5, 66);
+            this.SPF.Location = new System.Drawing.Point(9, 66);
             this.SPF.Name = "SPF";
             this.SPF.Size = new System.Drawing.Size(125, 17);
             this.SPF.TabIndex = 49;
@@ -1941,7 +1943,7 @@
             // LF
             // 
             this.LF.AutoSize = true;
-            this.LF.Location = new System.Drawing.Point(5, 42);
+            this.LF.Location = new System.Drawing.Point(9, 42);
             this.LF.Name = "LF";
             this.LF.Size = new System.Drawing.Size(198, 17);
             this.LF.TabIndex = 48;
@@ -1952,7 +1954,7 @@
             // DP
             // 
             this.DP.AutoSize = true;
-            this.DP.Location = new System.Drawing.Point(6, 19);
+            this.DP.Location = new System.Drawing.Point(8, 19);
             this.DP.Name = "DP";
             this.DP.Size = new System.Drawing.Size(70, 17);
             this.DP.TabIndex = 34;
@@ -1988,7 +1990,7 @@
             this.tabProtection2.Location = new System.Drawing.Point(4, 22);
             this.tabProtection2.Name = "tabProtection2";
             this.tabProtection2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProtection2.Size = new System.Drawing.Size(1001, 723);
+            this.tabProtection2.Size = new System.Drawing.Size(1001, 719);
             this.tabProtection2.TabIndex = 2;
             this.tabProtection2.Text = "Protection 2";
             this.tabProtection2.UseVisualStyleBackColor = true;
@@ -2279,9 +2281,9 @@
             this.gbRankImportant.Controls.Add(this.S);
             this.gbRankImportant.Controls.Add(this.SEG);
             this.gbRankImportant.Controls.Add(this.EFC);
-            this.gbRankImportant.Location = new System.Drawing.Point(18, 30);
+            this.gbRankImportant.Location = new System.Drawing.Point(18, 29);
             this.gbRankImportant.Name = "gbRankImportant";
-            this.gbRankImportant.Size = new System.Drawing.Size(978, 312);
+            this.gbRankImportant.Size = new System.Drawing.Size(978, 316);
             this.gbRankImportant.TabIndex = 15;
             this.gbRankImportant.TabStop = false;
             // 
@@ -2292,9 +2294,9 @@
             this.ATJ.Controls.Add(this.ATJ_SIMP);
             this.ATJ.Controls.Add(this.ATJ_NAAIMP);
             this.ATJ.Controls.Add(this.label24);
-            this.ATJ.Location = new System.Drawing.Point(10, 5);
+            this.ATJ.Location = new System.Drawing.Point(8, 9);
             this.ATJ.Name = "ATJ";
-            this.ATJ.Size = new System.Drawing.Size(960, 39);
+            this.ATJ.Size = new System.Drawing.Size(964, 35);
             this.ATJ.TabIndex = 45;
             this.ATJ.TabStop = false;
             // 
@@ -2434,7 +2436,7 @@
             this.ATH.Controls.Add(this.ATH_SIMP);
             this.ATH.Controls.Add(this.ATH_NAAIMP);
             this.ATH.Controls.Add(this.label25);
-            this.ATH.Location = new System.Drawing.Point(10, 39);
+            this.ATH.Location = new System.Drawing.Point(10, 40);
             this.ATH.Name = "ATH";
             this.ATH.Size = new System.Drawing.Size(960, 38);
             this.ATH.TabIndex = 6;
@@ -2501,7 +2503,7 @@
             this.AROH.Controls.Add(this.AROH_SIMP);
             this.AROH.Controls.Add(this.AROH_NAAIMP);
             this.AROH.Controls.Add(this.label31);
-            this.AROH.Location = new System.Drawing.Point(10, 244);
+            this.AROH.Location = new System.Drawing.Point(10, 245);
             this.AROH.Name = "AROH";
             this.AROH.Size = new System.Drawing.Size(960, 30);
             this.AROH.TabIndex = 12;
@@ -2568,7 +2570,7 @@
             this.ATF.Controls.Add(this.ATF_SIMP);
             this.ATF.Controls.Add(this.ATF_NAAIMP);
             this.ATF.Controls.Add(this.label26);
-            this.ATF.Location = new System.Drawing.Point(10, 72);
+            this.ATF.Location = new System.Drawing.Point(10, 73);
             this.ATF.Name = "ATF";
             this.ATF.Size = new System.Drawing.Size(960, 38);
             this.ATF.TabIndex = 7;
@@ -2635,7 +2637,7 @@
             this.POFM.Controls.Add(this.POFM_SIMP);
             this.POFM.Controls.Add(this.POFM_NAAIMP);
             this.POFM.Controls.Add(this.label30);
-            this.POFM.Location = new System.Drawing.Point(11, 210);
+            this.POFM.Location = new System.Drawing.Point(11, 211);
             this.POFM.Name = "POFM";
             this.POFM.Size = new System.Drawing.Size(959, 35);
             this.POFM.TabIndex = 11;
@@ -2702,7 +2704,7 @@
             this.S.Controls.Add(this.S_SIMP);
             this.S.Controls.Add(this.S_NAAIMP);
             this.S.Controls.Add(this.label27);
-            this.S.Location = new System.Drawing.Point(10, 109);
+            this.S.Location = new System.Drawing.Point(10, 110);
             this.S.Name = "S";
             this.S.Size = new System.Drawing.Size(960, 32);
             this.S.TabIndex = 8;
@@ -2769,7 +2771,7 @@
             this.SEG.Controls.Add(this.SEG_SIMP);
             this.SEG.Controls.Add(this.SEG_NAAIMP);
             this.SEG.Controls.Add(this.label29);
-            this.SEG.Location = new System.Drawing.Point(10, 173);
+            this.SEG.Location = new System.Drawing.Point(10, 174);
             this.SEG.Name = "SEG";
             this.SEG.Size = new System.Drawing.Size(960, 38);
             this.SEG.TabIndex = 10;
@@ -2836,7 +2838,7 @@
             this.EFC.Controls.Add(this.EFC_SIMP);
             this.EFC.Controls.Add(this.EFC_NAAIMP);
             this.EFC.Controls.Add(this.label28);
-            this.EFC.Location = new System.Drawing.Point(10, 138);
+            this.EFC.Location = new System.Drawing.Point(10, 139);
             this.EFC.Name = "EFC";
             this.EFC.Size = new System.Drawing.Size(960, 36);
             this.EFC.TabIndex = 9;
@@ -2900,7 +2902,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(5, 9);
+            this.label23.Location = new System.Drawing.Point(5, 8);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(693, 18);
             this.label23.TabIndex = 0;
@@ -2927,7 +2929,7 @@
             this.tabHostCountry.Location = new System.Drawing.Point(4, 22);
             this.tabHostCountry.Name = "tabHostCountry";
             this.tabHostCountry.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHostCountry.Size = new System.Drawing.Size(1001, 723);
+            this.tabHostCountry.Size = new System.Drawing.Size(1001, 719);
             this.tabHostCountry.TabIndex = 3;
             this.tabHostCountry.Text = "Host Country";
             this.tabHostCountry.UseVisualStyleBackColor = true;
@@ -3100,7 +3102,7 @@
             // Cash
             // 
             this.Cash.AutoSize = true;
-            this.Cash.Location = new System.Drawing.Point(369, 6);
+            this.Cash.Location = new System.Drawing.Point(362, 7);
             this.Cash.Name = "Cash";
             this.Cash.Size = new System.Drawing.Size(59, 17);
             this.Cash.TabIndex = 40;
@@ -3406,7 +3408,7 @@
             this.tabAssistanceNeeds1.Location = new System.Drawing.Point(4, 22);
             this.tabAssistanceNeeds1.Name = "tabAssistanceNeeds1";
             this.tabAssistanceNeeds1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssistanceNeeds1.Size = new System.Drawing.Size(1001, 723);
+            this.tabAssistanceNeeds1.Size = new System.Drawing.Size(1001, 719);
             this.tabAssistanceNeeds1.TabIndex = 4;
             this.tabAssistanceNeeds1.Text = "Assistance Needs 1";
             this.tabAssistanceNeeds1.UseVisualStyleBackColor = true;
@@ -3436,100 +3438,6 @@
             this.btnAssistanceNeedsNext1.Text = "Next";
             this.btnAssistanceNeedsNext1.UseVisualStyleBackColor = false;
             this.btnAssistanceNeedsNext1.Click += new System.EventHandler(this.btnAssistanceNeedsNext1_Click);
-            // 
-            // SC
-            // 
-            this.SC.Controls.Add(this.txtSCC);
-            this.SC.Controls.Add(this.dateSCD);
-            this.SC.Controls.Add(this.chkSCP);
-            this.SC.Controls.Add(this.label68);
-            this.SC.Location = new System.Drawing.Point(6, 486);
-            this.SC.Name = "SC";
-            this.SC.Size = new System.Drawing.Size(940, 38);
-            this.SC.TabIndex = 19;
-            this.SC.TabStop = false;
-            // 
-            // txtSCC
-            // 
-            this.txtSCC.Location = new System.Drawing.Point(501, 11);
-            this.txtSCC.Name = "txtSCC";
-            this.txtSCC.Size = new System.Drawing.Size(433, 20);
-            this.txtSCC.TabIndex = 7;
-            // 
-            // dateSCD
-            // 
-            this.dateSCD.CustomFormat = "MMM dd yyyy";
-            this.dateSCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateSCD.Location = new System.Drawing.Point(382, 11);
-            this.dateSCD.Name = "dateSCD";
-            this.dateSCD.Size = new System.Drawing.Size(109, 20);
-            this.dateSCD.TabIndex = 6;
-            // 
-            // chkSCP
-            // 
-            this.chkSCP.AutoSize = true;
-            this.chkSCP.Location = new System.Drawing.Point(327, 17);
-            this.chkSCP.Name = "chkSCP";
-            this.chkSCP.Size = new System.Drawing.Size(15, 14);
-            this.chkSCP.TabIndex = 4;
-            this.chkSCP.UseVisualStyleBackColor = true;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(5, 12);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(118, 17);
-            this.label68.TabIndex = 2;
-            this.label68.Text = "Seasonal Clothes";
-            // 
-            // PC
-            // 
-            this.PC.Controls.Add(this.txtPCC);
-            this.PC.Controls.Add(this.datePCD);
-            this.PC.Controls.Add(this.chkPCP);
-            this.PC.Controls.Add(this.label66);
-            this.PC.Location = new System.Drawing.Point(7, 411);
-            this.PC.Name = "PC";
-            this.PC.Size = new System.Drawing.Size(942, 38);
-            this.PC.TabIndex = 17;
-            this.PC.TabStop = false;
-            // 
-            // txtPCC
-            // 
-            this.txtPCC.Location = new System.Drawing.Point(510, 12);
-            this.txtPCC.Name = "txtPCC";
-            this.txtPCC.Size = new System.Drawing.Size(425, 20);
-            this.txtPCC.TabIndex = 7;
-            // 
-            // datePCD
-            // 
-            this.datePCD.CustomFormat = "MMM dd yyyy";
-            this.datePCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePCD.Location = new System.Drawing.Point(382, 11);
-            this.datePCD.Name = "datePCD";
-            this.datePCD.Size = new System.Drawing.Size(109, 20);
-            this.datePCD.TabIndex = 6;
-            // 
-            // chkPCP
-            // 
-            this.chkPCP.AutoSize = true;
-            this.chkPCP.Location = new System.Drawing.Point(326, 15);
-            this.chkPCP.Name = "chkPCP";
-            this.chkPCP.Size = new System.Drawing.Size(15, 14);
-            this.chkPCP.TabIndex = 4;
-            this.chkPCP.UseVisualStyleBackColor = true;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(5, 12);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(162, 17);
-            this.label66.TabIndex = 2;
-            this.label66.Text = "Psychosocial counseling";
             // 
             // gbPostArrivalNeeds
             // 
@@ -3653,6 +3561,53 @@
             this.label69.TabIndex = 2;
             this.label69.Text = "Protection referral";
             // 
+            // SC
+            // 
+            this.SC.Controls.Add(this.txtSCC);
+            this.SC.Controls.Add(this.dateSCD);
+            this.SC.Controls.Add(this.chkSCP);
+            this.SC.Controls.Add(this.label68);
+            this.SC.Location = new System.Drawing.Point(6, 486);
+            this.SC.Name = "SC";
+            this.SC.Size = new System.Drawing.Size(940, 38);
+            this.SC.TabIndex = 19;
+            this.SC.TabStop = false;
+            // 
+            // txtSCC
+            // 
+            this.txtSCC.Location = new System.Drawing.Point(501, 11);
+            this.txtSCC.Name = "txtSCC";
+            this.txtSCC.Size = new System.Drawing.Size(433, 20);
+            this.txtSCC.TabIndex = 7;
+            // 
+            // dateSCD
+            // 
+            this.dateSCD.CustomFormat = "MMM dd yyyy";
+            this.dateSCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateSCD.Location = new System.Drawing.Point(382, 11);
+            this.dateSCD.Name = "dateSCD";
+            this.dateSCD.Size = new System.Drawing.Size(109, 20);
+            this.dateSCD.TabIndex = 6;
+            // 
+            // chkSCP
+            // 
+            this.chkSCP.AutoSize = true;
+            this.chkSCP.Location = new System.Drawing.Point(327, 17);
+            this.chkSCP.Name = "chkSCP";
+            this.chkSCP.Size = new System.Drawing.Size(15, 14);
+            this.chkSCP.TabIndex = 4;
+            this.chkSCP.UseVisualStyleBackColor = true;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(5, 12);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(118, 17);
+            this.label68.TabIndex = 2;
+            this.label68.Text = "Seasonal Clothes";
+            // 
             // NFI
             // 
             this.NFI.Controls.Add(this.txtNFIC);
@@ -3699,6 +3654,53 @@
             this.label67.Size = new System.Drawing.Size(212, 17);
             this.label67.TabIndex = 2;
             this.label67.Text = "Non-Food Items (Family module)";
+            // 
+            // PC
+            // 
+            this.PC.Controls.Add(this.txtPCC);
+            this.PC.Controls.Add(this.datePCD);
+            this.PC.Controls.Add(this.chkPCP);
+            this.PC.Controls.Add(this.label66);
+            this.PC.Location = new System.Drawing.Point(7, 411);
+            this.PC.Name = "PC";
+            this.PC.Size = new System.Drawing.Size(942, 38);
+            this.PC.TabIndex = 17;
+            this.PC.TabStop = false;
+            // 
+            // txtPCC
+            // 
+            this.txtPCC.Location = new System.Drawing.Point(510, 12);
+            this.txtPCC.Name = "txtPCC";
+            this.txtPCC.Size = new System.Drawing.Size(425, 20);
+            this.txtPCC.TabIndex = 7;
+            // 
+            // datePCD
+            // 
+            this.datePCD.CustomFormat = "MMM dd yyyy";
+            this.datePCD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePCD.Location = new System.Drawing.Point(382, 11);
+            this.datePCD.Name = "datePCD";
+            this.datePCD.Size = new System.Drawing.Size(109, 20);
+            this.datePCD.TabIndex = 6;
+            // 
+            // chkPCP
+            // 
+            this.chkPCP.AutoSize = true;
+            this.chkPCP.Location = new System.Drawing.Point(326, 15);
+            this.chkPCP.Name = "chkPCP";
+            this.chkPCP.Size = new System.Drawing.Size(15, 14);
+            this.chkPCP.TabIndex = 4;
+            this.chkPCP.UseVisualStyleBackColor = true;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(5, 12);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(162, 17);
+            this.label66.TabIndex = 2;
+            this.label66.Text = "Psychosocial counseling";
             // 
             // WFP
             // 
@@ -4194,7 +4196,7 @@
             this.tabAssistanceNeeds2.Location = new System.Drawing.Point(4, 22);
             this.tabAssistanceNeeds2.Name = "tabAssistanceNeeds2";
             this.tabAssistanceNeeds2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssistanceNeeds2.Size = new System.Drawing.Size(1001, 723);
+            this.tabAssistanceNeeds2.Size = new System.Drawing.Size(1001, 719);
             this.tabAssistanceNeeds2.TabIndex = 5;
             this.tabAssistanceNeeds2.Text = "Assistance Needs 2";
             this.tabAssistanceNeeds2.UseVisualStyleBackColor = true;
@@ -4268,12 +4270,12 @@
             this.gbTransportation.Controls.Add(this.txtTransAdditionalInfo);
             this.gbTransportation.Controls.Add(this.label80);
             this.gbTransportation.Controls.Add(this.US);
+            this.gbTransportation.Controls.Add(this.TWE);
             this.gbTransportation.Controls.Add(this.LTTC);
             this.gbTransportation.Controls.Add(this.HOTH);
             this.gbTransportation.Controls.Add(this.PWT);
             this.gbTransportation.Controls.Add(this.RTOP);
             this.gbTransportation.Controls.Add(this.TBH);
-            this.gbTransportation.Controls.Add(this.TWE);
             this.gbTransportation.Location = new System.Drawing.Point(33, 230);
             this.gbTransportation.Name = "gbTransportation";
             this.gbTransportation.Size = new System.Drawing.Size(951, 209);
@@ -4413,7 +4415,7 @@
             // TWE
             // 
             this.TWE.AutoSize = true;
-            this.TWE.Location = new System.Drawing.Point(11, 14);
+            this.TWE.Location = new System.Drawing.Point(10, 14);
             this.TWE.Name = "TWE";
             this.TWE.Size = new System.Drawing.Size(188, 17);
             this.TWE.TabIndex = 99;
@@ -4677,14 +4679,12 @@
             // 
             // tabReintegrationNeeds1
             // 
+            this.tabReintegrationNeeds1.Controls.Add(this.pnlHoHEducationLevel);
             this.tabReintegrationNeeds1.Controls.Add(this.pnlWhatCanHelpYou);
             this.tabReintegrationNeeds1.Controls.Add(this.pnlCanReadWrite);
             this.tabReintegrationNeeds1.Controls.Add(this.pnlThirdNeed);
             this.tabReintegrationNeeds1.Controls.Add(this.pnlSecondNeed);
             this.tabReintegrationNeeds1.Controls.Add(this.pnlFirstNeed);
-            this.tabReintegrationNeeds1.Controls.Add(this.lblHoHEducationOther);
-            this.tabReintegrationNeeds1.Controls.Add(this.txtHoHEducationOther);
-            this.tabReintegrationNeeds1.Controls.Add(this.cmbHoHEducationLevel);
             this.tabReintegrationNeeds1.Controls.Add(this.lblProOther);
             this.tabReintegrationNeeds1.Controls.Add(this.cmbProfession);
             this.tabReintegrationNeeds1.Controls.Add(this.txtProfessionOther);
@@ -4695,7 +4695,6 @@
             this.tabReintegrationNeeds1.Controls.Add(this.btnReintegNeed1NeedNext);
             this.tabReintegrationNeeds1.Controls.Add(this.gbMainConcerns);
             this.tabReintegrationNeeds1.Controls.Add(this.label93);
-            this.tabReintegrationNeeds1.Controls.Add(this.label92);
             this.tabReintegrationNeeds1.Controls.Add(this.label91);
             this.tabReintegrationNeeds1.Controls.Add(this.gbToolsNeeded);
             this.tabReintegrationNeeds1.Controls.Add(this.label89);
@@ -4711,10 +4710,57 @@
             this.tabReintegrationNeeds1.Location = new System.Drawing.Point(4, 22);
             this.tabReintegrationNeeds1.Name = "tabReintegrationNeeds1";
             this.tabReintegrationNeeds1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReintegrationNeeds1.Size = new System.Drawing.Size(1001, 723);
+            this.tabReintegrationNeeds1.Size = new System.Drawing.Size(1001, 719);
             this.tabReintegrationNeeds1.TabIndex = 6;
             this.tabReintegrationNeeds1.Text = "Reintegration Needs 1";
             this.tabReintegrationNeeds1.UseVisualStyleBackColor = true;
+            // 
+            // pnlHoHEducationLevel
+            // 
+            this.pnlHoHEducationLevel.Controls.Add(this.label92);
+            this.pnlHoHEducationLevel.Controls.Add(this.cmbHoHEducationLevel);
+            this.pnlHoHEducationLevel.Controls.Add(this.lblHoHEducationOther);
+            this.pnlHoHEducationLevel.Controls.Add(this.txtHoHEducationOther);
+            this.pnlHoHEducationLevel.Enabled = false;
+            this.pnlHoHEducationLevel.Location = new System.Drawing.Point(9, 400);
+            this.pnlHoHEducationLevel.Name = "pnlHoHEducationLevel";
+            this.pnlHoHEducationLevel.Size = new System.Drawing.Size(983, 51);
+            this.pnlHoHEducationLevel.TabIndex = 129;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Location = new System.Drawing.Point(3, 10);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(406, 18);
+            this.label92.TabIndex = 36;
+            this.label92.Text = "27. What is the highest education level achieved by the HoH?";
+            // 
+            // cmbHoHEducationLevel
+            // 
+            this.cmbHoHEducationLevel.FormattingEnabled = true;
+            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 9);
+            this.cmbHoHEducationLevel.Name = "cmbHoHEducationLevel";
+            this.cmbHoHEducationLevel.Size = new System.Drawing.Size(170, 21);
+            this.cmbHoHEducationLevel.TabIndex = 121;
+            this.cmbHoHEducationLevel.SelectionChangeCommitted += new System.EventHandler(this.cmbHoHEducationLevel_SelectionChangeCommitted);
+            // 
+            // lblHoHEducationOther
+            // 
+            this.lblHoHEducationOther.AutoSize = true;
+            this.lblHoHEducationOther.Location = new System.Drawing.Point(617, 13);
+            this.lblHoHEducationOther.Name = "lblHoHEducationOther";
+            this.lblHoHEducationOther.Size = new System.Drawing.Size(33, 13);
+            this.lblHoHEducationOther.TabIndex = 62;
+            this.lblHoHEducationOther.Text = "Other";
+            // 
+            // txtHoHEducationOther
+            // 
+            this.txtHoHEducationOther.Location = new System.Drawing.Point(652, 10);
+            this.txtHoHEducationOther.Name = "txtHoHEducationOther";
+            this.txtHoHEducationOther.Size = new System.Drawing.Size(324, 20);
+            this.txtHoHEducationOther.TabIndex = 122;
             // 
             // pnlWhatCanHelpYou
             // 
@@ -4765,6 +4811,7 @@
             this.rdoCanYouReadWriteYes.TabStop = true;
             this.rdoCanYouReadWriteYes.Text = "Yes";
             this.rdoCanYouReadWriteYes.UseVisualStyleBackColor = true;
+            this.rdoCanYouReadWriteYes.CheckedChanged += new System.EventHandler(this.rdoCanYouReadWriteYes_CheckedChanged);
             // 
             // rdoCanYouReadWriteNo
             // 
@@ -4776,6 +4823,7 @@
             this.rdoCanYouReadWriteNo.TabStop = true;
             this.rdoCanYouReadWriteNo.Text = "No";
             this.rdoCanYouReadWriteNo.UseVisualStyleBackColor = true;
+            this.rdoCanYouReadWriteNo.CheckedChanged += new System.EventHandler(this.rdoCanYouReadWriteYes_CheckedChanged);
             // 
             // pnlThirdNeed
             // 
@@ -4854,31 +4902,6 @@
             this.txtReintegrationNeeds1Other.Name = "txtReintegrationNeeds1Other";
             this.txtReintegrationNeeds1Other.Size = new System.Drawing.Size(425, 20);
             this.txtReintegrationNeeds1Other.TabIndex = 107;
-            // 
-            // lblHoHEducationOther
-            // 
-            this.lblHoHEducationOther.AutoSize = true;
-            this.lblHoHEducationOther.Location = new System.Drawing.Point(620, 423);
-            this.lblHoHEducationOther.Name = "lblHoHEducationOther";
-            this.lblHoHEducationOther.Size = new System.Drawing.Size(33, 13);
-            this.lblHoHEducationOther.TabIndex = 62;
-            this.lblHoHEducationOther.Text = "Other";
-            // 
-            // txtHoHEducationOther
-            // 
-            this.txtHoHEducationOther.Location = new System.Drawing.Point(662, 420);
-            this.txtHoHEducationOther.Name = "txtHoHEducationOther";
-            this.txtHoHEducationOther.Size = new System.Drawing.Size(324, 20);
-            this.txtHoHEducationOther.TabIndex = 122;
-            // 
-            // cmbHoHEducationLevel
-            // 
-            this.cmbHoHEducationLevel.FormattingEnabled = true;
-            this.cmbHoHEducationLevel.Location = new System.Drawing.Point(425, 419);
-            this.cmbHoHEducationLevel.Name = "cmbHoHEducationLevel";
-            this.cmbHoHEducationLevel.Size = new System.Drawing.Size(170, 21);
-            this.cmbHoHEducationLevel.TabIndex = 121;
-            this.cmbHoHEducationLevel.SelectionChangeCommitted += new System.EventHandler(this.cmbHoHEducationLevel_SelectionChangeCommitted);
             // 
             // lblProOther
             // 
@@ -5051,16 +5074,6 @@
             this.label93.Size = new System.Drawing.Size(407, 18);
             this.label93.TabIndex = 38;
             this.label93.Text = "28. What are your 3 main concerns in Afghanistan? (select 3)";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(3, 420);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(406, 18);
-            this.label92.TabIndex = 36;
-            this.label92.Text = "27. What is the highest education level achieved by the HoH?";
             // 
             // label91
             // 
@@ -5270,7 +5283,7 @@
             this.tabReintegrationNeeds2.Location = new System.Drawing.Point(4, 22);
             this.tabReintegrationNeeds2.Name = "tabReintegrationNeeds2";
             this.tabReintegrationNeeds2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReintegrationNeeds2.Size = new System.Drawing.Size(1001, 723);
+            this.tabReintegrationNeeds2.Size = new System.Drawing.Size(1001, 719);
             this.tabReintegrationNeeds2.TabIndex = 7;
             this.tabReintegrationNeeds2.Text = "Reintegration Needs 2";
             this.tabReintegrationNeeds2.UseVisualStyleBackColor = true;
@@ -5584,7 +5597,7 @@
             this.tabImageAndCard.Location = new System.Drawing.Point(4, 22);
             this.tabImageAndCard.Name = "tabImageAndCard";
             this.tabImageAndCard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabImageAndCard.Size = new System.Drawing.Size(1001, 723);
+            this.tabImageAndCard.Size = new System.Drawing.Size(1001, 719);
             this.tabImageAndCard.TabIndex = 8;
             this.tabImageAndCard.Text = "Card and Image";
             this.tabImageAndCard.UseVisualStyleBackColor = true;
@@ -5620,7 +5633,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1009, 749);
+            this.ClientSize = new System.Drawing.Size(1009, 745);
             this.Controls.Add(this.tabBeneficiary);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -5701,17 +5714,17 @@
             this.pnlHostCountry.PerformLayout();
             this.tabAssistanceNeeds1.ResumeLayout(false);
             this.tabAssistanceNeeds1.PerformLayout();
-            this.SC.ResumeLayout(false);
-            this.SC.PerformLayout();
-            this.PC.ResumeLayout(false);
-            this.PC.PerformLayout();
             this.gbPostArrivalNeeds.ResumeLayout(false);
             this.pnlAssistanceNeedTitle.ResumeLayout(false);
             this.pnlAssistanceNeedTitle.PerformLayout();
             this.PR.ResumeLayout(false);
             this.PR.PerformLayout();
+            this.SC.ResumeLayout(false);
+            this.SC.PerformLayout();
             this.NFI.ResumeLayout(false);
             this.NFI.PerformLayout();
+            this.PC.ResumeLayout(false);
+            this.PC.PerformLayout();
             this.WFP.ResumeLayout(false);
             this.WFP.PerformLayout();
             this.DDR.ResumeLayout(false);
@@ -5748,6 +5761,8 @@
             this.groupBox21.PerformLayout();
             this.tabReintegrationNeeds1.ResumeLayout(false);
             this.tabReintegrationNeeds1.PerformLayout();
+            this.pnlHoHEducationLevel.ResumeLayout(false);
+            this.pnlHoHEducationLevel.PerformLayout();
             this.pnlWhatCanHelpYou.ResumeLayout(false);
             this.pnlWhatCanHelpYou.PerformLayout();
             this.pnlCanReadWrite.ResumeLayout(false);
@@ -6264,5 +6279,6 @@
         private System.Windows.Forms.Button btnCardPrevious;
         private System.Windows.Forms.Panel pnlAssistanceNeedTitle;
         private System.Windows.Forms.Panel pnlHHdocumentTitle;
+        private System.Windows.Forms.Panel pnlHoHEducationLevel;
     }
 }

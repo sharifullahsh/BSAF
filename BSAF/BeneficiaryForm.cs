@@ -297,7 +297,7 @@ namespace BSAF
             {
                 this.txtRentPayForAccom.Text = beneficiary.RentPayForAccom.ToString();
             }
-            if (beneficiary.RentPayCurrency == "AFN")
+            if (beneficiary.RentPayCurrency == "AFG")
             {
                 this.rdoAFG.Checked = true;
             }
@@ -846,7 +846,7 @@ namespace BSAF
                     this.beneficiary.RentPayCurrency = this.rdoUSD.Text;
                 }
                 else if(this.rdoAFG.Checked){
-                    this.beneficiary.RentPayCurrency = this.rdoUSD.Text;
+                    this.beneficiary.RentPayCurrency = this.rdoAFG.Text;
                 }
                 else { MessageBox.Show("Select currency for payment accomodation."); }
             }
@@ -2198,6 +2198,19 @@ namespace BSAF
             this.IsAllowTabChange = true;
             this.tabBeneficiary.SelectedIndex = 7;
             this.IsAllowTabChange = false;
+        }
+
+
+        private void rdoCanYouReadWriteYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoCanYouReadWriteYes.Checked)
+            {
+                this.pnlHoHEducationLevel.Enabled = true;
+            }
+            else
+            {
+                this.pnlHoHEducationLevel.Enabled = false;
+            }
         }
     }
 }

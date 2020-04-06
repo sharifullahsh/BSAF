@@ -26,6 +26,7 @@ namespace BSAF
         }
         private void FillBeneficiaryListView()
         {
+            this.lvBeneficiaries.Items.Clear();
             var beneficiares = (from b in db.Beneficiaries
                                 join i in db.Individuals
                                 on b.BeneficiaryID equals i.BeneficiaryID into individuals
