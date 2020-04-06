@@ -19,10 +19,6 @@ namespace BSAF.Helper
         }
         public static bool AuthenticateUser(string username, string password)
         {
-            //if (!ConnectionController.IsConnectedToInternet())
-            //{
-            //    return false;
-            //}
             var baseUrl = ConfigurationManager.AppSettings["BaseUrl"].ToString();
             string endpoint = baseUrl + "api/Login/login";
             string method = "POST";

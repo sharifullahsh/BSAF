@@ -50,6 +50,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Blue;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLogin.Location = new System.Drawing.Point(228, 221);
@@ -126,6 +127,7 @@
             // lblContinueOffline
             // 
             this.lblContinueOffline.AutoSize = true;
+            this.lblContinueOffline.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblContinueOffline.Location = new System.Drawing.Point(3, 317);
             this.lblContinueOffline.Name = "lblContinueOffline";
             this.lblContinueOffline.Size = new System.Drawing.Size(82, 13);

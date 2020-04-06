@@ -977,6 +977,7 @@
             // btnAddMemeber
             // 
             this.btnAddMemeber.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddMemeber.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddMemeber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMemeber.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAddMemeber.Location = new System.Drawing.Point(887, 50);
@@ -1444,6 +1445,7 @@
             // btnProfileNext
             // 
             this.btnProfileNext.BackColor = System.Drawing.Color.Blue;
+            this.btnProfileNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfileNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfileNext.ForeColor = System.Drawing.Color.White;
             this.btnProfileNext.Location = new System.Drawing.Point(904, 574);
@@ -1545,6 +1547,7 @@
             // btnProtection1Previous
             // 
             this.btnProtection1Previous.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection1Previous.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProtection1Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProtection1Previous.Location = new System.Drawing.Point(813, 541);
             this.btnProtection1Previous.Name = "btnProtection1Previous";
@@ -1557,6 +1560,7 @@
             // btnProtection1Next
             // 
             this.btnProtection1Next.BackColor = System.Drawing.Color.Blue;
+            this.btnProtection1Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProtection1Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProtection1Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProtection1Next.Location = new System.Drawing.Point(899, 541);
@@ -2146,6 +2150,7 @@
             // btnProtection2Previous
             // 
             this.btnProtection2Previous.BackColor = System.Drawing.Color.Silver;
+            this.btnProtection2Previous.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProtection2Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProtection2Previous.ForeColor = System.Drawing.SystemColors.WindowText;
             this.btnProtection2Previous.Location = new System.Drawing.Point(814, 578);
@@ -2159,6 +2164,7 @@
             // btnProtection2Next
             // 
             this.btnProtection2Next.BackColor = System.Drawing.Color.Blue;
+            this.btnProtection2Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProtection2Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProtection2Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProtection2Next.Location = new System.Drawing.Point(902, 578);
@@ -2988,6 +2994,7 @@
             // btnHostCountryPrevious
             // 
             this.btnHostCountryPrevious.BackColor = System.Drawing.Color.Silver;
+            this.btnHostCountryPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHostCountryPrevious.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnHostCountryPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHostCountryPrevious.Location = new System.Drawing.Point(798, 445);
@@ -3012,6 +3019,7 @@
             // btnHostCountryNext
             // 
             this.btnHostCountryNext.BackColor = System.Drawing.Color.Blue;
+            this.btnHostCountryNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHostCountryNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHostCountryNext.ForeColor = System.Drawing.SystemColors.Window;
             this.btnHostCountryNext.Location = new System.Drawing.Point(894, 445);
@@ -3393,8 +3401,6 @@
             // 
             this.tabAssistanceNeeds1.Controls.Add(this.btnAssistanceNeedsPrevious1);
             this.tabAssistanceNeeds1.Controls.Add(this.btnAssistanceNeedsNext1);
-            this.tabAssistanceNeeds1.Controls.Add(this.SC);
-            this.tabAssistanceNeeds1.Controls.Add(this.PC);
             this.tabAssistanceNeeds1.Controls.Add(this.gbPostArrivalNeeds);
             this.tabAssistanceNeeds1.Controls.Add(this.label50);
             this.tabAssistanceNeeds1.Location = new System.Drawing.Point(4, 22);
@@ -3407,6 +3413,7 @@
             // 
             // btnAssistanceNeedsPrevious1
             // 
+            this.btnAssistanceNeedsPrevious1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAssistanceNeedsPrevious1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssistanceNeedsPrevious1.Location = new System.Drawing.Point(806, 593);
             this.btnAssistanceNeedsPrevious1.Name = "btnAssistanceNeedsPrevious1";
@@ -3419,6 +3426,7 @@
             // btnAssistanceNeedsNext1
             // 
             this.btnAssistanceNeedsNext1.BackColor = System.Drawing.Color.Blue;
+            this.btnAssistanceNeedsNext1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAssistanceNeedsNext1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssistanceNeedsNext1.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAssistanceNeedsNext1.Location = new System.Drawing.Point(901, 594);
@@ -3435,17 +3443,17 @@
             this.SC.Controls.Add(this.dateSCD);
             this.SC.Controls.Add(this.chkSCP);
             this.SC.Controls.Add(this.label68);
-            this.SC.Location = new System.Drawing.Point(32, 512);
+            this.SC.Location = new System.Drawing.Point(6, 486);
             this.SC.Name = "SC";
-            this.SC.Size = new System.Drawing.Size(942, 38);
+            this.SC.Size = new System.Drawing.Size(940, 38);
             this.SC.TabIndex = 19;
             this.SC.TabStop = false;
             // 
             // txtSCC
             // 
-            this.txtSCC.Location = new System.Drawing.Point(510, 11);
+            this.txtSCC.Location = new System.Drawing.Point(501, 11);
             this.txtSCC.Name = "txtSCC";
-            this.txtSCC.Size = new System.Drawing.Size(429, 20);
+            this.txtSCC.Size = new System.Drawing.Size(433, 20);
             this.txtSCC.TabIndex = 7;
             // 
             // dateSCD
@@ -3460,7 +3468,7 @@
             // chkSCP
             // 
             this.chkSCP.AutoSize = true;
-            this.chkSCP.Location = new System.Drawing.Point(330, 15);
+            this.chkSCP.Location = new System.Drawing.Point(327, 17);
             this.chkSCP.Name = "chkSCP";
             this.chkSCP.Size = new System.Drawing.Size(15, 14);
             this.chkSCP.TabIndex = 4;
@@ -3482,9 +3490,9 @@
             this.PC.Controls.Add(this.datePCD);
             this.PC.Controls.Add(this.chkPCP);
             this.PC.Controls.Add(this.label66);
-            this.PC.Location = new System.Drawing.Point(23, 436);
+            this.PC.Location = new System.Drawing.Point(7, 411);
             this.PC.Name = "PC";
-            this.PC.Size = new System.Drawing.Size(948, 38);
+            this.PC.Size = new System.Drawing.Size(942, 38);
             this.PC.TabIndex = 17;
             this.PC.TabStop = false;
             // 
@@ -3492,7 +3500,7 @@
             // 
             this.txtPCC.Location = new System.Drawing.Point(510, 12);
             this.txtPCC.Name = "txtPCC";
-            this.txtPCC.Size = new System.Drawing.Size(436, 20);
+            this.txtPCC.Size = new System.Drawing.Size(425, 20);
             this.txtPCC.TabIndex = 7;
             // 
             // datePCD
@@ -3507,7 +3515,7 @@
             // chkPCP
             // 
             this.chkPCP.AutoSize = true;
-            this.chkPCP.Location = new System.Drawing.Point(330, 15);
+            this.chkPCP.Location = new System.Drawing.Point(326, 15);
             this.chkPCP.Name = "chkPCP";
             this.chkPCP.Size = new System.Drawing.Size(15, 14);
             this.chkPCP.TabIndex = 4;
@@ -3527,7 +3535,9 @@
             // 
             this.gbPostArrivalNeeds.Controls.Add(this.pnlAssistanceNeedTitle);
             this.gbPostArrivalNeeds.Controls.Add(this.PR);
+            this.gbPostArrivalNeeds.Controls.Add(this.SC);
             this.gbPostArrivalNeeds.Controls.Add(this.NFI);
+            this.gbPostArrivalNeeds.Controls.Add(this.PC);
             this.gbPostArrivalNeeds.Controls.Add(this.WFP);
             this.gbPostArrivalNeeds.Controls.Add(this.DDR);
             this.gbPostArrivalNeeds.Controls.Add(this.Escort);
@@ -3602,17 +3612,17 @@
             this.PR.Controls.Add(this.datePRD);
             this.PR.Controls.Add(this.chkPRP);
             this.PR.Controls.Add(this.label69);
-            this.PR.Location = new System.Drawing.Point(9, 523);
+            this.PR.Location = new System.Drawing.Point(7, 523);
             this.PR.Name = "PR";
-            this.PR.Size = new System.Drawing.Size(941, 38);
+            this.PR.Size = new System.Drawing.Size(940, 38);
             this.PR.TabIndex = 20;
             this.PR.TabStop = false;
             // 
             // txtPRC
             // 
-            this.txtPRC.Location = new System.Drawing.Point(507, 10);
+            this.txtPRC.Location = new System.Drawing.Point(502, 10);
             this.txtPRC.Name = "txtPRC";
-            this.txtPRC.Size = new System.Drawing.Size(431, 20);
+            this.txtPRC.Size = new System.Drawing.Size(434, 20);
             this.txtPRC.TabIndex = 7;
             // 
             // datePRD
@@ -3627,7 +3637,7 @@
             // chkPRP
             // 
             this.chkPRP.AutoSize = true;
-            this.chkPRP.Location = new System.Drawing.Point(328, 15);
+            this.chkPRP.Location = new System.Drawing.Point(326, 15);
             this.chkPRP.Name = "chkPRP";
             this.chkPRP.Size = new System.Drawing.Size(15, 14);
             this.chkPRP.TabIndex = 4;
@@ -3649,17 +3659,17 @@
             this.NFI.Controls.Add(this.dateNFID);
             this.NFI.Controls.Add(this.chkNFIP);
             this.NFI.Controls.Add(this.label67);
-            this.NFI.Location = new System.Drawing.Point(3, 449);
+            this.NFI.Location = new System.Drawing.Point(6, 449);
             this.NFI.Name = "NFI";
-            this.NFI.Size = new System.Drawing.Size(944, 38);
+            this.NFI.Size = new System.Drawing.Size(941, 38);
             this.NFI.TabIndex = 18;
             this.NFI.TabStop = false;
             // 
             // txtNFIC
             // 
-            this.txtNFIC.Location = new System.Drawing.Point(508, 12);
+            this.txtNFIC.Location = new System.Drawing.Point(506, 12);
             this.txtNFIC.Name = "txtNFIC";
-            this.txtNFIC.Size = new System.Drawing.Size(434, 20);
+            this.txtNFIC.Size = new System.Drawing.Size(427, 20);
             this.txtNFIC.TabIndex = 7;
             // 
             // dateNFID
@@ -3674,7 +3684,7 @@
             // chkNFIP
             // 
             this.chkNFIP.AutoSize = true;
-            this.chkNFIP.Location = new System.Drawing.Point(330, 15);
+            this.chkNFIP.Location = new System.Drawing.Point(327, 14);
             this.chkNFIP.Name = "chkNFIP";
             this.chkNFIP.Size = new System.Drawing.Size(15, 14);
             this.chkNFIP.TabIndex = 4;
@@ -3696,17 +3706,17 @@
             this.WFP.Controls.Add(this.dateWFPD);
             this.WFP.Controls.Add(this.chkWFPP);
             this.WFP.Controls.Add(this.label65);
-            this.WFP.Location = new System.Drawing.Point(3, 373);
+            this.WFP.Location = new System.Drawing.Point(5, 373);
             this.WFP.Name = "WFP";
-            this.WFP.Size = new System.Drawing.Size(944, 38);
+            this.WFP.Size = new System.Drawing.Size(940, 38);
             this.WFP.TabIndex = 16;
             this.WFP.TabStop = false;
             // 
             // txtWFPC
             // 
-            this.txtWFPC.Location = new System.Drawing.Point(508, 12);
+            this.txtWFPC.Location = new System.Drawing.Point(506, 12);
             this.txtWFPC.Name = "txtWFPC";
-            this.txtWFPC.Size = new System.Drawing.Size(436, 20);
+            this.txtWFPC.Size = new System.Drawing.Size(428, 20);
             this.txtWFPC.TabIndex = 7;
             // 
             // dateWFPD
@@ -3721,7 +3731,7 @@
             // chkWFPP
             // 
             this.chkWFPP.AutoSize = true;
-            this.chkWFPP.Location = new System.Drawing.Point(330, 15);
+            this.chkWFPP.Location = new System.Drawing.Point(328, 14);
             this.chkWFPP.Name = "chkWFPP";
             this.chkWFPP.Size = new System.Drawing.Size(15, 14);
             this.chkWFPP.TabIndex = 4;
@@ -3751,9 +3761,9 @@
             // 
             // txtDDRC
             // 
-            this.txtDDRC.Location = new System.Drawing.Point(508, 12);
+            this.txtDDRC.Location = new System.Drawing.Point(504, 12);
             this.txtDDRC.Name = "txtDDRC";
-            this.txtDDRC.Size = new System.Drawing.Size(432, 20);
+            this.txtDDRC.Size = new System.Drawing.Size(433, 20);
             this.txtDDRC.TabIndex = 7;
             // 
             // dateDDRD
@@ -3768,7 +3778,7 @@
             // chkDDRP
             // 
             this.chkDDRP.AutoSize = true;
-            this.chkDDRP.Location = new System.Drawing.Point(330, 15);
+            this.chkDDRP.Location = new System.Drawing.Point(328, 15);
             this.chkDDRP.Name = "chkDDRP";
             this.chkDDRP.Size = new System.Drawing.Size(15, 14);
             this.chkDDRP.TabIndex = 4;
@@ -3790,9 +3800,9 @@
             this.Escort.Controls.Add(this.dateED);
             this.Escort.Controls.Add(this.chkEP);
             this.Escort.Controls.Add(this.label63);
-            this.Escort.Location = new System.Drawing.Point(0, 299);
+            this.Escort.Location = new System.Drawing.Point(6, 299);
             this.Escort.Name = "Escort";
-            this.Escort.Size = new System.Drawing.Size(951, 38);
+            this.Escort.Size = new System.Drawing.Size(941, 38);
             this.Escort.TabIndex = 14;
             this.Escort.TabStop = false;
             // 
@@ -3800,7 +3810,7 @@
             // 
             this.txtEC.Location = new System.Drawing.Point(509, 11);
             this.txtEC.Name = "txtEC";
-            this.txtEC.Size = new System.Drawing.Size(438, 20);
+            this.txtEC.Size = new System.Drawing.Size(428, 20);
             this.txtEC.TabIndex = 7;
             // 
             // dateED
@@ -3815,7 +3825,7 @@
             // chkEP
             // 
             this.chkEP.AutoSize = true;
-            this.chkEP.Location = new System.Drawing.Point(330, 15);
+            this.chkEP.Location = new System.Drawing.Point(327, 18);
             this.chkEP.Name = "chkEP";
             this.chkEP.Size = new System.Drawing.Size(15, 14);
             this.chkEP.TabIndex = 4;
@@ -3837,17 +3847,17 @@
             this.EMC.Controls.Add(this.dateEMCD);
             this.EMC.Controls.Add(this.chkEMCP);
             this.EMC.Controls.Add(this.label62);
-            this.EMC.Location = new System.Drawing.Point(2, 261);
+            this.EMC.Location = new System.Drawing.Point(7, 261);
             this.EMC.Name = "EMC";
-            this.EMC.Size = new System.Drawing.Size(947, 38);
+            this.EMC.Size = new System.Drawing.Size(942, 38);
             this.EMC.TabIndex = 13;
             this.EMC.TabStop = false;
             // 
             // txtEMCC
             // 
-            this.txtEMCC.Location = new System.Drawing.Point(508, 14);
+            this.txtEMCC.Location = new System.Drawing.Point(507, 13);
             this.txtEMCC.Name = "txtEMCC";
-            this.txtEMCC.Size = new System.Drawing.Size(433, 20);
+            this.txtEMCC.Size = new System.Drawing.Size(429, 20);
             this.txtEMCC.TabIndex = 7;
             // 
             // dateEMCD
@@ -3862,7 +3872,7 @@
             // chkEMCP
             // 
             this.chkEMCP.AutoSize = true;
-            this.chkEMCP.Location = new System.Drawing.Point(330, 15);
+            this.chkEMCP.Location = new System.Drawing.Point(326, 15);
             this.chkEMCP.Name = "chkEMCP";
             this.chkEMCP.Size = new System.Drawing.Size(15, 14);
             this.chkEMCP.TabIndex = 4;
@@ -3884,17 +3894,17 @@
             this.AITC.Controls.Add(this.dateAITCD);
             this.AITC.Controls.Add(this.chkAITCP);
             this.AITC.Controls.Add(this.label61);
-            this.AITC.Location = new System.Drawing.Point(3, 223);
+            this.AITC.Location = new System.Drawing.Point(7, 223);
             this.AITC.Name = "AITC";
-            this.AITC.Size = new System.Drawing.Size(948, 38);
+            this.AITC.Size = new System.Drawing.Size(944, 38);
             this.AITC.TabIndex = 12;
             this.AITC.TabStop = false;
             // 
             // txtAITCC
             // 
-            this.txtAITCC.Location = new System.Drawing.Point(508, 11);
+            this.txtAITCC.Location = new System.Drawing.Point(506, 11);
             this.txtAITCC.Name = "txtAITCC";
-            this.txtAITCC.Size = new System.Drawing.Size(436, 20);
+            this.txtAITCC.Size = new System.Drawing.Size(433, 20);
             this.txtAITCC.TabIndex = 7;
             // 
             // dateAITCD
@@ -3909,7 +3919,7 @@
             // chkAITCP
             // 
             this.chkAITCP.AutoSize = true;
-            this.chkAITCP.Location = new System.Drawing.Point(330, 15);
+            this.chkAITCP.Location = new System.Drawing.Point(326, 14);
             this.chkAITCP.Name = "chkAITCP";
             this.chkAITCP.Size = new System.Drawing.Size(15, 14);
             this.chkAITCP.TabIndex = 4;
@@ -3931,9 +3941,9 @@
             this.STA.Controls.Add(this.dateSTAD);
             this.STA.Controls.Add(this.chkSTAP);
             this.STA.Controls.Add(this.label60);
-            this.STA.Location = new System.Drawing.Point(0, 186);
+            this.STA.Location = new System.Drawing.Point(5, 186);
             this.STA.Name = "STA";
-            this.STA.Size = new System.Drawing.Size(950, 38);
+            this.STA.Size = new System.Drawing.Size(945, 38);
             this.STA.TabIndex = 11;
             this.STA.TabStop = false;
             // 
@@ -3941,7 +3951,7 @@
             // 
             this.txtSTAC.Location = new System.Drawing.Point(509, 12);
             this.txtSTAC.Name = "txtSTAC";
-            this.txtSTAC.Size = new System.Drawing.Size(440, 20);
+            this.txtSTAC.Size = new System.Drawing.Size(432, 20);
             this.txtSTAC.TabIndex = 7;
             // 
             // dateSTAD
@@ -3956,7 +3966,7 @@
             // chkSTAP
             // 
             this.chkSTAP.AutoSize = true;
-            this.chkSTAP.Location = new System.Drawing.Point(330, 15);
+            this.chkSTAP.Location = new System.Drawing.Point(328, 15);
             this.chkSTAP.Name = "chkSTAP";
             this.chkSTAP.Size = new System.Drawing.Size(15, 14);
             this.chkSTAP.TabIndex = 4;
@@ -3978,17 +3988,17 @@
             this.FT.Controls.Add(this.dateFTD);
             this.FT.Controls.Add(this.chkFTP);
             this.FT.Controls.Add(this.label59);
-            this.FT.Location = new System.Drawing.Point(3, 150);
+            this.FT.Location = new System.Drawing.Point(5, 150);
             this.FT.Name = "FT";
-            this.FT.Size = new System.Drawing.Size(947, 38);
+            this.FT.Size = new System.Drawing.Size(945, 36);
             this.FT.TabIndex = 10;
             this.FT.TabStop = false;
             // 
             // txtFTC
             // 
-            this.txtFTC.Location = new System.Drawing.Point(508, 15);
+            this.txtFTC.Location = new System.Drawing.Point(506, 15);
             this.txtFTC.Name = "txtFTC";
-            this.txtFTC.Size = new System.Drawing.Size(438, 20);
+            this.txtFTC.Size = new System.Drawing.Size(435, 20);
             this.txtFTC.TabIndex = 7;
             // 
             // dateFTD
@@ -4003,7 +4013,7 @@
             // chkFTP
             // 
             this.chkFTP.AutoSize = true;
-            this.chkFTP.Location = new System.Drawing.Point(330, 15);
+            this.chkFTP.Location = new System.Drawing.Point(328, 15);
             this.chkFTP.Name = "chkFTP";
             this.chkFTP.Size = new System.Drawing.Size(15, 14);
             this.chkFTP.TabIndex = 4;
@@ -4025,17 +4035,17 @@
             this.CFT.Controls.Add(this.dateCFTD);
             this.CFT.Controls.Add(this.chkCFTP);
             this.CFT.Controls.Add(this.label53);
-            this.CFT.Location = new System.Drawing.Point(2, 113);
+            this.CFT.Location = new System.Drawing.Point(5, 114);
             this.CFT.Name = "CFT";
-            this.CFT.Size = new System.Drawing.Size(949, 38);
+            this.CFT.Size = new System.Drawing.Size(946, 36);
             this.CFT.TabIndex = 9;
             this.CFT.TabStop = false;
             // 
             // txtCFTC
             // 
-            this.txtCFTC.Location = new System.Drawing.Point(509, 11);
+            this.txtCFTC.Location = new System.Drawing.Point(507, 11);
             this.txtCFTC.Name = "txtCFTC";
-            this.txtCFTC.Size = new System.Drawing.Size(440, 20);
+            this.txtCFTC.Size = new System.Drawing.Size(433, 20);
             this.txtCFTC.TabIndex = 7;
             // 
             // dateCFTD
@@ -4050,7 +4060,7 @@
             // chkCFTP
             // 
             this.chkCFTP.AutoSize = true;
-            this.chkCFTP.Location = new System.Drawing.Point(330, 15);
+            this.chkCFTP.Location = new System.Drawing.Point(328, 13);
             this.chkCFTP.Name = "chkCFTP";
             this.chkCFTP.Size = new System.Drawing.Size(15, 14);
             this.chkCFTP.TabIndex = 4;
@@ -4060,7 +4070,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(5, 12);
+            this.label53.Location = new System.Drawing.Point(11, 12);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(153, 17);
             this.label53.TabIndex = 2;
@@ -4072,9 +4082,9 @@
             this.FLT.Controls.Add(this.dateFLTD);
             this.FLT.Controls.Add(this.chkFLTP);
             this.FLT.Controls.Add(this.label52);
-            this.FLT.Location = new System.Drawing.Point(0, 82);
+            this.FLT.Location = new System.Drawing.Point(5, 79);
             this.FLT.Name = "FLT";
-            this.FLT.Size = new System.Drawing.Size(951, 38);
+            this.FLT.Size = new System.Drawing.Size(946, 36);
             this.FLT.TabIndex = 8;
             this.FLT.TabStop = false;
             // 
@@ -4082,7 +4092,7 @@
             // 
             this.txtFLTC.Location = new System.Drawing.Point(509, 10);
             this.txtFLTC.Name = "txtFLTC";
-            this.txtFLTC.Size = new System.Drawing.Size(440, 20);
+            this.txtFLTC.Size = new System.Drawing.Size(432, 20);
             this.txtFLTC.TabIndex = 7;
             // 
             // dateFLTD
@@ -4097,7 +4107,7 @@
             // chkFLTP
             // 
             this.chkFLTP.AutoSize = true;
-            this.chkFLTP.Location = new System.Drawing.Point(330, 15);
+            this.chkFLTP.Location = new System.Drawing.Point(328, 14);
             this.chkFLTP.Name = "chkFLTP";
             this.chkFLTP.Size = new System.Drawing.Size(15, 14);
             this.chkFLTP.TabIndex = 4;
@@ -4107,7 +4117,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(5, 12);
+            this.label52.Location = new System.Drawing.Point(10, 12);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(272, 17);
             this.label52.TabIndex = 2;
@@ -4119,17 +4129,17 @@
             this.TBRC.Controls.Add(this.dateTBRCD);
             this.TBRC.Controls.Add(this.chkTBRCP);
             this.TBRC.Controls.Add(this.label51);
-            this.TBRC.Location = new System.Drawing.Point(5, 42);
+            this.TBRC.Location = new System.Drawing.Point(5, 43);
             this.TBRC.Name = "TBRC";
-            this.TBRC.Size = new System.Drawing.Size(947, 41);
+            this.TBRC.Size = new System.Drawing.Size(945, 36);
             this.TBRC.TabIndex = 81;
             this.TBRC.TabStop = false;
             // 
             // txtTBRCC
             // 
-            this.txtTBRCC.Location = new System.Drawing.Point(509, 11);
+            this.txtTBRCC.Location = new System.Drawing.Point(504, 11);
             this.txtTBRCC.Name = "txtTBRCC";
-            this.txtTBRCC.Size = new System.Drawing.Size(441, 20);
+            this.txtTBRCC.Size = new System.Drawing.Size(437, 20);
             this.txtTBRCC.TabIndex = 7;
             // 
             // dateTBRCD
@@ -4144,7 +4154,7 @@
             // chkTBRCP
             // 
             this.chkTBRCP.AutoSize = true;
-            this.chkTBRCP.Location = new System.Drawing.Point(330, 19);
+            this.chkTBRCP.Location = new System.Drawing.Point(328, 15);
             this.chkTBRCP.Name = "chkTBRCP";
             this.chkTBRCP.Size = new System.Drawing.Size(15, 14);
             this.chkTBRCP.TabIndex = 4;
@@ -4154,7 +4164,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(5, 15);
+            this.label51.Location = new System.Drawing.Point(10, 15);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(231, 17);
             this.label51.TabIndex = 2;
@@ -4223,6 +4233,7 @@
             // 
             // btnAssistanceNeedsPrevious2
             // 
+            this.btnAssistanceNeedsPrevious2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAssistanceNeedsPrevious2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssistanceNeedsPrevious2.Location = new System.Drawing.Point(813, 472);
             this.btnAssistanceNeedsPrevious2.Name = "btnAssistanceNeedsPrevious2";
@@ -4235,6 +4246,7 @@
             // btnAssistanceNeedsNext2
             // 
             this.btnAssistanceNeedsNext2.BackColor = System.Drawing.Color.Blue;
+            this.btnAssistanceNeedsNext2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAssistanceNeedsNext2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAssistanceNeedsNext2.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAssistanceNeedsNext2.Location = new System.Drawing.Point(909, 472);
@@ -4922,6 +4934,7 @@
             // 
             // btnReintegNeed1Previous
             // 
+            this.btnReintegNeed1Previous.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReintegNeed1Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintegNeed1Previous.Location = new System.Drawing.Point(806, 573);
             this.btnReintegNeed1Previous.Name = "btnReintegNeed1Previous";
@@ -4934,6 +4947,7 @@
             // btnReintegNeed1NeedNext
             // 
             this.btnReintegNeed1NeedNext.BackColor = System.Drawing.Color.Blue;
+            this.btnReintegNeed1NeedNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReintegNeed1NeedNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintegNeed1NeedNext.ForeColor = System.Drawing.SystemColors.Window;
             this.btnReintegNeed1NeedNext.Location = new System.Drawing.Point(906, 571);
@@ -5384,6 +5398,7 @@
             // 
             // btnReintegNeeds2Previous
             // 
+            this.btnReintegNeeds2Previous.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReintegNeeds2Previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintegNeeds2Previous.Location = new System.Drawing.Point(804, 536);
             this.btnReintegNeeds2Previous.Name = "btnReintegNeeds2Previous";
@@ -5396,6 +5411,7 @@
             // btnReintegNeeds2Next
             // 
             this.btnReintegNeeds2Next.BackColor = System.Drawing.Color.Blue;
+            this.btnReintegNeeds2Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReintegNeeds2Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintegNeeds2Next.ForeColor = System.Drawing.SystemColors.Window;
             this.btnReintegNeeds2Next.Location = new System.Drawing.Point(906, 535);
@@ -5575,6 +5591,7 @@
             // 
             // btnCardPrevious
             // 
+            this.btnCardPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCardPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCardPrevious.Location = new System.Drawing.Point(732, 345);
             this.btnCardPrevious.Name = "btnCardPrevious";
@@ -5587,6 +5604,7 @@
             // btnSaveBeneficiary
             // 
             this.btnSaveBeneficiary.BackColor = System.Drawing.Color.Blue;
+            this.btnSaveBeneficiary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveBeneficiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveBeneficiary.ForeColor = System.Drawing.SystemColors.Window;
             this.btnSaveBeneficiary.Location = new System.Drawing.Point(829, 345);

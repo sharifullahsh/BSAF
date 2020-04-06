@@ -4,20 +4,16 @@ using System.Linq;
 using System.Windows.Forms;
 using BSAF.Entity;
 using BSAF.Helper;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BSAF
 {
     public partial class LoginForm : Form
     {
-        UserManager<IdentityUser> userManager;
 
         public LoginForm()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
-            userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(new IdentityDbContext("BSAFconn")));
         }
         private async void btnLogin_Click(object sender, EventArgs e)
         {

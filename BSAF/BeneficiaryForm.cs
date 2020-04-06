@@ -387,9 +387,7 @@ namespace BSAF
                 this.rdoWantReturnNo.Checked = true;
             }
             //Post arrival needs
-            var gbPostArrivalNeeds = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>();
-            var ts = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>().Count();
-            var names = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>().Select(g=>g.Name);
+            var gbPostArrivalNeeds = this.gbPostArrivalNeeds.Controls.OfType<GroupBox>();         
             var bPostArrivalNeeds = beneficiary.PostArrivalNeeds.Select(n=>n.NeedCode);
             foreach(var gb in gbPostArrivalNeeds)
             {
