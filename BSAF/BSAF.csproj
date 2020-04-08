@@ -70,6 +70,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -178,6 +187,11 @@
     <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Helper\Variables.cs" />
+    <Compile Include="Migrations\202004080256369_init.cs" />
+    <Compile Include="Migrations\202004080256369_init.designer.cs">
+      <DependentUpon>202004080256369_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ViewModels\JwtVM.cs" />
     <Compile Include="Models\ViewModels\UserInfo.cs" />
     <Compile Include="Helper\Validation.cs" />
@@ -217,7 +231,6 @@
     <Compile Include="BSAFMDIParent.Designer.cs">
       <DependentUpon>BSAFMDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Tables\ReturnReason.cs" />
     <Compile Include="Models\Tables\Transportation.cs" />
     <Compile Include="Models\ViewModels\BeneficiaryVM.cs" />
@@ -244,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BSAFMDIParent.resx">
       <DependentUpon>BSAFMDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080256369_init.resx">
+      <DependentUpon>202004080256369_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

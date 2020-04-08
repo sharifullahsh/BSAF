@@ -386,12 +386,12 @@
             this.txtTransAdditionalInfo = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
             this.US = new System.Windows.Forms.CheckBox();
+            this.TWE = new System.Windows.Forms.CheckBox();
             this.LTTC = new System.Windows.Forms.CheckBox();
             this.HOTH = new System.Windows.Forms.CheckBox();
             this.PWT = new System.Windows.Forms.CheckBox();
             this.RTOP = new System.Windows.Forms.CheckBox();
             this.TBH = new System.Windows.Forms.CheckBox();
-            this.TWE = new System.Windows.Forms.CheckBox();
             this.label78 = new System.Windows.Forms.Label();
             this.gbBenefited = new System.Windows.Forms.GroupBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
@@ -510,6 +510,7 @@
             this.tabImageAndCard = new System.Windows.Forms.TabPage();
             this.btnCardPrevious = new System.Windows.Forms.Button();
             this.btnSaveBeneficiary = new System.Windows.Forms.Button();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1257,6 +1258,7 @@
             // 
             // tabProfile
             // 
+            this.tabProfile.Controls.Add(this.metroTextBox1);
             this.tabProfile.Controls.Add(this.pnlReturnStatus);
             this.tabProfile.Controls.Add(this.pnlBeneficiaryInfo);
             this.tabProfile.Controls.Add(this.pnlFamilyMember);
@@ -4362,6 +4364,16 @@
             this.US.Text = "Under support/pending in TC or in other places";
             this.US.UseVisualStyleBackColor = true;
             // 
+            // TWE
+            // 
+            this.TWE.AutoSize = true;
+            this.TWE.Location = new System.Drawing.Point(10, 14);
+            this.TWE.Name = "TWE";
+            this.TWE.Size = new System.Drawing.Size(188, 17);
+            this.TWE.TabIndex = 99;
+            this.TWE.Text = "Travelled with escort and reunified";
+            this.TWE.UseVisualStyleBackColor = true;
+            // 
             // LTTC
             // 
             this.LTTC.AutoSize = true;
@@ -4411,16 +4423,6 @@
             this.TBH.TabIndex = 16;
             this.TBH.Text = "Travelled by him/herself (without escort)";
             this.TBH.UseVisualStyleBackColor = true;
-            // 
-            // TWE
-            // 
-            this.TWE.AutoSize = true;
-            this.TWE.Location = new System.Drawing.Point(10, 14);
-            this.TWE.Name = "TWE";
-            this.TWE.Size = new System.Drawing.Size(188, 17);
-            this.TWE.TabIndex = 99;
-            this.TWE.Text = "Travelled with escort and reunified";
-            this.TWE.UseVisualStyleBackColor = true;
             // 
             // label78
             // 
@@ -5628,6 +5630,38 @@
             this.btnSaveBeneficiary.UseVisualStyleBackColor = false;
             this.btnSaveBeneficiary.Click += new System.EventHandler(this.btnSaveBeneficiary_Click);
             // 
+            // metroTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(185, 1);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Lines = new string[] {
+        "metroTextBox1"};
+            this.metroTextBox1.Location = new System.Drawing.Point(380, 100);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(207, 23);
+            this.metroTextBox1.TabIndex = 54;
+            this.metroTextBox1.Text = "metroTextBox1";
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // BeneficiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6280,5 +6314,6 @@
         private System.Windows.Forms.Panel pnlAssistanceNeedTitle;
         private System.Windows.Forms.Panel pnlHHdocumentTitle;
         private System.Windows.Forms.Panel pnlHoHEducationLevel;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }
