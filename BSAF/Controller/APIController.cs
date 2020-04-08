@@ -20,7 +20,7 @@ namespace BSAF.Controller
 
         public static bool SubmitBeneficiary(BeneficiaryVM model)
         {
-            string endpoint = Variables.baseUrl + "api/Beneficiary/";
+            string endpoint = Variables.beneficiaryUrl;
             string method = "POST";
             string json = JsonConvert.SerializeObject(model);
             try

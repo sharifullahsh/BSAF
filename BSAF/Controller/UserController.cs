@@ -19,8 +19,7 @@ namespace BSAF.Helper
         }
         public static bool AuthenticateUser(string username, string password)
         {
-            var baseUrl = ConfigurationManager.AppSettings["BaseUrl"].ToString();
-            string endpoint = baseUrl + "api/Login/login";
+            string endpoint = Variables.loginUrl ;
             string method = "POST";
             string json = JsonConvert.SerializeObject(new
             {

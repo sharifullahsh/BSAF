@@ -9,6 +9,8 @@ namespace BSAF.Helper
 {
     public class Variables
     {
-        public static string baseUrl = ConfigurationManager.AppSettings["BaseUrl"].ToString();
+        public static string baseUrl = ConfigurationManager.AppSettings["baseUrl"].ToString();
+        public static string loginUrl = ConfigurationManager.AppSettings["loginUrl"].ToString();
+        public static string beneficiaryUrl = ConfigurationManager.AppSettings["beneficiaryUrl"].ToString();
     }
 }
